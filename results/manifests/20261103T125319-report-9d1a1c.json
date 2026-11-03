@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "run_id": "20261103T125319-report-9d1a1c",
+  "command": "report-build",
+  "timestamp_utc": "2026-11-03T12:53:19.612178+00:00",
+  "status": "SUCCESS",
+  "git_commit": "0e8110256fa60e43c1be3072d32da4eba46fd9a0",
+  "git_dirty": true,
+  "tools": {
+    "latexmk": {
+      "path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/bin/universal-darwin/latexmk",
+      "version": "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    },
+    "lualatex": {
+      "path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/bin/universal-darwin/lualatex",
+      "version": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)"
+    },
+    "biber": {
+      "path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/bin/universal-darwin/biber",
+      "version": "biber version: 2.22"
+    }
+  },
+  "inputs": {
+    "report/appendices/appendices.tex": "8d90ca0c01ebf300d08b8e9125a03e383ca6398fb60adacd401970dd94bece3c",
+    "report/artwork/bias-editorial-v2.png": "48e1ef8572821c4fd5f01ba2ff8068ff48749c84672ea21f1a4fdd91c269dd48",
+    "report/artwork/cover-editorial-v2.png": "13292951630573df0778908c7f55df842d84e0f22824521c699a124549a77a90",
+    "report/artwork/ensemble-editorial-v2.png": "5b0ced04b21087f66e1e1c972da22a00d1297298c735487395ca792bf37fafb1",
+    "report/artwork/messina-logo-user-supplied.png": "629d26bd366c17f2ac03ddd31d0ce751f63af1071ce6325d1dc5512bf32d4c1a",
+    "report/artwork_provenance.json": "5ff8edf678399cd282052ddde574f5e8a1d279f92683db1e39928efd92099910",
+    "report/chapters/01_introduction.tex": "ce310fa682735cb64ce5d525e9ef42097cbf1172544b556ff088887018230c2a",
+    "report/chapters/02_background.tex": "0aaf38680577dfe24fd73d41de998903d2b3c559aa6d06186ef94e2b324ed2c8",
+    "report/chapters/03_methodology.tex": "1def431115dfbfb4105c3ba429479d8bce95ca227c39cbb0e21b1b783ec7b556",
+    "report/chapters/04_audit.tex": "fcea87a1ddf5a0aee9faad5e7c94a486d06ab02befbf7360db0655fe4367edea",
+    "report/chapters/05_robustness.tex": "046317122829e43daac55441cc66b0d6bfd847b7a08311b59712d46273e2cd1a",
+    "report/chapters/06_results.tex": "c35aea9fcc6d480d482bb28d7bd6e2cc1052912bb73d59d36d96dc47b643c55e",
+    "report/chapters/07_discussion.tex": "375c4f5df653fd12e7605fc63605c4a7d5a1a94a91eb3c1b82367a355fd9ce17",
+    "report/chapters/08_outcomes.tex": "7a4c1bc3b064c973e4659ce5202fe126cd9dcd214b5902a7ef756d4088eb57b4",
+    "report/chapters/09_conclusions.tex": "515f06a54bfd0b87e4a167f776fb09b226d5e01497ad3e7e623fe3c692cec1b3",
+    "report/data_provenance.json": "ca59c27d0420d66a137bf1e82e77888231f6c26b1595a081b2f0c7a09b74e71e",
+    "report/figures/cover_concept.pdf": "13b518a084902707d83f58a72ac225171472a6bff7726896b48016be90e402b2",
+    "report/figures/fig01_workflow.pdf": "4e19a9495581cee9d32cf225aa40fb7d9b4a529f393d2c050a0187985d731e4c",
+    "report/figures/fig03_feature_diagnostics.pdf": "9a67a1db697a39a7bb1d1d6889e299cd9643d2439b494b8435c67298665c1eee",
+    "report/figures/gmm_seed_matrices.pdf": "71f745efe8f6a948c2bb7fd95ef09371721d0c645920a44105dbf6a52d5e24e8",
+    "report/figures/gmm_sensitivity.pdf": "43460e407a4dc5eeb5039a2770a4e7d7bcf6368ae1f4b8fefe4fabe1ee26fa17",
+    "report/figures/raw_descriptor_distributions.pdf": "6123e4eb3b18a1bf721598bf9bd3667b8d407c4afe99b4c724647601ac122f7f",
+    "report/figures/sampling_autocorrelations.pdf": "933cfd8889e7d2311029310b5714595dad360937e0fca727b22d4d726da4cad2",
+    "report/generated/environment_rows.tex": "b8ab0b64d44896776648a71ce8eb32e446b7b4720d8f338a695dc395b5fdfaf5",
+    "report/generated/fit_scaler.py": "c5787d6397b124d487cb7b875d3403d14bcf9421e0f49e7fce68c3e9a7389610",
+    "report/generated/gmm_rows.tex": "1dfede9887450e59561669bf51a744c0463c6cbe09d4f9586c5c6367e4acd464",
+    "report/generated/gromacs-mcp-excerpt.py": "01bdf6601c5a6d01c7db729f642452783af8095658444a1c2d73aa83963b8ee7",
+    "report/generated/revision_values.tex": "4efa5e38b9b028d9fc1c9910f86950e5c2d238cc915b242ced202314db4e300d",
+    "report/generated/sampling_rows.tex": "b078c42b765afba6d21dab475c887a66419cba83154aa35d35e8f09bf6cb0811",
+    "report/generated/values.tex": "e7dfbf9cca7f0a96bf738eff7e30e90e4fd1fe284759e8a68f006f71a1ecaf41",
+    "report/generated/vmd-mcp-excerpt.py": "7eb8e6f9033bbeb47a574bde0b6f3d7206951b2ab05358a6744774686fc34491",
+    "report/preamble.tex": "bfc06f0c6d8862af5f42c9119ea6a090e23a6ded247c9d931329708385cf731b",
+    "report/preview/ablation_rows.tex": "1dfede9887450e59561669bf51a744c0463c6cbe09d4f9586c5c6367e4acd464",
+    "report/preview/provenance.json": "eeca73bf1e929bece25a74aecc6cab1f04c2a432e2d8a4a3fe772a904c23ab06",
+    "report/preview/provenance.tex": "eaaa868573e2222a38f19701fe2e3547b2e6dd2db22c8a568f4536a730fb8e03",
+    "report/preview/revision-preview.tex": "8543b39d32df0c047b9b64430eb64334dd53207dcf5d57c405106aa2056885fb",
+    "report/references.bib": "b988e2bf679e85feec5229ffc667d6390a28271e7b3816ab7bb0bcd8db719f2f",
+    "report/report.tex": "ac3c22575545a75b45da6585c2dde37b48b94b569ea6f166d8d3805ab848637e",
+    "report/revision_provenance.json": "f3298bd9d008830f40d4a4170426872fff585094ef2fe08ac8140ac3de237027",
+    "report/screenshots/gromacs-mdrun.jpg": "141f8057b4613aa052b4033ab93fe386f3e336c68ea857d6eb85024e725ef614",
+    "report/screenshots/vmd-gyration.jpg": "d3974d85da310e251ab27e2497d56ed10ec14e6d4e76e9a8b748ef536bf96ae4"
+  },
+  "outputs": [
+    {
+      "filename": "results/logs/20261103T125319-report-9d1a1c/latexmk.log",
+      "sha256": "0a561dab312815c60b7ed8ef19df03dcefbd693e2de3aeb74d1894dd791ddf50"
+    },
+    {
+      "filename": "results/logs/20261103T125319-report-9d1a1c/report.blg",
+      "sha256": "9789bfb2668ba3566c5acfdff403ac341e9289ed162cf4ef985bf00a43f4c150"
+    },
+    {
+      "filename": "results/logs/20261103T125319-report-9d1a1c/report.log",
+      "sha256": "4da8d55cfd723ac5fe516ff4826eb817d79b3f95adf34441797707ce0894fb5c"
+    },
+    {
+      "filename": "results/logs/20261103T125319-report-9d1a1c/report.pdf",
+      "sha256": "c9fd4cf5e4920cee2fb1c57d5222eeb71f5cba27c2da4b5bc4dac04ece07bd9c"
+    }
+  ],
+  "build_command": [
+    "latexmk",
+    "-lualatex",
+    "-interaction=nonstopmode",
+    "-halt-on-error",
+    "-outdir=build",
+    "report.tex"
+  ],
+  "warnings": [
+    "Package unicode-math Warning: Using \\overbracket and \\underbracket from",
+    "Package unicode-math Warning: I'm going to overwrite the following commands"
+  ],
+  "main_text_pages": 22,
+  "total_pages": 38,
+  "page_labels": [
+    "1",
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33"
+  ],
+  "page_target_met": true,
+  "runtime_seconds": 9.068638915894553
+}

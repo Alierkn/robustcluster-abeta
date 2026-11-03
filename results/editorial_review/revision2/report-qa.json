@@ -1,0 +1,20 @@
+{
+  "release": "0.1.1",
+  "date": "2026-11-03",
+  "report_manifest": "results/manifests/20261103T130123-report-145074.json",
+  "qa_manifest": "results/manifests/20261103T130142-qa-4635a6.json",
+  "report_sha256": "d177b4eaaf19b01869db34030da01bbdf82330813d22ecf946101d91b3918107",
+  "main_text_pages": 22,
+  "total_pages": 38,
+  "visual_review": "All pages in contact sheets; methods, discussion and figure page at reading size. After student-confirmed reflection, only pages 25\u201326 changed in extracted text; both inspected at reading size.",
+  "footer_minimum_gap_pt": 32.24,
+  "footer_method": "pdftotext word bounding boxes, main text versus centred page-number footer",
+  "tagged_pdf": false,
+  "pdf_language": "en-GB",
+  "numerical_algorithms_changed": false,
+  "new_empirical_runs": false,
+  "new_external_checker_whole_report": false,
+  "student_confirmed_reflection": true,
+  "detector_excerpt_unchanged": true,
+  "footer_measurement_scope": "Measured before the final personal reflection; only pages 25\u201326 then changed and were visually inspected."
+}

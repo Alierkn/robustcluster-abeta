@@ -32,11 +32,15 @@
 \setlength{\parindent}{1em}
 \setlength{\parskip}{2pt plus 1pt}
 \setlength{\emergencystretch}{2em}
+% Keep a paragraph's opening/closing line with its neighbouring text.
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
 \setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{1}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
-\captionsetup{font=small,labelfont=bf,format=plain}
+\captionsetup{font=small,labelfont=bf,format=plain,justification=raggedright,singlelinecheck=false}
 \newtcolorbox{auditnote}{colback=CoolGrey,colframe=Audit,boxrule=.4pt,arc=0pt,left=7pt,right=7pt,top=5pt,bottom=5pt,title=Scientific audit note,fonttitle=\sffamily\bfseries}
 \newcommand{\abforty}{Aβ40}
 \newcommand{\abfortytwo}{Aβ42}

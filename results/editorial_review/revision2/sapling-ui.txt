@@ -1,0 +1,421 @@
+Browser tab: 1, Title: "AI Detector | GPT-5, ChatGPT, Claude, Gemini, DeepSeek | Sapling", URL: "https://sapling.ai/ai-content-detector".
+0 AXWebArea AI Detector | GPT-5, ChatGPT, Claude, Gemini, DeepSeek | Sapling, URL: sapling.ai/ai-content-detector
+	1 container topnav
+		2 link Description: Sapling home, Value: sapling.ai/
+		3 link Description: Get started, Value: sapling.ai/route_install, ID: get_started_link
+		4 container topnavCollapse
+			5 link (collapsed) Description: Products , Value: sapling.ai/ai-content-detector#, ID: dropdownProductsLink, Secondary Actions: Expand
+			6 link (collapsed) Description: Solutions , Value: sapling.ai/ai-content-detector#, ID: dropdownSolutionsLink, Secondary Actions: Expand
+			7 link Description: Sign in, Value: sapling.ai/user/sign-in
+			8 link Description: Pricing, Value: sapling.ai/pricing
+			9 link Description: Contact, Value: sapling.ai/contact?demo=True
+	10 container
+		11 heading AI Detector, Value: 1
+			12 text AI Detector
+		13 text Detect whether text is AI-generated.
+	211 container AI Content Detector for Chrome
+		212 button Dismiss
+		213 text AI Content Detector for Chrome
+		214 text Check for AI-generated content anywhere on the internet.
+		215 link Description: Add to Chrome, Value: chrome.google.com/webstore/detail/ai-content-detector-for-c/gbcfdjgipmpinkahpiambcikjkijimhi/
+	14 container
+		15 text entry area (settable) Description: Text to check, ID: content-editor, Value: Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide shape. Their correlation, however, does not determine whether one can be omitted from a clustering model. This internship report investigates that distinction in amyloid-β40 descriptors and audits the analysis supplied for reproducing the workflow of Cadenelli and colleagues.
+
+The dataset contains 300,003 observations in three replica segments, covering the source-labelled 1–3 microsecond interval. Inspection of the original script identified problems with parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. These were addressed in a modular Python implementation with numerical tests and recorded configurations. A recovered free-energy surface passed grid-completeness and query checks. Its energy units and construction provenance remain unresolved, so the reported experiments use the biased descriptors without equilibrium reweighting.
+			216 text Rad
+			217 text ius
+			218 text  of
+			219 text  gy
+			220 text ration
+			221 text  and
+			222 text  solvent
+			223 text -
+			224 text accessible
+			225 text  surface
+			226 text  area
+			227 text  (
+			228 text S
+			229 text AS
+			230 text A
+			231 text )
+			232 text  describe
+			233 text  related
+			234 text  aspects
+			235 text  of
+			236 text  pept
+			237 text ide
+			238 text  shape
+			239 text .
+			240 text  Their
+			241 text  correlation
+			242 text ,
+			243 text  however
+			244 text ,
+			245 text  does
+			246 text  not
+			247 text  determine
+			248 text  whether
+			249 text  one
+			250 text  can
+			251 text  be
+			252 text  omitted
+			253 text  from
+			254 text  a
+			255 text  clust
+			256 text ering
+			257 text  model
+			258 text .
+			259 text  This
+			260 text  internship
+			261 text  report
+			262 text  investigates
+			263 text  that
+			264 text  distinction
+			265 text  in
+			266 text  am
+			267 text yl
+			268 text oid
+			269 text -
+			270 text β
+			271 text 40
+			272 text  descript
+			273 text ors
+			274 text  and
+			275 text  audits
+			276 text  the
+			277 text  analysis
+			278 text  supplied
+			279 text  for
+			280 text  reprodu
+			281 text cing
+			282 text  the
+			283 text  workflow
+			284 text  of
+			285 text  Cad
+			286 text en
+			287 text elli
+			288 text  and
+			289 text  colleagues
+			290 text .
+			291 text The
+			292 text  dataset
+			293 text  contains
+			294 text  300
+			295 text ,
+			296 text 003
+			297 text  observations
+			298 text  in
+			299 text  three
+			300 text  replica
+			301 text  segments
+			302 text ,
+			303 text  covering
+			304 text  the
+			305 text  source
+			306 text -
+			307 text lab
+			308 text elled
+			309 text  1
+			310 text –
+			311 text 3
+			312 text  micro
+			313 text second
+			314 text  interval
+			315 text .
+			316 text  Inspection
+			317 text  of
+			318 text  the
+			319 text  original
+			320 text  script
+			321 text  identified
+			322 text  problems
+			323 text  with
+			324 text  parsing
+			325 text ,
+			326 text  residual
+			327 text  clusters
+			328 text ,
+			329 text  free
+			330 text -
+			331 text energy
+			332 text  interpol
+			333 text ation
+			334 text ,
+			335 text  replica
+			336 text  pool
+			337 text ing
+			338 text  and
+			339 text  weighted
+			340 text  summ
+			341 text aries
+			342 text .
+			343 text  These
+			344 text  were
+			345 text  addressed
+			346 text  in
+			347 text  a
+			348 text  modular
+			349 text  Python
+			350 text  implementation
+			351 text  with
+			352 text  numerical
+			353 text  tests
+			354 text  and
+			355 text  recorded
+			356 text  configurations
+			357 text .
+			358 text  A
+			359 text  recovered
+			360 text  free
+			361 text -
+			362 text energy
+			363 text  surface
+			364 text  passed
+			365 text  grid
+			366 text -
+			367 text com
+			368 text ple
+			369 text teness
+			370 text  and
+			371 text  query
+			372 text  checks
+			373 text .
+			374 text  Its
+			375 text  energy
+			376 text  units
+			377 text  and
+			378 text  construction
+			379 text  proven
+			380 text ance
+			381 text  remain
+			382 text  unresolved
+			383 text ,
+			384 text  so
+			385 text  the
+			386 text  reported
+			387 text  experiments
+			388 text  use
+			389 text  the
+			390 text  biased
+			391 text  descript
+			392 text ors
+			393 text  without
+			394 text  equilibrium
+			395 text  re
+			396 text weight
+			397 text ing
+			398 text .
+		399 container count-p
+			400 text Tokens: 
+			401 text 187
+		17 button Check again, ID: checkButton
+			402 text Check again
+		19 container Try a sample
+			20 text Try a sample
+			21 checkbox AI-generated (mix), Value: 0
+			22 checkbox AI-generated resume, Value: 0
+			23 checkbox Human-written excerpt, Value: 0
+		24 text Upload a PDF or Word document
+		25 button Upload a PDF or Word document, ID: fFile
+		26 text Selectable text is required. Scanned images need OCR first.
+		27 container url-check-form
+			28 text Or check a web page
+			29 text field (settable) Or check a web page, ID: url-check-input
+			30 button Check URL, ID: url-check-button
+		403 container fake-p
+			404 container
+				405 text AI-detection score: 
+				406 text 99.9
+				407 text %
+			408 progress indicator Description: AI-detection score, Value: 99.9000015258789
+			409 container
+				410 text Score for checked text (model estimate).
+				411 text  False positives and negatives may occur.
+			412 container share-result
+				413 text Share report (link expires after 3 days)
+				414 container
+					415 text field Description: Share URL, Value: https://sapling.ai/ai-content-detector/bfbf670b26ef86e7c3ee48451828fb0c, ID: page-link-input
+					416 button Copy, ID: page-copy-link-button
+		417 button (collapsed) Show sentence scores, ID: sentences-generated-button, Secondary Actions: Expand
+	31 container
+		32 heading Automate AI detection with the API, Value: 2
+			33 text Automate AI detection with the API
+		34 text Try an API key, run an example, and review usage before choosing a paid plan.
+		35 link Description: Get a free API key, Value: sapling.ai/start/api/detector
+		36 link Description: API docs, Value: sapling.ai/docs/api/detector/
+		37 link Description: Usage pricing and calculators, Value: sapling.ai/docs/api/pricing/
+		38 text  · API billing is separate from Pro.
+	39 container
+		40 heading Get it everywhere you write, Value: 2
+			41 text Get it everywhere you write
+		42 text Use the AI detector extension to check text on other webpages. For grammar suggestions and writing assistance, install the Sapling writing extension.
+		43 link Description: Install AI Content Detector, Value: chrome.google.com/webstore/detail/ai-content-detector-for-c/gbcfdjgipmpinkahpiambcikjkijimhi/
+		44 link Description: Install Sapling, Value: sapling.ai/route_install, ID: install-cta-button
+	45 container
+		46 text Developed by former researchers at:
+		47 image Cal
+		48 image Stanford
+		49 image Meta
+		50 image Google
+	51 heading About this tool, Value: 2
+		52 text About this tool
+	53 text This free AI detector outputs the probability that a text is AI-generated by a model such as ChatGPT or Gemini. Detect AI slop and machine-generated content. Helpful for educators, SEO practitioners, and reviewers of user-generated content.
+	54 heading Instructions, Value: 2
+		55 text Instructions
+	56 text Type or paste text above to score. The AI detector becomes much more accurate after 50 or so words. The token count (approximately the word count) will be shown as part of the score output.
+	57 text No current AI content detector (including Sapling's) should be used as a standalone check to determine whether text is AI-generated or written by a human. False positives and false negatives will occur.
+	58 content list
+		59 container
+			60 AXListMarker • 
+			61 text The top section will show the overall score and highlight portions of the text that appear to be AI-generated.
+		62 container
+			63 AXListMarker • 
+			64 text The bottom section scores each sentence with  the same detector model  as the overall score, on the same scale: a higher score means the sentence is more likely AI-generated.
+		65 container
+			66 AXListMarker • 
+			67 text The overall score covers the whole text at once, so a text that is only partly AI-generated can have a low overall score while some of its sentences score high. Check both (along with your best judgment) to make an assessment.
+	68 container
+		69 text Supported languages:  English, Spanish, Portuguese, French, German, Italian, Dutch and Japanese. The language is detected automatically; non-English text is scored by Sapling's multilingual model. Detector pages in other languages: 
+		70 link Description: Español, Value: sapling.ai/es/detector-de-ia
+		71 text  · 
+		72 link Description: Português, Value: sapling.ai/pt/detector-de-ia
+		73 text  · 
+		74 link Description: Français, Value: sapling.ai/fr/detecteur-ia
+		75 text  · 
+		76 link Description: Deutsch, Value: sapling.ai/de/ki-detektor
+		77 text  · 
+		78 link Description: Italiano, Value: sapling.ai/it/rilevatore-ia
+		79 text  · 
+		80 link Description: Nederlands, Value: sapling.ai/nl/ai-detector
+		81 text  · 
+		82 link Description: 日本語, Value: sapling.ai/ja/ai-checker
+		83 text .
+	84 container
+		85 text Here's a 
+		86 link Description: guide, Value: sapling.ai/ai-detector-evaluation
+		87 text .
+	88 container
+		89 text Looking for other ways to score content? 
+		90 link Description: Contact us, Value: sapling.ai/contact
+		91 text .
+	92 button (collapsed) Get the AI detector whitepaper PDF · 11 pages ›, Secondary Actions: Expand
+		93 heading Get the AI detector whitepaper, Value: 2
+			94 text Get the AI detector whitepaper
+		95 text PDF · 11 pages
+		96 text ›
+	97 heading Changelog, Value: 2
+		98 text Changelog
+	99 heading NEW, Value: 3
+		100 text NEW
+	101 content list
+		102 container
+			103 text 2026-10-13 Added preliminary support for Italian and Dutch.
+		104 container
+			105 text 2026-10-09 Added AI detection for Spanish, Portuguese, French, German and Japanese. The language is detected automatically and the text is scored by a model trained on human-written and AI-generated text in that language.
+		106 container
+			107 text 2026-09-17 Higher precision on recent models and significantly higher detection of humanized AI text. On internal held-out evaluations, false positives fell by 60%. Updated models including ChatGPT, Claude, Gemini, DeepSeek, and Qwen, and Kimi coverage was added.
+		108 container
+			109 text 2026-05-18 Added sample texts — try detecting AI-generated generic text, AI-generated resumes, or human-written content directly from the tool.
+	110 heading OLDER UPDATES, Value: 3
+		111 text OLDER UPDATES
+	112 content list
+		113 container
+			114 text 2025-10-27 Enhanced support for latest AI models including GPT-5, Claude 4.5, Gemini 2.5, Qwen3, and DeepSeek-V3. Maintained compatibility with older models.
+		115 container
+			116 text 2025-01-20 Increased context length to 100,000 characters.
+		117 container
+			118 text 2024-06-06 Significantly better performance on recent models such as GPT-4o, Gemini, Claude 3, Llama 3, and Mistral v0.3.
+		119 container
+			120 text 2024-05-27 Support for PDFs and DOCX files.
+		121 container
+			122 text 2024-03-12 Better text normalization.
+		123 container
+			124 text 2023-11-05 Versioning of different detector versions (available in API).
+	125 heading IN DEVELOPMENT, Value: 3
+		126 text IN DEVELOPMENT
+	127 content list
+		128 text Support for more languages.
+	129 heading Frequently Asked Questions, Value: 2
+		130 text Frequently Asked Questions
+	131 container
+		132 button (expanded) What is an AI content detector?, Secondary Actions: Collapse
+			133 text What is an AI content detector?
+		134 text Recently, advanced models such as OpenAI's GPT-5, Anthropic's Claude 4.5, Google's Gemini 2.5, Qwen3, DeepSeek-V3, and other state-of-the-art AI systems have led to the rise of sophisticated machine-generated content, sometimes referred to as "AI slop." This synthetic content is increasingly indistinguishable from human-written content, leading to the frequent thought: "Was this written by AI?". Despite rapid progress, these models continue to have shortcomings such as hallucinated facts as well as consequences such as enabling cheating in language courses. Low-quality AI-generated content, or slop, can be particularly problematic when it floods search results, social media, and other platforms. This AI checker and slop detector tool provides a way of screening whether a piece of content is written by a human or a machine, helping resolve the "Is this AI-generated?" question and identify AI slop.
+	135 button (collapsed) How does this detector work?, Secondary Actions: Expand
+		136 text How does this detector work?
+	137 button (collapsed) Do you have an AI detector for PDFs? Or an AI detector for Word .DOCX files?, Secondary Actions: Expand
+		138 text Do you have an AI detector for PDFs? Or an AI detector for Word .DOCX files?
+	139 button (collapsed) Can I use the AI detector on resumes and job applications?, Secondary Actions: Expand
+		140 text Can I use the AI detector on resumes and job applications?
+	141 button (collapsed) Is there an AI Content Detector extension I can use on other websites?, Secondary Actions: Expand
+		142 text Is there an AI Content Detector extension I can use on other websites?
+	143 button (collapsed) How accurate is the AI detector?, Secondary Actions: Expand
+		144 text How accurate is the AI detector?
+	145 button (collapsed) I pasted my own writing but it says it's AI-generated! What's going on?, Secondary Actions: Expand
+		146 text I pasted my own writing but it says it's AI-generated! What's going on?
+	147 button (collapsed) My text is getting cut off. How can I run the AI detector on longer texts?, Secondary Actions: Expand
+		148 text My text is getting cut off. How can I run the AI detector on longer texts?
+	149 button (collapsed) Can I access the AI detector through an API?, Secondary Actions: Expand
+		150 text Can I access the AI detector through an API?
+	151 button (collapsed) Does the AI detector work with languages other than English?, Secondary Actions: Expand
+		152 text Does the AI detector work with languages other than English?
+	153 button (collapsed) Secondary Actions: Expand, Does the AI check work with outputs from different language models such as GPT-5, Claude 4.5, Gemini 2.5, Qwen3, DeepSeek-V3, and other AI models?
+		154 text Does the AI check work with outputs from different language models such as GPT-5, Claude 4.5, Gemini 2.5, Qwen3, DeepSeek-V3, and other AI models?
+	155 button (collapsed) Secondary Actions: Expand, How does Sapling's AI detector compare to others such as Copyleaks, GPTZero, Writer, Turnitin, or Content at Scale?
+		156 text How does Sapling's AI detector compare to others such as Copyleaks, GPTZero, Writer, Turnitin, or Content at Scale?
+	157 button (collapsed) What is AI slop and how does the slop detector work?, Secondary Actions: Expand
+		158 text What is AI slop and how does the slop detector work?
+	159 button (collapsed) Do tools that claim to make AI-generated text undetectable work?, Secondary Actions: Expand
+		160 text Do tools that claim to make AI-generated text undetectable work?
+	161 container
+		162 link Description: Sapling home, Value: sapling.ai/
+		163 text © 2026 Sapling Intelligence, Inc.
+		164 content list Sapling on social media
+			165 link Description: X, Value: twitter.com/saplingai
+			166 link Description: LinkedIn, Value: linkedin.com/company/saplingai
+			167 link Description: GitHub, Value: github.com/saplingai
+			168 link Description: Discord, Value: discord.gg/p5gDc684TX
+			169 link Description: YouTube, Value: youtube.com/channel/UCECmwMysTpmB3jQoo5HJOmw
+			170 link Description: Facebook, Value: facebook.com/Sapling-Intelligence-684416121988762/
+		171 container Product
+			172 heading Product, Value: 2, ID: s-footer-product
+				173 text Product
+			174 content list
+				175 link Description: AI Grammar Check, Value: sapling.ai/grammar-check
+				176 link Description: AI Detector, Value: sapling.ai/ai-content-detector
+				177 link Description: AI Punctuation Check, Value: sapling.ai/punctuation-check
+				178 link Description: Sentence Rewriter, Value: sapling.ai/sentence-rewriter
+				179 link Description: Integrations, Value: sapling.ai/integrations
+				180 link Description: Pricing, Value: sapling.ai/pricing
+		181 container Developers
+			182 heading Developers, Value: 2, ID: s-footer-developers
+				183 text Developers
+			184 content list
+				185 link Description: Documentation, Value: sapling.ai/docs/
+				186 link Description: MCP Server, Value: sapling.ai/mcp
+				187 link Description: LLM Index, Value: sapling.ai/llm/index
+				188 link Description: Status, Value: sapling.statuspage.io/
+		189 container Company
+			190 heading Company, Value: 2, ID: s-footer-company
+				191 text Company
+			192 content list
+				193 link Description: About, Value: sapling.ai/about
+				194 link Description: Careers, Value: sapling.ai/careers
+				195 link Description: Press, Value: mailto:press@sapling.ai
+				196 link Description: Contact, Value: sapling.ai/contact
+		197 container Trust
+			198 heading Trust, Value: 2, ID: s-footer-trust
+				199 text Trust
+			200 content list
+				201 link Description: Security, Value: sapling.ai/security
+				202 link Description: Privacy, Value: sapling.ai/privacy
+				203 link Description: Terms, Value: sapling.ai/tos
+				204 link Description: Support, Value: sapling.ai/support
+		205 container Account
+			206 heading Account, Value: 2, ID: s-footer-account
+				207 text Account
+			208 content list
+				209 link Description: Sign in, Value: sapling.ai/user/sign-in
+				210 link Description: Create account, Value: sapling.ai/user/register
+
+The focused UI element is 0 AXWebArea AI Detector | GPT-5, ChatGPT, Claude, Gemini, DeepSeek | Sapling, URL: sapling.ai/ai-content-detector

@@ -128,3 +128,7 @@ Historical run records retain local filesystem paths to preserve their original 
 New project code and documentation use [BSD-3-Clause](LICENSE). This does not relicense supplied data, legacy code, third-party publications, institutional logos or companion-project material. The VMD and GROMACS MCP repositories are independent projects linked for inspection; they are not dependencies of this descriptor pipeline.
 
 Publication scope and fresh-history policy: [PUBLIC_RELEASE.md](docs/PUBLIC_RELEASE.md). External checker evidence is recorded separately in [AI_CHECKER_REVIEW.md](docs/AI_CHECKER_REVIEW.md); it is not a scientific validation score.
+
+## Editorial revision v0.1.1
+
+The report now includes a substantive nine-chapter prose revision and a source-based [textbook and Adobe design review](docs/EDITORIAL_DESIGN_RESEARCH_V011.md). The [revision record](docs/PROSE_REVISION_V011.md) identifies changes in explanation without new numerical experiments. A second [external checker record](docs/AI_CHECKER_REVIEW_REVISION2.md) preserves actual excerpt-level results; neither service returned Human. Such scores are not a scientific or authorship certification.

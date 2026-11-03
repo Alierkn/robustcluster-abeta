@@ -56,3 +56,12 @@
 - Added live code/LaTeX links, a visual README, module guide, contribution instructions, issue forms, and publication-readiness notes.
 - Retained exact results of two external AI checks on a fixed abstract excerpt; no whole-report authorship claim or detector optimization.
 - Added exact-commit MIT notices for the companion source excerpts and a documented public-snapshot boundary.
+
+## 0.1.1 — 2026-11-03
+
+- Revised 54 chapter paragraphs to explain analytical choices, reduce repetition and connect observations to their limits.
+- Rewrote the abstract around the actual SASA-removal experiment and its recorded numerical comparisons.
+- Applied consistent left-aligned captions and paragraph widow/orphan controls in the central LaTeX style.
+- Documented exact inspected sections from three textbooks and five Adobe guides, including the PDF accessibility limitation.
+- Preserved a second fixed-excerpt detector check: Sapling99.9% AI; GPTZero100% AI, neither Human. No detector-targeted rewrite or new scientific run.
+- Incremented release metadata; numerical algorithms and historical outputs are unchanged.

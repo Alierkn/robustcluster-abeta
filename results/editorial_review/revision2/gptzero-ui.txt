@@ -1,0 +1,206 @@
+Browser tab: 3, Title: "Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide sh — GPTZero", URL: "https://app.gptzero.me/".
+0 AXWebArea URL: app.gptzero.me/, Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide sh — GPTZero
+	1 container
+		2 container root
+			3 container
+				4 button GPTZero logo
+					5 image GPTZero logo
+				6 button New Scan
+					7 image
+					8 text New Scan
+				9 button Custom Review
+					10 image
+					11 text Custom Review
+				12 container Navigation sidebar
+					13 content list
+						14 link Description: Scans, Value: app.gptzero.me/documents-history, ID: documents-link
+						15 link Description: Chrome Extension, ID: chrome-extension-link, Value: chromewebstore.google.com/detail/kgobeoibakoahbfnlficpmibdbkdchap?utm_source=dashboard&utm_medium=button&utm_content=sidebar
+			16 container
+				17 text Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide sh
+				18 button Sign up
+				19 button Log in
+				20 container input-view-container
+					21 button Expand input view
+						22 image
+					23 splitter Resize results panel
+					24 container
+						25 container
+							26 button Copy
+								27 image
+							28 button Undo
+								29 image
+							30 button (disabled) Redo
+								31 image
+							32 button Text
+								33 image
+							34 button Bold
+								35 image
+							36 button Italic
+								37 image
+							38 button Underline
+								39 image
+							40 button (disabled) Add link
+								41 image
+							42 button More formatting options
+								43 image
+							44 button Proofread
+								45 image
+								46 text Proofread
+							47 button (disabled) Watch your writing replay
+								48 image
+						49 container Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide shape. Their correlation, however, does not determine whether one can be omitted from a clustering model. This internship report investigates that distinction in amyloid-β40 descriptors and audits the analysis supplied for reproducing the workflow of Cadenelli and colleagues.
+
+
+
+
+The dataset contains 300,003 observations in three replica segments, covering the source-labelled 1–3 microsecond interval. Inspection of the original script identified problems with parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. These were addressed in a modular Python implementation with numerical tests and recorded configurations. A recovered free-energy surface passed grid-completeness and query checks. Its energy units and construction provenance remain unresolved, so the reported experiments use the biased descriptors without equilibrium reweighting.
+							50 container
+								51 text Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide shape. Their correlation, however, does not determine whether one can be omitted from a clustering model. This internship report investigates that distinction in amyloid-β40 descriptors and audits the analysis supplied for reproducing the workflow of Cadenelli and colleagues.
+							52 container
+								53 text The dataset contains 300,003 observations in three replica segments, covering the source-labelled 1–3 microsecond interval. Inspection of the original script identified problems with parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. These were addressed in a modular Python implementation with numerical tests and recorded configurations. A recovered free-energy surface passed grid-completeness and query checks. Its energy units and construction provenance remain unresolved, so the reported experiments use the biased descriptors without equilibrium reweighting.
+					54 container
+						55 text Great! You've entered enough text to scan 986 characters
+				56 container
+					57 container Description: Scan type navigation, ID: right-hand-scan-menu
+						58 button Description: Basic Scan, ID: g0-nav-menu-button-basic
+						59 button Description: Advanced, ID: g0-nav-menu-button-advanced
+							60 text Advanced
+						61 button Description: Feedback, ID: g0-nav-menu-button-v2_writing_feedback
+							62 text Feedback
+						63 button Description: Plagiarism, ID: g0-nav-menu-button-plagiarism
+							64 text Plagiarism
+						65 button Description: Hallucination, ID: g0-nav-menu-button-bibliography_scan
+							66 text Hallucination
+					67 container g0-nexus-results-header
+						68 heading Basic Scan, Value: 1
+							69 text Basic Scan
+						70 button This result is accurate
+							71 image
+						72 button Disagree with this scan result?
+							73 image
+						74 button Share
+							75 image
+							76 text Share
+						77 button Export
+							78 image
+							79 text Export
+					80 container
+						81 image
+							82 text AI
+						83 image
+						84 text GPTZero AI Detection Model  4.1o We are highly confident this text was AI generated
+						85 text Chance this entire text is...
+						86 button AI 100%
+							87 text AI 100%
+							88 image
+						89 button Mixed 0%
+							90 text Mixed 0%
+							91 image
+						92 button Human 0%
+							93 text Human 0%
+							94 image
+						95 radio button AI Sentences, Value: 1
+							96 container
+								97 image
+								98 text AI Sentences
+						99 radio button AI Patterns NEW, Value: 0
+							100 container
+								101 image
+								102 text AI Patterns NEW
+						103 radio button AI Vocab, Value: 0
+							104 container
+								105 image
+								106 text AI Vocab
+						107 heading Your most AI sentences, Value: 6
+							108 text Your most AI sentences
+						109 content list
+							110 container
+								111 container Low impact
+									112 text High AI impact
+								113 container Medium impact
+									114 text High AI impact
+								115 container High impact
+									116 text High AI impact
+								117 text A recovered free-energy surface passed grid-completeness and query checks.
+							118 container
+								119 container Low impact
+									120 text High AI impact
+								121 container Medium impact
+									122 text High AI impact
+								123 container High impact
+									124 text High AI impact
+								125 text Their correlation, however, does not determine whether one can be omitted from a clustering model.
+							126 container
+								127 container Low impact
+									128 text High AI impact
+								129 container Medium impact
+									130 text High AI impact
+								131 container High impact
+									132 text High AI impact
+								133 text Inspection of the original script identified problems with parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries.
+						134 image
+						135 text Advanced sentence scanning
+						136 text Understand how each sentence impacts AI probabilities.
+						137 button Try for Free
+						138 text 1/1 free scans left
+						139 text What's next?
+						140 button Writing feedback on your draft Structure, tone, and argument analysis
+							141 text Writing feedback on your draft
+							142 text Structure, tone, and argument analysis
+							143 image
+						144 button (collapsed) Guidance for Teachers and reviewers, Secondary Actions: Expand
+							145 image
+							146 text Guidance for Teachers and reviewers
+					147 text Text up-to-date 986 characters • 126 words
+					148 button Re-scan
+						149 text Re-scan
+						150 image
+				151 container
+					152 button AI Tools
+					153 list
+						154 image
+					155 button Feedback
+						156 image
+						157 text Feedback
+					158 button
+						159 image
+				160 container
+					161 image
+					162 text Here are some useful AI tools.
+					163 text Ways they can help you as a
+					164 pop up button (collapsed) teacher, ID: headlessui-menu-button-:rv:, Secondary Actions: Expand
+						165 text teacher
+						166 image
+					167 button Give constructive feedback Generate insights aligned with your rubric criteria.
+						168 image
+						169 text Give constructive feedback
+						170 text Generate insights aligned with your rubric criteria.
+					171 button Help with addressing AI use in this assignment Get advice on how to address AI use with your student.
+						172 image
+						173 text Help with addressing AI use in this assignment
+						174 text Get advice on how to address AI use with your student.
+					175 button Help support a struggling learner Develop a plan to help this student succeed.
+						176 image
+						177 text Help support a struggling learner
+						178 text Develop a plan to help this student succeed.
+					179 button Find contradictions in my text Uncover inconsistencies and improve logical clarity.
+						180 image
+						181 text Find contradictions in my text
+						182 text Uncover inconsistencies and improve logical clarity.
+					183 button Custom question
+						184 image
+						185 text Custom question
+					186 container
+						187 splitter 75
+						188 text entry area (settable)
+						189 button Add rubric or documents
+							190 image
+							191 text Add rubric or documents
+						192 button (disabled) ->
+
+The focused UI element is 49 container Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide shape. Their correlation, however, does not determine whether one can be omitted from a clustering model. This internship report investigates that distinction in amyloid-β40 descriptors and audits the analysis supplied for reproducing the workflow of Cadenelli and colleagues.
+
+
+
+
+The dataset contains 300,003 observations in three replica segments, covering the source-labelled 1–3 microsecond interval. Inspection of the original script identified problems with parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. These were addressed in a modular Python implementation with numerical tests and recorded configurations. A recovered free-energy surface passed grid-completeness and query checks. Its energy units and construction provenance remain unresolved, so the reported experiments use the biased descriptors without equilibrium reweighting.

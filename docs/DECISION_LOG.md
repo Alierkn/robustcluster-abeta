@@ -38,3 +38,11 @@ Editorial correction: the 7 October entries were initially labelled D17/D18, dup
 ## D23 — 2026-11-03: editorial review and shareable repository
 
 User requested external AI checks, academic editing and a downloadable GitHub repository. Record detector results only against their exact input; do not optimize prose to conceal assistance. Tighten the actual scientific argument and retain the disclosure. Create a fresh public history from the audited tracked-file snapshot, excluding supplied raw data, third-party original script, publisher PDFs and private correspondence. Preserve immutable public evidence and its hashes; some historical manifests contain non-secret local runtime paths. The report includes the supplied academic cover details by the user's request. Public repository: https://github.com/Alierkn/robustcluster-abeta. No new scientific experiments are implied by this editorial release.
+
+## D24 — 2026-11-03: textbook-informed editorial refinement
+
+Apply explanatory sequencing from inspected Knuth, Boyd–Vandenberghe and ISLP sections; use Adobe style and preflight guidance as design principles within the existing LaTeX pipeline. Revise the nine chapters and abstract, retaining equations, numerical outputs and assistance disclosure. Apply paragraph-break controls and left-aligned captions centrally. Do not introduce a rigid baseline grid or claim tagged-PDF accessibility. External detectors are checked once per service on a fixed revised excerpt; neither returns Human, and that outcome is preserved. This is an editorial/software-metadata release, not a new biological analysis.
+
+### D25 — Student-confirmed GROMACS learning reflection
+
+On 3 November 2026 the student described learning to use GROMACS as initially difficult but enjoyable. Chapter 8 now conveys that experience in two first-person sentences. This is a personal reflection supplied by the student, not a new computational result or evidence of a completed molecular simulation. No numerical method changed; the fixed detector excerpt is unchanged. The final PDF was rebuilt and the two affected pages visually checked.

@@ -4,7 +4,7 @@ title: "RobustCluster-Aβ: audited conformational clustering and reproducibility
 repository-code: "https://github.com/Alierkn/robustcluster-abeta"
 url: "https://github.com/Alierkn/robustcluster-abeta"
 type: software
-version: 0.1.0
+version: 0.1.1
 license: BSD-3-Clause
 authors:
   - family-names: "Ocaklı"

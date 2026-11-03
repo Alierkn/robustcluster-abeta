@@ -1,3 +1,19 @@
+# Current release v0.1.1 — textbook-informed refinement
+
+Selected report: `20261103T130123-report-145074` — SUCCESS, 22 main-text / 38 total pages. Selected local QA: `20261103T130142-qa-4635a6` — SUCCESS, 36 tests, lint, bibliography and output hashes. Numerical algorithms and saved scientific outputs are unchanged; version metadata is incremented to 0.1.1.
+
+All pages were inspected as overviews; dense methods, discussion and figure pages were checked at reading size. Captions share left alignment; paragraph opening/closing lines are kept with adjacent text. A visually dense methods page prompted a coordinate check: its body-to-footer gap is 32.24 pt, the minimum across checked pages, so no extra manual page break was introduced. No overfull/underfull boxes, missing glyphs, duplicate labels or unresolved citations remain. The two existing benign math-package warnings persist.
+
+The PDF remains untagged; language metadata, bookmarks and searchable text do not establish PDF/UA compliance. Adobe guidance informed reusable styles and preflight, not an Adobe application execution. Detailed primary-source inspection is in `EDITORIAL_DESIGN_RESEARCH_V011.md`.
+
+The revised fixed excerpt received Sapling 99.9% AI and GPTZero 100% AI; neither returned Human. These are not full-report or authorship results. Exact records are in `AI_CHECKER_REVIEW_REVISION2.md`. No prose was changed in response to those scores. The student subsequently confirmed that learning to use GROMACS was initially challenging but enjoyable. Two first-person sentences now convey that experience in Chapter 8. No specific simulation or technical achievement was inferred. The fixed abstract excerpt is unchanged.
+
+After the student-confirmed addition, the report was rebuilt and release QA repeated. Extracted text changed only on PDF pages 25–26; both were inspected at reading size and retain clear margins and an intact code panel. Pagination is unchanged.
+
+The previous release and the October delivery remain preserved. Earlier QA records below retain their historical scope.
+
+---
+
 # Current editorial release — 3 November 2026
 
 - Selected report build: `20261103T122345-report-96156c` — SUCCESS, 22 main-text pages, 38 total.

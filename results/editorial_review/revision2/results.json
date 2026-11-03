@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-03",
+  "status": "completed",
+  "scope": "First two paragraphs of revised abstract; excerpt fixed before submission.",
+  "input": {
+    "date": "2026-11-03",
+    "source": "report/report.tex, revised Abstract, first two paragraphs",
+    "source_sha256": "ac3c22575545a75b45da6585c2dde37b48b94b569ea6f166d8d3805ab848637e",
+    "excerpt_sha256": "74da4bc3e228e779adc6b6e8677a4ec94e5900ca7974fd51cbdcc14c6a802579",
+    "word_count": 126,
+    "character_count": 986,
+    "selection_rule": "First two abstract paragraphs, fixed before score submission, same rule as prior review but changed content and length. Not a controlled authorship experiment.",
+    "personally_identifying_or_raw_data_uploaded": false
+  },
+  "services": [
+    {
+      "name": "Sapling",
+      "url": "https://sapling.ai/ai-content-detector",
+      "submissions": 1,
+      "ai_probability_percent": 99.9,
+      "displayed_tokens": 187,
+      "truncated": false,
+      "model_version": "not exposed",
+      "procedure": "One page-advertised WebMCP call; result confirmed in visible browser UI."
+    },
+    {
+      "name": "GPTZero",
+      "url": "https://gptzero.me/",
+      "result_url": "https://app.gptzero.me/?scanType=basic&source=landing&triggerScan=true",
+      "submissions": 1,
+      "scan": "Basic Scan",
+      "model_version": "4.1o",
+      "ai_percent": 100,
+      "mixed_percent": 0,
+      "human_percent": 0,
+      "displayed_words": 126,
+      "displayed_characters": 986,
+      "procedure": "One landing-page Scan click; result opened in new tab. Transient browser verification cleared without challenge interaction."
+    }
+  ],
+  "limitations": [
+    "Neither service returned Human.",
+    "Selection rule matches prior review; text and length differ, so this is not a controlled before/after authorship experiment.",
+    "Scores concern only the submitted excerpt, not the whole report, authorship provenance, scientific accuracy or publication readiness.",
+    "No input revision based on scores, no retry to improve scores, no account, payment or CAPTCHA bypass."
+  ],
+  "evidence_sha256": {
+    "excerpt.txt": "74da4bc3e228e779adc6b6e8677a4ec94e5900ca7974fd51cbdcc14c6a802579",
+    "gptzero-ui.txt": "523d6a01c193c3106084ae5648d3a56298767f0bbbe00236ffe15077ace3fe13",
+    "gptzero.png": "3956cf2b2654d26a234cdca45bce99b37251280c31b975060327532a296c6399",
+    "input.json": "ee4872fc87ed410cdfa838029e7804cc0816eaa9d93c34a6f1d521d6b72dae1e",
+    "sapling-score.png": "5ed771f823be3999b9a3cd4b9f719fd2c1f134d43b21d589bcc84d799eedba38",
+    "sapling-ui.txt": "14b111d79e0cdbace38b5fc3fb5fe34b83a17757941bfec9d32c4a1477a1e87e",
+    "sapling-webmcp-result.json": "3fd9a183e4dd019f9aff7b39c6707227700865df3a0981d7c248fdd92d0cc145",
+    "sapling.png": "5ebe00b7ef0e76b48a274c6a67c268a823e38b4dde7369870b1e2e17d7623d5c"
+  }
+}
