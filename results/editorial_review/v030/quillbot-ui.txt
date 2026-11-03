@@ -1,0 +1,127 @@
+Browser tab: 818606082, Title: "New document - Quillbot AI", URL: "https://quillbot.com/docs/new".
+0 AXWebArea New document - Quillbot AI, URL: quillbot.com/docs/new
+	1 container
+		2 container root-client
+			7 container
+				8 link Description: Quillbot Logo, Value: quillbot.com/?referrer=quill_logo
+				9 text Tools Professional Academic Creators Personal Extensions & apps
+				10 link Description: Upgrade to Premium, Value: quillbot.com/premium?referrer=header&product=text-editor
+				11 pop up button Log in
+			12 container
+				13 link Description: Paraphraser, Value: quillbot.com/paraphrasing-tool?referrer=side_navbar
+				14 link Description: Grammar Checker, Value: quillbot.com/grammar-check?referrer=side_navbar
+				15 link Description: AI Detector, Value: quillbot.com/ai-content-detector?referrer=side_navbar
+				16 link Description: Plagiarism Checker, Value: quillbot.com/plagiarism-checker?referrer=side_navbar
+				17 link Description: AI Humanizer, Value: quillbot.com/ai-humanizer?referrer=side_navbar
+				18 link Description: Beta AI Presentation Maker, Value: quillbot.com/ai-presentation-maker?referrer=side_navbar
+				19 link Description: AI Chat, Value: quillbot.com/ai-chat?referrer=side_navbar
+				20 link Description: AI Image Generator, Value: quillbot.com/ai-image-generator?referrer=side_navbar
+				21 link Description: Translate, Value: quillbot.com/translate?referrer=side_navbar
+				557 link Description: Summarizer, Value: quillbot.com/summarize?referrer=side_navbar
+				558 link Description: Citation Generator, Value: quillbot.com/citation-generator?referrer=side_navbar
+				24 link Description: Quillbot for Chrome, Value: chromewebstore.google.com/detail/quillbot-ai-writing-and-g/iidnbdjijdkbmajdffnidomddglmieko?hl=en-US&utm_source=quillbot.com&utm_medium=TextEditor&utm_campaign=side_navbar-link
+			559 container
+				560 toolbar Document toolbar
+					561 container Your documents
+						562 button Your documents
+							563 image
+					564 container Undo ⌘Z
+						565 button (disabled) Undo ⌘Z
+							566 image
+					567 container Redo ⌘Y
+						568 button (disabled) Redo ⌘Y
+							569 image
+					570 pop up button (collapsed) 232 words, Secondary Actions: Expand
+						571 text 232 words
+						572 image
+					573 button English (US)
+						574 text English (US)
+						575 image
+					576 container Copy full text
+						577 button Copy full text
+							578 image
+					579 container Clear text
+						580 button Clear text
+							581 image
+					582 container More
+						583 button More
+							584 image
+				585 container Editor
+					586 text entry area (settable) Description: Document editor, ID: text-editor, Value: Molecular simulation data require both statistical analysis and an understanding of how the observations were generated. This curricular internship used amyloid-β40 descriptors to connect practical work with GROMACS, VMD and Python to a reproducible analysis of conformational clustering. The report develops the scientific background, examines the supplied implementation of the workflow of Cadenelli and colleagues, and presents a separate experiment on the choice of clustering features.
+
+The available table contains 300,003 observations from three replicas over the source-labelled 1–3 microsecond interval. The audit identified problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries. A modular implementation addresses these operations through explicit validation, numerical tests and recorded run settings. The recovered free-energy surface contains the complete grid and covers all converted descriptor queries. Its energy units and construction procedure remain unverified, so equilibrium clustering and population estimates are not reported.
+
+The completed descriptor analysis found a pooled correlation of 0.848 between radius of gyration and solvent-accessible surface area (SASA). The first two standardized principal components account for 88.1% of variance. To examine whether the correlation justified removing SASA, Gaussian mixtures were fitted to four and three descriptors using one shared, replica-balanced fitting sample. Five component counts and five initialization seeds produced fifty converged fits. The median agreement between feature sets was 0.864 at three components and 0.457 at six, showing that the effect of feature removal depends on the fitted model.
+						587 container
+							588 text Molecular simulation data require both statistical analysis and an understanding of how the observations were generated. This curricular internship used amyloid-β40 descriptors to connect practical work with GROMACS, VMD and Python to a reproducible analysis of conformational clustering. The report develops the scientific background, examines the supplied implementation of the workflow of Cadenelli and colleagues, and presents a separate experiment on the choice of clustering features.
+							589 text The available table contains 300,003 observations from three replicas over the source-labelled 1–3 microsecond interval. The audit identified problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries. A modular implementation addresses these operations through explicit validation, numerical tests and recorded run settings. The recovered free-energy surface contains the complete grid and covers all converted descriptor queries. Its energy units and construction procedure remain unverified, so equilibrium clustering and population estimates are not reported.
+							590 text The completed descriptor analysis found a pooled correlation of 0.848 between radius of gyration and solvent-accessible surface area (SASA). The first two standardized principal components account for 88.1% of variance. To examine whether the correlation justified removing SASA, Gaussian mixtures were fitted to four and three descriptors using one shared, replica-balanced fitting sample. Five component counts and five initialization seeds produced fifty converged fits. The median agreement between feature sets was 0.864 at three components and 0.457 at six, showing that the effect of feature removal depends on the fitted model.
+					591 container
+						592 text Write 
+						593 text good
+						594 text  well, everywhere Say goodbye to copy-paste. Get advanced AI writing assistance, wherever you write.
+						595 link Description: Add to Chrome, Value: chromewebstore.google.com/detail/quillbot-ai-writing-and-g/iidnbdjijdkbmajdffnidomddglmieko?hl=en-US&utm_campaign=te_writing_studio_extension_banner&utm_source=quillbot.com&utm_medium=TextEditor
+						596 container Dismiss promotion
+							597 button Dismiss promotion
+						598 container
+							599 pop up button (collapsed) Rewrite, Secondary Actions: Expand
+								600 image
+								601 text Rewrite
+							602 container Update your text to run another scan
+								603 button (disabled) Detect AI again
+				604 container
+					605 container Description: Writing assistant, ID: mode-panel-recommendations
+						606 image
+						607 text Writing assistant
+					608 container Description: Detect AI, ID: mode-panel-ai-detector
+						609 image
+						610 text Detect AI
+						611 container Our AI detector is among the most advanced available, but no AI detector is 100% accurate. This score represents the percentage of words likely generated or refined using an AI tool.
+							612 container AI score
+								613 text 0
+							614 text %
+							615 text of text is likely AI
+						616 text AI-generated
+						617 container
+							618 text 0 %
+						619 text AI-refined
+						620 container
+							621 text 0 %
+						622 text Human-written
+						623 container
+							624 text 100 %
+						625 container This model performed well
+							626 button This model performed well
+								627 image
+						628 container This model performed poorly
+							629 button This model performed poorly
+								630 image
+						631 text Model v7.1.0
+						632 image
+						633 button Download report
+							634 image
+							635 text Download report
+						636 text Want more authentic text?
+						637 link Description: Refine with Paraphraser, Value: quillbot.com/paraphrasing-tool?referrer=ai-detector%2Fai-detection%2Fpphr_upsell&product=text-editor
+						638 button Check for plagiarism Happy with the score? Now ensure it’s original...
+							639 image
+							640 text Check for plagiarism
+							641 text Happy with the score? Now ensure it’s original...
+						642 text Never rely on AI detection alone to make decisions that could impact someone's career or academic standing.
+						643 text You’ve got 4 AI scans left today
+						644 link Description: Upgrade for more, Value: quillbot.com/premium?returnUrl=%2Fdocs%2Fnew&referrer=ai-detector%2Fai-detection%2Fsome-scans-left&product=text-editor
+				645 tab group Description: Switch between modes, ID: dock
+					646 container Writing assistant
+						647 tab (selectable, settable, boolean) Description: Writing assistant, Value: 0, ID: mode-tab-recommendations
+					648 container Close (⌘/)
+						649 tab (selected, settable, boolean) Description: Detect AI, Value: 1, ID: mode-tab-ai-detector
+					650 container Check plagiarism
+						651 tab (selectable, settable, boolean) Description: Check plagiarism, Value: 0, ID: mode-tab-plagiarism-checker
+					652 container AI Chat
+						653 tab (selectable, settable, boolean) Description: AI Chat, Value: 0, ID: mode-tab-chat
+		556 text reCAPTCHA hizmetiyle bağlantı kurulamadı. Lütfen internet bağlantınızı kontrol edin ve reCAPTCHA testi almak için sayfayı yeniden yükleyin.
+	294 button Get summaries and key insights using AI Assistant
+		295 button Open AI Assistant
+			296 image ImportedIcons
+
+The focused UI element is 0 AXWebArea New document - Quillbot AI, URL: quillbot.com/docs/new

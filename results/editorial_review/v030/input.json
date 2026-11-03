@@ -1,0 +1,20 @@
+{
+  "prepared_at": "2026-11-03T14:25:56.657760+00:00",
+  "source": "report/report.tex Abstract",
+  "source_sha256": "cc5219ea400d641f4ac42d31f3808d5f798d91253251e32f1653bc142f377611",
+  "macro_source": "report/generated/values.tex",
+  "macro_source_sha256": "e7dfbf9cca7f0a96bf738eff7e30e90e4fd1fe284759e8a68f006f71a1ecaf41",
+  "resolved_macros": {
+    "RgSasaCorrelation": "0.848",
+    "PCATwo": "88.1"
+  },
+  "selection_rule": "Longest complete-paragraph prefix of finalized abstract <=2000 Unicode characters, selected before any score. Same exact input for all services.",
+  "paragraphs_selected": 3,
+  "total_abstract_paragraphs": 4,
+  "excerpt_words": 232,
+  "excerpt_characters": 1738,
+  "excerpt_sha256": "18123d65082f01838dd037ac1a572fc79e86f82d8c103579dfc58ace069967b0",
+  "full_plain_abstract_characters": 2242,
+  "full_report_submitted": false,
+  "terminal_newline": false
+}

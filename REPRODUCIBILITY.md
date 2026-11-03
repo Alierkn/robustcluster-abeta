@@ -32,7 +32,7 @@ The rbias comparison additionally requires documented `metad.rbias` units and ge
 
 ## 6. Regenerate figures and report
 
-`robustcluster figures --config config/robustness.yaml --source-manifest PATH` checks the source manifest status and every output hash, then creates a fresh figure-generation run. `scripts/prepare_report.py --manifest PATH` imports tables and figures from a successful diagnostics run and creates traceable LaTeX macros. `scripts/build_report.py --tex-bin PATH` runs LuaLaTeX/Biber through latexmk. Use a TeX Live installation with the packages listed in report/preamble.tex; never silently substitute another engine or font.
+`robustcluster figures --config config/robustness.yaml --source-manifest PATH` checks the source manifest status and every output hash, then creates a fresh figure-generation run. `scripts/prepare_report.py --manifest PATH` imports tables and figures from a successful diagnostics run and creates traceable LaTeX macros. `scripts/build_report.py --tex-bin PATH` runs LuaLaTeX/Biber through latexmk. Use a TeX Live installation with the packages listed in report/preamble.tex, including placeins for diagnostic-section float boundaries; never silently substitute another engine or font.
 
 The local TeX toolchain was installed under the task's work directory; the source archive does not bundle executable runtimes. The build script accepts a different verified TeX bin directory. Publication-style figures are saved as PDF/SVG. Bibliography metadata is checked against publisher records and official documentation in docs/literature.json; no live network access is required to compile the delivered sources.
 
@@ -55,7 +55,7 @@ python scripts/build_report.py --tex-bin /absolute/path/to/texlive/bin/platform
 python scripts/verify_release.py
 ```
 
-The historical asset-import helper `prepare_revision.py` selects the documented successful GMM, FES, figure and preview manifests and checks every output hash before importing assets. It does not rerun or silently select newer analyses. To publish a new scientific revision, explicitly update these selections after reviewing its successful runs. For v0.2.0, `report/rebuild_provenance.json` additionally locks imported assets and the new figure run. Do not run historical import helpers on the final source without updating and reviewing this record. The actual screenshots are preserved assets; reproducing the report uses those captures, not a live GitHub page. `report/revision_provenance.json` records their commit-specific URLs and hashes. Build diagnostics and an immutable PDF are retained for each build.
+The historical asset-import helper `prepare_revision.py` selects the documented successful GMM, FES, figure and preview manifests and checks every output hash before importing assets. It does not rerun or silently select newer analyses. To publish a new scientific revision, explicitly update these selections after reviewing its successful runs. For v0.3.0, `report/rebuild_provenance.json` additionally locks imported assets and the new figure run. Do not run historical import helpers on the final source without updating and reviewing this record. The actual screenshots are preserved assets; reproducing the report uses those captures, not a live GitHub page. `report/revision_provenance.json` records their commit-specific URLs and hashes. Build diagnostics and an immutable PDF are retained for each build.
 
 The optional `--originals-dir` release-check argument verifies all four historical source files when they remain available at that location. Without it, preserved local script/data copies are still checked when present; absence of the original-download folder is explicitly recorded. The public source archive excludes both the complete and partial FES, the descriptor input and supplied legacy script.
 
@@ -67,12 +67,12 @@ The workflow drawing can be regenerated independently with `python scripts/refre
 
 Report builds and validation also work from an extracted source archive without `.git`. In that case commit and dirty-state metadata are explicitly null; file hashes and selected historical manifests retain the evidence trail. An unrelated enclosing repository is never used as this project's Git identity. The release-packaging command itself still requires a Git checkout because it uses tracked files as its allowlist.
 
-## Regenerate the v0.2.0 figure layout
+## Regenerate the v0.3.0 figure layout
 
 ```bash
 python scripts/build_editorial_figures.py
 ```
 
-This reads the selected successful diagnostic/GMM manifests, verifies every source-output hash, checks the table structure and writes three PDF/SVG pairs to a new immutable run directory. It does not fit new models or change `report/`. The selected delivered run is `20261103T135347-e4275730`. Plot labels use DejaVu Serif TrueType; the LaTeX document uses Libertinus. Inspect a regenerated run before copying its three figure pairs into `report/figures` and updating the selected source-manifest and asset hashes in `report/rebuild_provenance.json`. A different font or Matplotlib release can change file bytes without changing plotted numerical values; record that environment rather than claiming byte-identical rendering.
+This reads the selected successful diagnostic/GMM manifests, verifies every source-output hash, checks the table structure and writes three PDF/SVG pairs to a new immutable run directory. It does not fit new models or change `report/`. The selected delivered run is `20261103T142638-b16e0fbe`. Plot labels use DejaVu Serif TrueType; the LaTeX document uses Libertinus. Inspect a regenerated run before copying its three figure pairs into `report/figures` and updating the selected source-manifest and asset hashes in `report/rebuild_provenance.json`. A different font or Matplotlib release can change file bytes without changing plotted numerical values; record that environment rather than claiming byte-identical rendering.
 
 The isolated `report-next/` draft was used during editing and is not part of the source archive. Historical draft manifests/PDFs are retained as development evidence; only the final `report/` source and selected release build define the delivered document.

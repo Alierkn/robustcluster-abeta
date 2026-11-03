@@ -1,0 +1,194 @@
+{
+  "run_id": "20261103T144147-qa-52cf37",
+  "command": "release-qa",
+  "status": "SUCCESS",
+  "timestamp_utc": "2026-11-03T14:41:47.974086+00:00",
+  "python_executable": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/bin/python",
+  "checks": {
+    "pytest": {
+      "returncode": 0,
+      "command": [
+        "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta-v030/results/logs/20261103T144147-qa-52cf37/tests.xml"
+      ]
+    },
+    "ruff": {
+      "returncode": 0,
+      "command": [
+        "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts"
+      ]
+    },
+    "test_counts": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "36",
+      "time": "2.243",
+      "timestamp": "2026-11-03T15:41:48.339804+01:00",
+      "hostname": "MacBook-Pro.local"
+    },
+    "original_hashes": "NOT CHECKED: supply --originals-dir",
+    "bibliography": {
+      "verified_entries": 34,
+      "cited_entries": 32,
+      "uncited_entries": [
+        "abeta2022",
+        "wilkinson2016"
+      ]
+    },
+    "analysis_output_integrity": [
+      {
+        "manifest": "20260921T011540-2a1650e4.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T011541-223ff5a4.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T011645-54ad80d3.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T011959-583b4421.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T012035-b996d4c0.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012036-71325c73.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012036-9b6dbc2a.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012037-4dee77a1.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012038-c7bcf311.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012039-dd2069bf.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012040-ba8ea6d6.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T013134-4d13b326.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T013152-c45e6960.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T102957-e2a462e5.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104141-f0143175.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104330-bbd8111e.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104602-3ea5d41f.json",
+        "status": "FAILED"
+      },
+      {
+        "manifest": "20261007T104657-04cb6ba4.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104709-dd9f8f2c.json",
+        "status": "FAILED"
+      },
+      {
+        "manifest": "20261007T104738-91cd2368.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104846-17f8483c.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T105027-a3b84676.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T105122-c040f192.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T115101-b5fc7418.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261103T134659-ba59eb37.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261103T135347-e4275730.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261103T142553-fd935a74.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261103T142638-b16e0fbe.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261103T142651-837817b0.json",
+        "status": "BLOCKED"
+      }
+    ],
+    "report": {
+      "manifest": "results/manifests/20261103T143938-report-36532e.json",
+      "sha256": "2b52014fcd4654f33c41302ab17333724b87c3b86728916feab5c77ce0a8b5da",
+      "main_text_pages": 19,
+      "warnings": [
+        "Package unicode-math Warning: Using \\overbracket and \\underbracket from",
+        "Package unicode-math Warning: I'm going to overwrite the following commands"
+      ]
+    }
+  },
+  "outputs": [
+    {
+      "filename": "results/logs/20261103T144147-qa-52cf37/pytest.log",
+      "sha256": "f039900cf03abf7b34a86ca89afb51372538c021db1bd4c9fe1330ebd8dbbb00"
+    },
+    {
+      "filename": "results/logs/20261103T144147-qa-52cf37/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "filename": "results/logs/20261103T144147-qa-52cf37/tests.xml",
+      "sha256": "d40fd92b5a790c56803b7acc300a56ccb07998f17c04c274dcb88e2b2244020b"
+    }
+  ],
+  "git_commit": "0f9192d2c1febc6a0ed03e67d0093b06ca6981b6",
+  "git_dirty": true,
+  "runtime_seconds": 2.88884195801802
+}

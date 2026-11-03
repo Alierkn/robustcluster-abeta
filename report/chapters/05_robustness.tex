@@ -30,9 +30,15 @@ p(\mathbf{x})=\sum_{j=1}^{K}\pi_j\mathcal{N}(\mathbf{x}\mid\symbf{\mu}_j,\symbf{
 \end{equation}
 In \cref{eq:gmm}, components approximate the sampled descriptor distribution; their mixture coefficients are not equilibrium weights. The scikit-learn implementation uses full covariance matrices \autocite{pedregosa2011}.
 
-One fixed fitting sample contains 1,000 frames per replica, selected with seed 20261007. Means and population standard deviations are fitted on these 3,000 rows and shared between representations. For each $K=2,\ldots,6$, seeds 42--46 initialize five models per representation: 50 fits overall, each with one initialization, 500 maximum iterations, tolerance $10^{-3}$ and covariance regularization $10^{-6}$. The protocol was committed before execution.
+The protocol was committed before execution. Its four operations separate the choice of fitting observations from the comparisons made afterwards:
+\begin{protocolsteps}
+\item \textbf{Fix the sample.} Select 1,000 frames per replica with seed 20261007. Use the same 3,000 observations for every fit.
+\item \textbf{Fit the transformation.} Estimate means and population standard deviations on those rows only. Share the transformation of retained descriptors between the four- and three-feature representations.
+\item \textbf{Fit the models.} For each $K=2,\ldots,6$, use seeds 42--46: 50 fits overall. Each fit uses one initialization, at most 500 iterations, tolerance $10^{-3}$ and covariance regularization $10^{-6}$.
+\item \textbf{Compare assignments.} Label all 300,003 frames, including fitting rows. Use five paired-seed ARIs to compare representations and ten seed pairs to compare initializations within each representation.
+\end{protocolsteps}
 
-Every model labels all 300,003 frames, including fitting rows. Paired ARIs compare representations; ten seed pairs compare initializations within each representation. Saved outputs include label matching, Jaccard overlaps, raw replica fractions and centroid shifts in the shared standardized three-feature space. This is descriptive evaluation, not held-out prediction. Keeping the sample fixed excludes sample-selection uncertainty; observed ranges are not confidence intervals. BIC is compared only within a feature space.
+Saved outputs include label matching, Jaccard overlaps, raw replica fractions and centroid shifts in the shared standardized three-feature space. The evaluation is descriptive, not held-out prediction. Keeping the sample fixed excludes sample-selection uncertainty; observed ranges are not confidence intervals. BIC is compared only within a feature space.
 
 \section{Wasserstein scaling sensitivity}
 The planned comparison changes descriptor scaling while keeping the same four marginal distances. This tests whether a variable's numerical range dominates consensus. Raw scaling remains the baseline; normalization does not resolve what the authors intended. Joint or sliced distances, energy distance and MMD remain optional future alternatives.

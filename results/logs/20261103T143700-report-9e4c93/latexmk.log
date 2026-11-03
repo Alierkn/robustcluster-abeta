@@ -1,0 +1,185 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+Latexmk: applying rule 'lualatex'...
+Rule 'lualatex':  Reasons for rerun
+Changed files or newly in use/created:
+  chapters/06_results.tex
+  chapters/07_discussion.tex
+  preamble.tex
+Category 'changed_user':
+  chapters/06_results.tex
+  chapters/07_discussion.tex
+  preamble.tex
+
+------------
+Run number 1 of rule 'lualatex'
+------------
+------------
+Running 'lualatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "report.tex"'
+------------
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026) 
+ restricted system commands enabled.
+(./report.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-08-10>
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlogo.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/keyval.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrsize11pt.clo)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/typearea.sty)) (./preamble.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/geometry/geometry.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fontenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amstext.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/calc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/l3backend-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fix-cm.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ts1enc.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype-luatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/siunitx/siunitx.sty
+Include code introduced on 2026-09-12
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/array.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphicx.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphics.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/trig.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-def/luatex.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/subcaption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption3.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))))
+
+! LaTeX Error: File `placeins.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.11 \usepackage
+                {booktabs,tabularx,longtable,threeparttable}
+ 493 words of node memory still in use:
+   5 hlist, 1 vlist, 2 rule, 1 dir, 4 kern, 1 glyph, 5 attribute, 60 glue_spec,
+ 5 attribute_list, 1 write nodes
+   avail lists: 2:21,3:2,4:1,5:7,6:1,7:29,11:3
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on report.log.
+Latexmk: Getting log file 'build/report.log'
+Latexmk: Examining 'build/report.fls'
+Latexmk: Examining 'build/report.log'
+Latexmk: Missing input file 'placeins.sty' message in .log file:
+  ! LaTeX Error: File `placeins.sty' not found.
+Latexmk: Errors, so I did not complete making targets
+Collected error summary (may duplicate other messages):
+  lualatex: Command for 'lualatex' gave return code 1
+      Refer to 'build/report.log' and/or above output for details
+
+Latexmk: Sometimes, the -f option can be used to get latexmk
+  to try to force complete processing.
+  But normally, you will need to correct the file(s) that caused the
+  error, and then rerun latexmk.
+  In some cases, it is best to clean out generated files before rerunning
+  latexmk after you've corrected the files.

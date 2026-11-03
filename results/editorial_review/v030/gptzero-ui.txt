@@ -1,0 +1,230 @@
+Browser tab: 818606091, Title: "Molecular simulation data require both statistical analysis and an understanding of how the observat — GPTZero", URL: "https://app.gptzero.me/".
+0 AXWebArea URL: app.gptzero.me/, Molecular simulation data require both statistical analysis and an understanding of how the observat — GPTZero
+	1 container
+		2 container root
+			3 container
+				4 button GPTZero logo
+					5 image GPTZero logo
+				6 button New Scan
+					7 image
+					8 text New Scan
+				9 button Custom Review
+					10 image
+					11 text Custom Review
+				12 container Navigation sidebar
+					13 content list
+						14 link Description: Scans, Value: app.gptzero.me/documents-history, ID: documents-link
+						15 link Description: Chrome Extension, ID: chrome-extension-link, Value: chromewebstore.google.com/detail/kgobeoibakoahbfnlficpmibdbkdchap?utm_source=dashboard&utm_medium=button&utm_content=sidebar
+			16 container
+				17 text Molecular simulation data require both statistical analysis and an understanding of how the observat
+				18 button Sign up
+				19 button Log in
+				20 container input-view-container
+					21 button Expand input view
+						22 image
+					23 splitter Resize results panel
+					24 container
+						25 container
+							26 button Copy
+								27 image
+							28 button Undo
+								29 image
+							30 button (disabled) Redo
+								31 image
+							32 button Text
+								33 image
+							34 button Bold
+								35 image
+							36 button Italic
+								37 image
+							38 button Underline
+								39 image
+							40 button (disabled) Add link
+								41 image
+							42 button More formatting options
+								43 image
+							44 button Proofread
+								45 image
+								46 text Proofread
+							47 button (disabled) Watch your writing replay
+								48 image
+						49 container
+							50 container Molecular simulation data require both statistical analysis and an understanding of how the observations were generated. This curricular internship used amyloid-β40 descriptors to connect practical work with GROMACS, VMD and Python to a reproducible analysis of conformational clustering. The report develops the scientific background, examines the supplied implementation of the workflow of Cadenelli and colleagues, and presents a separate experiment on the choice of clustering features.
+
+
+
+
+The available table contains 300,003 observations from three replicas over the source-labelled 1–3 microsecond interval. The audit identified problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries. A modular implementation addresses these operations through explicit validation, numerical tests and recorded run settings. The recovered free-energy surface contains the complete grid and covers all converted descriptor queries. Its energy units and construction procedure remain unverified, so equilibrium clustering and population estimates are not reported.
+
+
+
+
+The completed descriptor analysis found a pooled correlation of 0.848 between radius of gyration and solvent-accessible surface area (SASA). The first two standardized principal components account for 88.1% of variance. To examine whether the correlation justified removing SASA, Gaussian mixtures were fitted to four and three descriptors using one shared, replica-balanced fitting sample. Five component counts and five initialization seeds produced fifty converged fits. The median agreement between feature sets was 0.864 at three components and 0.457 at six, showing that the effect of feature removal depends on the fitted model.
+								51 container
+									52 text Molecular simulation data require both statistical analysis and an understanding of how the observations were generated.  This curricular internship used amyloid-β40 descriptors to connect practical work with GROMACS, VMD and Python to a reproducible analysis of conformational clustering. The report develops the scientific background, examines the supplied implementation of the workflow of Cadenelli and colleagues, and presents a separate experiment on the choice of clustering features.
+								53 text The available table contains 300,003 observations from three replicas over the source-labelled 1–3 microsecond interval. The audit identified problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries. A modular implementation addresses these operations through explicit validation, numerical tests and recorded run settings. The recovered free-energy surface contains the complete grid and covers all converted descriptor queries. Its energy units and construction procedure remain unverified, so equilibrium clustering and population estimates are not reported.
+								54 text The completed descriptor analysis found a pooled correlation of 0.848 between radius of gyration and solvent-accessible surface area (SASA). The first two standardized principal components account for 88.1% of variance. To examine whether the correlation justified removing SASA, Gaussian mixtures were fitted to four and three descriptors using one shared, replica-balanced fitting sample. Five component counts and five initialization seeds produced fifty converged fits. The median agreement between feature sets was 0.864 at three components and 0.457 at six, showing that the effect of feature removal depends on the fitted model.
+							55 container
+								56 image ⚖️
+								57 button Open Grammarly. 4 suggestions.
+									58 container
+										59 text 4
+					60 container
+						61 text Great! You've entered enough text to scan 1738 characters
+				62 container
+					63 container Description: Scan type navigation, ID: right-hand-scan-menu
+						64 button Description: Basic Scan, ID: g0-nav-menu-button-basic
+						65 button Description: Advanced, ID: g0-nav-menu-button-advanced
+							66 text Advanced
+						67 button Description: Feedback, ID: g0-nav-menu-button-v2_writing_feedback
+							68 text Feedback
+						69 button Description: Plagiarism, ID: g0-nav-menu-button-plagiarism
+							70 text Plagiarism
+						71 button Description: Hallucination, ID: g0-nav-menu-button-bibliography_scan
+							72 text Hallucination
+					73 container g0-nexus-results-header
+						74 heading Basic Scan, Value: 1
+							75 text Basic Scan
+						76 button Model 2025-03-13-base
+							77 text Model 
+							78 text 2025-03-13-base
+						79 button Share
+							80 image
+							81 text Share
+						82 button Export
+							83 image
+							84 text Export
+					85 image
+					86 text Create a free account to unlock more scans Join over 6 million users Sign up for free to keep scanning.
+					87 button Sign up for free
+						88 image
+						89 text Sign up for free
+					90 image
+						91 text AI
+					92 image
+					93 container
+						94 text GPTZero AI Detection
+					95 container
+						96 text Model  3.3b
+					97 container
+						98 text We are highly confident this text was AI generated
+						99 image
+					100 text Chance this entire text is...
+					101 button AI 100%
+						102 text AI 100%
+						103 image
+					104 button Mixed 0%
+						105 text Mixed 0%
+						106 image
+					107 button Human 0%
+						108 text Human 0%
+						109 image
+					110 radio button AI Sentences, Value: 1
+						111 container
+							112 image
+							113 text AI Sentences
+					114 radio button AI Patterns NEW, Value: 0
+						115 container
+							116 image
+							117 text AI Patterns NEW
+					118 radio button AI Vocab, Value: 0
+						119 container
+							120 image
+							121 text AI Vocab
+					122 text What's next?
+					123 button Writing feedback on your draft Structure, tone, and argument analysis
+						124 text Writing feedback on your draft
+						125 text Structure, tone, and argument analysis
+						126 image
+					127 button (collapsed) Guidance for Teachers and reviewers, Secondary Actions: Expand
+						128 image
+						129 text Guidance for Teachers and reviewers
+					130 text Text changed Scan to update 1,738 characters • 232 words
+					131 button Re-scan
+						132 text Re-scan
+						133 image
+				134 container
+					135 button AI Tools
+					136 list
+						137 image
+					138 button Feedback
+						139 image
+						140 text Feedback
+					141 button
+						142 image
+				143 container
+					144 image
+					145 text Here are some useful AI tools.
+					146 text Ways they can help you as a
+					147 pop up button (collapsed) teacher, ID: headlessui-menu-button-:rv:, Secondary Actions: Expand
+						148 text teacher
+						149 image
+					150 button Give constructive feedback Generate insights aligned with your rubric criteria.
+						151 image
+						152 text Give constructive feedback
+						153 text Generate insights aligned with your rubric criteria.
+					154 button Help with addressing AI use in this assignment Get advice on how to address AI use with your student.
+						155 image
+						156 text Help with addressing AI use in this assignment
+						157 text Get advice on how to address AI use with your student.
+					158 button Help support a struggling learner Develop a plan to help this student succeed.
+						159 image
+						160 text Help support a struggling learner
+						161 text Develop a plan to help this student succeed.
+					162 button Find contradictions in my text Uncover inconsistencies and improve logical clarity.
+						163 image
+						164 text Find contradictions in my text
+						165 text Uncover inconsistencies and improve logical clarity.
+					166 button Custom question
+						167 image
+						168 text Custom question
+					169 container
+						170 splitter 75
+						171 text entry area (settable)
+						172 button Add rubric or documents
+							173 image
+							174 text Add rubric or documents
+						175 button (disabled) ->
+			176 container Modal
+				177 container sign-up-modal
+					178 heading Sign up to Continue, Value: 2
+						179 text Sign up to Continue
+					180 container
+						181 text Already have an account?
+						182 text Log in
+					183 button Continue with Google
+						184 image
+						185 text Continue with Google
+					186 button Continue with Facebook
+						187 image
+					188 button Continue with Clever SSO
+						189 image Continue with Clever SSO
+					190 button Continue with Github
+						191 image
+					192 button Continue with email
+						193 text Continue with email
+						194 image
+					195 container
+						196 text By continuing, you agree to our
+						197 link Description: Terms of Service, Value: gptzero.me/terms-of-use.html
+						198 text and have read our
+						199 link Description: Privacy Policy, Value: gptzero.me/privacy-policy.html
+						200 text .
+					201 text You also agree to receive product-related marketing emails from GPTZero, which you can unsubscribe from at any time.
+	202 container grammarly-integration
+		203 text {"mode":"full","isActive":true,"isUserDisabled":false}
+	204 button Get summaries and key insights using AI Assistant
+		205 button Open AI Assistant
+			206 image ImportedIcons
+
+The focused UI element is 50 container Molecular simulation data require both statistical analysis and an understanding of how the observations were generated. This curricular internship used amyloid-β40 descriptors to connect practical work with GROMACS, VMD and Python to a reproducible analysis of conformational clustering. The report develops the scientific background, examines the supplied implementation of the workflow of Cadenelli and colleagues, and presents a separate experiment on the choice of clustering features.
+
+
+
+
+The available table contains 300,003 observations from three replicas over the source-labelled 1–3 microsecond interval. The audit identified problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries. A modular implementation addresses these operations through explicit validation, numerical tests and recorded run settings. The recovered free-energy surface contains the complete grid and covers all converted descriptor queries. Its energy units and construction procedure remain unverified, so equilibrium clustering and population estimates are not reported.
+
+
+
+
+The completed descriptor analysis found a pooled correlation of 0.848 between radius of gyration and solvent-accessible surface area (SASA). The first two standardized principal components account for 88.1% of variance. To examine whether the correlation justified removing SASA, Gaussian mixtures were fitted to four and three descriptors using one shared, replica-balanced fitting sample. Five component counts and five initialization seeds produced fifty converged fits. The median agreement between feature sets was 0.864 at three components and 0.457 at six, showing that the effect of feature removal depends on the fitted model.

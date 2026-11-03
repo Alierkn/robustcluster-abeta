@@ -1,11 +1,11 @@
 {
-  "stage": "full report reconstruction",
-  "base_release": "0.1.2",
+  "stage": "publication-informed varied layout",
+  "base_release": "0.2.0",
   "new_scientific_experiments": false,
   "source_manifests": [
     {
-      "filename": "results/manifests/20261103T135347-e4275730.json",
-      "sha256": "fe75cae006544812ba1388464799e96b3ef78c5fb45ddd9b029a19677e06e23f"
+      "filename": "results/manifests/20261103T142638-b16e0fbe.json",
+      "sha256": "a115ce232cc40fcb3564d6ea85f85a01d3dbfa964e4f611d5add3aa280e1340d"
     }
   ],
   "assets": [
@@ -67,27 +67,27 @@
     },
     {
       "filename": "report/figures/rebuild_autocorrelations.pdf",
-      "sha256": "78e8b1d6d0a3278f89cafebcb3361d5d64ba5ca80e629b8cc64e4d0f6733d1e4"
+      "sha256": "422f14491eeaf4e55a78634c5800d3cf85717f74c5c0db377547b8f0ece3e804"
     },
     {
       "filename": "report/figures/rebuild_autocorrelations.svg",
-      "sha256": "1c09882850a30603c5b3360f8c888a476623bc17abc323884c42c68deba50d84"
+      "sha256": "e9f56754757d42efabdb674138e604f6d64682b92ba8c611887379b2df14f4fc"
     },
     {
       "filename": "report/figures/rebuild_features.pdf",
-      "sha256": "df0375ea53248e93d2eec7e76dea931c207792202e66fd4406f3fc0c0d6bc58e"
+      "sha256": "55081e3537ae32db27171aec10291b3dd538f324fac942f6712ed881d8051215"
     },
     {
       "filename": "report/figures/rebuild_features.svg",
-      "sha256": "ebc1ac36aab70bd9ffc837a02c9e2d0b49d91013b10aad0a3c47af9581417962"
+      "sha256": "6ed1c6a3b7e7ce49438e0ebbfb658840a23b682ecace95badb24cf8089e28f57"
     },
     {
       "filename": "report/figures/rebuild_gmm.pdf",
-      "sha256": "fc30c1dbf915863effaa6c469b564f96b370c4bd9d7b0d7198debc88752026d1"
+      "sha256": "f219f051f06ff721a19abc54b35ba6cbb739f7547b0b87161979a7f7a60d8d91"
     },
     {
       "filename": "report/figures/rebuild_gmm.svg",
-      "sha256": "41e8562b809763adc3e37bb163e384a31b0293cefad2b917a5e1582c7b78b45b"
+      "sha256": "bde6fab24d5931c4fd51a2f452e7bcb7395c496ef6bbd3cef5f3cd5fa4663917"
     },
     {
       "filename": "report/figures/sampling_autocorrelations.pdf",
@@ -149,6 +149,19 @@
       "bottom": 25
     },
     "approved_cover_and_centered_logo_preserved": true,
-    "plot_font": "DejaVu Serif (TrueType embedding)"
-  }
+    "plot_font": "DejaVu Serif (TrueType embedding)",
+    "body_leading_multiplier": 1.04,
+    "chapter_pt": 22,
+    "section_pt": 12.2,
+    "reading_structures": [
+      "continuous prose",
+      "numbered protocols",
+      "comparison table",
+      "two short panel pairs"
+    ],
+    "plot_palette": "navy/teal/muted audit accent",
+    "chapter_leading_pt": 26,
+    "float_control": "placeins barriers before new diagnostic sections"
+  },
+  "previous_provenance_sha256": "82dd3e26e456bdf589dd018686239534929666959b0cf5fcae4f3329940ca412"
 }

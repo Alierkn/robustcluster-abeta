@@ -1,4 +1,22 @@
-# Current release v0.2.0 — complete report reconstruction
+# Current release v0.3.0 — reading structures and equilibrium readiness
+
+Selected report: `20261103T143938-report-36532e` — **SUCCESS, 19 main-text pages / 36 total**. Selected local release QA: `20261103T144147-qa-52cf37` — **SUCCESS, 36 tests**, Ruff, bibliography and recorded-output integrity. Report SHA256: `0611ff7d4e4ce3fd37b4de3d8df305387fe051d0407629a108fd1b128f7df78d`.
+
+All 36 pages were inspected in overviews; PDF pages 18–21 received reading-size review. All embedded fonts are subsetted and Unicode-mapped. The 221 named destinations and 131 internal destination links resolve. No missing glyphs, unresolved citations, duplicate labels, overfull or underfull boxes remain. Two pre-existing unicode-math command-selection warnings remain benign. The PDF is not tagged; cover lettering remains generated raster artwork. Machine records and overviews: `results/editorial_review/v030/pdf_qa.json` and adjacent files.
+
+The design uses continuous prose, numbered procedures, a comparison table and two panel pairs according to the reading task. Scientific values, equations, configuration and empirical source outputs remain unchanged. A read-only semantic review found no remaining claim/parameter/citation regression. The 34-entry verified bibliography supplies 32 cited entries. The final build's input hashes match the delivered source files.
+
+Actual original script, descriptor input, complete FES and primary-paper PDF hashes were rechecked against the inventory and match. The historical partial-download file is no longer present at its former Downloads path; no new hash claim is made for it. The first QA attempt requiring all historical originals therefore failed explicitly (`20261103T144035-qa-07e863`); the final portable QA passed, supplemented by the four available-source hash checks in `pdf_qa.json`. The missing partial file is never used as an FES.
+
+The new placeins dependency was installed in the isolated TeX toolchain. Two intermediate build failures (missing package, then cached failure state) remain labelled FAILED. Rebuilding from a fresh build directory succeeded; those failures are not presented as scientific failures or hidden by deleting their logs. The source archive requires the listed TeX packages rather than bundling an executable runtime.
+
+Checker evidence is attached only to the unchanged 232-word abstract excerpt: Sapling 99.9% AI, QuillBot 0% likely AI, GPTZero BLOCKED. The discrepancy is retained, not averaged or converted into a whole-report authorship claim. See `AI_CHECKER_REVIEW_V030.md`.
+
+New descriptor validation `20261103T142553-fd935a74` succeeded. Reproduction prerequisite check `20261103T142651-837817b0` stopped BLOCKED before DPC fitting or weight calculation. FES units and exact construction/replica combination remain unresolved; the requested full equilibrium population analysis is not complete. See `EQUILIBRIUM_READINESS_V030.md`.
+
+---
+
+# Previous release v0.2.0 — complete report reconstruction
 
 Selected report: `20261103T140226-report-575524` — **SUCCESS, 18 main-text pages / 35 total**. Selected local release QA: `20261103T140300-qa-9861c8` — **SUCCESS, 36 tests**, lint, bibliography and output integrity. Report SHA256: `e24d2415a840d0e44fc3589ac1fbfe9e502a364bda422773cea9ae2aa1efc34b`.
 

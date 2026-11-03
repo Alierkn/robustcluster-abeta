@@ -8,7 +8,7 @@ Scientific code audit · sampling diagnostics · feature-space sensitivity
 
 [Code guide](docs/CODE_GUIDE.md) · [Reproduction instructions](REPRODUCIBILITY.md) · [Evidence and scope](docs/PUBLICATION_READINESS.md)
 
-![Descriptor correlations and principal-component variance from the recorded Aβ40 diagnostic run](results/figures/20261103T135347-e4275730/rebuild_features.svg)
+![Descriptor correlations and principal-component variance from the recorded Aβ40 diagnostic run](results/figures/20261103T142638-b16e0fbe/rebuild_features.svg)
 
 *Observed descriptor correlations and PCA diagnostics from the supplied biased trajectories. These plots describe the available sample; they do not estimate equilibrium populations. [Source manifest](results/manifests/20260921T011959-583b4421.json).*
 
@@ -54,9 +54,9 @@ On Windows, activate the environment with `.venv\Scripts\activate` instead. Test
 
 ## Inspect the completed extension
 
-![Feature-ablation agreement and initialization sensitivity for the saved Gaussian-mixture pilot](results/figures/20261103T135347-e4275730/rebuild_gmm.svg)
+![Feature-ablation agreement and initialization sensitivity for the saved Gaussian-mixture pilot](results/figures/20261103T142638-b16e0fbe/rebuild_gmm.svg)
 
-*Four descriptors versus the same representation without SASA, evaluated on identical frame identities. The curves summarize five paired seeds per component count. Variation across runs is not a confidence interval. [Analysis protocol and interpretation](docs/GMM_ABLATION_PILOT.md) · [Figure manifest](results/manifests/20261103T135347-e4275730.json).*
+*Four descriptors versus the same representation without SASA, evaluated on identical frame identities. The curves summarize five paired seeds per component count. Variation across runs is not a confidence interval. [Analysis protocol and interpretation](docs/GMM_ABLATION_PILOT.md) · [Figure manifest](results/manifests/20261103T142638-b16e0fbe.json).*
 
 The pilot asks whether correlated features can nevertheless change a geometric partition. It does not establish a preferred biological family count. Gaussian components are not assumed to be metastable states, and raw assigned-frame fractions are not equilibrium populations.
 
@@ -129,14 +129,16 @@ New project code and documentation use [BSD-3-Clause](LICENSE). This does not re
 
 Publication scope and fresh-history policy: [PUBLIC_RELEASE.md](docs/PUBLIC_RELEASE.md). External checker evidence is recorded separately in [AI_CHECKER_REVIEW.md](docs/AI_CHECKER_REVIEW.md); it is not a scientific validation score.
 
-## Rebuilt report v0.2.0
+## Revised report v0.3.0
 
-The abstract and all nine chapters were written afresh around the internship's learning sequence, the supplied-data audit and the completed descriptor experiment. The report has **18 main-text pages, 35 pages including front matter, references and appendices**. It uses 32 references from the existing verified bibliography, 11 pt Libertinus typography, vector plots regenerated from saved tables, readable code panels and the approved illustrated cover.
+The report has **19 main-text pages, 36 pages including front matter, references and appendices**. It uses 32 cited references, 11 pt Libertinus typography, larger vector-plot labels and the approved illustrated cover. Numbered method steps, an audit comparison table and two short paired explanations complement normal scientific prose. The hierarchy and reading structures draw on inspected JMLR, LiveCoMS and PLOS PDFs; see the [design research](docs/DESIGN_RESEARCH_V030.md).
 
-The student's confirmed GROMACS, VMD and Python use is described separately from their personal VMD MCP and GROMACS MCP projects. No new simulation, clustering experiment or equilibrium result is implied by the rewrite. [Rebuild record](docs/rebuild/REBUILD_RECORD.md) · [Learning evidence](docs/rebuild/LEARNING_EVIDENCE_MAP.md) · [Visual storyboard](docs/rebuild/VISUAL_AND_EVIDENCE_MAP.md).
+The student's confirmed GROMACS, VMD and Python use is described separately from their personal VMD MCP and GROMACS MCP projects. The [learning evidence map](docs/rebuild/LEARNING_EVIDENCE_MAP.md) and [complete-rebuild record](docs/rebuild/REBUILD_RECORD.md) retain that distinction.
 
-Earlier external-check results below concern their historical excerpts, not this rebuilt text. No new detector score is claimed.
+A new [external checker comparison](docs/AI_CHECKER_REVIEW_V030.md) used one frozen 232-word abstract excerpt: Sapling returned 99.9% AI, QuillBot 0% likely AI, and GPTZero required registration. These conflicting outputs are not a whole-report authorship result or scientific validation. The checked abstract is unchanged; assistance and generated-art disclosures remain in the report.
+
+The requested equilibrium analysis received a fresh [readiness review](docs/EQUILIBRIUM_READINESS_V030.md). Descriptor validation succeeded, but the reproduction preflight stopped before clustering or weighting because FES units/construction remain unverified. No equilibrium population or new molecular fit was produced.
 
 ### Editorial history
 
-The [v0.1.1 design research](docs/EDITORIAL_DESIGN_RESEARCH_V011.md) and [v0.1.2 readability record](docs/PROSE_READABILITY_V012.md) remain available. Exact historical checker inputs and outcomes are preserved in the [external-review records](docs/AI_CHECKER_REVIEW_REVISION3.md). Those excerpt-level classifications are not scientific validation or authorship certification. The report retains its assistance and generated-art disclosures.
+The [v0.2.0 rebuild](docs/rebuild/REBUILD_RECORD.md), [v0.1.1 design research](docs/EDITORIAL_DESIGN_RESEARCH_V011.md) and [v0.1.2 readability record](docs/PROSE_READABILITY_V012.md) remain available. Earlier checker inputs and outcomes stay attached to their [historical excerpts](docs/AI_CHECKER_REVIEW_REVISION3.md); they are not controlled before/after comparisons with the new review.

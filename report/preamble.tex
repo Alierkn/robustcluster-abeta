@@ -5,13 +5,16 @@
 \setmainfont{LibertinusSerif}[Extension=.otf,UprightFont=*-Regular,ItalicFont=*-Italic,BoldFont=*-Bold,BoldItalicFont=*-BoldItalic]
 \setsansfont{LibertinusSans}[Extension=.otf,UprightFont=*-Regular,ItalicFont=*-Italic,BoldFont=*-Bold]
 \setmathfont{LibertinusMath-Regular.otf}
-\usepackage{microtype,siunitx,graphicx,subcaption,adjustbox}
+% About 14.1 pt body leading with the 11 pt KOMA-Script base size.
+\linespread{1.04}
+\usepackage{microtype,siunitx,graphicx,subcaption,adjustbox,placeins}
 \usepackage{booktabs,tabularx,longtable,threeparttable}
 \usepackage{xcolor,tcolorbox,tikz}
 \usetikzlibrary{arrows.meta,positioning}
 \usepackage{listings,csquotes}
 \usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=6,minbibnames=3,giveninits=true]{biblatex}
 \addbibresource{references.bib}
+\AtBeginBibliography{\small\linespread{1}\selectfont}
 \usepackage{hyperref,bookmark,cleveref,glossaries-extra,scrlayer-scrpage}
 \definecolor{Navy}{HTML}{173A5E}
 \definecolor{Teal}{HTML}{2E6F73}
@@ -21,17 +24,24 @@
 \hypersetup{hypertexnames=false,colorlinks=true,linkcolor=Navy,citecolor=Teal,urlcolor=Navy,pdftitle={RobustCluster-Aβ: reproducible analysis of amyloid-β40 conformational descriptors},pdfauthor={Ali Erkan Ocaklı},pdfsubject={Curricular internship report, Data Analysis L-31, academic year 2025–2026},pdfkeywords={amyloid-beta40, metadynamics, reproducibility, clustering, feature sensitivity},pdflang={en-GB}}
 \color{Ink}
 \setkomafont{disposition}{\rmfamily\bfseries\color{Navy}}
-\setkomafont{chapter}{\rmfamily\fontsize{23}{27}\selectfont\bfseries\color{Navy}}
-\setkomafont{section}{\sffamily\normalsize\bfseries\color{Navy}}
+\setkomafont{chapter}{\rmfamily\fontsize{22}{26}\selectfont\bfseries\color{Navy}}
+\setkomafont{section}{\sffamily\fontsize{12.2}{15}\selectfont\bfseries\color{Navy}}
+\setkomafont{subsection}{\sffamily\normalsize\bfseries\color{Ink}}
 \setkomafont{pageheadfoot}{\sffamily\small\color{Navy}}
+% A distinct chapter number and short rule establish a repeatable opening.
+% The body remains single-column 11 pt Libertinus; no cover geometry changes.
+\renewcommand*{\chapterformat}{\textcolor{Teal}{\thechapter\autodot}\enskip}
+\renewcommand*{\chapterlinesformat}[3]{%
+  \parbox[t]{\linewidth}{\raggedright\hyphenpenalty=10000 #2#3\par\nobreak\vspace{.35em}%
+    {\color{Teal}\rule{.12\linewidth}{.6pt}}}}
 \clearpairofpagestyles
 \ihead{RobustCluster-Aβ}
 \ohead{\headmark}
 \automark{chapter}
 \cfoot*{\pagemark}
 \pagestyle{scrheadings}
-\RedeclareSectionCommand[beforeskip=0pt,afterskip=13pt]{chapter}
-\RedeclareSectionCommand[beforeskip=11pt,afterskip=4pt]{section}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=14pt]{chapter}
+\RedeclareSectionCommand[beforeskip=12pt,afterskip=5pt]{section}
 \setlength{\parindent}{1em}
 \setlength{\parskip}{1.5pt plus .5pt}
 \setlength{\emergencystretch}{2em}
@@ -43,7 +53,29 @@
 \setcounter{tocdepth}{1}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
-\captionsetup{font=small,labelfont=bf,format=plain,justification=raggedright,singlelinecheck=false}
+\captionsetup{font=small,labelfont={bf,color=Navy},textfont={color=Ink},format=plain,justification=raggedright,singlelinecheck=false,skip=7pt}
+% Sequential methods benefit from explicit steps, without a large callout box.
+% This ordinary list can break across pages and keeps the body font unchanged.
+\newcounter{protocolstep}
+\newenvironment{protocolsteps}{%
+  \begin{list}{\sffamily\bfseries\color{Teal}\arabic{protocolstep}.}{%
+    \usecounter{protocolstep}%
+    \setlength{\leftmargin}{2em}%
+    \setlength{\labelwidth}{1.35em}%
+    \setlength{\labelsep}{.65em}%
+    \setlength{\topsep}{6pt}%
+    \setlength{\itemsep}{5pt}%
+    \setlength{\parsep}{1.5pt}%
+    \setlength{\partopsep}{0pt}}%
+}{\end{list}}
+% Use two panels, separated by \hfill, for short parallel explanations only.
+% These minipages do not split; long prose and equations remain full width.
+\newenvironment{comparisonpanel}[1]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}%
+    \setlength{\parindent}{0pt}\setlength{\parskip}{4pt}\raggedright
+    {\sffamily\bfseries\color{Navy}#1\par}%
+    \nobreak\vspace{3pt}{\color{Teal}\hrule height .4pt}\vspace{6pt}%
+}{\end{minipage}}
 \newtcolorbox{auditnote}{colback=CoolGrey,colframe=Audit,boxrule=.4pt,arc=0pt,left=7pt,right=7pt,top=5pt,bottom=5pt,title=Scientific audit note,fonttitle=\sffamily\bfseries}
 \newcommand{\abforty}{Aβ40}
 \newcommand{\abfortytwo}{Aβ42}

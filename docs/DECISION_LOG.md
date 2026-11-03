@@ -64,3 +64,15 @@ Use the existing correlation/PCA, ACF and GMM comparison tables for three new ve
 ### D29 — Page composition and bibliography selection
 
 Use 29/26/25/25 mm margins and a quiet serif chapter/sans section hierarchy at 11 pt body size. Preserve the approved 42 mm seal at the physical page centre. The measured main-text length is 18 pages; bibliography/appendices/front matter are excluded. Retain all 34 verified entries in the source register but cite the 32 relevant to the rebuilt narrative; do not insert irrelevant citations to maintain a historical count. Sources: existing design research and rendered-page review. This changes presentation and exposition only.
+
+### D30 — Publication-informed mixed reading structures
+
+Inspect actual publisher PDFs from JMLR, LiveCoMS and PLOS, with exact pages and hashes recorded in DESIGN_RESEARCH_V030.md. Use numbered methods, an audit comparison table and two short panel pairs where the content supports comparison; retain connected single-column prose for theory and discussion. Keep 11 pt Libertinus text, approved cover, scientific scope and numerical evidence. Rebuild vector plots from fixed, hash-verified source tables. This is an editorial extension, not a new scientific experiment. Expected effect: clearer hierarchy and easier comparison without arbitrary column changes or simulated journal identity.
+
+### D31 — Fixed-scope external checker comparison
+
+Before checking, freeze the longest complete-paragraph abstract prefix within the common 2,000-character free limit: 232 words, 1,738 characters. Submit that exact text once to Sapling, QuillBot and GPTZero. Sapling returns 99.9% AI, QuillBot 0% likely AI, and GPTZero blocks a new result behind registration. Preserve the disagreement, exact text and screenshots; do not average the scores, extend them to the whole report, or revise the excerpt to chase a label. Source: actual recorded service outputs in results/editorial_review/v030.
+
+### D32 — Equilibrium prerequisites rechecked rather than assumed
+
+Review the exact FES, primary article, supplied script and technical correspondence. kJ/mol is supported by the source-code assumption and published hill units, but the recovered FES header does not establish its unit or exact reconstruction/combination. Keep the physical-provenance fields unset. New validation succeeded and preflight run 20261103T142651-837817b0 stopped BLOCKED, with no new DPC fitting or population estimate. This preserves the reproduction definition; it is not an alternative reweighting method. Resolving the file's physical provenance remains necessary before full execution. Sources and minimum questions are in EQUILIBRIUM_READINESS_V030.md.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 — 2026-11-03
+
+- Publication-informed chapter hierarchy, numbered protocols, audit comparison table, short paired explanations and larger vector-plot labels. Approved cover and empirical values preserved.
+- Fresh checker comparison on one frozen 232-word abstract excerpt: conflicting Sapling/QuillBot outputs; GPTZero registration block recorded without a claimed score.
+- Renewed equilibrium-readiness review, successful descriptor validation and explicitly blocked reproduction preflight. No equilibrium population or new molecular result generated.
+- Updated reproducibility instructions and retained all earlier release evidence.
+
 ## 0.2.0 — 2026-11-03
 
 - Rebuilt the abstract and all nine scientific/learning chapters around the actual internship question, recorded analysis and confirmed student experience.

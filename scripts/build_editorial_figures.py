@@ -7,6 +7,7 @@ import sys
 import matplotlib
 matplotlib.use("Agg")
 from matplotlib import font_manager
+from matplotlib.colors import LinearSegmentedColormap
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -16,8 +17,8 @@ from robustcluster_abeta.manifest import Run, dump_json, sha256
 ROOT = Path(__file__).resolve().parents[1]
 source_ids = {"diagnostics": "20260921T011959-583b4421", "gmm": "20261007T104141-f0143175"}
 config = {"project_root": str(ROOT), "inputs": {}, "source_runs": source_ids,
-          "figure_width_inches": 6.0, "plot_font": "DejaVu Serif",
-          "scientific_mode": "saved_results_presentation", "model_fitting": False}
+          "figure_width_inches": 6.2, "plot_font": "DejaVu Serif",
+          "layout_revision": "v0.3.0", "scientific_mode": "saved_results_presentation", "model_fitting": False}
 run = Run(config, "editorial-figures")
 run.data["script_sha256"] = sha256(__file__)
 run.data["source_manifests"] = {}
@@ -34,8 +35,10 @@ try:
                 raise ValueError(f"Source output changed: {item['filename']}")
         run.data["source_manifests"][name] = {"filename": str(path.relative_to(ROOT)), "sha256": sha256(path)}
     plt.style.use(ROOT / "src/robustcluster_abeta/publication.mplstyle")
-    plt.rcParams.update({"font.family": "DejaVu Serif", "font.size": 10, "axes.labelsize": 9.5, "axes.titlesize": 10.5,
-                         "xtick.labelsize": 9, "ytick.labelsize": 9, "legend.fontsize": 8.5})
+    plt.rcParams.update({"font.family": "DejaVu Serif", "font.size": 10.5, "axes.labelsize": 10, "axes.titlesize": 11,
+                         "axes.titleweight": "bold", "axes.titlecolor": "#173A5E",
+                         "axes.labelcolor": "#20242A", "axes.edgecolor": "#667B88",
+                         "xtick.labelsize": 9, "ytick.labelsize": 9, "legend.fontsize": 9})
     run.data["resolved_serif"] = Path(font_manager.findfont(font_manager.FontProperties(family="serif"))).name
     run.data["style_sha256"] = sha256(ROOT / "src/robustcluster_abeta/publication.mplstyle")
     dump_json(run.file, run.data)
@@ -61,16 +64,16 @@ try:
             figure.savefig(run.path("figures", f"{stem}.{extension}"))
         plt.close(figure)
 
-    fig, axes = plt.subplots(1, 2, figsize=(6, 3.05), layout="constrained")
+    fig, axes = plt.subplots(1, 2, figsize=(6.2, 3.2), layout="constrained")
     labels = [r"$n_\alpha$", r"$n_\beta$", r"$R_g$", "SASA"]
-    im = axes[0].imshow(corr.to_numpy(), vmin=-1, vmax=1, cmap="RdBu_r")
+    im = axes[0].imshow(corr.to_numpy(), vmin=-1, vmax=1, cmap=LinearSegmentedColormap.from_list("audit_diverging", ["#A95542", "#F3F5F7", "#2E6F73"]))
     axes[0].set_xticks(range(4), labels)
     axes[0].set_yticks(range(4), labels)
     axes[0].set_title("A  Feature correlations", loc="left")
     for i in range(4):
         for j in range(4):
             val = corr.iloc[i, j]
-            axes[0].text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=8.5,
+            axes[0].text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=9.5,
                          color="white" if abs(val) > .65 else "#20242A")
     fig.colorbar(im, ax=axes[0], shrink=.65, ticks=[-1, 0, 1], label="Pearson r")
     axes[1].bar(range(1, 5), ratios * 100, color=colors[1], width=.65)
@@ -85,7 +88,7 @@ try:
     acf = pd.read_csv(diag / "autocorrelations.csv")
     if not np.isfinite(acf[["lag_ps", "acf"]].to_numpy()).all():
         raise ValueError("Non-finite ACF plotting data")
-    fig, axes = plt.subplots(2, 2, figsize=(6, 4.2), layout="constrained")
+    fig, axes = plt.subplots(2, 2, figsize=(6.2, 4.4), layout="constrained")
     for ax, feature, label in zip(axes.flat, corr.columns, labels):
         for color, (replica, part) in zip(colors, acf[acf.descriptor == feature].groupby("replica_id")):
             ax.plot(part.lag_ps / 1000, part.acf, color=color, label=f"Replica {replica}")
@@ -95,7 +98,7 @@ try:
     save(fig, "rebuild_autocorrelations")
 
     summary = ablation.groupby("k").ari.agg(["min", "median", "max"])
-    fig, axes = plt.subplots(1, 2, figsize=(6, 3.25), layout="constrained")
+    fig, axes = plt.subplots(1, 2, figsize=(6.2, 3.35), layout="constrained")
     for k, group in ablation.groupby("k"):
         axes[0].scatter(k + np.linspace(-.08, .08, len(group)), group.ari, s=15, color=colors[0], alpha=.65)
     axes[0].plot(summary.index, summary["median"], "D-", color=colors[0], ms=4, label="Median of 5 seeds")
@@ -117,7 +120,7 @@ try:
         "source_runs": source_ids, "new_fits": 0, "equilibrium_weighting": False,
         "acf": "Saved plotting sequence; no estimator recalculated; lag is biased trajectory time.",
         "gmm": "A: 5 paired seeds and median. B: medians and observed min/max of 10 pairs per feature space; not confidence intervals.",
-        "figure_width_inches": 6.0, "font_size_points": 10})
+        "figure_width_inches": 6.2, "font_size_points": 10.5})
     usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     run.data["peak_rss_bytes"] = int(usage if sys.platform == "darwin" else usage * 1024)
     run.data["peak_memory_method"] = "Process ru_maxrss high-water mark"

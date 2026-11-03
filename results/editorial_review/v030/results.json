@@ -1,0 +1,103 @@
+{
+  "recorded_at": "2026-11-03T14:28:52.017422+00:00",
+  "status": "PARTIAL",
+  "release": "v0.3.0",
+  "input": {
+    "prepared_at": "2026-11-03T14:25:56.657760+00:00",
+    "source": "report/report.tex Abstract",
+    "source_sha256": "cc5219ea400d641f4ac42d31f3808d5f798d91253251e32f1653bc142f377611",
+    "macro_source": "report/generated/values.tex",
+    "macro_source_sha256": "e7dfbf9cca7f0a96bf738eff7e30e90e4fd1fe284759e8a68f006f71a1ecaf41",
+    "resolved_macros": {
+      "RgSasaCorrelation": "0.848",
+      "PCATwo": "88.1"
+    },
+    "selection_rule": "Longest complete-paragraph prefix of finalized abstract <=2000 Unicode characters, selected before any score. Same exact input for all services.",
+    "paragraphs_selected": 3,
+    "total_abstract_paragraphs": 4,
+    "excerpt_words": 232,
+    "excerpt_characters": 1738,
+    "excerpt_sha256": "18123d65082f01838dd037ac1a572fc79e86f82d8c103579dfc58ace069967b0",
+    "full_plain_abstract_characters": 2242,
+    "full_report_submitted": false,
+    "terminal_newline": false
+  },
+  "services": [
+    {
+      "name": "Sapling",
+      "status": "COMPLETED",
+      "url": "https://sapling.ai/ai-content-detector",
+      "submission_attempts": 1,
+      "verified_current_excerpt_score": true,
+      "ai_detection_percent": 99.9,
+      "displayed_tokens": 323,
+      "model_version": "not exposed",
+      "truncation_warning_observed": false,
+      "temporary_share_url": "https://sapling.ai/ai-content-detector/ac7220555c712e01db61b545e5fb7ecb",
+      "procedure": "Saved excerpt inserted once; one Check again click; visible input, token count and current score recorded."
+    },
+    {
+      "name": "QuillBot",
+      "status": "COMPLETED",
+      "url": "https://quillbot.com/ai-content-detector",
+      "result_url": "https://quillbot.com/docs/new",
+      "submission_attempts": 1,
+      "verified_current_excerpt_score": true,
+      "likely_ai_percent": 0,
+      "ai_generated_percent": 0,
+      "ai_refined_percent": 0,
+      "human_written_percent": 100,
+      "displayed_words": 232,
+      "model_version": "v7.1.0",
+      "procedure": "Saved identical excerpt inserted once; one Detect AI click. Site opened its document result view with score and model label. Detect AI again was disabled until text changes. Dismissed unrelated extension promotion for screenshot; no writing tools used.",
+      "environment_note": "Page accessibility state included a reCAPTCHA connection warning, but the ordinary submission returned a visible completed result. No challenge interaction or bypass was performed."
+    },
+    {
+      "name": "GPTZero",
+      "status": "BLOCKED",
+      "url": "https://gptzero.me/",
+      "result_url": "https://app.gptzero.me/",
+      "submission_attempts": 1,
+      "verified_current_excerpt_score": false,
+      "score": null,
+      "displayed_words": 232,
+      "displayed_characters": 1738,
+      "blocker": "Sign up to Continue modal; free account required to unlock more scans; status Text changed — Scan to update.",
+      "unverified_background_display": {
+        "ai_percent": 100,
+        "mixed_percent": 0,
+        "human_percent": 0,
+        "model_labels": [
+          "3.3b",
+          "2025-03-13-base"
+        ],
+        "warning": "Not established as an updated result for this excerpt; excluded from comparison."
+      },
+      "procedure": "One landing-page Scan click. Stopped at sign-up gate; no registration, re-scan or alternate-session attempt."
+    }
+  ],
+  "interpretation": "Sapling and QuillBot disagree on the identical excerpt. Preserve both results; do not average incomparable score scales or infer whole-report authorship, scientific accuracy or publication readiness.",
+  "comparison_with_previous_reviews": "Different excerpt length and wording, and service/model differences, prevent a controlled before/after authorship comparison. The v0.3.0 layout changes do not create an authorship experiment.",
+  "constraints_observed": [
+    "Text fixed and hashed before submission",
+    "Only authorized report prose, no cover identifiers, private correspondence or raw data",
+    "One attempt per service",
+    "No source edits based on scores",
+    "No humanization, paraphrasing or rewriting service",
+    "No accounts, purchases, CAPTCHA bypass or usage-limit evasion"
+  ],
+  "evidence_sha256": {
+    "SERVICE_LIMITS.md": "362f03c200f2f64c5252a18ff92491723a1383ac89d9c652b2745951d934d3fb",
+    "excerpt.txt": "18123d65082f01838dd037ac1a572fc79e86f82d8c103579dfc58ace069967b0",
+    "gptzero-blocked.png": "6b8bf1dee9781dd881accacea8642d3d1165a7413584a2aa76eb2a2442af22fe",
+    "gptzero-ui.txt": "c7d0d1b8baf5c7875263f9c935551b5213a7b95b16ab471f7690807d050fab7b",
+    "input.json": "fb9e13a2c0c8029fa149ce5df77bad9859486754bd89a4bc688dd5bb7a379faa",
+    "protocol.json": "f3eb75f7418a7208b716b97e361a5e6c495136c40d39d39fec8a76d42b9ffe26",
+    "quillbot-clean.png": "87e52288e70f835fc1faec20179c51a2c2ffe21c8380f3045c981d3637b5c23d",
+    "quillbot-ui.txt": "db276f77f96ff835d5d35b91af5b6855442420d2a9e4e0b393fba5b7a9b4799e",
+    "quillbot.png": "3f418a7c7e8bd9658587ca19b860a6921e0801744b9aae86ad96a9d8ca3df6ba",
+    "sapling-input.png": "3d6f655617801214a23573fbe8db4e5e1002c4f7ce9d060b8ed04b22f57dd795",
+    "sapling-score.png": "3c3bd08c81b2ba2fa3a85587521731a461348e8bbb6ea94de13b77ffa4b6378e",
+    "sapling-ui.txt": "9943a97500ef2991a7453cfd6fb765b9911a4b2f2f30a565a47bb117895fe56f"
+  }
+}

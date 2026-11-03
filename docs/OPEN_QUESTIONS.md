@@ -17,3 +17,7 @@
 | Q13 | Source-labelled time/length/area units | Recorded assumptions in diagnostics | Upstream analysis commands or metadata |
 
 No unresolved item is filled with inferred simulation settings or fabricated results. Bibliographic uncertainty stays outside references.bib until verified.
+
+## 3 November 2026 follow-up
+
+The requested equilibrium-population analysis prompted a new review of the complete FES header, source code, primary paper and technical correspondence. None supplied an explicit energy-unit and replica-combination declaration for this exact file. New descriptor validation succeeded; the reproduction preflight stopped as BLOCKED before clustering or weighting. Q01/Q02/Q05 remain open. See [the evidence and run records](EQUILIBRIUM_READINESS_V030.md) and the [unsent provenance questions](FES_PROVENANCE_REQUEST.md). No email was sent.

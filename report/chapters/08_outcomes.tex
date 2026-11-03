@@ -21,7 +21,15 @@ The modules, tests, configurations, source tables and plots document the work pr
 \section{My molecular-software interface projects}
 I also created two personal software projects, \href{https://github.com/Alierkn/vmd-mcp}{VMD MCP} and \href{https://github.com/Alierkn/gromacs-mcp}{GROMACS MCP}. They use the Model Context Protocol to expose molecular-software operations through structured inputs and outputs. They are distinct from the Aβ40 descriptor analysis, but provide further examples of connecting scientific programs with Python interfaces.
 
-The inspected VMD MCP source constructs Tcl commands for measurements and rendering. Its gyration function passes an atom selection and mass-weighting option to VMD and returns frame-indexed values. GROMACS MCP includes preparation and analysis helpers and a background-run interface with checked paths and a recorded output log. Contributor histories remain in the repositories, and the report links to the source versions inspected.
+\par\addvspace{8pt}\noindent
+\begin{comparisonpanel}{VMD MCP: frame measurements}
+The inspected source constructs Tcl commands for measurement and rendering. Its gyration function passes an atom selection and mass-weighting option to VMD, then returns frame-indexed values.
+\end{comparisonpanel}\hfill
+\begin{comparisonpanel}{GROMACS MCP: execution interface}
+The inspected source includes preparation and analysis helpers. Its background-run interface checks paths and records output in a log.
+\end{comparisonpanel}
+\par\addvspace{8pt}
+Contributor histories remain in the repositories. Appendix G links to the source versions inspected and pairs the code excerpts with genuine screenshots.
 
 These interfaces organize requests; source code alone does not establish that a calculation ran. No reported Aβ40 trajectory is attributed to them. Comparing their outputs with the supplied descriptors would also require compatible selections and units: the inspected VMD gyration function documents angstroms, whereas the table is labelled in nanometres.
 

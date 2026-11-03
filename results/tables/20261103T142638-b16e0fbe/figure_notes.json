@@ -1,0 +1,12 @@
+{
+  "source_runs": {
+    "diagnostics": "20260921T011959-583b4421",
+    "gmm": "20261007T104141-f0143175"
+  },
+  "new_fits": 0,
+  "equilibrium_weighting": false,
+  "acf": "Saved plotting sequence; no estimator recalculated; lag is biased trajectory time.",
+  "gmm": "A: 5 paired seeds and median. B: medians and observed min/max of 10 pairs per feature space; not confidence intervals.",
+  "figure_width_inches": 6.2,
+  "font_size_points": 10.5
+}

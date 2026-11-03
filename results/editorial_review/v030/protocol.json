@@ -1,0 +1,31 @@
+{
+  "prepared_at": "2026-11-03T14:25:39.550439+00:00",
+  "status": "WAITING_FOR_TEXT_FREEZE",
+  "selection_rule": "Longest complete-paragraph prefix of the finalized abstract whose plain text is at most 2000 Unicode characters. No detector-driven selection. Resolve LaTeX macros from recorded report values, preserve wording and paragraph order. If fewer than 80 words fit, stop and document scope constraint.",
+  "scope": "Same exact fixed excerpt on all eligible services, not whole report.",
+  "attempt_limit_per_service": 1,
+  "services": [
+    "Sapling",
+    "GPTZero",
+    "QuillBot"
+  ],
+  "prohibited_actions": [
+    "detector-driven prose edits",
+    "humanization tools",
+    "new accounts",
+    "purchases",
+    "CAPTCHA bypass",
+    "service-limit evasion",
+    "interpreting stale background scores as current"
+  ],
+  "evidence": [
+    "exact UTF-8 input",
+    "input and source SHA256 before submission",
+    "counts",
+    "visible results or blockers",
+    "screenshots",
+    "model version when exposed",
+    "machine-readable outcome"
+  ],
+  "comparability": "No aggregate whole-report score; changed text/length/model means prior revisions are not a controlled authorship experiment."
+}

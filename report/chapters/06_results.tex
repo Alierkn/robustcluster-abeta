@@ -24,32 +24,36 @@ Input validation found three segments of \num{100001} rows. Times increase at th
 The FES check resolved the earlier incomplete-download problem. The recovered file contains 2,801 by 1,301 grid points, giving 3,644,101 rows with five finite columns. Every expected coordinate pair is present and none is duplicated. The nonperiodic axes cover 0--28 and 0--13 at spacing 0.01. All 300,003 converted queries are inside the grid and yield finite bilinear interpolations. The file is numerically usable, but its energy column declares no unit. That unresolved information prevents interpretation of calculated equilibrium weights.
 
 \section{Shared variation in the descriptors}
-The pooled Rg--SASA correlation is \RgSasaCorrelation{}, compared with \AlphaBetaCorrelation{} between the two secondary-structure descriptors. Thus the strongest association among these pairs concerns compaction and solvent exposure. It gives a reason to compare clustering with and without SASA, rather than assuming in advance that the two variables are interchangeable.
-
-PCA provides a second description of the feature relationships. After standardization, the first component accounts for \PCAFirst{}\% of total variance and the second for \PCASecond{}\%. Their combined share is \PCATwo{}\% (\cref{fig:features}). Much of the variation lies in two directions, but the spectrum does not show whether smaller distinctions affect cluster boundaries. The later feature comparison addresses that question directly. Per-replica distributions are retained in \cref{fig:rawdistributions}; they describe the recorded samples without equilibrium weighting.
-
 \begin{figure}[!htbp]
 \centering\includegraphics[width=\textwidth]{rebuild_features.pdf}
 \caption{Relationships between the four descriptors in the pooled, unweighted Aβ40 sample. Left: Pearson correlation matrix. Right: variance explained by standardized PCA, with cumulative variance shown by the line. These summaries describe the biased observations, not equilibrium probabilities.}
 \label{fig:features}
 \end{figure}
 
+The pooled Rg--SASA correlation is \RgSasaCorrelation{}, compared with \AlphaBetaCorrelation{} between the two secondary-structure descriptors. Thus the strongest association among these pairs concerns compaction and solvent exposure. It gives a reason to compare clustering with and without SASA, rather than assuming in advance that the two variables are interchangeable.
+
+PCA provides a second description of the feature relationships. After standardization, the first component accounts for \PCAFirst{}\% of total variance and the second for \PCASecond{}\%. Their combined share is \PCATwo{}\% (\cref{fig:features}). Much of the variation lies in two directions, but the spectrum does not show whether smaller distinctions affect cluster boundaries. The later feature comparison addresses that question directly. Per-replica distributions are retained in \cref{fig:rawdistributions}; they describe the recorded samples without equilibrium weighting.
+
+
+
+\FloatBarrier
 \section{Dependence between saved observations}
 The apparent sample size changes substantially when temporal dependence is considered. The correlation estimator returns provisional ESS values between \ESSMinimum{} and \ESSMaximum{} for the 12 replica--descriptor series, each containing \num{100001} saved frames. All \UnreliableCount{} estimates fail at least one of the specified reliability checks. The estimates therefore signal a problem for independent-frame reasoning; they do not provide precise counts of independent conformations.
 
 The ACF curves show persistent correlations and differences between replicas (\cref{fig:acf}). The accompanying diagnostics also record shifts between the means of the first and second halves of some series. Assessing uncertainty as if each frame were independent would be poorly supported by these results. They do not, however, constitute a new assessment of convergence for the full published trajectories: the complete bias history and original convergence diagnostics are unavailable.
 
 \begin{figure}[!htbp]
-\centering\includegraphics[width=.88\textwidth]{rebuild_autocorrelations.pdf}
+\centering\includegraphics[width=.95\textwidth]{rebuild_autocorrelations.pdf}
 \caption{Autocorrelation functions calculated separately for each replica and descriptor. For readability the figure displays a subset of lag points over the first half of the available window; estimation uses the full ACF sequence. The horizontal axis follows biased trajectory time and is not an unbiased physical relaxation time.}
 \label{fig:acf}
 \end{figure}
 
+\FloatBarrier
 \section{What changes when SASA is removed}
-All \GMMModels{} fits met the configured numerical convergence criterion. Together they cover two feature sets, five component counts and five paired initialization seeds. The pilot took \GMMSeconds{} s and reached a sampled process-tree peak of \GMMMemory{} MiB. The models nevertheless produce different assignments across component counts and initializations. \Cref{fig:gmm,tab:gmm} compares both sources of variation on the same frame identities.
+All \GMMModels{} fits met the configured numerical convergence criterion. Together they cover two feature sets, five component counts and five paired initialization seeds. The pilot took \GMMSeconds{} s and reached a sampled process-tree peak of \GMMMemory{} MiB. The models nevertheless produce different assignments across component counts and initializations. \Cref{fig:gmm,tab:gmm} compare both sources of variation on the same frame identities.
 
 \begin{figure}[!htbp]
-\centering\includegraphics[width=.95\textwidth]{rebuild_gmm.pdf}
+\centering\includegraphics[width=\textwidth]{rebuild_gmm.pdf}
 \caption{The independent GMM comparison on biased descriptor observations. Left: ARI between four-feature and SASA-removed assignments for five paired seeds; diamonds denote medians. Right: within-feature-space ARI for ten seed pairs. Bars span observed minima and maxima, not confidence intervals. Every model uses the same fitting subset, and evaluation includes fitting rows.}
 \label{fig:gmm}
 \end{figure}
@@ -60,7 +64,15 @@ All \GMMModels{} fits met the configured numerical convergence criterion. Togeth
 \label{tab:gmm}
 \end{table}
 
-Paired feature sets reveal the effect of excluding SASA on fixed fitting observations. Within-space comparisons reveal variation from initialization alone. Reading both helps distinguish a feature effect from variation already present before a descriptor is removed.
+\par\addvspace{8pt}\noindent
+\begin{comparisonpanel}{Changing the feature set}
+Paired fits use the same observations and seed. Their ARI measures how assignments change when SASA is excluded.
+\end{comparisonpanel}\hfill
+\begin{comparisonpanel}{Changing the initialization}
+Fits within one feature space retain all descriptors in that representation. Their ARIs measure variation from initialization alone.
+\end{comparisonpanel}
+\par\addvspace{8pt}
+Reading the comparisons together helps distinguish a feature effect from variation already present before a descriptor is removed.
 
 The three-component fits give cross-representation ARIs of 0.862--0.868. After maximum-overlap label matching, approximately 95.3\% of frames retain corresponding labels, using the median over seeds. Within-space agreement is also high: 0.994--1.000 for four descriptors and 0.988--1.000 without SASA. At two components, the corresponding within-space ranges extend down to 0.011 and 0.067. A single fit would miss this variation; all seed comparisons are shown in \cref{fig:seedmatrices}.
 
