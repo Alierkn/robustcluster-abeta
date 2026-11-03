@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 — 2026-11-03
+
+- Rebuilt the abstract and all nine scientific/learning chapters around the actual internship question, recorded analysis and confirmed student experience.
+- Distinguished hands-on GROMACS/VMD/Python use from the student's personal MCP projects; retained assistance and artwork disclosures.
+- Revised the type hierarchy, margins and float placement; retained 11 pt Libertinus and the approved centred-logo cover. Final report: 18 main-text pages, 35 total, 32 cited references.
+- Regenerated three vector figure panels from hash-verified saved tables without new fits; added explicit illustrative verification cases and detailed sampling diagnostics.
+- Added rebuild provenance checks, an isolated report-source option and figure-output integrity checks to release QA. Kept previous releases and unsuccessful draft evidence.
+- No new empirical experiment or detector check; full equilibrium reproduction remains blocked by FES provenance.
+
 ## 0.1.2 — 2026-11-03
 
 - Rewrote the abstract and revised the nine chapters in direct academic English suitable for an undergraduate report, retaining precise terms and explaining compressed phrases.

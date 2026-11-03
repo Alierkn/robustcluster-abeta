@@ -64,6 +64,18 @@ Let $\widetilde w_{ri}$ sum to one within replica $r$. The pooled expectation of
 For a cell with fractional coordinates $u,v\in[0,1]$, interpolation combines its four corner values with weights $(1-u)(1-v)$, $u(1-v)$, $(1-u)v$, and $uv$. Their sum is one. Any surface $a+b\alpha+c\beta+d\alpha\beta$ is reproduced exactly within floating-point tolerance. The test suite includes such a mixed-term surface, reordered input rows, boundaries and invalid-grid cases, providing stronger evidence than checking a single grid node.
 
 \chapter{Additional diagnostics and interpretation}
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\textwidth]{raw_descriptor_distributions.pdf}
+\caption{Per-replica distributions of the recorded descriptors. Each descriptor uses common bin edges, with separate density normalization for each replica. The curves retain the simulation bias and are not equilibrium distributions. Units follow the source labels.}
+\label{fig:rawdistributions}
+\end{figure}
+\begin{table}[htbp]
+\centering\small
+\input{generated/sampling_rows.tex}
+\caption{All recorded correlation estimates, each flagged as unreliable by at least one stated check. $g$ denotes statistical inefficiency. The half-window shift is the absolute difference of means divided by the full-series standard deviation. The time axis belongs to the biased trajectory.}
+\label{tab:sampling}
+\end{table}
 The saved tables contain per-replica raw descriptor counts, means, standard deviations, extrema, common-bin histograms, the full four-feature correlation matrix, PCA transformation parameters and explained variance, and the reported correlation-estimator diagnostics. The ACF figure is a plotting subsample, not the series used to estimate $g$. No weights are present in these real-data diagnostic summaries.
 
 The half-window mean-shift diagnostic is descriptive. A large shift can arise from slow fluctuations, nonstationarity, or changing occupation of sampled regions. Its threshold is an explicit project heuristic. A low shift alone would not establish convergence, and no threshold outcome can recover an unbiased time scale from WT-MetaD time. Future evaluation should preserve these distinctions when adding weighted estimates.
@@ -112,7 +124,7 @@ For later production, establish the recovered FES energy units and construction 
 The checked bibliography contains journal articles and official documentation records; its matrix links each citation to its question, method, relevance, and report section. Online-first dates and issue years are distinguished. References whose publisher verification remained unresolved are documented outside the BibTeX file rather than filled from memory.
 
 \chapter{Companion source-code evidence}
-The following images are genuine browser captures from public, commit-specific GitHub source pages on 7 October 2026. They document implementation, not simulation execution. The full images are preserved unchanged; short searchable listings in the main text are a separate presentation format.
+The following images are genuine browser captures from public, commit-specific GitHub source pages on 7 October 2026. They document implementation, not simulation execution. The full images are preserved unchanged; short accompanying searchable listings are a separate presentation format.
 \begin{codepanel}{02\quad Measure each saved frame}{VMD MCP / source lines 250--266}
 \lstinputlisting[style=editorialcode,firstnumber=250]{generated/vmd-mcp-excerpt.py}
 \end{codepanel}

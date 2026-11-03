@@ -1,81 +1,61 @@
 \chapter{Data and computational methodology}
-\section{Data provenance}
-The input is a 10-column text table with \num{300003} numerical rows. Its SHA256 and the hash of the original script are recorded in the inventory. The original materials are retained unchanged. The table contains scalar descriptors and a column labelled \code{metad.rbias}. Contact maps or molecular renderings would additionally require atomic coordinates and a verified mapping from each row to its structural frame.
+\section{Data provenance and scope}
+The analysis begins with a supplied text table, not with atomic coordinates. Each row contains time, an offset-corrected bias field and eight structural measurements. The file has \num{300003} rows and ten columns. The original header is retained in the inventory, including its spelling of the peptide--solvent hydrogen-bond field. The script, descriptor table and recovered FES have recorded SHA256 hashes, which allow later copies to be checked against the materials inspected here.
 
-The paper describes the method to reproduce, while the supplied script shows its implementation. Neither alone establishes that an analysis completed; that requires execution records. Scientific V2 and its changelog were unavailable, and the method map records this gap.
+The published method provides the scientific reference \autocite{cadenelli2026}. The supplied script provides additional implementation details, some of which differ from that description. The reproduction therefore has two sources of information: the paper for the intended calculation, and the code for choices that need to be checked. The independent GMM experiment has its own configuration and does not change the reproduction baseline.
 
-\section{Replica segmentation}
-Replica boundaries are detected where the first column decreases. Parsing requires exactly three segments, strictly increasing times within each segment, finite numerical entries, and a recognized header. Extra segments, duplicate times, malformed rows, or missing interval coverage fail validation rather than being silently skipped.
+\section{Replica segmentation and analysis interval}
+A decrease in the time column marks the beginning of a new replica. Validation requires exactly three segments, strictly increasing times within each segment, finite entries and complete coverage of the selected interval. It rejects malformed rows rather than discarding them. Each accepted row retains its original file line, source-row index, replica ID and frame index within that replica. These identities are needed when two runs assign labels in different orders.
 
-Before selecting or shuffling frames, the parser saves their identities: zero-based source row, one-based file line, replica ID and zero-based frame index within the original segment. These identifiers let clustering comparisons match the same observations across runs. Comparing arrays by their storage order alone could mistake reordered frames for changed assignments.
+The analysis includes both endpoints from \num{1000000} to \num{3000000}, giving \num{100001} frames per replica at spacing 20. Interpreting these values as picoseconds follows the supplied script and published protocol, so the interval is recorded as 1--3 μs with that unit assumption. The first microsecond is not in the table. Its exclusion can be reproduced, but its equilibration cannot be reassessed from these data.
 
-\section{Analysis interval}
-The baseline interval includes both endpoints from \num{1000000} to \num{3000000}, with time interpreted in picoseconds as labelled in the source. Each replica contributes \num{100001} frames separated by 20 ps. The original script and published protocol support this interpretation, but the original simulation and analysis metadata are absent. The conversion to the supplied 1--3 μs window is therefore recorded as an assumption.
+\section{Descriptor definitions and normalization}
+The baseline features are $\na$, $\nb$, $R_g$ and SASA. The first two are continuous secondary-structure descriptors. The original script labels $R_g$ in nm and SASA in nm$^2$; their upstream calculation settings remain unavailable. The additional SASA and hydrogen-bond columns are intended for later cluster characterization.
 
-The published workflow excludes the first microsecond. The supplied table already starts at that boundary. It allows the analysis interval to be checked, but not the preceding equilibration period or convergence over the full trajectory.
+Clustering uses pooled min--max scaling. For descriptor $x_f$, the transformed value is $z_f=(x_f-a_f)/(b_f-a_f)$, where $a_f$ and $b_f$ are the minimum and maximum across the complete analysis interval. The saved transformation gives every replica and discovery group the same coordinate system. A constant feature is rejected because the denominator would be zero. The GMM experiment instead standardizes its fitting sample, as described in Chapter~5.
 
-\section{Descriptor definitions}
-The clustering columns are $\na$, $\nb$, $R_g$ in nm, and SASA in nm$^2$, with units taken from the original script. The parser explicitly maps differences in header spelling, including the original \code{HBONNDSPS} spelling. It preserves \code{metad.rbias} as a separate field rather than treating it as an interpolated free energy.
+\section{STEP 1: local Density Peak Clustering}
+\Cref{fig:workflow} summarizes the implemented reproduction. Frames are divided into random, nonoverlapping groups of approximately \num{30000}. A final group of at most ten frames is redistributed over the preceding groups. Local NumPy generators derive their streams from a recorded master seed \autocite{numpyrng}. Their draws are reproducible, although they do not reproduce the legacy global-RNG sequence exactly.
 
-The FES and the clustering algorithm use different coordinates. FES queries apply the paper's descriptor conversions, $\alpha=\na/1.1$ and $\beta=\nb/2.5$, whereas clustering uses normalized features. Passing min--max-scaled values to the FES would select different physical CV locations. Separate modules and saved parameters keep these transformations distinct.
+Within a group, local density counts neighbours inside $d_c$, including the point itself. Points are ordered by decreasing density, with local frame position breaking ties. Separation $\delta_i$ is the distance to the nearest earlier point in that order; the first point uses the maximum pairwise distance. Candidate centres are ranked by $\rho_i\delta_i$. The ordering rule is needed because equal-density points are not strictly denser neighbours.
 
-\section{Feature normalization}
-For each baseline descriptor $x_f$, min--max scaling uses all replicas within the analysis window: $z_f=(x_f-a_f)/(b_f-a_f)$, where $a_f$ and $b_f$ are the pooled minimum and maximum. Both values are saved. A constant feature would make the denominator zero, so validation rejects it rather than silently removing the descriptor.
-
-The pooled transform gives every replica and discovery group the same coordinate system. If each group were scaled independently, an observation's numerical position would depend on the group to which it had been randomly assigned. The baseline therefore retains the source's common min--max scaling. Standardization belongs to the separate GMM protocol; the planned DPC scaling comparisons remain unperformed.
-
-\section{STEP 1: iterative Density Peak Clustering}
-The workflow in \cref{fig:workflow} begins by dividing frames into random, nonoverlapping subsets. Production group size is approximately \num{30000}. If the final subset contains at most ten frames, those frames are redistributed over the preceding groups without losing their identities. Local random-number generator (RNG) streams are derived from a recorded master seed. This removes the limit imposed by the original fixed seed list, but produces different random draws from the original global-RNG implementation \autocite{numpyrng}.
-
-Local density is the number of neighbors within $d_c$, including the point itself as in the supplied code. To handle equal densities reproducibly, points are ordered by density and then by local frame position. The separation $\delta_i$ is measured to the closest earlier point in that order; the first point uses the maximum pairwise distance. Ranking $\rho_i\delta_i$ then identifies candidate centers that combine density with separation. The tie rule matters because an earlier point need not be strictly denser.
-
-For each cutoff, the algorithm tries candidate center counts from 10 down to 2. It selects the candidate with the most acceptable clusters; ties retain the earlier candidate, which has more centers. Acceptance requires at least 300 members and mean silhouette at least 0.3. After accepted members are removed, $d_c$ is multiplied by 0.9. The process stops when fewer than 300 points remain or five consecutive iterations accept no cluster. The remaining, or residual, points are still unassigned at this stage.
+Starting at $d_c=1.3$, the algorithm tries 10 down to 2 centres and keeps the candidate with the most acceptable clusters. Ties retain the earlier, higher-centre-count candidate. A cluster needs at least 300 members and a mean silhouette of at least 0.3. Accepted members are removed, and $d_c$ is multiplied by 0.9. Iteration stops below 300 remaining points or after five consecutive unsuccessful iterations. Residual frames receive their final labels only in STEP~3.
 
 \begin{figure}[tb]
 \centering\includegraphics[width=\textwidth]{fig01_workflow.pdf}
-\caption{Implemented analysis design. The primary branch separates geometric cluster discovery from statistical reweighting. Robustness experiments rerun designated stages independently. The FES grid has been validated, while empirical weighting remains blocked by energy-unit and construction provenance; this workflow diagram documents implementation, not successful completion of every box.}
+\caption{Implemented reproduction workflow. Local accepted clusters define global families; every analysis frame is subsequently assigned a label. The independent extensions have separate configurations. The diagram describes the software design: complete empirical reweighting has not been performed.}
 \label{fig:workflow}
 \end{figure}
 
-Distances are computed in bounded blocks and stored in a float32 matrix. Cutoff density is evaluated row by row, avoiding an additional floating-point kernel matrix. Silhouettes reuse the distance matrix when the number of labels lies between two and $N-1$, as required for a valid calculation \autocite{sklearnsilhouette}. Distance storage still grows quadratically with group size, and repeated silhouette calculations can remain costly. These changes reduce extra memory use without removing that scaling problem.
+Pairwise distances are stored as float32 values in a matrix constructed in blocks. Density counts do not allocate a second floating-point kernel matrix. Silhouette calculations reuse the distances where the label count is valid, between two and $N-1$ \autocite{sklearnsilhouette}. Storage still grows as $N^2$; these changes reduce extra memory rather than remove the quadratic cost.
 
-\section{STEP 2: Wasserstein consensus}
-Only acceptable local clusters enter consensus. For clusters $A$ and $B$, the implemented source metric is
+\section{STEP 2: Wasserstein consensus clustering}
+Consensus includes accepted local clusters only. For clusters $A$ and $B$, the supplied-code distance is
 \begin{equation}
 D(A,B)=\left[\sum_{f=1}^{4}W_1(A_f,B_f)^2\right]^{1/2}.
 \label{eq:wasserstein}
 \end{equation}
-Here $W_1$ is the one-dimensional first Wasserstein distance between the observed distributions of a single descriptor \autocite{scipywasserstein}. Equation~\ref{eq:wasserstein} combines these four separate distances; it is not a joint four-dimensional optimal-transport distance. It can miss differences in the relationships between descriptors when each individual distribution remains unchanged.
+In \cref{eq:wasserstein}, each $W_1$ compares the observed distributions of one descriptor \autocite{scipywasserstein}. The combined distance is not joint four-dimensional optimal transport: two clusters may have similar individual distributions but different relationships between descriptors.
 
-The reproduction configuration uses raw descriptors, matching the supplied code. The combined distance therefore mixes their scales and units, a choice the paper does not fully explain. Normalized distances belong to a separate extension. Average-linkage clustering merges local clusters and then uses the source's cubic-spline elbow heuristic to choose a cut: smoothing parameter 5, with the maximum second derivative sought in the first 90\% of merge steps. The calculation fails explicitly if there are fewer than five local clusters or the merge-height curve is entirely flat, because the heuristic cannot justify a cut in those cases.
+The baseline retains the script's raw descriptor scales. Because this combines different units and ranges, normalized Wasserstein distances are reserved for a separate sensitivity experiment. Average-linkage clustering is cut using the source's cubic-spline elbow heuristic: smoothing parameter 5 and maximum second derivative within the first 90\% of merges. Fewer than five accepted clusters or a flat merge-height curve causes an explicit failure.
 
-\section{STEP 3: final frame assignment}
-Each global centroid is the mean normalized feature vector of all accepted local-cluster members assigned to that family. All analysis-window frames, including residuals and frames outside reduced discovery groups, are assigned once to the nearest centroid. Distance ties use deterministic label ordering. Centroids are not iteratively refitted after reassignment: doing so would introduce a k-means refinement absent from the documented baseline.
+\section{STEP 3: assigning every frame}
+A global centroid is the mean normalized descriptor vector of its accepted local-cluster members. Every analysis frame is assigned to its nearest centroid, including residuals and frames outside reduced discovery groups. Ties use deterministic label order. Centroids are not updated after assignment, since an iterative k-means refinement would change the specified method. Labels are saved with frame identities for later statistics and comparisons.
 
-The final labels are stored with the original frame identities. This lets descriptor statistics, stability comparisons and any later structural mapping refer to exactly the same observations. Their molecular interpretation remains limited by the chosen descriptor representation.
+\section{FES interpolation and statistical weights}
+The FES reader checks header dimensions, axis bounds, nonperiodic status, coordinate spacing, duplicate pairs and finite values, including derivative columns. All expected grid points must be present. Row order is unrestricted, but partial-download files are rejected. Descriptor queries use $\alpha=\na/1.1$ and $\beta=\nb/2.5$; these are physical CV conversions, not the clustering normalization.
 
-\section{FES validation and interpolation}
-The FES parser requires axis names, minimum and maximum coordinates, grid counts, and confirmation that the axes are nonperiodic. It checks the row count, finite values including supplied derivatives, coordinate spacing, unique coordinate pairs, and agreement with the header. Rows need not arrive in grid order. Files with a partial-download extension are rejected before parsing.
+Bilinear interpolation uses \texttt{RegularGridInterpolator} with its linear method and strict bounds checking \autocite{scipygrid,virtanen2020}. Points outside the grid are errors, not candidates for clipping. An analytic surface with a mixed $\alpha\beta$ term tests the interpolation between grid nodes as well as at the boundaries.
 
-Interpolation uses SciPy's linear rectilinear-grid interpolator with bounds checking enabled \autocite{scipygrid,virtanen2020}. Every query must fall inside both axes. A bilinear analytic surface containing a mixed $\alpha\beta$ term provides an exact test, including boundary queries and shuffled rows. Missing cells and out-of-bounds queries are errors; no extrapolation or clipping is permitted.
-
-\section{Statistical weights}
-Equation~\ref{eq:finalweights} is evaluated in log space. Within replica $r$, normalized weights are
+The final-bias expression in \cref{eq:finalweights} is evaluated in log space. For replica $r$, weights are normalized before pooling:
 \begin{equation}
 \widetilde w_{ri}=\exp\!\left[\ell_{ri}-\operatorname{logsumexp}_j(\ell_{rj})\right],
-\qquad W_{ri}=\frac{\widetilde w_{ri}}{3}.
+\qquad W_{ri}=\widetilde w_{ri}/3.
 \label{eq:replicaweights}
 \end{equation}
-Equation~\ref{eq:replicaweights} gives each replica the same total weight, regardless of the arbitrary log-weight offset or differences in raw weight sums. The raw exponential is saved only as a diagnostic. If it is too large or too small to represent numerically, the output flags overflow or underflow; normalized calculations still use log weights.
+Equation~\ref{eq:replicaweights} gives each replica one third of the total weight. Raw exponentials are saved for inspection with overflow or underflow flags; normalized calculations continue to use log weights. The intended frame table records identities, time, CVs, interpolated energy, raw and normalized weights, and final labels. It has not been produced for the real data because the FES energy units and construction procedure remain unverified.
 
-The intended frame table contains replica, source row, file line, frame index, time, physical CVs, interpolated free energy, raw log weight, raw weight/status, within-replica weight, pooled weight, and final label. No such real weighted table is reported in this release because FES energy-unit and construction provenance remain unverified.
+\section{Cluster summaries and reproducibility}
+A family's relevance is the sum of its pooled member weights. Conditional means and distribution standard deviations use the same weights within that family. Distribution width describes variation among members; replica SEM describes uncertainty in average relevance across replicas. The optional block bootstrap resamples consecutive observations separately within each replica while holding labels and the FES fixed. Its intervals would not include uncertainty from reconstructing the FES or refitting clusters.
 
-\section{Weighted cluster characterization}
-Summing the pooled weights of a cluster's members gives its relevance. The same member weights give the mean and width of each descriptor within that cluster. The width is the square root of the weighted central second moment and describes how much the members vary. The replica standard error of the mean (SEM) is calculated from the separate replica populations and describes uncertainty in their average relevance.
-
-The uncertainty extension keeps the fitted labels and supplied FES fixed while resampling blocks of consecutive observations independently within each replica. It renormalizes the selected weights and recalculates populations for each draw. Any resulting intervals would apply only to that fixed partition and FES. They would not include uncertainty from reconstructing the FES, selecting a model or changing the clustering seed. The output records this limitation.
-
-\section{Software environment and reproducibility}
-The modular implementation uses NumPy, SciPy, pandas, Matplotlib and scikit-learn for numerical analysis, data handling, plotting and machine learning \autocite{harris2020,virtanen2020,pedregosa2011}. A locked environment records the installed versions separately from the published simulation versions. Snakemake specifies which stages depend on earlier outputs; command-line interface (CLI) commands also run these stages without notebooks \autocite{snakemakedocs,wratten2021}.
-
-Each run begins with a manifest recording its chosen parameters. A supervisor process records the analysis worker's status and measures memory use across its process tree every 0.1 s, enforcing the configured runtime and memory limits. Successful, failed, and blocked runs have distinct final statuses. Figures can be rebuilt only after a successful run and a check of its output hashes. This record links each figure to the calculation and data that produced it.
+NumPy, SciPy, pandas, Matplotlib and scikit-learn support the modular implementation \autocite{harris2020,virtanen2020,pedregosa2011}. Commands and the Snakemake workflow use the same functions \autocite{snakemakedocs,wratten2021}. Before execution, a manifest records configuration, hashes, seeds and software versions. Runtime and sampled process-tree memory are logged, and resource limits are enforced. Successful, failed and blocked stages remain distinguishable. This record is what connects a reported figure to a particular calculation.

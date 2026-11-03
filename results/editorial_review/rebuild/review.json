@@ -1,0 +1,302 @@
+{
+  "timestamp_utc": "2026-11-03T14:05:05.834877+00:00",
+  "status": "SUCCESS",
+  "selected_report_manifest": "20261103T140226-report-575524",
+  "report_sha256": "e24d2415a840d0e44fc3589ac1fbfe9e502a364bda422773cea9ae2aa1efc34b",
+  "selected_release_qa": "20261103T140300-qa-9861c8",
+  "total_pages": 35,
+  "main_text_pages": 18,
+  "all_selected_build_input_hashes_match": true,
+  "original_download_hashes": {
+    "CLUSTERING40_ottimizzato.py": "cfd76ebb6eb2fe193c342587b19cef402c29dabbdf63347d3b481656ae46e579",
+    "input_clustering_ab40.dat": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77",
+    "FES_AB_40.dat": "6fd6c3d7c04e20859cf91abb4765e126e0f3fcb982d3795b643165dde26fa3f4"
+  },
+  "scientific_code_config_test_changes": [
+    "version metadata only"
+  ],
+  "bibliography_source_unchanged": true,
+  "cited_entries": 32,
+  "verified_register_entries": 34,
+  "fonts_embedded_subset_unicode_mapped": true,
+  "render_stderr": "",
+  "internal_destinations": 206,
+  "unresolved_internal_links": [],
+  "external_uri_links": [
+    {
+      "page": 21,
+      "uri": "https://github.com/Alierkn/vmd-mcp"
+    },
+    {
+      "page": 21,
+      "uri": "https://github.com/Alierkn/gromacs-mcp"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1021/cr400525m"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1021/acs.jpcb.6c01000"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1103/PhysRevLett.100.020603"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1038/s41592-019-0506-8"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1038/s41592-021-01254-9"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1038/s41467-025-64098-3"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1016/j.softx.2015.06.001"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1038/nmeth.4067"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1038/nmeth.4067"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1016/j.cpc.2013.09.018"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1021/acs.jctc.5b00784"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.33011/livecoms.1.1.5067"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.33011/livecoms.1.1.5067"
+    },
+    {
+      "page": 24,
+      "uri": "https://www.plumed.org/doc-v2.9/user-doc/html/_m_e_t_a_d.html"
+    },
+    {
+      "page": 24,
+      "uri": "https://www.plumed.org/doc-v2.9/user-doc/html/_m_e_t_a_d.html"
+    },
+    {
+      "page": 24,
+      "uri": "https://www.plumed.org/doc-v2.9/user-doc/html/sum_hills.html"
+    },
+    {
+      "page": 24,
+      "uri": "https://www.plumed.org/doc-v2.9/user-doc/html/sum_hills.html"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1002/jcc.21305"
+    },
+    {
+      "page": 24,
+      "uri": "https://doi.org/10.1021/jp504920s"
+    },
+    {
+      "page": 24,
+      "uri": "https://www.plumed.org/doc-v2.9/user-doc/html/_r_e_w_e_i_g_h_t__m_e_t_a_d.html"
+    },
+    {
+      "page": 24,
+      "uri": "https://www.plumed.org/doc-v2.9/user-doc/html/_r_e_w_e_i_g_h_t__m_e_t_a_d.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1002/bip.360221211"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1016/0377-0427(87)90125-7"
+    },
+    {
+      "page": 25,
+      "uri": "https://numpy.org/doc/stable/reference/random/parallel.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://numpy.org/doc/stable/reference/random/parallel.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_samples.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_samples.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wasserstein_distance.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wasserstein_distance.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RegularGridInterpolator.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RegularGridInterpolator.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1038/s41592-019-0686-2"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1038/s41592-019-0686-2"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1038/s41586-020-2649-2"
+    },
+    {
+      "page": 25,
+      "uri": "https://www.jmlr.org/papers/v12/pedregosa11a.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://www.jmlr.org/papers/v12/pedregosa11a.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1007/BF01908075"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1016/j.ins.2021.01.010"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1021/acs.jctc.4c00223"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1038/s41597-022-01710-x"
+    },
+    {
+      "page": 25,
+      "uri": "https://doi.org/10.1002/jcc.21787"
+    },
+    {
+      "page": 25,
+      "uri": "https://docs.hpc.cineca.it/hpc/leonardo.html"
+    },
+    {
+      "page": 25,
+      "uri": "https://docs.hpc.cineca.it/hpc/leonardo.html"
+    },
+    {
+      "page": 32,
+      "uri": "https://github.com/Alierkn/robustcluster-abeta"
+    },
+    {
+      "page": 32,
+      "uri": "https://github.com/Alierkn/robustcluster-abeta"
+    },
+    {
+      "page": 32,
+      "uri": "https://github.com/Alierkn/robustcluster-abeta/tree/main/src/robustcluster_abeta"
+    },
+    {
+      "page": 32,
+      "uri": "https://github.com/Alierkn/robustcluster-abeta/tree/main/report"
+    },
+    {
+      "page": 34,
+      "uri": "https://github.com/Alierkn/vmd-mcp/blob/01912595595bf0302124f57559e1e6a22095fb24/src/vmd_mcp/server.py#L242-L278"
+    },
+    {
+      "page": 35,
+      "uri": "https://github.com/Alierkn/gromacs-mcp/blob/2c5c957c3f2c047888b63ae258ace3df34cb8773/src/gromacs_mcp/server.py#L1441-L1479"
+    }
+  ],
+  "external_urls_live_rechecked": false,
+  "visual_review": {
+    "all_page_overviews": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "reading_size_pages": [
+      18,
+      19,
+      21
+    ],
+    "observed_issues": [],
+    "scope": "Layout/legibility and scientific/editorial source review; not journal peer review"
+  },
+  "language": "en-GB",
+  "tagged_pdf": false,
+  "pdf_ua_conformance_claimed": false,
+  "new_empirical_experiments": 0,
+  "new_detector_checks": 0,
+  "superseded_plot_run": {
+    "run": "20261103T134659-ba59eb37",
+    "publication_preflight": "REJECTED: OpenType font embedding mismatch warning; numeric generation succeeded"
+  },
+  "selected_plot_run": "20261103T135347-e4275730",
+  "artwork_and_logo_unchanged": true,
+  "scientific_reproduction": "BLOCKED: FES energy units and construction provenance unresolved",
+  "warnings": [
+    "Package unicode-math Warning: Using \\overbracket and \\underbracket from",
+    "Package unicode-math Warning: I'm going to overwrite the following commands"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "run_id": "20261103T135347-e4275730",
+  "status": "SUCCESS",
+  "command": "editorial-figures",
+  "experiment": null,
+  "timestamp_utc": "2026-11-03T13:53:47.829389+00:00",
+  "git_commit": "ffeeb4b6a1ed37e97ca914d5202f46d4cf16ea9d",
+  "git_dirty": true,
+  "source_sha256": {
+    "src/robustcluster_abeta/__init__.py": "a76fdb6874eea1db66daad1f23414c3883a26c04f0e8e825e5da7763038430b2",
+    "src/robustcluster_abeta/audit_fes.py": "f2951d8948e4f8b5bf8564b4e3acc14dc35aff4bf069d076ef19cc249a856553",
+    "src/robustcluster_abeta/cli.py": "830f9e65e4483a033e47d65cd4b8183c43e4e17acf9ca603f4c1590cfd6c6df2",
+    "src/robustcluster_abeta/consensus.py": "613e7ce2180d0e67ad0b2b9f85f00a7362d9f20d3d3bfd51e54c68fbc174ef22",
+    "src/robustcluster_abeta/dpc.py": "f833f9219f5cbb6db42790e6d1224f4a48aa193f30e1014fa6827c309def7c13",
+    "src/robustcluster_abeta/fes.py": "81345790bcc5adac0a044055ab5c65e75387bf5391ffcfcfe884f1f904f3f206",
+    "src/robustcluster_abeta/gmm_ablation.py": "fa1df770e2f0f8ae122ffb085c3e5e477dc0de2d3964a0b56b9b5ca45bd284e4",
+    "src/robustcluster_abeta/io.py": "30060c0ade1d9b49db6f03d03fd1f877d2eb4a3f19942ef053a2bc2755f780c3",
+    "src/robustcluster_abeta/manifest.py": "c73480bf2b613b4e09b5e3be2b10d5c4586543dfb7c95a859815fe59d933196e",
+    "src/robustcluster_abeta/pipeline.py": "92e9b1bd13d61596a23a8202b2eff64b177898b9e40d3c9bb634498566376cbe",
+    "src/robustcluster_abeta/plotting.py": "6783c740727d3a52a36df679cdc0f1d9b149faa54d8d4002f460999bb24d7bcc",
+    "src/robustcluster_abeta/preprocessing.py": "72f8da7bae79f53f786411a8157625752640e4f50c344de0e291ef6b1a96ba46",
+    "src/robustcluster_abeta/reweighting.py": "75d2888582fc4316070e76b53e97058bb4df3f781fe2c7c33a497ab95d8e97f5",
+    "src/robustcluster_abeta/stability.py": "09069ca505d4e7b078b8dcda33d3aae242556c897297597f5911e13e3eac948c",
+    "src/robustcluster_abeta/statistics.py": "a6fd389136a00475b53f8832c729c4ca05a556acefa1f0a16edad2875cb0d419",
+    "src/robustcluster_abeta/validation.py": "fd3a8f0db293e0e8adf0e2e220026e29075d7e5e7504f69026276b42fc0e988d"
+  },
+  "python": "3.12.6",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "robustcluster-abeta": "0.1.0"
+  },
+  "config": {
+    "project_root": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta-rewrite",
+    "inputs": {},
+    "source_runs": {
+      "diagnostics": "20260921T011959-583b4421",
+      "gmm": "20261007T104141-f0143175"
+    },
+    "figure_width_inches": 6.0,
+    "plot_font": "DejaVu Serif",
+    "scientific_mode": "saved_results_presentation",
+    "model_fitting": false
+  },
+  "inputs": {},
+  "outputs": [
+    {
+      "filename": "results/tables/20261103T135347-e4275730/figure_notes.json",
+      "sha256": "7a654e9610101964290af0b9272b3b03d8d3c30843b74d4f13a65d9a9912fed1"
+    },
+    {
+      "filename": "results/figures/20261103T135347-e4275730/rebuild_autocorrelations.pdf",
+      "sha256": "78e8b1d6d0a3278f89cafebcb3361d5d64ba5ca80e629b8cc64e4d0f6733d1e4"
+    },
+    {
+      "filename": "results/figures/20261103T135347-e4275730/rebuild_autocorrelations.svg",
+      "sha256": "1c09882850a30603c5b3360f8c888a476623bc17abc323884c42c68deba50d84"
+    },
+    {
+      "filename": "results/figures/20261103T135347-e4275730/rebuild_features.pdf",
+      "sha256": "df0375ea53248e93d2eec7e76dea931c207792202e66fd4406f3fc0c0d6bc58e"
+    },
+    {
+      "filename": "results/figures/20261103T135347-e4275730/rebuild_features.svg",
+      "sha256": "ebc1ac36aab70bd9ffc837a02c9e2d0b49d91013b10aad0a3c47af9581417962"
+    },
+    {
+      "filename": "results/figures/20261103T135347-e4275730/rebuild_gmm.pdf",
+      "sha256": "fc30c1dbf915863effaa6c469b564f96b370c4bd9d7b0d7198debc88752026d1"
+    },
+    {
+      "filename": "results/figures/20261103T135347-e4275730/rebuild_gmm.svg",
+      "sha256": "41e8562b809763adc3e37bb163e384a31b0293cefad2b917a5e1582c7b78b45b"
+    }
+  ],
+  "runtime_seconds": 0.6200903339777142,
+  "peak_rss_bytes": 145211392,
+  "script_sha256": "eae7e6fdf90330d979b28b2942ea7d5a13ed0b4574752cb5aaa33d0a60da0e00",
+  "source_manifests": {
+    "diagnostics": {
+      "filename": "results/manifests/20260921T011959-583b4421.json",
+      "sha256": "132375f79a48b7a10e5e2a1f2ce0ed1556fdfb0cc3e68c402edeea297de9e3b2"
+    },
+    "gmm": {
+      "filename": "results/manifests/20261007T104141-f0143175.json",
+      "sha256": "8570ba7e1fb8b9ad8d83e038b42c9969545458b320d19dab8a4eb5a1c65f5e37"
+    }
+  },
+  "font_files": {},
+  "resolved_serif": "DejaVuSerif.ttf",
+  "style_sha256": "1d27b523596cff3289e405ba560cd86863863d0066f780a197ff249b816b860a",
+  "peak_memory_method": "Process ru_maxrss high-water mark",
+  "message": null
+}

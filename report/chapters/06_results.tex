@@ -1,83 +1,67 @@
 \chapter{Results}
-\section{Available evidence and execution status}
-The input checks found three segments of \num{100001} rows, each at the 20 ps spacing stated in the source. The table had the expected columns, finite values and interval coverage. It can therefore be used for the descriptor calculations below. These checks alone cannot show that the original simulation converged or that each descriptor was calculated correctly.
-
-Run \code{\DiagnosticRun} produced the descriptor results in \DiagnosticSeconds{} s, with sampled peak worker-process memory of \DiagnosticMemory{} MiB. These measurements apply to this small local calculation; they do not predict the cost of full DPC. \Cref{tab:status} lists the completed diagnostics, FES check and GMM experiment alongside the analyses that remain blocked.
+\section{What the available data support}
+The calculations reported here use the supplied Aβ40 descriptors. Tests with generated data are discussed with the software validation and are not included as molecular observations. \Cref{tab:status} distinguishes the completed analyses from the unresolved reproduction steps.
 
 \begin{table}[htbp]
 \centering
-\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
-Analysis & Evidence status\\\midrule
-Input validation & Completed on the supplied Aβ40 descriptor table\\
-Correlation matrix / PCA & Completed; unweighted biased-sample diagnostics\\
-Autocorrelations / provisional ESS & Completed; every estimate flagged as unreliable\\
-FES grid and interpolation & Completed; units/construction remain unverified\\
-Weighted paper reproduction & Blocked: unit/construction provenance\\
-GMM seed / SASA-ablation pilot & Completed; biased-sample geometric comparison\\
-DPC seed / feature / scaling studies & Not completed; separate reproduction prerequisites\\
-Time-dependent weight comparison & Blocked: FES and rbias unit/provenance requirements\\
-Molecular representatives / ShapeGMM & Blocked: coordinate trajectory and mapping absent\\
-External validation / Leonardo jobs & Not performed\\\bottomrule
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Analysis & Status and scope\\
+\midrule
+Descriptor diagnostics & Complete; unweighted observations from three replicas\\
+FES grid and query checks & Complete; energy units and construction unresolved\\
+GMM feature comparison & Complete; 50 fits on a fixed fitting sample\\
+Paper DPC and reweighting & Empirical reproduction not completed\\
+Structural representatives & Unavailable without coordinates and frame mapping\\
+\bottomrule
 \end{tabularx}
-\caption{Scientific evidence available at release. Tests on synthetic fixtures are excluded from the empirical analysis statuses.}
+\caption{Scope of the recorded calculations. Numerical validation of an input or implementation does not by itself establish an equilibrium result.}
 \label{tab:status}
 \end{table}
 
-\section{Descriptor distributions and redundancy}
-Across the pooled data, the Pearson correlation is \RgSasaCorrelation{} for Rg and SASA and \AlphaBetaCorrelation{} for the two secondary-structure descriptors. The strong Rg--SASA correlation motivated the feature-removal experiment. Both descriptors describe aspects of molecular dimensions, but their correlation does not tell us whether removing one will change the label assigned to a frame.
+Input validation found three segments of \num{100001} rows. Times increase at the source-labelled spacing of 20 ps, and the data satisfy the column, finite-value and interval checks. The descriptor calculation, run \code{\DiagnosticRun}, took \DiagnosticSeconds{} s with a sampled peak worker-process memory of \DiagnosticMemory{} MiB. These measurements describe the local diagnostic run, not the expected cost of a full DPC analysis.
 
-The first two standardized principal components explain \PCAFirst{}\% and \PCASecond{}\% of total variance, respectively, or \PCATwo{}\% together (\cref{fig:features}). Most of the variation is therefore captured by two directions in feature space. The clustering comparison checks whether distinctions with less variance still affect the fitted groups.
+The FES check resolved the earlier incomplete-download problem. The recovered file contains 2,801 by 1,301 grid points, giving 3,644,101 rows with five finite columns. Every expected coordinate pair is present and none is duplicated. The nonperiodic axes cover 0--28 and 0--13 at spacing 0.01. All 300,003 converted queries are inside the grid and yield finite bilinear interpolations. The file is numerically usable, but its energy column declares no unit. That unresolved information prevents interpretation of calculated equilibrium weights.
 
-\begin{figure}[htbp]
-\centering\includegraphics[width=\textwidth]{fig03_feature_diagnostics.pdf}
-\caption{Computed diagnostics for the pooled, unweighted Aβ40 descriptor sample. Left: Pearson correlations of the four baseline descriptors. Right: explained variance of PCA after per-feature standardization, with cumulative variance shown by the line. These are geometric summaries of the biased sample and do not represent reweighted equilibrium probabilities.}
+\section{Shared variation in the descriptors}
+The pooled Rg--SASA correlation is \RgSasaCorrelation{}, compared with \AlphaBetaCorrelation{} between the two secondary-structure descriptors. Thus the strongest association among these pairs concerns compaction and solvent exposure. It gives a reason to compare clustering with and without SASA, rather than assuming in advance that the two variables are interchangeable.
+
+PCA provides a second description of the feature relationships. After standardization, the first component accounts for \PCAFirst{}\% of total variance and the second for \PCASecond{}\%. Their combined share is \PCATwo{}\% (\cref{fig:features}). Much of the variation lies in two directions, but the spectrum does not show whether smaller distinctions affect cluster boundaries. The later feature comparison addresses that question directly. Per-replica distributions are retained in \cref{fig:rawdistributions}; they describe the recorded samples without equilibrium weighting.
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{rebuild_features.pdf}
+\caption{Relationships between the four descriptors in the pooled, unweighted Aβ40 sample. Left: Pearson correlation matrix. Right: variance explained by standardized PCA, with cumulative variance shown by the line. These summaries describe the biased observations, not equilibrium probabilities.}
 \label{fig:features}
 \end{figure}
 
-\Cref{fig:rawdistributions} compares the replicas with the same bin edges for each descriptor. Each histogram is divided by its own frame count and bin width. The curves show differences between the recorded samples, but no equilibrium correction has been applied, so they cannot establish differences in equilibrium populations.
+\section{Dependence between saved observations}
+The apparent sample size changes substantially when temporal dependence is considered. The correlation estimator returns provisional ESS values between \ESSMinimum{} and \ESSMaximum{} for the 12 replica--descriptor series, each containing \num{100001} saved frames. All \UnreliableCount{} estimates fail at least one of the specified reliability checks. The estimates therefore signal a problem for independent-frame reasoning; they do not provide precise counts of independent conformations.
 
-\begin{figure}[htbp]
-\centering\includegraphics[width=.95\textwidth]{raw_descriptor_distributions.pdf}
-\caption{Actual per-replica descriptor histograms over the supplied interval. Curves use common bin edges for each descriptor and independent density normalization. No final-bias or time-dependent statistical weights have been applied. Units follow the original script's labels and remain a recorded upstream-provenance assumption.}
-\label{fig:rawdistributions}
-\end{figure}
+The ACF curves show persistent correlations and differences between replicas (\cref{fig:acf}). The accompanying diagnostics also record shifts between the means of the first and second halves of some series. Assessing uncertainty as if each frame were independent would be poorly supported by these results. They do not, however, constitute a new assessment of convergence for the full published trajectories: the complete bias history and original convergence diagnostics are unavailable.
 
-\section{Temporal correlation and provisional ESS}
-The provisional ESS values range from \ESSMinimum{} to \ESSMaximum{} across the 12 replica--descriptor series, compared with \num{100001} saved frames in each series. All \UnreliableCount{} estimates fail at least one of the reliability checks defined earlier. The results point to strong dependence and possible changes over time, but they should not be read as precise numbers of independent equilibrium conformations.
-
-\Cref{tab:sampling} reports these estimates and the difference in means between the two halves of each series. Several descriptors show a substantial shift. Together with the failed reliability checks, this gives little support for treating frames as independent when estimating uncertainty. A comparison with the published convergence assessment would need the full bias history and the original diagnostics, which are not available here.
-
-\begin{table}[htbp]
-\centering\small
-\input{generated/sampling_rows.tex}
-\caption{Computed correlation diagnostics. All entries are flagged as unreliable under the stated heuristics. The time scale is measured along the biased trajectory, using the source-labelled sampling interval. $g$ is statistical inefficiency; the final column is the absolute difference of half-window means divided by the full-series standard deviation. No physical relaxation-time interpretation is made.}
-\label{tab:sampling}
-\end{table}
-
-\begin{figure}[htbp]
-\centering\includegraphics[width=.95\textwidth]{sampling_autocorrelations.pdf}
-\caption{Autocorrelation functions computed separately for each replica and descriptor. The plotted curves cover the first half of the available lag window with a reduced plotting density; the estimator operates on the full, un-decimated ACF sequence. Long persistence and changing behavior across replicas reinforce the need for cautious uncertainty analysis. Lag is biased trajectory time, not recovered physical time.}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.88\textwidth]{rebuild_autocorrelations.pdf}
+\caption{Autocorrelation functions calculated separately for each replica and descriptor. For readability the figure displays a subset of lag points over the first half of the available window; estimation uses the full ACF sequence. The horizontal axis follows biased trajectory time and is not an unbiased physical relaxation time.}
 \label{fig:acf}
 \end{figure}
 
-\section{Complete FES validation}
-The recovered file contains exactly 2,801 by 1,301 grid points: 3,644,101 rows with five finite columns. There are no duplicate coordinates, and every expected pair of grid coordinates is present. The nonperiodic axes span 0--28 and 0--13 at spacing 0.01. All 300,003 converted descriptor queries are inside the grid, and bilinear interpolation returns a finite value for each one. This confirms that the grid can be read and queried. It does not resolve the missing energy unit; the source script's use of kJ/mol is not enough to verify that unit for the file.
+\section{What changes when SASA is removed}
+All \GMMModels{} fits met the configured numerical convergence criterion. Together they cover two feature sets, five component counts and five paired initialization seeds. The pilot took \GMMSeconds{} s and reached a sampled process-tree peak of \GMMMemory{} MiB. The models nevertheless produce different assignments across component counts and initializations. \Cref{fig:gmm,tab:gmm} compares both sources of variation on the same frame identities.
 
-\section{Representation and initialization sensitivity}
-All \GMMModels{} GMM fits reached the chosen numerical convergence criterion. The run took \GMMSeconds{} s, with a sampled process-tree peak of \GMMMemory{} MiB. Even so, the frame assignments differ between component counts and initializations (\cref{fig:gmm}). An algorithm can finish fitting without giving the same partition in every run.
-\begin{figure}[htbp]
-\centering\includegraphics[width=\textwidth]{gmm_sensitivity.pdf}
-\caption{Independent GMM sensitivity experiment on the biased descriptor sample. Left: four-feature versus SASA-ablated assignments at each of five seeds; diamonds mark medians. Right: within-space ARI over ten seed pairs; bars span observed minima and maxima, not confidence intervals. The fit subset is fixed across all models and evaluation includes fit rows.}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.95\textwidth]{rebuild_gmm.pdf}
+\caption{The independent GMM comparison on biased descriptor observations. Left: ARI between four-feature and SASA-removed assignments for five paired seeds; diamonds denote medians. Right: within-feature-space ARI for ten seed pairs. Bars span observed minima and maxima, not confidence intervals. Every model uses the same fitting subset, and evaluation includes fitting rows.}
 \label{fig:gmm}
 \end{figure}
-\begin{table}[htbp]\centering
-\input{generated/gmm_rows.tex}
-\caption{Observed representation agreement across five paired initializations. Component count was varied by design; the table does not identify an optimal biological family count.}
+
+\begin{table}[htbp]
+\centering\input{generated/gmm_rows.tex}
+\caption{Agreement between feature sets across the five paired initializations. Component counts were specified for comparison, not selected as physical numbers of states.}
 \label{tab:gmm}
 \end{table}
-At three components, ARI between the four-feature and SASA-removed fits lies between 0.862 and 0.868. After matching labels by maximum overlap, approximately 95.3\% of frames keep corresponding labels (median across seeds). Agreement between seeds is also high: 0.994--1.000 with four descriptors and 0.988--1.000 without SASA. At two components, within-space ARI falls as low as 0.011 and 0.067, respectively. One initialization would not reveal this variation. \Cref{fig:seedmatrices} shows the full comparison matrices.
 
-The three-component fits show the clearest agreement after removing SASA. At the other tested counts, removing SASA has a larger effect or gives results that vary more between seeds. The conclusion is therefore tied to the tested model size and fitting procedure. It does not justify dropping SASA from the published baseline. These are comparisons of labels in the biased sample, with no equilibrium weighting.
+Paired feature sets reveal the effect of excluding SASA on fixed fitting observations. Within-space comparisons reveal variation from initialization alone. Reading both helps distinguish a feature effect from variation already present before a descriptor is removed.
 
-\section{Analyses remaining unavailable}
-Equilibrium cluster relevance, weighted descriptions of the families and the planned paper-DPC robustness studies are still unavailable. Molecular snapshots also require atomic coordinates, which the descriptor table does not contain. The completed GMM experiment answers a separate question about the descriptors and does not replace those analyses.
+The three-component fits give cross-representation ARIs of 0.862--0.868. After maximum-overlap label matching, approximately 95.3\% of frames retain corresponding labels, using the median over seeds. Within-space agreement is also high: 0.994--1.000 for four descriptors and 0.988--1.000 without SASA. At two components, the corresponding within-space ranges extend down to 0.011 and 0.067. A single fit would miss this variation; all seed comparisons are shown in \cref{fig:seedmatrices}.
+
+Removing SASA preserves much of the three-component partition in this fixed biased sample, while other counts show lower or more variable agreement. Equilibrium populations, weighted summaries and paper-DPC robustness remain uncomputed.

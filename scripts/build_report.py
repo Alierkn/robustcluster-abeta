@@ -19,7 +19,12 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "report"
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--tex-bin", type=Path, help="Verified TeX Live binary directory")
+parser.add_argument("--report-dir", type=Path, default=REPORT,
+                    help="Report source directory inside this repository")
 args = parser.parse_args()
+REPORT = args.report_dir.resolve()
+if not REPORT.is_relative_to(ROOT):
+    parser.error("The report directory must be inside the project")
 if args.tex_bin:
     os.environ["PATH"] = str(args.tex_bin.resolve()) + os.pathsep + os.environ.get("PATH", "")
 run_id = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S") + "-report-" + uuid.uuid4().hex[:6]
@@ -64,6 +69,16 @@ try:
     for record in artwork["outputs"]:
         if sha256(ROOT / record["filename"]) != record["sha256"]:
             raise RuntimeError("Artwork or source excerpt changed")
+    rebuild_path = REPORT / "rebuild_provenance.json"
+    if rebuild_path.exists():
+        rebuild = json.loads(rebuild_path.read_text())
+        for record in rebuild["source_manifests"]:
+            path = ROOT / record["filename"]
+            if sha256(path) != record["sha256"] or json.loads(path.read_text())["status"] != "SUCCESS":
+                raise RuntimeError("Rebuild source manifest changed or was not successful")
+        for record in rebuild["assets"]:
+            if sha256(ROOT / record["filename"]) != record["sha256"]:
+                raise RuntimeError("Rebuilt report asset changed")
     paths = [p for p in REPORT.rglob("*") if p.is_file() and "build" not in p.parts
              and p.suffix in {".tex", ".bib", ".json"}]
     paths += list((REPORT / "figures").glob("*.pdf"))

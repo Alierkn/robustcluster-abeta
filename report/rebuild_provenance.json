@@ -1,0 +1,154 @@
+{
+  "stage": "full report reconstruction",
+  "base_release": "0.1.2",
+  "new_scientific_experiments": false,
+  "source_manifests": [
+    {
+      "filename": "results/manifests/20261103T135347-e4275730.json",
+      "sha256": "fe75cae006544812ba1388464799e96b3ef78c5fb45ddd9b029a19677e06e23f"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "report/artwork/bias-editorial-v2.png",
+      "sha256": "48e1ef8572821c4fd5f01ba2ff8068ff48749c84672ea21f1a4fdd91c269dd48"
+    },
+    {
+      "filename": "report/artwork/cover-editorial-v2.pdf",
+      "sha256": "7bc473a634e454dc69629ab3d4ad8130259e4c22d8538e0c78b233331343887d"
+    },
+    {
+      "filename": "report/artwork/cover-editorial-v2.png",
+      "sha256": "13292951630573df0778908c7f55df842d84e0f22824521c699a124549a77a90"
+    },
+    {
+      "filename": "report/artwork/cover-editorial-v3-logo.pdf",
+      "sha256": "f11d9aeacf5581fb1e6a641d04a615ffc76ffd6ed7b945973ab5f544229fd2fd"
+    },
+    {
+      "filename": "report/artwork/cover-editorial-v4-centered-logo.pdf",
+      "sha256": "9982b0bac1d09602abebd4e2b5dfd240b2f253ebca7263a3edd8832554a27e5e"
+    },
+    {
+      "filename": "report/artwork/cover-editorial-v5-page-center-logo.pdf",
+      "sha256": "ec285c33d0782826e8898f95ce7e7ce69519b5707cb69740c4dbe6d1c2b6dd44"
+    },
+    {
+      "filename": "report/artwork/ensemble-editorial-v2.png",
+      "sha256": "5b0ced04b21087f66e1e1c972da22a00d1297298c735487395ca792bf37fafb1"
+    },
+    {
+      "filename": "report/artwork/messina-logo-user-supplied.png",
+      "sha256": "629d26bd366c17f2ac03ddd31d0ce751f63af1071ce6325d1dc5512bf32d4c1a"
+    },
+    {
+      "filename": "report/figures/cover_concept.pdf",
+      "sha256": "13b518a084902707d83f58a72ac225171472a6bff7726896b48016be90e402b2"
+    },
+    {
+      "filename": "report/figures/fig01_workflow.pdf",
+      "sha256": "4e19a9495581cee9d32cf225aa40fb7d9b4a529f393d2c050a0187985d731e4c"
+    },
+    {
+      "filename": "report/figures/fig03_feature_diagnostics.pdf",
+      "sha256": "9a67a1db697a39a7bb1d1d6889e299cd9643d2439b494b8435c67298665c1eee"
+    },
+    {
+      "filename": "report/figures/gmm_seed_matrices.pdf",
+      "sha256": "71f745efe8f6a948c2bb7fd95ef09371721d0c645920a44105dbf6a52d5e24e8"
+    },
+    {
+      "filename": "report/figures/gmm_sensitivity.pdf",
+      "sha256": "43460e407a4dc5eeb5039a2770a4e7d7bcf6368ae1f4b8fefe4fabe1ee26fa17"
+    },
+    {
+      "filename": "report/figures/raw_descriptor_distributions.pdf",
+      "sha256": "6123e4eb3b18a1bf721598bf9bd3667b8d407c4afe99b4c724647601ac122f7f"
+    },
+    {
+      "filename": "report/figures/rebuild_autocorrelations.pdf",
+      "sha256": "78e8b1d6d0a3278f89cafebcb3361d5d64ba5ca80e629b8cc64e4d0f6733d1e4"
+    },
+    {
+      "filename": "report/figures/rebuild_autocorrelations.svg",
+      "sha256": "1c09882850a30603c5b3360f8c888a476623bc17abc323884c42c68deba50d84"
+    },
+    {
+      "filename": "report/figures/rebuild_features.pdf",
+      "sha256": "df0375ea53248e93d2eec7e76dea931c207792202e66fd4406f3fc0c0d6bc58e"
+    },
+    {
+      "filename": "report/figures/rebuild_features.svg",
+      "sha256": "ebc1ac36aab70bd9ffc837a02c9e2d0b49d91013b10aad0a3c47af9581417962"
+    },
+    {
+      "filename": "report/figures/rebuild_gmm.pdf",
+      "sha256": "fc30c1dbf915863effaa6c469b564f96b370c4bd9d7b0d7198debc88752026d1"
+    },
+    {
+      "filename": "report/figures/rebuild_gmm.svg",
+      "sha256": "41e8562b809763adc3e37bb163e384a31b0293cefad2b917a5e1582c7b78b45b"
+    },
+    {
+      "filename": "report/figures/sampling_autocorrelations.pdf",
+      "sha256": "933cfd8889e7d2311029310b5714595dad360937e0fca727b22d4d726da4cad2"
+    },
+    {
+      "filename": "report/generated/environment_rows.tex",
+      "sha256": "b8ab0b64d44896776648a71ce8eb32e446b7b4720d8f338a695dc395b5fdfaf5"
+    },
+    {
+      "filename": "report/generated/fit_scaler.py",
+      "sha256": "c5787d6397b124d487cb7b875d3403d14bcf9421e0f49e7fce68c3e9a7389610"
+    },
+    {
+      "filename": "report/generated/gmm_rows.tex",
+      "sha256": "1dfede9887450e59561669bf51a744c0463c6cbe09d4f9586c5c6367e4acd464"
+    },
+    {
+      "filename": "report/generated/gromacs-mcp-excerpt.py",
+      "sha256": "01bdf6601c5a6d01c7db729f642452783af8095658444a1c2d73aa83963b8ee7"
+    },
+    {
+      "filename": "report/generated/revision_values.tex",
+      "sha256": "4efa5e38b9b028d9fc1c9910f86950e5c2d238cc915b242ced202314db4e300d"
+    },
+    {
+      "filename": "report/generated/sampling_rows.tex",
+      "sha256": "b078c42b765afba6d21dab475c887a66419cba83154aa35d35e8f09bf6cb0811"
+    },
+    {
+      "filename": "report/generated/values.tex",
+      "sha256": "e7dfbf9cca7f0a96bf738eff7e30e90e4fd1fe284759e8a68f006f71a1ecaf41"
+    },
+    {
+      "filename": "report/generated/vmd-mcp-excerpt.py",
+      "sha256": "7eb8e6f9033bbeb47a574bde0b6f3d7206951b2ab05358a6744774686fc34491"
+    },
+    {
+      "filename": "report/screenshots/gromacs-mdrun.jpg",
+      "sha256": "141f8057b4613aa052b4033ab93fe386f3e336c68ea857d6eb85024e725ef614"
+    },
+    {
+      "filename": "report/screenshots/vmd-gyration.jpg",
+      "sha256": "d3974d85da310e251ab27e2497d56ed10ec14e6d4e76e9a8b748ef536bf96ae4"
+    }
+  ],
+  "student_confirmed": [
+    "Hands-on use of GROMACS, VMD and Python",
+    "VMD MCP and GROMACS MCP created as personal projects",
+    "GROMACS learning initially challenging and enjoyable"
+  ],
+  "design": {
+    "font_family": "Libertinus Serif/Sans/Math",
+    "body_pt": 11,
+    "margins_mm": {
+      "left": 29,
+      "right": 26,
+      "top": 25,
+      "bottom": 25
+    },
+    "approved_cover_and_centered_logo_preserved": true,
+    "plot_font": "DejaVu Serif (TrueType embedding)"
+  }
+}

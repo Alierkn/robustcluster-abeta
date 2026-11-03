@@ -1,4 +1,16 @@
-# Current release v0.1.2 — undergraduate readability
+# Current release v0.2.0 — complete report reconstruction
+
+Selected report: `20261103T140226-report-575524` — **SUCCESS, 18 main-text pages / 35 total**. Selected local release QA: `20261103T140300-qa-9861c8` — **SUCCESS, 36 tests**, lint, bibliography and output integrity. Report SHA256: `e24d2415a840d0e44fc3589ac1fbfe9e502a364bda422773cea9ae2aa1efc34b`.
+
+The abstract and all nine chapters were written afresh. Learning evidence now reflects the student's confirmed GROMACS/VMD/Python use and personally created MCP projects. Three new vector panels replot existing numerical tables; there were no new empirical fits or biological claims. Original script/data/FES hashes match, and the selected build's source hashes match the delivered files. The unchanged bibliography contains 34 verified entries; 32 are cited.
+
+All 35 pages were visually reviewed as overviews; PDF pages 18, 19 and 21 were also inspected at reading size. Fonts are embedded and Unicode-mapped; Poppler rendering reports no warnings. Internal PDF destinations resolve. No missing characters, unresolved citations, duplicate labels or overfull/underfull boxes remain. The two existing benign unicode-math warnings and the untagged-PDF accessibility limit remain documented. Earlier plot files with an embedding warning were rejected for publication and superseded, not silently altered.
+
+Details: `rebuild/REBUILD_RECORD.md`; machine-readable review and page overviews: `results/editorial_review/rebuild/`. Full equilibrium reproduction is still blocked by FES units/construction provenance. No new AI-detector check was performed; the historical scores below do not apply to this rewritten report.
+
+---
+
+# Previous release v0.1.2 — undergraduate readability
 
 Selected report build: `20261103T131528-report-67e955` — SUCCESS, **22 main-text pages, 38 total**. Selected local release QA: `20261103T131615-qa-72d4c6` — SUCCESS, **36 tests**, lint, bibliography and saved-output integrity.
 

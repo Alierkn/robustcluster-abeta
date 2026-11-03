@@ -1,28 +1,31 @@
 \chapter{Internship outcomes and skills}
-\section{Learning sequence and practical objectives}
-The internship connected Data Analysis methods with molecular simulations. The learning programme began with amino-acid properties, peptide bonds, protein structure and intrinsic disorder. It then covered force fields, molecular dynamics and dihedral angles through supplied slides and readings. The final assignment brought these topics together: reproduce a clustering analysis, examine parameter changes and carry out an independent analysis using methods from the degree.
+\section{Learning the molecular context}
+The internship required more than applying a familiar statistical method to a new table. The assigned programme began with the concepts needed to interpret the data: amino acids, peptide bonds, protein structure and intrinsic disorder. Force fields, molecular dynamics and dihedral angles connected those concepts to simulation. The final task brought them together through examination of a clustering analysis and an independent investigation.
 
-Two ideas were especially relevant to the analysis. Consecutive rows are saved configurations, but they are not necessarily independent observations. Similarly, counting the frames in a group gives its frequency in the saved sample; finding its equilibrium probability requires valid statistical weights. These familiar statistical questions need careful interpretation when the data come from a biased simulation.
+I used GROMACS, VMD and Python during the internship. Learning to use GROMACS was one of the more challenging parts of the internship for me. I found the process demanding at first, but I also enjoyed becoming more familiar with the software.
 
-Learning to use GROMACS was one of the more challenging parts of the internship for me. I found the process demanding at first, but I also enjoyed becoming more familiar with the software.
+Saved configurations need not be independent observations, and their frequency in a biased simulation differs from their equilibrium probability. These points connect the molecular setting to statistics while showing why the origin of the data matters.
 
-\section{Demonstrable analysis and software outputs}
-The completed work includes the code and input checks, modular analysis routines, 36 passing tests, descriptor diagnostics, validation of the full FES grid and the GMM sensitivity experiment. The last of these turns the observed Rg--SASA correlation into a question that can be tested by comparing labels. Keeping the results for every component count and initialization shows where assignments are stable and where they change.
+\section{Turning an observation into an analysis}
+The Python project provides a concrete example. The descriptor analysis found a strong relationship between radius of gyration and SASA. Rather than treating this as a reason to remove SASA immediately, the independent experiment compared fitted assignments with and without it. The same fitting rows kept the comparison focused on the feature choice. Repeated initializations exposed variation that a single fit would have hidden.
 
-Feature scaling is one example of why an implementation detail matters. Once the mean and scale have been fitted on the chosen sample, the model must reuse them for later observations. The following searchable excerpt comes directly from the analysis code.
-\begin{codepanel}{01\quad Fit the geometry once}{RobustCluster-Aβ / Python}
+Small programming decisions also became explicit parts of the analysis. Feature scaling is fitted on a specified sample and reused for later observations. A test checks that a large evaluation value cannot alter that transformation. Original frame identities are retained so that label arrays refer to the same observations. These details determine whether a difference comes from the method under investigation or an unintended change in preprocessing.
+
+\begin{codepanel}{Fit once, reuse the same scale}{RobustCluster-Aβ / Python}
 \lstinputlisting[style=editorialcode]{generated/fit_scaler.py}
 \end{codepanel}
-The function rejects a feature that is constant in the fitting sample and returns the parameters used for scaling. The test supplies a large evaluation value and checks that it does not change the fitted mean or scale. In this way, adding observations for prediction cannot silently change the coordinate system used by the model.
 
-\section{Companion projects: VMD MCP and GROMACS MCP}
-Two additional software projects are publicly available: \href{https://github.com/Alierkn/vmd-mcp}{VMD MCP} and \href{https://github.com/Alierkn/gromacs-mcp}{GROMACS MCP}. Both use the Model Context Protocol (MCP) to make molecular-software operations available to a client through structured inputs and outputs. Their code shows how a request is turned into a calculation. The underlying software and the supplied data still determine whether that calculation is scientifically meaningful.
 
-VMD MCP constructs Tcl commands for operations such as per-frame radius of gyration, RMSD, SASA and rendering. The gyration function passes the selected atoms and mass-weighting option to VMD, then parses frame-indexed values. GROMACS MCP includes helpers for simulation preparation and analysis and a background-run interface that constructs a command, validates paths and records output. Genuine source screenshots and immutable commit links appear in \cref{fig:vmdcode,fig:gmxcode}.
+The modules, tests, configurations, source tables and plots document the work produced. Successful execution remains distinct from establishing the physical meaning of a cluster.
 
-These projects work with molecular software, while RobustCluster starts from an existing descriptor table. There is no evidence that either companion project generated the supplied Aβ40 trajectories. Their outputs also need care before comparison: the inspected VMD gyration function documents angstroms, whereas the descriptor table is labelled in nanometres. A comparison would need checked units and compatible atom selections. The repository histories retain contributor attribution.
+\section{My molecular-software interface projects}
+I also created two personal software projects, \href{https://github.com/Alierkn/vmd-mcp}{VMD MCP} and \href{https://github.com/Alierkn/gromacs-mcp}{GROMACS MCP}. They use the Model Context Protocol to expose molecular-software operations through structured inputs and outputs. They are distinct from the Aβ40 descriptor analysis, but provide further examples of connecting scientific programs with Python interfaces.
 
-\section{Reproducibility and computational scope}
-The software work is documented through preserved inputs, separate configuration files, analytic tests, failure records and figures generated from saved tables. A manifest records which data and settings produced a result. It also distinguishes a calculation that failed or could not start from a successful calculation that returned zero. These records help explain the analysis without relying on the code alone.
+The inspected VMD MCP source constructs Tcl commands for measurements and rendering. Its gyration function passes an atom selection and mass-weighting option to VMD and returns frame-indexed values. GROMACS MCP includes preparation and analysis helpers and a background-run interface with checked paths and a recorded output log. Contributor histories remain in the repositories, and the report links to the source versions inspected.
 
-All calculations newly reported here were local analyses of descriptors. The project includes a configurable Leonardo submission template and references to the official documentation \autocite{leonardodocs}, but there are no Leonardo job records. The reported computational work therefore does not include HPC execution, setting up the molecular simulations or measuring physical kinetic rates.
+These interfaces organize requests; source code alone does not establish that a calculation ran. No reported Aβ40 trajectory is attributed to them. Comparing their outputs with the supplied descriptors would also require compatible selections and units: the inspected VMD gyration function documents angstroms, whereas the table is labelled in nanometres.
+
+\section{What can be carried forward}
+The report brings together the assigned learning programme, practical software use and calculations with saved outputs. Distinguishing them gives a clearer account than treating every planned task as completed. GROMACS and VMD use belongs to the practical experience; the descriptor diagnostics and GMM comparison belong to the recorded analysis.
+
+The reusable outcome is a project whose steps can be examined. Each empirical figure has a source table, each calculation has settings, and each unavailable result has a reason. This organization can support further work once the FES units and construction are established. A Leonardo submission template is included for preparation, but no Leonardo job records exist. The reported computations remain local; further simulations or structural analyses will need their own execution records and validation.

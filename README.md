@@ -8,7 +8,7 @@ Scientific code audit · sampling diagnostics · feature-space sensitivity
 
 [Code guide](docs/CODE_GUIDE.md) · [Reproduction instructions](REPRODUCIBILITY.md) · [Evidence and scope](docs/PUBLICATION_READINESS.md)
 
-![Descriptor correlations and principal-component variance from the recorded Aβ40 diagnostic run](results/figures/20260921T011959-583b4421/fig03_feature_diagnostics.svg)
+![Descriptor correlations and principal-component variance from the recorded Aβ40 diagnostic run](results/figures/20261103T135347-e4275730/rebuild_features.svg)
 
 *Observed descriptor correlations and PCA diagnostics from the supplied biased trajectories. These plots describe the available sample; they do not estimate equilibrium populations. [Source manifest](results/manifests/20260921T011959-583b4421.json).*
 
@@ -54,9 +54,9 @@ On Windows, activate the environment with `.venv\Scripts\activate` instead. Test
 
 ## Inspect the completed extension
 
-![Feature-ablation agreement and initialization sensitivity for the saved Gaussian-mixture pilot](results/figures/20261007T104846-17f8483c/gmm_sensitivity.svg)
+![Feature-ablation agreement and initialization sensitivity for the saved Gaussian-mixture pilot](results/figures/20261103T135347-e4275730/rebuild_gmm.svg)
 
-*Four descriptors versus the same representation without SASA, evaluated on identical frame identities. The curves summarize five paired seeds per component count. Variation across runs is not a confidence interval. [Analysis protocol and interpretation](docs/GMM_ABLATION_PILOT.md) · [Figure manifest](results/manifests/20261007T104846-17f8483c.json).*
+*Four descriptors versus the same representation without SASA, evaluated on identical frame identities. The curves summarize five paired seeds per component count. Variation across runs is not a confidence interval. [Analysis protocol and interpretation](docs/GMM_ABLATION_PILOT.md) · [Figure manifest](results/manifests/20261103T135347-e4275730.json).*
 
 The pilot asks whether correlated features can nevertheless change a geometric partition. It does not establish a preferred biological family count. Gaussian components are not assumed to be metastable states, and raw assigned-frame fractions are not equilibrium populations.
 
@@ -129,10 +129,14 @@ New project code and documentation use [BSD-3-Clause](LICENSE). This does not re
 
 Publication scope and fresh-history policy: [PUBLIC_RELEASE.md](docs/PUBLIC_RELEASE.md). External checker evidence is recorded separately in [AI_CHECKER_REVIEW.md](docs/AI_CHECKER_REVIEW.md); it is not a scientific validation score.
 
-## Editorial revision v0.1.1
+## Rebuilt report v0.2.0
 
-The report now includes a substantive nine-chapter prose revision and a source-based [textbook and Adobe design review](docs/EDITORIAL_DESIGN_RESEARCH_V011.md). The [revision record](docs/PROSE_REVISION_V011.md) identifies changes in explanation without new numerical experiments. A second [external checker record](docs/AI_CHECKER_REVIEW_REVISION2.md) preserves actual excerpt-level results; neither service returned Human. Such scores are not a scientific or authorship certification.
+The abstract and all nine chapters were written afresh around the internship's learning sequence, the supplied-data audit and the completed descriptor experiment. The report has **18 main-text pages, 35 pages including front matter, references and appendices**. It uses 32 references from the existing verified bibliography, 11 pt Libertinus typography, vector plots regenerated from saved tables, readable code panels and the approved illustrated cover.
 
-## Readability revision v0.1.2
+The student's confirmed GROMACS, VMD and Python use is described separately from their personal VMD MCP and GROMACS MCP projects. No new simulation, clustering experiment or equilibrium result is implied by the rewrite. [Rebuild record](docs/rebuild/REBUILD_RECORD.md) · [Learning evidence](docs/rebuild/LEARNING_EVIDENCE_MAP.md) · [Visual storyboard](docs/rebuild/VISUAL_AND_EVIDENCE_MAP.md).
 
-The [latest prose revision](docs/PROSE_READABILITY_V012.md) uses more direct English and explains technical comparisons while preserving equations, results and the student's confirmed experience. The [new external check](docs/AI_CHECKER_REVIEW_REVISION3.md) returned Sapling 100.0% AI on the saved abstract excerpt; GPTZero was blocked by its free-scan/sign-up gate and supplied no verified current score. These observations are not full-report authorship findings. The exact input, screenshots and previous reviews remain available.
+Earlier external-check results below concern their historical excerpts, not this rebuilt text. No new detector score is claimed.
+
+### Editorial history
+
+The [v0.1.1 design research](docs/EDITORIAL_DESIGN_RESEARCH_V011.md) and [v0.1.2 readability record](docs/PROSE_READABILITY_V012.md) remain available. Exact historical checker inputs and outcomes are preserved in the [external-review records](docs/AI_CHECKER_REVIEW_REVISION3.md). Those excerpt-level classifications are not scientific validation or authorship certification. The report retains its assistance and generated-art disclosures.

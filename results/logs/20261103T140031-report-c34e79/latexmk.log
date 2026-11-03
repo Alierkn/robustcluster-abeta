@@ -1,0 +1,3089 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+Latexmk: making output directory 'build'
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'lualatex'...
+Rule 'lualatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'lualatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'lualatex'
+------------
+------------
+Running 'lualatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "report.tex"'
+------------
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026) 
+ restricted system commands enabled.
+(./report.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-08-10>
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlogo.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/keyval.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrsize11pt.clo)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/typearea.sty)) (./preamble.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/geometry/geometry.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fontenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amstext.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/calc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/l3backend-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fix-cm.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ts1enc.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype-luatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/siunitx/siunitx.sty
+Include code introduced on 2026-09-12
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/array.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphicx.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphics.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/trig.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-def/luatex.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/subcaption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption3.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/tabularx.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/longtable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.c
+ode.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/verbatim.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/environ/environ.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioni
+ng.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstpatch.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ifthen.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/url/url.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-dm.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-compat.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/nameref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/refcount/refcount.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/puenc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bitset/bitset.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hluatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bkm-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xfor/xfor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-lua.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-utf8.ldf))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer.sty)) (./generated/values.tex)
+(./generated/revision_values.tex)) (./build/report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/ltcaption.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+No file report.bbl.
+[1<./artwork/cover-editorial-v2.png><./artwork/messina-logo-user-supplied.png>]
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/mt-cmr.cfg) [1{/Users/alico/Documents/Codex/2
+026-09-21/you-are-working-as-a-senior/work/texlive/texmf-var/fonts/map/pdftex/u
+pdmap/pdftex.map}]
+No file report.toc.
+[2] [3] (./chapters/01_introduction.tex
+chapter 1.
+
+LaTeX Warning: Citation 'vanderlee2014' on page 1 undefined on input line 7.
+
+
+LaTeX Warning: Citation 'cadenelli2026' on page 1 undefined on input line 10.
+
+
+LaTeX Warning: Citation 'barducci2008' on page 1 undefined on input line 10.
+
+
+LaTeX Warning: Citation 'plumed2019' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'wratten2021' on page 1 undefined on input line 21.
+
+) (./chapters/02_background.tex [1] [2]
+chapter 2.
+
+LaTeX Warning: Citation 'vanderlee2014' on page 3 undefined on input line 4.
+
+
+LaTeX Warning: Citation 'cadenelli2026' on page 3 undefined on input line 4.
+
+
+LaTeX Warning: Citation 'borthakur2025' on page 3 undefined on input line 6.
+
+
+LaTeX Warning: Citation 'cadenelli2026' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'abraham2015' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'huang2017' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'tribello2014' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'chodera2016' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'grossfield2019' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'barducci2008' on page 3 undefined on input line 19.
+
+
+LaTeX Warning: Reference `eq:hills' on page 1 undefined on input line 29.
+
+[3]
+
+LaTeX Warning: Citation 'plumedmetad' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `eq:hills' on page 1 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'plumedsum' on page 4 undefined on input line 50.
+
+
+LaTeX Warning: Reference `eq:finalweights' on page 4 undefined on input line 58
+.
+
+
+LaTeX Warning: Citation 'bonomi2009' on page 4 undefined on input line 60.
+
+
+LaTeX Warning: Citation 'tiwary2015' on page 4 undefined on input line 60.
+
+
+LaTeX Warning: Citation 'plumedreweight' on page 4 undefined on input line 60.
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 60--61
+[]\TU/LibertinusSerif(0)/m/n/10.95 Other es-ti-ma-tors ac-count ex-plic-itly fo
+r the chang-ing bias nor-mal-iza-tion [[],
+
+LaTeX Warning: Citation 'kabsch1983' on page 4 undefined on input line 63.
+
+[4<./artwork/ensemble-editorial-v2.png><./artwork/bias-editorial-v2.png>]
+
+LaTeX Warning: Citation 'cadenelli2026' on page 5 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'rousseeuw1987' on page 5 undefined on input line 70.
+
+) (./chapters/03_methodology.tex [5]
+chapter 3.
+
+LaTeX Warning: Citation 'cadenelli2026' on page 6 undefined on input line 5.
+
+
+LaTeX Warning: Reference `fig:workflow' on page 1 undefined on input line 18.
+
+
+LaTeX Warning: Citation 'numpyrng' on page 6 undefined on input line 18.
+
+[6]
+
+LaTeX Warning: Citation 'sklearnsilhouette' on page 7 undefined on input line 3
+0.
+
+
+LaTeX Warning: Citation 'scipywasserstein' on page 7 undefined on input line 38
+.
+
+[7<./figures/fig01_workflow.pdf>]
+
+LaTeX Warning: Citation 'scipygrid' on page 8 undefined on input line 48.
+
+
+LaTeX Warning: Citation 'virtanen2020' on page 8 undefined on input line 48.
+
+
+LaTeX Warning: Reference `eq:finalweights' on page 1 undefined on input line 50
+.
+
+
+LaTeX Warning: Citation 'harris2020' on page 8 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'virtanen2020' on page 8 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'pedregosa2011' on page 8 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'snakemakedocs' on page 8 undefined on input line 61.
+
+
+LaTeX Warning: Citation 'wratten2021' on page 8 undefined on input line 61.
+
+) (./chapters/04_audit.tex
+Underfull \hbox (badness 1354) in paragraph at lines 61--1
+[]\TU/LibertinusSerif(0)/m/n/10.95 NumPy, SciPy, pan-das, Mat-plotlib and sciki
+t-learn sup-port the mod-u-lar im-ple-men-ta-tion
+[8]
+chapter 4.
+[9]) (./chapters/05_robustness.tex [10]
+chapter 5.
+
+LaTeX Warning: Reference `eq:correlation' on page 1 undefined on input line 10.
+
+
+
+LaTeX Warning: Citation 'grossfield2019' on page 11 undefined on input line 10.
+
+
+
+LaTeX Warning: Citation 'chodera2016' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Reference `eq:kish' on page 11 undefined on input line 17.
+
+
+LaTeX Warning: Citation 'hubert1985' on page 11 undefined on input line 20.
+
+
+LaTeX Warning: Reference `eq:gmm' on page 1 undefined on input line 31.
+
+
+LaTeX Warning: Citation 'pedregosa2011' on page 11 undefined on input line 31.
+
+[11]
+
+LaTeX Warning: Citation 'tiwary2015' on page 12 undefined on input line 41.
+
+
+LaTeX Warning: Citation 'bonomi2009' on page 12 undefined on input line 41.
+
+
+LaTeX Warning: Citation 'plumedreweight' on page 12 undefined on input line 41.
+
+
+
+LaTeX Warning: Citation 'derrico2021' on page 12 undefined on input line 44.
+
+
+LaTeX Warning: Citation 'sasmal2024' on page 12 undefined on input line 44.
+
+
+LaTeX Warning: Citation 'borthakur2025' on page 12 undefined on input line 47.
+
+) (./chapters/06_results.tex [12]
+chapter 6.
+
+LaTeX Warning: Reference `tab:status' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Reference `fig:features' on page 1 undefined on input line 29.
+
+
+LaTeX Warning: Reference `fig:rawdistributions' on page 1 undefined on input li
+ne 29.
+
+
+LaTeX Warning: Reference `fig:acf' on page 1 undefined on input line 40.
+
+[13]
+
+LaTeX Warning: Reference `tab:gmm' on page 1 undefined on input line 49.
+
+
+LaTeX Warning: Reference `fig:gmm' on page 1 undefined on input line 49.
+
+[14<./figures/rebuild_features.pdf><./figures/rebuild_autocorrelations.pdf>]
+(./generated/gmm_rows.tex)
+
+LaTeX Warning: Reference `fig:seedmatrices' on page 1 undefined on input line 6
+5.
+
+) (./chapters/07_discussion.tex [15<./figures/rebuild_gmm.pdf>]
+chapter 7.
+
+LaTeX Warning: Citation 'cadenelli2026' on page 16 undefined on input line 10.
+
+
+LaTeX Warning: Citation 'borthakur2025' on page 16 undefined on input line 12.
+
+
+LaTeX Warning: Citation 'grossfield2019' on page 16 undefined on input line 15.
+
+
+
+LaTeX Warning: Citation 'plumed2019' on page 16 undefined on input line 19.
+
+
+LaTeX Warning: Citation 'barker2022' on page 16 undefined on input line 19.
+
+) (./chapters/08_outcomes.tex [16]
+chapter 8.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstlang1.sty) (./generated/fit_scaler.py)
+[17]) (./chapters/09_conclusions.tex [18]
+chapter 9.
+
+LaTeX Warning: Citation 'michaud2011' on page 19 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'sasmal2024' on page 19 undefined on input line 8.
+
+) [19]
+
+LaTeX Warning: Empty bibliography on input line 67.
+
+(./appendices/appendices.tex
+chapter A.
+[20] [21]
+chapter B.
+
+LaTeX Warning: Reference `eq:finalweights' on page 1 undefined on input line 58
+.
+
+[22]
+chapter C.
+(./generated/sampling_rows.tex) [23<./figures/raw_descriptor_distributions.pdf>
+] [24<./figures/gmm_seed_matrices.pdf>]
+chapter D.
+[25]
+chapter E.
+
+LaTeX Warning: Citation 'leonardodocs' on page 26 undefined on input line 116.
+
+[26]
+chapter F.
+(./generated/environment_rows.tex) [27]
+chapter G.
+(./generated/vmd-mcp-excerpt.py) [28<./screenshots/vmd-gyration.jpg>]
+(./generated/gromacs-mcp-excerpt.py)) [29<./screenshots/gromacs-mdrun.jpg>]
+(./build/report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                report
+(biblatex)                and rerun LaTeX afterwards.
+
+)
+(see the transcript file for additional information)
+ 764 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_k
+ern, 3 glyph, 25 attribute, 81 glue_spec, 25 attribute_list, 2 write, 1 pdf_act
+ion nodes
+   avail lists: 1:8,2:4092,3:469,4:5174,5:4871,6:213,7:10565,8:65,9:14624,10:44
+,11:920,12:1
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/lm/lmmono9-regular.otf></Users/alico/Docume
+nts/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/
+opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></Users/alico/Docum
+ents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts
+/opentype/public/lm/lmmono8-regular.otf></Users/alico/Documents/Codex/2026-09-2
+1/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/
+lmmonolt10-bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as
+-a-senior/work/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-
+a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
+></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texl
+ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.ot
+f></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/tex
+live/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular
+.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/
+texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Regula
+r.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work
+/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Bold.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regula
+r.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work
+/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold
+.otf>
+Output written on report.pdf (33 pages, 9461966 bytes).
+Transcript written on report.log.
+Latexmk: Getting log file 'build/report.log'
+Latexmk: Examining 'build/report.fls'
+Latexmk: Examining 'build/report.log'
+Latexmk: Missing bbl file 'build/report.bbl' in following:
+ No file report.bbl.
+Latexmk: Missing input file 'report.toc' message in .log file:
+  No file report.toc.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'report.pdf'
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Bibliography file(s) from .bcf file:
+  references.bib
+Sources for biber
+  references.bib
+  build/report.bcf
+Latexmk: applying rule 'biber build/report'...
+Rule 'biber build/report':  Reasons for rerun
+Category 'other':
+  Rerun of 'biber build/report' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'biber build/report'
+------------
+------------
+Running 'biber  "build/report.bcf"'
+------------
+INFO - This is Biber 2.22
+INFO - Logfile is 'build/report.blg'
+INFO - Reading 'build/report.bcf'
+INFO - Found 32 citekeys in bib section 0
+INFO - Processing section 0
+INFO - Looking for bibtex file 'references.bib' for section 0
+INFO - LaTeX decoding ...
+INFO - Found BibTeX data source 'references.bib'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+INFO - No sort tailoring available for locale 'en-US'
+INFO - Writing 'build/report.bbl' with encoding 'UTF-8'
+INFO - Output to build/report.bbl
+Latexmk: Found biber source file(s) [build/report.bcf, references.bib]
+Latexmk: applying rule 'lualatex'...
+Rule 'lualatex':  Reasons for rerun
+Changed files or newly in use/created:
+  build/report.aux
+  build/report.bbl
+  build/report.toc
+
+------------
+Run number 2 of rule 'lualatex'
+------------
+------------
+Running 'lualatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "report.tex"'
+------------
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026) 
+ restricted system commands enabled.
+(./report.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-08-10>
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlogo.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/keyval.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrsize11pt.clo)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/typearea.sty)) (./preamble.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/geometry/geometry.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fontenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amstext.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/calc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/l3backend-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fix-cm.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ts1enc.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype-luatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/siunitx/siunitx.sty
+Include code introduced on 2026-09-12
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/array.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphicx.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphics.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/trig.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-def/luatex.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/subcaption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption3.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/tabularx.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/longtable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.c
+ode.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/verbatim.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/environ/environ.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioni
+ng.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstpatch.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ifthen.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/url/url.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-dm.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-compat.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/nameref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/refcount/refcount.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/puenc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bitset/bitset.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hluatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bkm-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xfor/xfor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-lua.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-utf8.ldf))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer.sty)) (./generated/values.tex)
+(./generated/revision_values.tex)) (./build/report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/ltcaption.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (./build/report.bbl) [1<./art
+work/cover-editorial-v2.png><./artwork/messina-logo-user-supplied.png>]
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/mt-cmr.cfg) [1{/Users/alico/Documents/Codex/2
+026-09-21/you-are-working-as-a-senior/work/texlive/texmf-var/fonts/map/pdftex/u
+pdmap/pdftex.map}] (./build/report.toc [2]) [3] [4]
+(./chapters/01_introduction.tex
+chapter 1.
+) (./chapters/02_background.tex [1]
+chapter 2.
+[2] [3<./artwork/ensemble-editorial-v2.png><./artwork/bias-editorial-v2.png>])
+(./chapters/03_methodology.tex [4]
+chapter 3.
+[5] [6<./figures/fig01_workflow.pdf>]) (./chapters/04_audit.tex [7]
+chapter 4.
+[8]) (./chapters/05_robustness.tex [9]
+chapter 5.
+[10]) (./chapters/06_results.tex [11]
+chapter 6.
+[12] [13<./figures/rebuild_features.pdf><./figures/rebuild_autocorrelations.pdf
+>] (./generated/gmm_rows.tex)) (./chapters/07_discussion.tex [14<./figures/rebu
+ild_gmm.pdf>]
+chapter 7.
+) (./chapters/08_outcomes.tex [15]
+chapter 8.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstlang1.sty) (./generated/fit_scaler.py)
+[16]) (./chapters/09_conclusions.tex [17]
+chapter 9.
+) [18]
+chapter without number
+[19] (./appendices/appendices.tex [20]
+chapter A.
+[21] [22]
+chapter B.
+[23]
+chapter C.
+(./generated/sampling_rows.tex) [24<./figures/raw_descriptor_distributions.pdf>
+] [25<./figures/gmm_seed_matrices.pdf>]
+chapter D.
+[26]
+chapter E.
+[27]
+chapter F.
+(./generated/environment_rows.tex) [28]
+chapter G.
+(./generated/vmd-mcp-excerpt.py) [29<./screenshots/vmd-gyration.jpg>]
+(./generated/gromacs-mcp-excerpt.py)) [30<./screenshots/gromacs-mdrun.jpg>]
+(./build/report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+
+)
+ 919 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_k
+ern, 3 glyph, 38 attribute, 86 glue_spec, 38 attribute_list, 2 write, 14 pdf_ac
+tion nodes
+   avail lists: 1:11,2:4092,3:724,4:5174,5:4871,6:214,7:10592,8:99,9:14624,10:4
+4,11:920,12:1
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.84'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.82'
+
+warning  (pdf backend): unreferenced destination with name 'chapter*.98'
+
+warning  (pdf backend): unreferenced destination with name 'chapter*.96'
+
+warning  (pdf backend): unreferenced destination with name 'chapter*.85'
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/lm/lmmono9-regular.otf></Users/alico/Docume
+nts/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/
+opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></Users/alico/Docum
+ents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts
+/opentype/public/lm/lmmono8-regular.otf></Users/alico/Documents/Codex/2026-09-2
+1/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/
+lmmonolt10-bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as
+-a-senior/work/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-
+a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
+></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texl
+ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.ot
+f></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/tex
+live/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular
+.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/
+texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Bold.o
+tf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/te
+xlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regula
+r.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work
+/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold
+.otf>
+Output written on report.pdf (35 pages, 9489205 bytes).
+Transcript written on report.log.
+Latexmk: Getting log file 'build/report.log'
+Latexmk: Examining 'build/report.fls'
+Latexmk: Examining 'build/report.log'
+Latexmk: Found input bbl file 'build/report.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'report.pdf'
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Bibliography file(s) from .bcf file:
+  references.bib
+Sources for biber
+  references.bib
+  build/report.bcf
+Latexmk: applying rule 'lualatex'...
+Rule 'lualatex':  Reasons for rerun
+Changed files or newly in use/created:
+  build/report.aux
+  build/report.run.xml
+  build/report.toc
+
+------------
+Run number 3 of rule 'lualatex'
+------------
+------------
+Running 'lualatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "report.tex"'
+------------
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026) 
+ restricted system commands enabled.
+(./report.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-08-10>
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlogo.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/keyval.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrsize11pt.clo)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/typearea.sty)) (./preamble.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/geometry/geometry.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fontenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amstext.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/calc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/l3backend-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fix-cm.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ts1enc.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype-luatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/siunitx/siunitx.sty
+Include code introduced on 2026-09-12
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/array.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphicx.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphics.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/trig.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-def/luatex.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/subcaption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption3.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/tabularx.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/longtable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.c
+ode.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/verbatim.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/environ/environ.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioni
+ng.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstpatch.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ifthen.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/url/url.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-dm.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-compat.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/nameref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/refcount/refcount.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/puenc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bitset/bitset.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hluatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bkm-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xfor/xfor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-lua.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-utf8.ldf))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer.sty)) (./generated/values.tex)
+(./generated/revision_values.tex)) (./build/report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/ltcaption.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (./build/report.bbl) [1<./art
+work/cover-editorial-v2.png><./artwork/messina-logo-user-supplied.png>]
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/mt-cmr.cfg) [1{/Users/alico/Documents/Codex/2
+026-09-21/you-are-working-as-a-senior/work/texlive/texmf-var/fonts/map/pdftex/u
+pdmap/pdftex.map}] (./build/report.toc [2]) [3] [4]
+(./chapters/01_introduction.tex
+chapter 1.
+) (./chapters/02_background.tex [1]
+chapter 2.
+[2] [3<./artwork/ensemble-editorial-v2.png><./artwork/bias-editorial-v2.png>])
+(./chapters/03_methodology.tex [4]
+chapter 3.
+[5] [6<./figures/fig01_workflow.pdf>]) (./chapters/04_audit.tex [7]
+chapter 4.
+[8]) (./chapters/05_robustness.tex [9]
+chapter 5.
+[10]) (./chapters/06_results.tex [11]
+chapter 6.
+[12] [13<./figures/rebuild_features.pdf><./figures/rebuild_autocorrelations.pdf
+>] (./generated/gmm_rows.tex)) (./chapters/07_discussion.tex [14<./figures/rebu
+ild_gmm.pdf>]
+chapter 7.
+) (./chapters/08_outcomes.tex [15]
+chapter 8.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstlang1.sty) (./generated/fit_scaler.py)
+[16]) (./chapters/09_conclusions.tex [17]
+chapter 9.
+) [18]
+chapter without number
+[19] (./appendices/appendices.tex [20]
+chapter A.
+[21] [22]
+chapter B.
+[23]
+chapter C.
+(./generated/sampling_rows.tex) [24<./figures/raw_descriptor_distributions.pdf>
+] [25<./figures/gmm_seed_matrices.pdf>]
+chapter D.
+[26]
+chapter E.
+[27]
+chapter F.
+(./generated/environment_rows.tex) [28]
+chapter G.
+(./generated/vmd-mcp-excerpt.py) [29<./screenshots/vmd-gyration.jpg>]
+(./generated/gromacs-mcp-excerpt.py)) [30<./screenshots/gromacs-mdrun.jpg>]
+(./build/report.aux))
+ 919 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_k
+ern, 3 glyph, 38 attribute, 86 glue_spec, 38 attribute_list, 2 write, 14 pdf_ac
+tion nodes
+   avail lists: 1:11,2:4094,3:724,4:5174,5:4871,6:214,7:10592,8:99,9:14624,10:4
+4,11:920,12:1
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/lm/lmmono9-regular.otf></Users/alico/Docume
+nts/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/
+opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></Users/alico/Docum
+ents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts
+/opentype/public/lm/lmmono8-regular.otf></Users/alico/Documents/Codex/2026-09-2
+1/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/
+lmmonolt10-bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as
+-a-senior/work/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-
+a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
+></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texl
+ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.ot
+f></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/tex
+live/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular
+.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/
+texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Bold.o
+tf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/te
+xlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regula
+r.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work
+/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold
+.otf>
+Output written on report.pdf (35 pages, 9489482 bytes).
+Transcript written on report.log.
+Latexmk: Getting log file 'build/report.log'
+Latexmk: Examining 'build/report.fls'
+Latexmk: Examining 'build/report.log'
+Latexmk: Found input bbl file 'build/report.bbl'
+Latexmk: Log file says output to 'report.pdf'
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Bibliography file(s) from .bcf file:
+  references.bib
+Sources for biber
+  references.bib
+  build/report.bcf
+Latexmk: applying rule 'lualatex'...
+Rule 'lualatex':  Reasons for rerun
+Changed files or newly in use/created:
+  build/report.run.xml
+
+------------
+Run number 4 of rule 'lualatex'
+------------
+------------
+Running 'lualatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "report.tex"'
+------------
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026) 
+ restricted system commands enabled.
+(./report.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-08-10>
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlogo.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/keyval.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrsize11pt.clo)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/typearea.sty)) (./preamble.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/geometry/geometry.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fontenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amstext.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/calc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/l3backend-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fix-cm.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ts1enc.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype-luatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/siunitx/siunitx.sty
+Include code introduced on 2026-09-12
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/array.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphicx.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphics.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/trig.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-def/luatex.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/subcaption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption3.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/tabularx.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/longtable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.c
+ode.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/verbatim.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/environ/environ.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioni
+ng.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstpatch.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ifthen.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/url/url.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-dm.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-compat.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/nameref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/refcount/refcount.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/puenc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bitset/bitset.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hluatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bkm-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xfor/xfor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-lua.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-utf8.ldf))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer.sty)) (./generated/values.tex)
+(./generated/revision_values.tex)) (./build/report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/ltcaption.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (./build/report.bbl) [1<./art
+work/cover-editorial-v2.png><./artwork/messina-logo-user-supplied.png>]
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/mt-cmr.cfg) [1{/Users/alico/Documents/Codex/2
+026-09-21/you-are-working-as-a-senior/work/texlive/texmf-var/fonts/map/pdftex/u
+pdmap/pdftex.map}] (./build/report.toc [2]) [3] [4]
+(./chapters/01_introduction.tex
+chapter 1.
+) (./chapters/02_background.tex [1]
+chapter 2.
+[2] [3<./artwork/ensemble-editorial-v2.png><./artwork/bias-editorial-v2.png>])
+(./chapters/03_methodology.tex [4]
+chapter 3.
+[5] [6<./figures/fig01_workflow.pdf>]) (./chapters/04_audit.tex [7]
+chapter 4.
+[8]) (./chapters/05_robustness.tex [9]
+chapter 5.
+[10]) (./chapters/06_results.tex [11]
+chapter 6.
+[12] [13<./figures/rebuild_features.pdf><./figures/rebuild_autocorrelations.pdf
+>] (./generated/gmm_rows.tex)) (./chapters/07_discussion.tex [14<./figures/rebu
+ild_gmm.pdf>]
+chapter 7.
+) (./chapters/08_outcomes.tex [15]
+chapter 8.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstlang1.sty) (./generated/fit_scaler.py)
+[16]) (./chapters/09_conclusions.tex [17]
+chapter 9.
+) [18]
+chapter without number
+[19] (./appendices/appendices.tex [20]
+chapter A.
+[21] [22]
+chapter B.
+[23]
+chapter C.
+(./generated/sampling_rows.tex) [24<./figures/raw_descriptor_distributions.pdf>
+] [25<./figures/gmm_seed_matrices.pdf>]
+chapter D.
+[26]
+chapter E.
+[27]
+chapter F.
+(./generated/environment_rows.tex) [28]
+chapter G.
+(./generated/vmd-mcp-excerpt.py) [29<./screenshots/vmd-gyration.jpg>]
+(./generated/gromacs-mcp-excerpt.py)) [30<./screenshots/gromacs-mdrun.jpg>]
+(./build/report.aux))
+ 919 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_k
+ern, 3 glyph, 38 attribute, 86 glue_spec, 38 attribute_list, 2 write, 14 pdf_ac
+tion nodes
+   avail lists: 1:11,2:4094,3:723,4:5174,5:4871,6:216,7:10592,8:99,9:14624,10:4
+4,11:920,12:1
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/lm/lmmono9-regular.otf></Users/alico/Docume
+nts/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/
+opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></Users/alico/Docum
+ents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts
+/opentype/public/lm/lmmono8-regular.otf></Users/alico/Documents/Codex/2026-09-2
+1/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/
+lmmonolt10-bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as
+-a-senior/work/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-
+a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
+></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texl
+ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.ot
+f></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/tex
+live/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular
+.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/
+texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Bold.o
+tf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/te
+xlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regula
+r.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work
+/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold
+.otf>
+Output written on report.pdf (35 pages, 9489532 bytes).
+Transcript written on report.log.
+Latexmk: Getting log file 'build/report.log'
+Latexmk: Examining 'build/report.fls'
+Latexmk: Examining 'build/report.log'
+Latexmk: Found input bbl file 'build/report.bbl'
+Latexmk: Log file says output to 'report.pdf'
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Bibliography file(s) from .bcf file:
+  references.bib
+Sources for biber
+  references.bib
+  build/report.bcf
+Latexmk: applying rule 'lualatex'...
+Rule 'lualatex':  Reasons for rerun
+Changed files or newly in use/created:
+  chapters/03_methodology.tex
+Category 'changed_user':
+  chapters/03_methodology.tex
+
+------------
+Run number 5 of rule 'lualatex'
+------------
+------------
+Running 'lualatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "report.tex"'
+------------
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026) 
+ restricted system commands enabled.
+(./report.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-08-10>
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlogo.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/keyval.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/tocbasic.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrsize11pt.clo)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/typearea.sty)) (./preamble.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/geometry/geometry.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fontenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amstext.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/calc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3kernel/l3backend-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/fix-cm.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ts1enc.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype-luatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/siunitx/siunitx.sty
+Include code introduced on 2026-09-12
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/array.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphicx.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/graphics.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/trig.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-def/luatex.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/subcaption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/caption3.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/tabularx.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/longtable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.c
+ode.tex)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tools/verbatim.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/environ/environ.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioni
+ng.code.tex)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstpatch.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/listings.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/csquotes/csquotes.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/logreq/logreq.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/base/ifthen.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/url/url.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-dm.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-compat.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/biblatex.cfg)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/nameref.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/refcount/refcount.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/puenc.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bitset/bitset.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/hyperref/hluatex.def
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/bookmark/bkm-luatex.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/xfor/xfor.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-lua.def)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/datatool/datatool-utf8.ldf))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/koma-script/scrlayer.sty)) (./generated/values.tex)
+(./generated/revision_values.tex)) (./build/report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/caption/ltcaption.sty)
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (./build/report.bbl) [1<./art
+work/cover-editorial-v2.png><./artwork/messina-logo-user-supplied.png>]
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/microtype/mt-cmr.cfg) [1{/Users/alico/Documents/Codex/2
+026-09-21/you-are-working-as-a-senior/work/texlive/texmf-var/fonts/map/pdftex/u
+pdmap/pdftex.map}] (./build/report.toc [2]) [3] [4]
+(./chapters/01_introduction.tex
+chapter 1.
+) (./chapters/02_background.tex [1]
+chapter 2.
+[2] [3<./artwork/ensemble-editorial-v2.png><./artwork/bias-editorial-v2.png>])
+(./chapters/03_methodology.tex [4]
+chapter 3.
+[5] [6<./figures/fig01_workflow.pdf>]) (./chapters/04_audit.tex [7]
+chapter 4.
+[8]) (./chapters/05_robustness.tex [9]
+chapter 5.
+[10]) (./chapters/06_results.tex [11]
+chapter 6.
+[12] [13<./figures/rebuild_features.pdf><./figures/rebuild_autocorrelations.pdf
+>] (./generated/gmm_rows.tex)) (./chapters/07_discussion.tex [14<./figures/rebu
+ild_gmm.pdf>]
+chapter 7.
+) (./chapters/08_outcomes.tex [15]
+chapter 8.
+
+(/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/tex/latex/listings/lstlang1.sty) (./generated/fit_scaler.py)
+[16]) (./chapters/09_conclusions.tex [17]
+chapter 9.
+) [18]
+chapter without number
+[19] (./appendices/appendices.tex [20]
+chapter A.
+[21] [22]
+chapter B.
+[23]
+chapter C.
+(./generated/sampling_rows.tex) [24<./figures/raw_descriptor_distributions.pdf>
+] [25<./figures/gmm_seed_matrices.pdf>]
+chapter D.
+[26]
+chapter E.
+[27]
+chapter F.
+(./generated/environment_rows.tex) [28]
+chapter G.
+(./generated/vmd-mcp-excerpt.py) [29<./screenshots/vmd-gyration.jpg>]
+(./generated/gromacs-mcp-excerpt.py)) [30<./screenshots/gromacs-mdrun.jpg>]
+(./build/report.aux))
+ 919 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_k
+ern, 3 glyph, 38 attribute, 86 glue_spec, 38 attribute_list, 2 write, 14 pdf_ac
+tion nodes
+   avail lists: 1:11,2:4094,3:723,4:5174,5:4871,6:216,7:10592,8:99,9:14624,10:4
+4,11:920,12:1
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/lm/lmmono9-regular.otf></Users/alico/Docume
+nts/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/
+opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf></Users/alico/Docum
+ents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts
+/opentype/public/lm/lmmono8-regular.otf></Users/alico/Documents/Codex/2026-09-2
+1/you-are-working-as-a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/
+lmmonolt10-bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as
+-a-senior/work/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Bold.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-
+a-senior/work/texlive/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>
+</Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texli
+ve/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
+></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texl
+ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.ot
+f></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/tex
+live/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular
+.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/
+texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Bold.o
+tf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/te
+xlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSans-Regular.
+otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/t
+exlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regula
+r.otf></Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work
+/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold
+.otf>
+Output written on report.pdf (35 pages, 9489532 bytes).
+Transcript written on report.log.
+Latexmk: Getting log file 'build/report.log'
+Latexmk: Examining 'build/report.fls'
+Latexmk: Examining 'build/report.log'
+Latexmk: Found input bbl file 'build/report.bbl'
+Latexmk: Log file says output to 'report.pdf'
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Bibliography file(s) from .bcf file:
+  references.bib
+Sources for biber
+  references.bib
+  build/report.bcf
+Latexmk: All targets (build/report.pdf) are up-to-date
+

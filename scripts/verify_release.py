@@ -74,7 +74,7 @@ try:
         if candidate == path or candidate.name == "local_provenance.json":
             continue
         record = json.loads(candidate.read_text())
-        if record.get("command") in {"validate", "diagnostics", "reproduce", "robustness", "figures", "audit-fes", "gmm-ablation", "gmm-figures", "revision-preview", "workflow-figure"}:
+        if record.get("command") in {"validate", "diagnostics", "reproduce", "robustness", "figures", "audit-fes", "gmm-ablation", "gmm-figures", "revision-preview", "workflow-figure", "editorial-figures"}:
             if record["status"] == "RUNNING":
                 raise RuntimeError(f"Unfinished analysis: {candidate.name}")
             for output in record["outputs"]:

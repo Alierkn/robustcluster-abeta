@@ -1,31 +1,48 @@
 \chapter{Reproduction and scientific code audit}
+\label{ch:audit}
 \section{Original implementation}
-The supplied implementation puts input reading, replica separation, plotting, clustering and summary calculations in one script. Parsing the source identifies an Italian sentence without a comment marker at line 437, causing a syntax error before the analysis can run. The original is preserved exactly, including this defect, so that the audit can be checked against the supplied file.
+The audit began by separating three questions: what the paper describes, what the supplied code attempts, and what execution records demonstrate. The original combines input reading, replica separation, clustering, weighting and plotting in one script. A bare Italian sentence at line 437 causes a syntax error before execution. The file is preserved unchanged, so this finding and the later methodological comparisons remain checkable.
 
-The audit traces each calculation from its input to the quantity it would report. Reading the source shows what the script attempts to do, but no original execution manifest or complete numerical output set was located. Where the code differs from the paper, the method map records both versions and explains the correction made in the modular implementation.
+The script is evidence of implementation intent, not a completed run. No original execution manifest or complete output set was located. The method map consequently records paper statements and source behaviour separately.
 
 \section{Identified methodological issues}
-The original parser silently takes the first three segments separated by time resets and skips certain malformed lines. The new parser checks both the segment count and each row. Original group generation depends on a fixed list of 17 seeds, which would run out with smaller groups. The replacement uses local RNG streams and preserves every frame's identity. It makes the sampling reproducible but changes the exact subsets, so it is not claimed to reproduce the legacy script bit for bit.
+Some corrections protect the input. The original parser takes the first three time-reset segments and skips certain malformed rows. Explicit validation now checks all rows and the segment count. Group generation would also exhaust its fixed list of 17 seeds if sufficiently many groups were requested. Local random-number streams remove that limit, but change the exact subsets drawn by the legacy code.
 
-The handling of residual frames changes which observations define a family. In the supplied code, rejected frames receive a generic label and every label enters consensus. Frames that failed the acceptance criteria can therefore influence the global centers. The modular version uses only accepted local clusters to discover families, then assigns the residual frames in STEP 3. Residuals still contribute to the final population without being treated as an accepted local cluster.
+Other corrections affect the meaning of a cluster. The original sends rejected frames, grouped under a generic label, into consensus alongside accepted clusters. The modular implementation discovers global centres from accepted memberships only. Rejected frames still receive labels during final assignment, preserving their contribution without treating rejection as a newly discovered family.
 
-The original FES reader ignores the header information needed to check completeness and permits missing grid values with a warning. The weight function uses the nearest grid point and selects a boundary value for out-of-range queries. These choices can produce plausible-looking weights from invalid inputs. The replacement rejects incomplete grids and uses bilinear interpolation only within the grid bounds. The original partial download ended inside a numerical row and was rejected. The complete replacement received on 7 October passed grid validation; the earlier partial file remains unusable.
+The original FES reader permits missing cells, and its nearest-grid lookup can select a boundary value for an out-of-range query. Strict grid checks and bounded bilinear interpolation replace these choices. The partial download remains rejected; the complete replacement passed structural validation. That success does not establish its energy unit or reconstruction procedure.
 
-The original analysis weights cluster relevance but uses ordinary arithmetic means and standard deviations for the structural descriptors. Those summaries describe a different distribution from the weighted one specified in the paper's figure captions. The revised routines use the same weights for relevance and descriptor summaries within each cluster, and normalize replicas separately before pooling. Distribution width, replica SEM and bootstrap intervals remain separate quantities.
+Finally, the source weights relevance but uses unweighted descriptor means and standard deviations. The revised routines consistently weight cluster summaries and normalize each replica before pooling. Descriptor width, replica SEM and bootstrap intervals answer different questions and retain distinct names.
 
-\begin{auditnote}
-Correcting a calculation does not validate its input data or establish that the original simulation converged. The complete grid now passes validation, but its energy unit and construction procedure still need clarification before reweighting the real data.
-\end{auditnote}
-
-\section{Scientific V2 corrections: evidence unavailable}
-The requested intermediate file \code{CLUSTERING40\_scientific\_v2.py} and its changelog were not located. The method map therefore marks that implementation as unavailable. None of the corrections in this report is attributed to the missing version. If supplied later, it should be checked by its hash, preserved unchanged, and compared with both the original and the modular implementation.
+\section{Scientific V2: unavailable intermediate evidence}
+Neither \code{CLUSTERING40\_scientific\_v2.py} nor its changelog was located. The present corrections belong to the modular implementation; they are not attributed to an unseen intermediate version. If recovered, V2 should be preserved, hashed and compared directly with both available versions.
 
 \section{Verification and numerical tests}
-The current suite passed 36 tests, including strict parsing, interval boundaries, normalization, analytic bilinear interpolation, incomplete and duplicate grids, finite/bounds checks, weight sign, free-energy-offset invariance, equal replica masses, weighted moments, residual handling, final assignment, label-permutation agreement, and bootstrap separation of replicas. A seeded autoregressive fixture checks that the correlation estimator behaves plausibly for a known stationary process.
+The selected release record reports 36 passing tests. Analytic surfaces check bilinear interpolation, while deliberately incomplete grids and out-of-bounds queries check rejection. Weight tests cover the sign, invariance to a constant free-energy shift, equal replica contributions and weighted moments. Further checks cover parsing, scaling, residual exclusion, final assignment and label comparisons.
 
-A complete synthetic test dataset exercises cluster discovery, consensus, all-frame assignment, final-bias weights, population tables, conditional bootstrap intervals and PDF generation. Its generated descriptors and analytic surface are used only for testing, not as Aβ40 observations. A further test checks repeatability by fitting the GMM extension to synthetic, separated observations. Tests with renamed labels and missing families check that the comparisons behave as intended. An archive-provenance test also checks that a source release cannot inherit the Git commit of an unrelated enclosing repository. These tests check numerical behavior; they cannot establish that a cluster represents a biological family.
+A synthetic end-to-end fixture exercises discovery, consensus, weighting, summaries and figure generation. Synthetic GMM cases check repeatability and missing-family handling. An autoregressive fixture probes the correlation estimator; an archive test prevents an unrelated enclosing Git repository from supplying false provenance. These tests establish behaviour on known inputs. They are not additional Aβ40 experiments or proof that inferred groups have biological meaning.
+
+The interpolation test illustrates why an expected numerical answer is useful. A synthetic bilinear surface includes a mixed-coordinate term, so a query between nodes tests both axes together. Shuffling grid rows must preserve the answer; deleting or duplicating a grid point must instead raise an error. These checks address different failure modes even though they use the same small fixture.
+
+The weighting tests use a second invariant: an arbitrary additive FES constant must disappear after normalization. They also give two replicas unequal numbers of frames, then check that each contributes half of the pooled mass. This catches pooling by row count, which would look correct on three equal-length replicas. Such small examples complement the end-to-end fixture because the intended answer can be checked independently.
+
+\begin{table}[htbp]
+\centering
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Test intervention & Behaviour being checked\\
+\midrule
+Reorder FES grid rows & Identical interpolation after coordinate-based reconstruction\\
+Remove a grid point & Explicit input failure before interpolation\\
+Shift all FES energies & Unchanged replica-normalized weights\\
+Use unequal replica lengths & Equal total contributions after pooling\\
+Relabel cluster numbers & Unchanged partition agreement\\
+Change evaluation extremes & No change to a scaler fitted on fixed training rows\\
+\bottomrule
+\end{tabularx}
+\caption{Examples from the numerical verification suite. These are controlled software checks, not molecular experiments.}
+\label{tab:verification}
+\end{table}
 
 \section{Remaining methodological ambiguities}
-The main unresolved choices are the exact descriptor scaling in STEP 2, how the replica-averaged FES was constructed, and how the published cluster widths and uncertainties were defined. The supplied code also gives more detail than the paper about density ties and spline-based elbow selection. The repository identifies these choices as based on the supplied source; it does not imply that the paper fully specifies them.
-
-These choices affect how the analysis is run and how its results can be compared. Raw Wasserstein scaling remains the reproduction setting; normalized scaling has a separate extension configuration. The complete numerical grid does not resolve how the FES was constructed. Any future difference in populations will need to be checked against these analysis choices before it is given a biological interpretation.
+The paper does not fully specify STEP-2 scaling, the replica-averaged FES construction or the conventions behind every reported width and uncertainty. Density ties and elbow selection are also clearer in the supplied code. Source-informed choices are therefore identified explicitly. Raw Wasserstein scaling remains the reproduction setting, with normalization reserved for a separate sensitivity experiment. Resolving these choices is necessary before differences from published populations can be interpreted scientifically.

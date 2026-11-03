@@ -1,4 +1,4 @@
-\usepackage[a4paper,left=25mm,right=23mm,top=23mm,bottom=24mm,headsep=7mm]{geometry}
+\usepackage[a4paper,left=29mm,right=26mm,top=25mm,bottom=25mm,headsep=7mm]{geometry}
 \usepackage{fontspec}
 \usepackage{amsmath,mathtools,bm}
 \usepackage{unicode-math}
@@ -20,17 +20,20 @@
 \definecolor{Audit}{HTML}{A95542}
 \hypersetup{hypertexnames=false,colorlinks=true,linkcolor=Navy,citecolor=Teal,urlcolor=Navy,pdftitle={RobustCluster-Aβ: reproducible analysis of amyloid-β40 conformational descriptors},pdfauthor={Ali Erkan Ocaklı},pdfsubject={Curricular internship report, Data Analysis L-31, academic year 2025–2026},pdfkeywords={amyloid-beta40, metadynamics, reproducibility, clustering, feature sensitivity},pdflang={en-GB}}
 \color{Ink}
-\setkomafont{disposition}{\sffamily\bfseries\color{Navy}}
+\setkomafont{disposition}{\rmfamily\bfseries\color{Navy}}
+\setkomafont{chapter}{\rmfamily\fontsize{23}{27}\selectfont\bfseries\color{Navy}}
+\setkomafont{section}{\sffamily\normalsize\bfseries\color{Navy}}
 \setkomafont{pageheadfoot}{\sffamily\small\color{Navy}}
 \clearpairofpagestyles
 \ihead{RobustCluster-Aβ}
-\ohead{Conformational analysis and reproducibility}
+\ohead{\headmark}
+\automark{chapter}
 \cfoot*{\pagemark}
 \pagestyle{scrheadings}
-\RedeclareSectionCommand[beforeskip=0pt,afterskip=16pt]{chapter}
-\RedeclareSectionCommand[beforeskip=12pt,afterskip=5pt]{section}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=13pt]{chapter}
+\RedeclareSectionCommand[beforeskip=11pt,afterskip=4pt]{section}
 \setlength{\parindent}{1em}
-\setlength{\parskip}{2pt plus 1pt}
+\setlength{\parskip}{1.5pt plus .5pt}
 \setlength{\emergencystretch}{2em}
 % Keep a paragraph's opening/closing line with its neighbouring text.
 \clubpenalty=10000
@@ -52,7 +55,7 @@
 \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,frame=none,backgroundcolor=\color{CoolGrey},columns=fullflexible,keepspaces=true,showstringspaces=false,keywordstyle=\color{Navy}\bfseries,stringstyle=\color{Teal},commentstyle=\color{CodeComment}\itshape,tabsize=4,aboveskip=4pt,belowskip=4pt}
 \lstdefinestyle{editorialcode}{language=Python,numbers=left,numberstyle=\sffamily\scriptsize\color{CodeComment},numbersep=9pt,xleftmargin=19pt,basicstyle=\ttfamily\fontsize{8.2}{10.5}\selectfont,breakatwhitespace=false}
 \newtcolorbox{codepanel}[2]{colback=CoolGrey,colframe=Navy,colbacktitle=Navy,coltitle=white,boxrule=.35pt,arc=0pt,left=6pt,right=7pt,top=5pt,bottom=5pt,title={\sffamily\small\bfseries #1\hfill\normalfont\scriptsize #2},before skip=9pt,after skip=9pt}
-\graphicspath{{figures/}}
+\graphicspath{{figures/}{artwork/}}
 \input{generated/values.tex}
 
 \input{generated/revision_values.tex}
