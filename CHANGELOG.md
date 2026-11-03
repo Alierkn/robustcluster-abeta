@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 — 2026-11-03
+
+- Rewrote the abstract and revised the nine chapters in direct academic English suitable for an undergraduate report, retaining precise terms and explaining compressed phrases.
+- Preserved equations, numeric results, citation coverage, scientific limitations and the student's confirmed GROMACS reflection; no new empirical run.
+- Retained a fixed-excerpt recheck: Sapling 100.0% AI; GPTZero blocked by a free-scan/sign-up gate, with no verified current score. Previous review evidence is unchanged.
+- Recorded representative wording changes and a separate scientific-consistency review; report compilation and release QA are documented in `docs/FINAL_QA.md`.
+
 ## Final delivery audit — 2026-10-07
 
 - Checked report evidence, equations, citations, navigation, embedded fonts, source integrity and rendered layout.

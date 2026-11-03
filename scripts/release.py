@@ -23,7 +23,7 @@ if qa["status"] != "SUCCESS":
     raise RuntimeError("Most recent release QA did not pass")
 report = [r for r in records if r["command"] == "report-build" and r["status"] == "SUCCESS"][-1]
 build = json.loads((ROOT / report["filename"]).read_text())
-manifest = {"project": "RobustCluster-Aβ", "version": "0.1.1",
+manifest = {"project": "RobustCluster-Aβ", "version": "0.1.2",
             "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
             "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
             "scientific_reproduction_status": "BLOCKED",

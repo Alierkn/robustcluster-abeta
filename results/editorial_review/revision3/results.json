@@ -1,0 +1,64 @@
+{
+  "recorded_at": "2026-11-03T13:14:15.690731+00:00",
+  "status": "PARTIAL",
+  "input": {
+    "date": "2026-11-03T13:11:49.205481+00:00",
+    "source": "report/report.tex, revised Abstract, first two paragraphs",
+    "source_sha256": "e865d822bda00a06ed4ebbc11512172fa4e688ad2fbd2f01be22b7e3a7414bc5",
+    "excerpt_sha256": "0753d8c2c7f059d734c62d2b50cadcc4848923fa5e0f1baf367f85ad21326be7",
+    "word_count": 135,
+    "character_count": 923,
+    "selection_rule": "First two abstract paragraphs, fixed before score submission, same rule as prior reviews but changed content and length. Not a controlled authorship experiment.",
+    "personally_identifying_or_raw_data_uploaded": false
+  },
+  "services": [
+    {
+      "name": "Sapling",
+      "status": "COMPLETED",
+      "url": "https://sapling.ai/ai-content-detector",
+      "submissions": 1,
+      "verified_current_excerpt_score": true,
+      "ai_detection_percent": 100.0,
+      "displayed_tokens": 177,
+      "model_version": "not exposed",
+      "procedure": "One Check again button click after inserting the saved excerpt. Result visibly confirmed with exact excerpt and token count."
+    },
+    {
+      "name": "GPTZero",
+      "status": "BLOCKED",
+      "url": "https://gptzero.me/",
+      "result_url": "https://app.gptzero.me/",
+      "submissions": 1,
+      "verified_current_excerpt_score": false,
+      "score": null,
+      "blocker": "Sign-up required to continue/unlock more scans; result state says Text changed — Scan to update.",
+      "displayed_words": 135,
+      "displayed_characters": 923,
+      "unverified_background_display": {
+        "ai_percent": 100,
+        "mixed_percent": 0,
+        "human_percent": 0,
+        "model_labels": [
+          "3.3b",
+          "2025-03-13-base"
+        ],
+        "warning": "Not attributable to this excerpt; must not be reported as a completed current result."
+      },
+      "procedure": "One landing-page Scan click. Result tab displayed sign-up modal and stale/unupdated result indicators. Stopped without creating an account, re-scanning, or changing sessions to evade the limit."
+    }
+  ],
+  "comparison": "Same paragraph-selection rule as earlier reviews, but different wording and length; not a controlled before/after experiment.",
+  "limitations": [
+    "Only the fixed excerpt was submitted, not the full report.",
+    "No authorship, scientific correctness or publication-readiness inference from these classifications.",
+    "No source edits, detector-driven rewrites, retries, humanization services, accounts, purchases or CAPTCHA bypass."
+  ],
+  "evidence_sha256": {
+    "excerpt.txt": "0753d8c2c7f059d734c62d2b50cadcc4848923fa5e0f1baf367f85ad21326be7",
+    "gptzero-ui.txt": "4f8c57a44da086e9eaea238ef45212e61b3a7ff7b1cc2bb52863836ae7b1fe06",
+    "gptzero.png": "7534376a77a0da4ff5c6819b397eed94aa5b5247ccf871202765bafb8f688f3d",
+    "input.json": "f4f83a8c8d8627dd7850d4cf95c0aa598c6fdabf0dca1c4e18a1dc99bf54ba35",
+    "sapling-ui.txt": "54018520d9ba7d7fec47c4420635cfa1de2b3eeda15a083d2a2438f1aea2228f",
+    "sapling.png": "6dcb58346d2c95ed6cde74d2322a57e32fd29b2a8f7d9de06ddb45208a90b762"
+  }
+}

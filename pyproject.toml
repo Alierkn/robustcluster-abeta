@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "robustcluster-abeta"
-version = "0.1.1"
+version = "0.1.2"
 description = "Audited Aβ40 conformational clustering and reproducibility diagnostics"
 requires-python = ">=3.12,<3.14"
 license = {text = "BSD-3-Clause (new code only)"}

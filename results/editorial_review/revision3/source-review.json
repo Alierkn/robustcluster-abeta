@@ -1,0 +1,134 @@
+{
+  "baseline_commit": "6d1fc92729880e3965964a522d6b1999628e33e1",
+  "scope": "Editorial preservation checks, not a scientific experiment",
+  "chapters": [
+    {
+      "file": "report/chapters/01_introduction.tex",
+      "sha256": "b63b191f9628985b81b36b3b74c441cd7534ce5ab1d5d4b418bc1c678ca18700",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 414,
+      "source_words_after": 404
+    },
+    {
+      "file": "report/chapters/02_background.tex",
+      "sha256": "938b770a3739d3112a1b5eb7dc3065d224f007f4110323d2a669f4c035fb497b",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 1180,
+      "source_words_after": 1183
+    },
+    {
+      "file": "report/chapters/03_methodology.tex",
+      "sha256": "d3856e063a2c7648718bc6a2e162fca8044c5ebec12fbbb2564436aef87a1c4d",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 1573,
+      "source_words_after": 1633
+    },
+    {
+      "file": "report/chapters/04_audit.tex",
+      "sha256": "57f00580030a6f375a6eaf106b2194ce20ecdd9924fc73d1ad4e661e6c0eff2f",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 771,
+      "source_words_after": 820
+    },
+    {
+      "file": "report/chapters/05_robustness.tex",
+      "sha256": "8461b91b24847578a443327ce2e77b05294c1f4a907dfd8ef4a8b0c9d20499e8",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 1225,
+      "source_words_after": 1301
+    },
+    {
+      "file": "report/chapters/06_results.tex",
+      "sha256": "54d1e5b5e5e2258cc989c45ec2ad2af16339d84026f6f722b615c0653e71d746",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 1109,
+      "source_words_after": 1144
+    },
+    {
+      "file": "report/chapters/07_discussion.tex",
+      "sha256": "3a1a455ba49084e52274c4dcb7e8f3bc6c276e4a3b8c5c828bbb7ad52a9b2f5e",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 442,
+      "source_words_after": 468
+    },
+    {
+      "file": "report/chapters/08_outcomes.tex",
+      "sha256": "20d8358645f8ee9da25cbec8f34447ae319d16389df59356af326151113dd503",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 629,
+      "source_words_after": 649
+    },
+    {
+      "file": "report/chapters/09_conclusions.tex",
+      "sha256": "26dfa8e7b47ecaf27e153455fabb4366947b33e6e8deb14b0ad01e3d5697e8f7",
+      "checks": {
+        "equations": true,
+        "inline_math": true,
+        "citations": true,
+        "headings_labels": true,
+        "figures_tables": true,
+        "numbers": true
+      },
+      "source_words_before": 296,
+      "source_words_after": 312
+    }
+  ],
+  "all_checks_passed": true,
+  "new_empirical_runs": false
+}

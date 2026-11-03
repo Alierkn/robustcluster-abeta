@@ -1,4 +1,18 @@
-# Current release v0.1.1 — textbook-informed refinement
+# Current release v0.1.2 — undergraduate readability
+
+Selected report build: `20261103T131528-report-67e955` — SUCCESS, **22 main-text pages, 38 total**. Selected local release QA: `20261103T131615-qa-72d4c6` — SUCCESS, **36 tests**, lint, bibliography and saved-output integrity.
+
+The abstract and all nine chapters received a prose review for clear undergraduate-level explanation. A source comparison against `6d1fc92` confirms unchanged chapter equations, numerical literals, citation sequence, headings, labels, and complete figure/table environments. Manual review checked the meaning of the rewritten explanations, including FES marginalization and the separate meanings of cluster width and replica SEM. The confirmed GROMACS reflection and the assistance disclosure are unchanged. No numerical algorithm, configuration, empirical output or original supplied file was edited.
+
+All 38 pages were viewed in contact sheets. The abstract, dense methods, GMM method, discussion and internship/code pages (PDF pages 2, 12, 17, 24 and 25) were inspected at reading size. No clipping, collisions or missing assets were observed. Fonts are embedded and Unicode-mapped. The build has no unresolved citations or labels, missing glyphs, or overfull/underfull boxes. Two existing benign unicode-math compatibility warnings remain. The PDF remains untagged; no PDF/UA claim is made.
+
+The fixed 135-word abstract excerpt received **Sapling 100.0% AI**. **GPTZero is BLOCKED** by its free-scan/sign-up gate, with no verified score for the current excerpt. The stale background display is explicitly excluded from the result. These are not full-report authorship findings. Evidence is in `AI_CHECKER_REVIEW_REVISION3.md`; the excerpt was not rewritten after the scores were observed.
+
+Detailed wording examples: `PROSE_READABILITY_V012.md`, `PROSE_READABILITY_V012_A.md`, and `PROSE_READABILITY_V012_B.md`. Machine-readable source and PDF checks are under `results/editorial_review/revision3/`. The preceding v0.1.1 delivery and its checker records remain preserved. Older audits below describe their own selected builds.
+
+---
+
+# Previous release v0.1.1 — textbook-informed refinement
 
 Selected report: `20261103T130123-report-145074` — SUCCESS, 22 main-text / 38 total pages. Selected local QA: `20261103T130142-qa-4635a6` — SUCCESS, 36 tests, lint, bibliography and output hashes. Numerical algorithms and saved scientific outputs are unchanged; version metadata is incremented to 0.1.1.
 

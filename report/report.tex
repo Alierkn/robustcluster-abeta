@@ -19,15 +19,15 @@
 \pagenumbering{roman}
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-Radius of gyration and solvent-accessible surface area (SASA) describe related aspects of peptide shape. Their correlation, however, does not determine whether one can be omitted from a clustering model. This internship report investigates that distinction in amyloid-β40 descriptors and audits the analysis supplied for reproducing the workflow of Cadenelli and colleagues.
+This internship project examines how the choice of structural measurements affects clustering of amyloid-β40 configurations. The starting material was a descriptor table and an analysis script associated with the workflow of Cadenelli and colleagues. The work had two parts: checking and reorganising that analysis, and testing whether solvent-accessible surface area (SASA) could be left out when radius of gyration was already included.
 
-The dataset contains 300,003 observations in three replica segments, covering the source-labelled 1–3 microsecond interval. Inspection of the original script identified problems with parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. These were addressed in a modular Python implementation with numerical tests and recorded configurations. A recovered free-energy surface passed grid-completeness and query checks. Its energy units and construction provenance remain unresolved, so the reported experiments use the biased descriptors without equilibrium reweighting.
+The table contains 300,003 saved observations from three replicas over the source-labelled 1–3 microsecond interval. The code audit found errors in parsing and several steps used to form and describe clusters. The revised Python package includes numerical tests and records the settings of each run. A complete free-energy grid was also checked. Its energy units and method of construction could not be verified, so the analyses reported here do not estimate equilibrium populations.
 
-The pooled Rg–SASA correlation is \RgSasaCorrelation{}. The first two standardized principal components explain \PCATwo\% of feature variance. To test the consequence of removing SASA, an independent experiment fitted Gaussian mixtures to four descriptors and to the remaining three. A shared replica-balanced fitting sample was used for five component counts and five initialization seeds, giving fifty fits. All reached the numerical convergence criterion. With three components, the median cross-representation Adjusted Rand index was 0.864; it fell to 0.457 with six components. Agreement therefore depended on the chosen model resolution, despite the strong global feature correlation.
+Rg and SASA have a pooled correlation of \RgSasaCorrelation{}, and the first two standardized principal components explain \PCATwo\% of feature variance. Gaussian mixture models were then fitted with and without SASA, using the same sample with equal numbers of frames from each replica. Five component counts and five starting seeds gave fifty fits, all of which met the numerical convergence criterion. With three components, the median Adjusted Rand index between the two sets of assignments was 0.864; with six, it was 0.457. Removing SASA therefore had a different effect at different component counts, despite its strong correlation with Rg.
 
-Temporal diagnostics place a separate limit on interpretation: every replica–descriptor series failed at least one correlation-time reliability criterion. The Gaussian-mixture comparison consequently remains a descriptive analysis of one fixed fitting sample, evaluated on observations that include the fitting rows. It does not identify physical metastable states or unbiased kinetic rates.
+All replica–descriptor series failed at least one reliability check for the correlation-time estimate. The mixture comparison also used only one fitting sample, and its evaluation included the fitting rows. These limits mean that the results describe grouping in the supplied biased sample, not physical metastable states or unbiased kinetic rates.
 
-The resulting software and report make the completed descriptor analysis inspectable and provide a tested basis for further reproduction. Verified FES provenance is still required before equilibrium conformational populations can be reported.
+The code, saved results and report document what was checked and what remains unfinished. Reproducing equilibrium conformational populations still requires verified information about the free-energy surface and a separate calculation.
 
 \vspace{5mm}\noindent\textbf{Keywords:} amyloid-β40; intrinsically disordered peptides; well-tempered metadynamics; density peaks; statistical reweighting; reproducibility.
 \tableofcontents
@@ -51,7 +51,7 @@ WT-MetaD & Well-tempered metadynamics\\\bottomrule
 \end{tabularx}
 
 \vspace{6mm}
-Published methodology, the implemented reproduction, corrections to supplied code, robustness extensions, and future work are distinct evidence categories throughout this report. A successful software test demonstrates behavior on a specified fixture; it does not establish a biological result. A \blocked{} analysis lacks required inputs or provenance and is not presented as completed. The report distinguishes assigned learning topics, demonstrable project outputs, and analyses that remain unperformed.
+The report separates the published method, its implementation, corrections to the supplied code, additional robustness experiments, and future work. A software test checks how the code behaves on a specified example; it does not establish a biological result. An analysis marked \blocked{} lacks required inputs or information about their origin. Learning topics in the internship programme are also distinguished from work that has a recorded output.
 \clearpage
 \pagenumbering{arabic}
 \label{mainstart}

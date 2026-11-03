@@ -1,0 +1,177 @@
+Browser tab: 818606029, Title: "This internship project examines how the choice of structural measurements affects clustering of amy — GPTZero", URL: "https://app.gptzero.me/".
+0 AXWebArea URL: app.gptzero.me/, This internship project examines how the choice of structural measurements affects clustering of amy — GPTZero
+	1 container
+		2 container root
+			3 container
+				4 button Toggle sidebar
+					5 image
+				6 text This internship project examines how the choice of structural measurements affects clustering of amy
+				7 button Sign up
+				8 button Log in
+				9 container input-view-container
+					10 button Expand input view
+						11 image
+					12 splitter Resize results panel
+					13 container
+						14 container
+							15 button Copy
+								16 image
+							17 button Proofread
+								18 image
+								19 text Proofread
+							20 button (disabled) Watch your writing replay
+								21 image
+						22 container
+							23 container This internship project examines how the choice of structural measurements affects clustering of amyloid-β40 configurations. The starting material was a descriptor table and an analysis script associated with the workflow of Cadenelli and colleagues. The work had two parts: checking and reorganising that analysis, and testing whether solvent-accessible surface area (SASA) could be left out when radius of gyration was already included.
+
+
+
+
+The table contains 300,003 saved observations from three replicas over the source-labelled 1–3 microsecond interval. The code audit found errors in parsing and several steps used to form and describe clusters. The revised Python package includes numerical tests and records the settings of each run. A complete free-energy grid was also checked. Its energy units and method of construction could not be verified, so the analyses reported here do not estimate equilibrium populations.
+								24 container
+									25 text This internship project examines how the choice of structural measurements affects clustering of amyloid-β40 configurations.  The starting material was a descriptor table and an analysis script associated with the workflow of Cadenelli and colleagues. The work had two parts: checking and reorganising that analysis, and testing whether solvent-accessible surface area (SASA) could be left out when radius of gyration was already included.
+								26 text The table contains 300,003 saved observations from three replicas over the source-labelled 1–3 microsecond interval. The code audit found errors in parsing and several steps used to form and describe clusters. The revised Python package includes numerical tests and records the settings of each run. A complete free-energy grid was also checked. Its energy units and method of construction could not be verified, so the analyses reported here do not estimate equilibrium populations.
+							27 container
+								28 image ⚖️
+								29 button Open Grammarly. 1 suggestions.
+									30 container
+										31 text 1
+					32 container
+						33 text Great! You've entered enough text to scan 923 characters
+				34 container
+					35 container Description: Scan type navigation, ID: right-hand-scan-menu
+						36 button Description: Basic Scan, ID: g0-nav-menu-button-basic
+						37 button Description: Advanced, ID: g0-nav-menu-button-advanced
+							38 text Advanced
+						39 button Description: Feedback, ID: g0-nav-menu-button-v2_writing_feedback
+							40 text Feedback
+						41 button Description: Plagiarism, ID: g0-nav-menu-button-plagiarism
+							42 text Plagiarism
+						43 button Description: Hallucination, ID: g0-nav-menu-button-bibliography_scan
+							44 text Hallucination
+					45 container g0-nexus-results-header
+						46 heading Basic Scan, Value: 1
+							47 text Basic Scan
+						48 button Model 2025-03-13-base
+							49 text Model 
+							50 text 2025-03-13-base
+						51 button Share
+							52 image
+						53 button Export
+							54 image
+					55 image
+					56 text Create a free account to unlock more scans Join over 6 million users Sign up for free to keep scanning.
+					57 button Sign up for free
+						58 image
+						59 text Sign up for free
+					60 image
+						61 text AI
+					62 image
+					63 container
+						64 text GPTZero AI Detection
+					65 container
+						66 text Model  3.3b
+					67 container
+						68 text We are highly confident this text was AI generated
+						69 image
+					70 text Chance this entire text is...
+					71 button AI 100%
+						72 text AI 100%
+						73 image
+					74 button Mixed 0%
+						75 text Mixed 0%
+						76 image
+					77 button Human 0%
+						78 text Human 0%
+						79 image
+					80 radio button 1
+					81 radio button 0
+					82 radio button 0
+					83 text What's next?
+					84 button Writing feedback on your draft Structure, tone, and argument analysis
+						85 text Writing feedback on your draft
+						86 text Structure, tone, and argument analysis
+						87 image
+					88 button (collapsed) Guidance for Teachers and reviewers, Secondary Actions: Expand
+						89 image
+						90 text Guidance for Teachers and reviewers
+					91 text Text changed Scan to update 923 characters • 135 words
+					92 button Re-scan
+						93 text Re-scan
+						94 image
+				95 container
+					96 button AI Tools
+					97 list
+						98 image
+					99 button Feedback
+						100 image
+						101 text Feedback
+					102 button
+						103 image
+				104 container
+					105 image
+					106 text Here are some useful AI tools.
+					107 text Ways they can help you as a
+					108 pop up button (collapsed) teacher, ID: headlessui-menu-button-:rv:, Secondary Actions: Expand
+						109 text teacher
+						110 image
+					111 button Give constructive feedback
+						112 image
+						113 text Give constructive feedback
+					114 button Help with addressing AI use in this assignment
+						115 image
+						116 text Help with addressing AI use in this assignment
+					117 button Help support a struggling learner
+						118 image
+						119 text Help support a struggling learner
+					120 button Find contradictions in my text
+						121 image
+						122 text Find contradictions in my text
+					123 button Custom question
+						124 image
+						125 text Custom question
+					126 container
+						127 splitter 75
+						128 text entry area (settable)
+						129 button Add rubric or documents
+							130 image
+							131 text Add rubric or documents
+						132 button (disabled) ->
+			133 container Modal
+				134 container sign-up-modal
+					135 heading Sign up to Continue, Value: 2
+						136 text Sign up to Continue
+					137 container
+						138 text Already have an account?
+						139 text Log in
+					140 button Continue with Google
+						141 image
+						142 text Continue with Google
+					143 button Continue with Facebook
+						144 image
+					145 button Continue with Clever SSO
+						146 image Continue with Clever SSO
+					147 button Continue with Github
+						148 image
+					149 button Continue with email
+						150 text Continue with email
+						151 image
+					152 container
+						153 text By continuing, you agree to our
+						154 link Description: Terms of Service, Value: gptzero.me/terms-of-use.html
+						155 text and have read our
+						156 link Description: Privacy Policy, Value: gptzero.me/privacy-policy.html
+						157 text .
+					158 text You also agree to receive product-related marketing emails from GPTZero, which you can unsubscribe from at any time.
+	159 button Get summaries and key insights using AI Assistant
+		160 button Open AI Assistant
+			161 image ImportedIcons
+	162 container grammarly-integration
+		163 text {"mode":"full","isActive":true,"isUserDisabled":false}
+
+The focused UI element is 23 container This internship project examines how the choice of structural measurements affects clustering of amyloid-β40 configurations. The starting material was a descriptor table and an analysis script associated with the workflow of Cadenelli and colleagues. The work had two parts: checking and reorganising that analysis, and testing whether solvent-accessible surface area (SASA) could be left out when radius of gyration was already included.
+
+
+
+
+The table contains 300,003 saved observations from three replicas over the source-labelled 1–3 microsecond interval. The code audit found errors in parsing and several steps used to form and describe clusters. The revised Python package includes numerical tests and records the settings of each run. A complete free-energy grid was also checked. Its energy units and method of construction could not be verified, so the analyses reported here do not estimate equilibrium populations.

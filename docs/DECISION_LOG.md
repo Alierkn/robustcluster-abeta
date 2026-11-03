@@ -46,3 +46,9 @@ Apply explanatory sequencing from inspected Knuth, Boyd–Vandenberghe and ISLP 
 ### D25 — Student-confirmed GROMACS learning reflection
 
 On 3 November 2026 the student described learning to use GROMACS as initially difficult but enjoyable. Chapter 8 now conveys that experience in two first-person sentences. This is a personal reflection supplied by the student, not a new computational result or evidence of a completed molecular simulation. No numerical method changed; the fixed detector excerpt is unchanged. The final PDF was rebuilt and the two affected pages visually checked.
+
+### D26 — Undergraduate readability without changing scientific claims
+
+The student requested a more natural explanation after the v0.1.1 detector results. The new edit replaces compressed and administrative phrases with concrete explanations and keeps technical terms where precision requires them. The confirmed GROMACS reflection is unchanged; no further personal history is inferred. This is an editorial revision, not a reproduction or robustness experiment. It follows the existing academic writing guidance and the student's stated level and purpose. Equations, numerical outputs and uncertainty limits remain fixed. The intended effect is easier reading and explanation in an internship context, without a promised detector outcome.
+
+The first two revised abstract paragraphs were fixed before one attempt per external checker. Sapling returned 100.0% AI. GPTZero required registration for further scans; its stale background display is not recorded as a current result. The exact evidence is in `AI_CHECKER_REVIEW_REVISION3.md`. No score-driven rewrite followed those observations.

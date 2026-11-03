@@ -1,0 +1,31 @@
+{
+  "version": "0.1.2",
+  "date": "2026-11-03",
+  "report_manifest": "results/manifests/20261103T131528-report-67e955.json",
+  "qa_manifest": "results/manifests/20261103T131615-qa-72d4c6.json",
+  "report_sha256": "efe617925a02551edbfd20732da1450d3c616ac596c1a4f6f7d0e7832a533568",
+  "main_text_pages": 22,
+  "total_pages": 38,
+  "tests": 36,
+  "visual_review": {
+    "overview_pages": "1\u201338",
+    "reading_size_pdf_pages": [
+      2,
+      12,
+      17,
+      24,
+      25
+    ],
+    "finding": "No visible clipping, collisions or missing assets. Approved cover unchanged."
+  },
+  "warnings": [
+    "Package unicode-math Warning: Using \\overbracket and \\underbracket from",
+    "Package unicode-math Warning: I'm going to overwrite the following commands"
+  ],
+  "tagged_pdf": false,
+  "pdf_language": "en-GB",
+  "scientific_algorithms_changed": false,
+  "new_empirical_runs": false,
+  "source_preservation_record": "results/editorial_review/revision3/source-review.json",
+  "checker_scope": "First two abstract paragraphs only; no verified GPTZero current result."
+}

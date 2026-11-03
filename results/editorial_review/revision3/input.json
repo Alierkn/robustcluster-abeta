@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-03T13:11:49.205481+00:00",
+  "source": "report/report.tex, revised Abstract, first two paragraphs",
+  "source_sha256": "e865d822bda00a06ed4ebbc11512172fa4e688ad2fbd2f01be22b7e3a7414bc5",
+  "excerpt_sha256": "0753d8c2c7f059d734c62d2b50cadcc4848923fa5e0f1baf367f85ad21326be7",
+  "word_count": 135,
+  "character_count": 923,
+  "selection_rule": "First two abstract paragraphs, fixed before score submission, same rule as prior reviews but changed content and length. Not a controlled authorship experiment.",
+  "personally_identifying_or_raw_data_uploaded": false
+}

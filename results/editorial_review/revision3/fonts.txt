@@ -1,0 +1,29 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+MAEGWC+LibertinusSans-Bold           CID Type 0C       Identity-H       yes yes yes     19  0
+CCWGXQ+LibertinusSerif-Regular       CID Type 0C       Identity-H       yes yes yes     20  0
+YDQOND+LibertinusSerif-Bold          CID Type 0C       Identity-H       yes yes yes     21  0
+MWHRWT+LibertinusSans-Regular        CID Type 0C       Identity-H       yes yes yes    144  0
+YHYVYT+LibertinusMath-Regular        CID Type 0C       Identity-H       yes yes yes    202  0
+COONIA+LibertinusSerif-Regular       CID Type 0C       Identity-H       yes yes yes    203  0
+VYIXOM+LibertinusMath-Regular        CID Type 0C       Identity-H       yes yes yes    204  0
+MDCCHX+LibertinusMath-Regular        CID Type 0C       Identity-H       yes yes yes    225  0
+DEYCOV+LMMono10-Regular              CID Type 0C       Identity-H       yes yes yes    226  0
+GSYUBU+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    271  0
+GGGFFG+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    272  0
+UQWCOG+LibertinusSerif-Bold          CID Type 0C       Identity-H       yes yes yes    342  0
+BPVWFE+DejaVuSans-Oblique            CID TrueType      Identity-H       yes yes yes    379  0
+CSIITC+DejaVuSans                    CID TrueType      Identity-H       yes yes yes    380  0
+HFOQFE+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    381  0
+BPVWFE+DejaVuSans-Oblique            CID TrueType      Identity-H       yes yes yes    410  0
+CSIITC+DejaVuSans                    CID TrueType      Identity-H       yes yes yes    411  0
+FXMNPO+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    412  0
+BPVWFE+DejaVuSans-Oblique            CID TrueType      Identity-H       yes yes yes    455  0
+CSIITC+DejaVuSans                    CID TrueType      Identity-H       yes yes yes    456  0
+CMJRAI+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    457  0
+DIOMYR+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    481  0
+NNZHZS+LMMonoLt10-Bold               CID Type 0C       Identity-H       yes yes yes    521  0
+ANXQVX+LMMono8-Regular               CID Type 0C       Identity-H       yes yes yes    522  0
+BNTMVJ+LibertinusSerif-Italic        CID Type 0C       Identity-H       yes yes yes    566  0
+DQXCMS+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    642  0
+FVDBTJ+LMMono9-Regular               CID Type 0C       Identity-H       yes yes yes    685  0

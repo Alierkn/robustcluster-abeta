@@ -132,3 +132,7 @@ Publication scope and fresh-history policy: [PUBLIC_RELEASE.md](docs/PUBLIC_RELE
 ## Editorial revision v0.1.1
 
 The report now includes a substantive nine-chapter prose revision and a source-based [textbook and Adobe design review](docs/EDITORIAL_DESIGN_RESEARCH_V011.md). The [revision record](docs/PROSE_REVISION_V011.md) identifies changes in explanation without new numerical experiments. A second [external checker record](docs/AI_CHECKER_REVIEW_REVISION2.md) preserves actual excerpt-level results; neither service returned Human. Such scores are not a scientific or authorship certification.
+
+## Readability revision v0.1.2
+
+The [latest prose revision](docs/PROSE_READABILITY_V012.md) uses more direct English and explains technical comparisons while preserving equations, results and the student's confirmed experience. The [new external check](docs/AI_CHECKER_REVIEW_REVISION3.md) returned Sapling 100.0% AI on the saved abstract excerpt; GPTZero was blocked by its free-scan/sign-up gate and supplied no verified current score. These observations are not full-report authorship findings. The exact input, screenshots and previous reviews remain available.

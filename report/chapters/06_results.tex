@@ -1,8 +1,8 @@
 \chapter{Results}
 \section{Available evidence and execution status}
-Input validation established three segments of \num{100001} rows, each at the source-labelled 20 ps spacing. The table passed the schema, finite-value and interval checks used by the analysis. These checks support the scalar-descriptor calculations below; simulation convergence and upstream descriptor definitions remain outside what can be established from the table alone.
+The input checks found three segments of \num{100001} rows, each at the 20 ps spacing stated in the source. The table had the expected columns, finite values and interval coverage. It can therefore be used for the descriptor calculations below. These checks alone cannot show that the original simulation converged or that each descriptor was calculated correctly.
 
-Run \code{\DiagnosticRun} produced the descriptor diagnostics in \DiagnosticSeconds{} s, with sampled peak worker-process memory of \DiagnosticMemory{} MiB. These are measurements of a lightweight local calculation, not projections of full DPC cost. The status summary in \cref{tab:status} separates those diagnostics, the subsequent complete-grid FES check and the GMM pilot from the blocked reproduction attempt.
+Run \code{\DiagnosticRun} produced the descriptor results in \DiagnosticSeconds{} s, with sampled peak worker-process memory of \DiagnosticMemory{} MiB. These measurements apply to this small local calculation; they do not predict the cost of full DPC. \Cref{tab:status} lists the completed diagnostics, FES check and GMM experiment alongside the analyses that remain blocked.
 
 \begin{table}[htbp]
 \centering
@@ -24,9 +24,9 @@ External validation / Leonardo jobs & Not performed\\\bottomrule
 \end{table}
 
 \section{Descriptor distributions and redundancy}
-The pooled Pearson correlation is \RgSasaCorrelation{} for Rg and SASA and \AlphaBetaCorrelation{} for the two secondary-structure descriptors. The strong Rg--SASA association is the starting observation for the ablation experiment: both variables describe aspects of molecular dimensions, yet correlation alone leaves their role in assigning individual frames unresolved.
+Across the pooled data, the Pearson correlation is \RgSasaCorrelation{} for Rg and SASA and \AlphaBetaCorrelation{} for the two secondary-structure descriptors. The strong Rg--SASA correlation motivated the feature-removal experiment. Both descriptors describe aspects of molecular dimensions, but their correlation does not tell us whether removing one will change the label assigned to a frame.
 
-The first two standardized principal components explain \PCAFirst{}\% and \PCASecond{}\% of total variance, respectively, for a cumulative \PCATwo{}\% (\cref{fig:features}). Much of the descriptor variance is therefore concentrated in two directions. Whether lower-variance distinctions matter for a fitted partition is assessed through the clustering comparison, rather than decided from the spectrum.
+The first two standardized principal components explain \PCAFirst{}\% and \PCASecond{}\% of total variance, respectively, or \PCATwo{}\% together (\cref{fig:features}). Most of the variation is therefore captured by two directions in feature space. The clustering comparison checks whether distinctions with less variance still affect the fitted groups.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{fig03_feature_diagnostics.pdf}
@@ -34,7 +34,7 @@ The first two standardized principal components explain \PCAFirst{}\% and \PCASe
 \label{fig:features}
 \end{figure}
 
-\Cref{fig:rawdistributions} compares replicas using common bin edges for each descriptor. Each histogram is normalized by its own frame count and bin width, so differences in shape reflect the supplied samples. The curves have no equilibrium correction and cannot by themselves establish differences in equilibrium populations.
+\Cref{fig:rawdistributions} compares the replicas with the same bin edges for each descriptor. Each histogram is divided by its own frame count and bin width. The curves show differences between the recorded samples, but no equilibrium correction has been applied, so they cannot establish differences in equilibrium populations.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=.95\textwidth]{raw_descriptor_distributions.pdf}
@@ -43,9 +43,9 @@ The first two standardized principal components explain \PCAFirst{}\% and \PCASe
 \end{figure}
 
 \section{Temporal correlation and provisional ESS}
-The correlation diagnostics produce provisional ESS values ranging from \ESSMinimum{} to \ESSMaximum{} across the 12 replica--descriptor series, compared with \num{100001} raw frames in each series. All \UnreliableCount{} estimates fail at least one configured reliability heuristic. They should therefore be read as warning indicators of strong dependence and possible nonstationarity, not as precise counts of independent equilibrium conformations.
+The provisional ESS values range from \ESSMinimum{} to \ESSMaximum{} across the 12 replica--descriptor series, compared with \num{100001} saved frames in each series. All \UnreliableCount{} estimates fail at least one of the reliability checks defined earlier. The results point to strong dependence and possible changes over time, but they should not be read as precise numbers of independent equilibrium conformations.
 
-\Cref{tab:sampling} gives the estimator outputs alongside the shift in means between the two halves of each series. Several descriptors change substantially over that split. Together with the reliability flags, this makes an independent-frame uncertainty calculation poorly supported. Assessing the published convergence analysis would require the full bias history and its original diagnostics, which are unavailable here.
+\Cref{tab:sampling} reports these estimates and the difference in means between the two halves of each series. Several descriptors show a substantial shift. Together with the failed reliability checks, this gives little support for treating frames as independent when estimating uncertainty. A comparison with the published convergence assessment would need the full bias history and the original diagnostics, which are not available here.
 
 \begin{table}[htbp]
 \centering\small
@@ -61,10 +61,10 @@ The correlation diagnostics produce provisional ESS values ranging from \ESSMini
 \end{figure}
 
 \section{Complete FES validation}
-The recovered file contains exactly 2,801 by 1,301 grid points: 3,644,101 rows with five finite columns, no duplicate coordinates and complete Cartesian coverage. Its nonperiodic axes span 0--28 and 0--13 at spacing 0.01. All 300,003 converted descriptor queries lie within those bounds, and bounded bilinear interpolation returns finite values for every query. The grid check is an input-integrity result; the energy column has no declared unit and is not assigned one solely because the source script assumes kJ/mol.
+The recovered file contains exactly 2,801 by 1,301 grid points: 3,644,101 rows with five finite columns. There are no duplicate coordinates, and every expected pair of grid coordinates is present. The nonperiodic axes span 0--28 and 0--13 at spacing 0.01. All 300,003 converted descriptor queries are inside the grid, and bilinear interpolation returns a finite value for each one. This confirms that the grid can be read and queried. It does not resolve the missing energy unit; the source script's use of kJ/mol is not enough to verify that unit for the file.
 
 \section{Representation and initialization sensitivity}
-All \GMMModels{} models in the GMM pilot met their configured numerical convergence criterion. The run took \GMMSeconds{} s, with a sampled process-tree peak of \GMMMemory{} MiB. Despite this common stopping status, the fitted assignments differ across component counts and initializations (\cref{fig:gmm}). Convergence of the fitting algorithm and stability of the partition are therefore separate observations.
+All \GMMModels{} GMM fits reached the chosen numerical convergence criterion. The run took \GMMSeconds{} s, with a sampled process-tree peak of \GMMMemory{} MiB. Even so, the frame assignments differ between component counts and initializations (\cref{fig:gmm}). An algorithm can finish fitting without giving the same partition in every run.
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{gmm_sensitivity.pdf}
 \caption{Independent GMM sensitivity experiment on the biased descriptor sample. Left: four-feature versus SASA-ablated assignments at each of five seeds; diamonds mark medians. Right: within-space ARI over ten seed pairs; bars span observed minima and maxima, not confidence intervals. The fit subset is fixed across all models and evaluation includes fit rows.}
@@ -75,9 +75,9 @@ All \GMMModels{} models in the GMM pilot met their configured numerical converge
 \caption{Observed representation agreement across five paired initializations. Component count was varied by design; the table does not identify an optimal biological family count.}
 \label{tab:gmm}
 \end{table}
-At three components, cross-representation ARI lies between 0.862 and 0.868, with approximately 95.3\% of frames retaining corresponding labels after maximum-overlap matching (median across seeds). Within-space seed agreement is also high: 0.994--1.000 with four descriptors and 0.988--1.000 without SASA. At two components, however, within-space ARI ranges down to 0.011 and 0.067, respectively. A single initialization would conceal this variability. The full matrices are retained in \cref{fig:seedmatrices}.
+At three components, ARI between the four-feature and SASA-removed fits lies between 0.862 and 0.868. After matching labels by maximum overlap, approximately 95.3\% of frames keep corresponding labels (median across seeds). Agreement between seeds is also high: 0.994--1.000 with four descriptors and 0.988--1.000 without SASA. At two components, within-space ARI falls as low as 0.011 and 0.067, respectively. One initialization would not reveal this variation. \Cref{fig:seedmatrices} shows the full comparison matrices.
 
-The most consistent preservation of assignments in this pilot occurs at three components. At the other tested counts, the effect of removing SASA is larger or more dependent on initialization. This confines the conclusion to a specified model resolution and fit design: it does not support dropping SASA from the published baseline. The comparison concerns assignments in the biased sample; no equilibrium weighting was applied.
+The three-component fits show the clearest agreement after removing SASA. At the other tested counts, removing SASA has a larger effect or gives results that vary more between seeds. The conclusion is therefore tied to the tested model size and fitting procedure. It does not justify dropping SASA from the published baseline. These are comparisons of labels in the biased sample, with no equilibrium weighting.
 
 \section{Analyses remaining unavailable}
-Equilibrium cluster relevance, weighted family characterization and completed paper-DPC robustness remain unavailable. No molecular snapshots are created because the descriptor table has no atomic coordinates. The completed GMM experiment is an original descriptor-space extension, not a replacement for those stages.
+Equilibrium cluster relevance, weighted descriptions of the families and the planned paper-DPC robustness studies are still unavailable. Molecular snapshots also require atomic coordinates, which the descriptor table does not contain. The completed GMM experiment answers a separate question about the descriptors and does not replace those analyses.
