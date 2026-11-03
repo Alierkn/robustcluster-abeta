@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "run_id": "20260921T013152-c45e6960",
+  "status": "SUCCESS",
+  "command": "diagnostics",
+  "experiment": null,
+  "timestamp_utc": "2026-09-21T01:31:52.206395+00:00",
+  "git_commit": "198ae9b148733c39d2e1946460d244d38651e9e0",
+  "git_dirty": true,
+  "source_sha256": {
+    "src/robustcluster_abeta/__init__.py": "3cc8a1f08f68febd2093bbc43cc3f797012c65ac781256cab5b5bfc0fb984207",
+    "src/robustcluster_abeta/cli.py": "3addda382527ef3b73416ad736b983cf09303f1da5535cd3d21839142c4f5076",
+    "src/robustcluster_abeta/consensus.py": "613e7ce2180d0e67ad0b2b9f85f00a7362d9f20d3d3bfd51e54c68fbc174ef22",
+    "src/robustcluster_abeta/dpc.py": "f833f9219f5cbb6db42790e6d1224f4a48aa193f30e1014fa6827c309def7c13",
+    "src/robustcluster_abeta/fes.py": "bfafba87cc3a9b5e884fb30cbef148a21fbd016d68824f4b17d4cb985b6dc9a3",
+    "src/robustcluster_abeta/io.py": "30060c0ade1d9b49db6f03d03fd1f877d2eb4a3f19942ef053a2bc2755f780c3",
+    "src/robustcluster_abeta/manifest.py": "3642c17eda5b16b210e0ae0c8a9bcc48d54e7ee8c31308436ae89a0e36f9294a",
+    "src/robustcluster_abeta/pipeline.py": "7899651c07ac0e3217234cfa7e268dfb941da064858b5d5c3ecf56dd89353756",
+    "src/robustcluster_abeta/plotting.py": "36d1086aace820f551a99929f39b6f20557a1c663b651ab18955689950b8188b",
+    "src/robustcluster_abeta/preprocessing.py": "72f8da7bae79f53f786411a8157625752640e4f50c344de0e291ef6b1a96ba46",
+    "src/robustcluster_abeta/reweighting.py": "75d2888582fc4316070e76b53e97058bb4df3f781fe2c7c33a497ab95d8e97f5",
+    "src/robustcluster_abeta/stability.py": "09069ca505d4e7b078b8dcda33d3aae242556c897297597f5911e13e3eac948c",
+    "src/robustcluster_abeta/statistics.py": "a6fd389136a00475b53f8832c729c4ca05a556acefa1f0a16edad2875cb0d419",
+    "src/robustcluster_abeta/validation.py": "fd3a8f0db293e0e8adf0e2e220026e29075d7e5e7504f69026276b42fc0e988d"
+  },
+  "python": "3.12.6",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "robustcluster-abeta": "0.1.0"
+  },
+  "config": {
+    "project_root": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta",
+    "mode": "paper_reproduction",
+    "profile": "smoke",
+    "inputs": {
+      "descriptors": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/input_clustering_ab40.dat",
+      "fes": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/FES_AB_40.dat",
+      "fes_energy_unit": null,
+      "fes_provenance": null,
+      "rbias_energy_unit": null,
+      "rbias_provenance": null
+    },
+    "replicas": 3,
+    "interval_ps": [
+      1000000,
+      3000000
+    ],
+    "temperature_K": 310.0,
+    "gamma_bias": 10.0,
+    "features": [
+      "nAlpha",
+      "nBeta",
+      "Rg",
+      "SASA"
+    ],
+    "representation": "minmax",
+    "wasserstein": "raw",
+    "master_seed": 42,
+    "dpc": {
+      "nmax": 10,
+      "min_cluster_size": 300,
+      "silhouette_threshold": 0.3,
+      "dc": 1.3,
+      "dc_reduction": 0.9,
+      "max_no_improve_steps": 5
+    },
+    "consensus": {
+      "spline_s": 5.0
+    },
+    "bootstrap_draws": 500,
+    "profiles": {
+      "smoke": {
+        "group_size": 3000,
+        "max_groups": 2,
+        "seeds": 2,
+        "max_seconds": 300,
+        "max_memory_gib": 8,
+        "enabled": true
+      },
+      "medium": {
+        "group_size": 10000,
+        "max_groups": 3,
+        "seeds": 5,
+        "max_seconds": 1800,
+        "max_memory_gib": 16,
+        "enabled": true
+      },
+      "full": {
+        "group_size": 30000,
+        "max_groups": null,
+        "seeds": 20,
+        "max_seconds": 86400,
+        "max_memory_gib": 24,
+        "enabled": false
+      }
+    },
+    "config_file": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/config/paper_reproduction.yaml",
+    "config_sha256": "9af54be9ee398d57d3347f899215be873166b80f5a17f0dd58a950089a3074b7",
+    "execution": {
+      "group_size": 3000,
+      "max_groups": 2,
+      "seeds": 2,
+      "max_seconds": 300,
+      "max_memory_gib": 8,
+      "enabled": true
+    }
+  },
+  "inputs": {
+    "descriptors": {
+      "filename": "input_clustering_ab40.dat",
+      "exists": true,
+      "sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77"
+    },
+    "fes": {
+      "filename": "FES_AB_40.dat",
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "outputs": [
+    {
+      "filename": "results/tables/20260921T013152-c45e6960/autocorrelations.csv",
+      "sha256": "7e22c99f0d840e5c0cb382df2e7920a0e3860b4acfa0602847e01e38e3aaf452"
+    },
+    {
+      "filename": "results/tables/20260921T013152-c45e6960/feature_correlation.csv",
+      "sha256": "387240a8e60388d97741e5fb3835c87124ff4257c5c12c3564436abcebda5c26"
+    },
+    {
+      "filename": "results/tables/20260921T013152-c45e6960/pca.json",
+      "sha256": "906b6c04b2d261ba4c4c28dc09a905f567bfe2e9629e77e60f5fa39295738ddb"
+    },
+    {
+      "filename": "results/tables/20260921T013152-c45e6960/raw_descriptors.csv",
+      "sha256": "1e2b84579bfa47472557820bbca576bd51bd1564fb21b459c1d5ab134147495a"
+    },
+    {
+      "filename": "results/tables/20260921T013152-c45e6960/raw_histograms.csv",
+      "sha256": "869f0ef258fa0cf72c2d1a7275f270941b825ca9ea993e53f0022c3005b47e20"
+    },
+    {
+      "filename": "results/tables/20260921T013152-c45e6960/sampling_diagnostics.csv",
+      "sha256": "89209b0962c4fe756759b7d78c51df0f04fce63c6a0fb6cc5df93824c5d02272"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/fig01_workflow.pdf",
+      "sha256": "b8f566b1da8291728a393a1b624aa218d2c816451a51f86de60c9d0deb2ef763"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/fig01_workflow.svg",
+      "sha256": "d82d00157d04c35c5781f3b3e36099dda8ff12da0b0512d6ee7181500872adc5"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/fig03_feature_diagnostics.pdf",
+      "sha256": "c5dc7ac2e41a6099719ec8fac3259b855fdaed974b472a3098dd7a5698a2805b"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/fig03_feature_diagnostics.svg",
+      "sha256": "740863417e759fdf27f60e41b34fd9d55b004bf22318a69e45ccae94b65a7d54"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/raw_descriptor_distributions.pdf",
+      "sha256": "d324eade50510bb0fa70741ff9e1c5e3cc6e5939adcd6f1059e396d26f5c3c56"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/raw_descriptor_distributions.svg",
+      "sha256": "4a488a78522652b33a9a0ef8e4fa2ef93b8f1631051d7e34ac48dbb9ab7f0946"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/sampling_autocorrelations.pdf",
+      "sha256": "891fc03428a5f9d2214c641dbcfb0771b7940ab5744413cb82124b1abdf5ac2e"
+    },
+    {
+      "filename": "results/figures/20260921T013152-c45e6960/sampling_autocorrelations.svg",
+      "sha256": "c9124f562bff4e167d77770c48baf4680ba7c553d923ce9a86895f1f089fbf6c"
+    },
+    {
+      "filename": "results/logs/20260921T013152-c45e6960/execution.log",
+      "sha256": "ef5e18c05d9819c03f10c3c2370bf95d90380291aa0abe5481dd6317fbc1fa1e"
+    },
+    {
+      "filename": "results/logs/20260921T013152-c45e6960/outcome.json",
+      "sha256": "26e48a015d613349c0ab657bc9fa317602a1e051b8d50d411e813579eac3e2d3"
+    }
+  ],
+  "runtime_seconds": 3.7195164170116186,
+  "peak_rss_bytes": 492978176,
+  "source_manifest": null,
+  "resource_measurement": "process-tree RSS sampled every 0.1 s; may miss shorter peaks",
+  "summary": {
+    "frames": 300003,
+    "interpretation": "unweighted biased-stream diagnostics",
+    "weights": "BLOCKED: complete FES missing; rbias provenance unverified"
+  },
+  "message": null
+}

@@ -1,0 +1,9 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "summary": {
+    "frames": 300003,
+    "replicas": 3,
+    "fes_validated": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "CLUSTERING40_ottimizzato.py": {
+    "sha256": "cfd76ebb6eb2fe193c342587b19cef402c29dabbdf63347d3b481656ae46e579",
+    "original_matches_preserved_copy": true
+  },
+  "input_clustering_ab40.dat": {
+    "sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77",
+    "original_matches_preserved_copy": true
+  },
+  "FES_AB_40.dat": {
+    "sha256": "6fd6c3d7c04e20859cf91abb4765e126e0f3fcb982d3795b643165dde26fa3f4",
+    "original_matches_preserved_copy": true
+  },
+  "gmm": {
+    "models": 50,
+    "converged": 50,
+    "frames": 300003,
+    "fit_frames": 3000,
+    "all_ari_summary_ranges_match_source_table": true
+  },
+  "pdf": {
+    "pages": 38,
+    "internal_link_destinations_resolved": 136,
+    "external_uri_links_well_formed": 58,
+    "network_revalidation_of_external_urls": false,
+    "metadata_author": "Ali Erkan Ocakl\u0131",
+    "metadata_title": "RobustCluster-A\u03b2: reproducible analysis of amyloid-\u03b240 conformational descriptors"
+  },
+  "fonts": {
+    "embedded_fonts": 27,
+    "all_embedded_and_unicode_mapped": true
+  },
+  "editorial": {
+    "unresolved_placeholder_markers": 0,
+    "visual_review": "All 38 pages reviewed as contact sheets; final appendix parameter pages inspected at higher resolution. Cover/logo, arrows, code panels and captions inspected during their final revisions.",
+    "scientific_scope": "No new scientific analysis; completed diagnostics/GMM separated from blocked weighting and DPC reproduction."
+  }
+}

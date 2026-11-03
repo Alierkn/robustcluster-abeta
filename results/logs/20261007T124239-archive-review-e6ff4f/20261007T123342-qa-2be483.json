@@ -1,0 +1,33 @@
+{
+  "run_id": "20261007T123342-qa-2be483",
+  "command": "release-qa",
+  "status": "FAILED",
+  "timestamp_utc": "2026-10-07T12:33:42.927647+00:00",
+  "python_executable": "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12",
+  "checks": {
+    "pytest": {
+      "returncode": 2,
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/final-source-archive-verification/robustcluster-abeta/results/logs/20261007T123342-qa-2be483/tests.xml"
+      ]
+    }
+  },
+  "outputs": [
+    {
+      "filename": "results/logs/20261007T123342-qa-2be483/pytest.log",
+      "sha256": "4a010243ca6dab420bb71c3ff23c529fd927974ccad6a5d73946d0fc0212fc31"
+    },
+    {
+      "filename": "results/logs/20261007T123342-qa-2be483/tests.xml",
+      "sha256": "ada999be0c9cc84904d2e356234576f4677a6f0700aa2439bf59fd9c91cbc9d1"
+    }
+  ],
+  "git_commit": null,
+  "git_dirty": null,
+  "message": "pytest failed",
+  "runtime_seconds": 1.9511587909655645
+}

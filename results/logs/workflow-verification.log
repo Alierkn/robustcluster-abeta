@@ -1,0 +1,73 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-09-21 04:31:32
+  Workflow ID: ad25c96a-ea0a-4b41-82ff-5aa11ef90acb
+  Platform: macOS-27.0-arm64-arm-64bit
+  Host: MacBook-Pro.local
+  User: alico
+  Snakemake version: 9.27.0
+  Python version: 3.12.6 (v3.12.6:a4a2d2b0d85, Sep  6 2024, 16:08:03) [Clang 13.0.0 (clang-1300.0.29.30)]
+  Command: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/bin/snakemake -s workflows/Snakefile --cores 1
+  Snakefile: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/workflows/Snakefile
+  Base directory: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/workflows
+  Run directory: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta
+  Working directory: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+validate           1
+diagnostics        1
+all                1
+total              3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 21 04:31:34 2026]
+localrule validate:
+    input: config/paper_reproduction.yaml, data/raw/input_clustering_ab40.dat, src/robustcluster_abeta/__init__.py, src/robustcluster_abeta/cli.py, src/robustcluster_abeta/consensus.py, src/robustcluster_abeta/dpc.py, src/robustcluster_abeta/fes.py, src/robustcluster_abeta/io.py, src/robustcluster_abeta/manifest.py, src/robustcluster_abeta/pipeline.py, src/robustcluster_abeta/plotting.py, src/robustcluster_abeta/preprocessing.py, src/robustcluster_abeta/reweighting.py, src/robustcluster_abeta/stability.py, src/robustcluster_abeta/statistics.py, src/robustcluster_abeta/validation.py
+    output: results/workflow/validate.json
+    jobid: 2
+    reason: Missing output files: results/workflow/validate.json
+    resources: tmpdir=/var/folders/yg/tzj3dpjx09g4rbd8ftfb2_k00000gn/T
+SUCCESS: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/results/manifests/20260921T013134-4d13b326.json
+[Mon Sep 21 04:31:52 2026]
+Finished jobid: 2 (Rule: validate)
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 21 04:31:52 2026]
+localrule diagnostics:
+    input: config/paper_reproduction.yaml, results/workflow/validate.json, src/robustcluster_abeta/__init__.py, src/robustcluster_abeta/cli.py, src/robustcluster_abeta/consensus.py, src/robustcluster_abeta/dpc.py, src/robustcluster_abeta/fes.py, src/robustcluster_abeta/io.py, src/robustcluster_abeta/manifest.py, src/robustcluster_abeta/pipeline.py, src/robustcluster_abeta/plotting.py, src/robustcluster_abeta/preprocessing.py, src/robustcluster_abeta/reweighting.py, src/robustcluster_abeta/stability.py, src/robustcluster_abeta/statistics.py, src/robustcluster_abeta/validation.py
+    output: results/workflow/diagnostics.json
+    jobid: 1
+    reason: Missing output files: results/workflow/diagnostics.json; Input files updated by another job: results/workflow/validate.json
+    resources: tmpdir=/var/folders/yg/tzj3dpjx09g4rbd8ftfb2_k00000gn/T
+SUCCESS: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/results/manifests/20260921T013152-c45e6960.json
+[Mon Sep 21 04:31:55 2026]
+Finished jobid: 1 (Rule: diagnostics)
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Sep 21 04:31:55 2026]
+localrule all:
+    input: results/workflow/diagnostics.json
+    jobid: 0
+    reason: Input files updated by another job: results/workflow/diagnostics.json
+    resources: tmpdir=/var/folders/yg/tzj3dpjx09g4rbd8ftfb2_k00000gn/T
+[Mon Sep 21 04:31:55 2026]
+Finished jobid: 0 (Rule: all)
+3 of 3 steps (100%) done
+Complete log(s): /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/.snakemake/log/2026-09-21T043132.602979.snakemake.log
+Elapsed time: 0:00:23.325562

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "run_id": "20260921T013332-report-0c0ec5",
+  "command": "report-build",
+  "timestamp_utc": "2026-09-21T01:33:32.225558+00:00",
+  "status": "SUCCESS",
+  "git_commit": "f712fe8aefa0079ee027b0870bf88ebac1821eb6",
+  "git_dirty": false,
+  "tools": {
+    "latexmk": {
+      "path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/bin/universal-darwin/latexmk",
+      "version": "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    },
+    "lualatex": {
+      "path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/bin/universal-darwin/lualatex",
+      "version": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)"
+    },
+    "biber": {
+      "path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/texlive/bin/universal-darwin/biber",
+      "version": "biber version: 2.22"
+    }
+  },
+  "inputs": {
+    "report/appendices/appendices.tex": "8d7b7edf80c9423baa153a9242f31255748f6886687fcae62eefcd51324d3234",
+    "report/chapters/01_introduction.tex": "c02796486f24e92e6af2310537a0c06f1d85b4c19c3daa224a86fb81c8bcfe17",
+    "report/chapters/02_background.tex": "823340fe08dffa6e6fe5018e50d4e0c82080d0a8fb8e25ed8317e1e59abfa26a",
+    "report/chapters/03_methodology.tex": "9a7c56dc611af3cf3bfd27702c34431f5c77022189244f67bfb47df5001c02c7",
+    "report/chapters/04_audit.tex": "8b047a022a46a34b3ac8923ab74fa0dae17718734818426a8c6b23d05e503131",
+    "report/chapters/05_robustness.tex": "81f006178bfe219e8e861ca025928089a284a0f80be56b279fab5e620944ac49",
+    "report/chapters/06_results.tex": "87991c162dc7cc35575d42c8be38c31ef3de1e9d5a780d36bb1980eb12a40322",
+    "report/chapters/07_discussion.tex": "52db07bb0e3a96b5e4d87486d5dd21e8da4bb658655d05d0d409989594d42fae",
+    "report/chapters/08_outcomes.tex": "07bcd854ecfb5d648aee0e433cb12bce9ee908ec170b6f4024308b2295ea1aba",
+    "report/chapters/09_conclusions.tex": "fcd15d983b66758255923fcc743a449fe8ec5cd897c81d4b13f4866336f40299",
+    "report/data_provenance.json": "f1b6fe48949516ac057a51a8ff703ed6767f358460615d70b2cb2d551fd4b79a",
+    "report/figures/fig01_workflow.pdf": "79adb2fa196698c88aefeacedc39751d68d43d6eb224dc9fadc9c62536c8afda",
+    "report/figures/fig03_feature_diagnostics.pdf": "9a67a1db697a39a7bb1d1d6889e299cd9643d2439b494b8435c67298665c1eee",
+    "report/figures/raw_descriptor_distributions.pdf": "6123e4eb3b18a1bf721598bf9bd3667b8d407c4afe99b4c724647601ac122f7f",
+    "report/figures/sampling_autocorrelations.pdf": "933cfd8889e7d2311029310b5714595dad360937e0fca727b22d4d726da4cad2",
+    "report/generated/environment_rows.tex": "b8ab0b64d44896776648a71ce8eb32e446b7b4720d8f338a695dc395b5fdfaf5",
+    "report/generated/sampling_rows.tex": "b078c42b765afba6d21dab475c887a66419cba83154aa35d35e8f09bf6cb0811",
+    "report/generated/values.tex": "e7dfbf9cca7f0a96bf738eff7e30e90e4fd1fe284759e8a68f006f71a1ecaf41",
+    "report/preamble.tex": "6e2a5cfb58609f62b310b4015f3196633627d3b9d04f56896e5ed35e383b449f",
+    "report/references.bib": "b988e2bf679e85feec5229ffc667d6390a28271e7b3816ab7bb0bcd8db719f2f",
+    "report/report.tex": "04fec72cc22fd0f86c75bb9bf205b8a11fe2dd013f03ec8594bfe3a4f29336b6"
+  },
+  "outputs": [
+    {
+      "filename": "results/logs/20260921T013332-report-0c0ec5/latexmk.log",
+      "sha256": "be9658a2b044be1945499363ed7a747ce706140b084b505647b8c1d55c8f56b5"
+    },
+    {
+      "filename": "results/logs/20260921T013332-report-0c0ec5/report.blg",
+      "sha256": "a95543939b9f2bde68eeed55854ce790a452b10b5fb8d9da23cecda7d24667f5"
+    },
+    {
+      "filename": "results/logs/20260921T013332-report-0c0ec5/report.log",
+      "sha256": "c56906e75bb74cf779fac83a6c1bf3844ade962b999f849e45d52f4d37d93816"
+    },
+    {
+      "filename": "results/logs/20260921T013332-report-0c0ec5/report.pdf",
+      "sha256": "b4a608f7cdfc3b1315cd3d24a42dc51e66a4a05d26f1a0042bc3990018e0e566"
+    }
+  ],
+  "build_command": [
+    "latexmk",
+    "-lualatex",
+    "-interaction=nonstopmode",
+    "-halt-on-error",
+    "-outdir=build",
+    "report.tex"
+  ],
+  "warnings": [
+    "Package unicode-math Warning: Using \\overbracket and \\underbracket from",
+    "Package unicode-math Warning: I'm going to overwrite the following commands",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 8--8",
+    "Underfull \\hbox (badness 5417) in paragraph at lines 21--21",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 22--23",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 26--26",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 26--26"
+  ],
+  "main_text_pages": 21,
+  "total_pages": 34,
+  "page_labels": [
+    "1",
+    "i",
+    "ii",
+    "iii",
+    "iv",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29"
+  ],
+  "page_target_met": true,
+  "runtime_seconds": 0.9352680000010878
+}

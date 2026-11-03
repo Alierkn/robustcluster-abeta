@@ -1,0 +1,163 @@
+{
+  "run_id": "20261103T122301-qa-cd6038",
+  "command": "release-qa",
+  "status": "FAILED",
+  "timestamp_utc": "2026-11-03T12:23:01.457876+00:00",
+  "python_executable": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/bin/python",
+  "checks": {
+    "pytest": {
+      "returncode": 0,
+      "command": [
+        "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/results/logs/20261103T122301-qa-cd6038/tests.xml"
+      ]
+    },
+    "ruff": {
+      "returncode": 0,
+      "command": [
+        "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts"
+      ]
+    },
+    "test_counts": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "36",
+      "time": "3.417",
+      "timestamp": "2026-11-03T13:23:02.263390+01:00",
+      "hostname": "MacBook-Pro.local"
+    },
+    "original_hashes": "NOT CHECKED: supply --originals-dir",
+    "bibliography": {
+      "verified_entries": 34,
+      "cited_entries": 34,
+      "uncited_entries": []
+    },
+    "analysis_output_integrity": [
+      {
+        "manifest": "20260921T011540-2a1650e4.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T011541-223ff5a4.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T011645-54ad80d3.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T011959-583b4421.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T012035-b996d4c0.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012036-71325c73.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012036-9b6dbc2a.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012037-4dee77a1.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012038-c7bcf311.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012039-dd2069bf.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T012040-ba8ea6d6.json",
+        "status": "BLOCKED"
+      },
+      {
+        "manifest": "20260921T013134-4d13b326.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20260921T013152-c45e6960.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T102957-e2a462e5.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104141-f0143175.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104330-bbd8111e.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104602-3ea5d41f.json",
+        "status": "FAILED"
+      },
+      {
+        "manifest": "20261007T104657-04cb6ba4.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104709-dd9f8f2c.json",
+        "status": "FAILED"
+      },
+      {
+        "manifest": "20261007T104738-91cd2368.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T104846-17f8483c.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T105027-a3b84676.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T105122-c040f192.json",
+        "status": "SUCCESS"
+      },
+      {
+        "manifest": "20261007T115101-b5fc7418.json",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "filename": "results/logs/20261103T122301-qa-cd6038/pytest.log",
+      "sha256": "326009e0d42006b3b0ef2944f623f41e5d7d45a7707c48d58163a8fcc512f4b7"
+    },
+    {
+      "filename": "results/logs/20261103T122301-qa-cd6038/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "filename": "results/logs/20261103T122301-qa-cd6038/tests.xml",
+      "sha256": "25d5578ed1ba3d59599347c4f741982f06f782613c212cc633388b95f8087107"
+    }
+  ],
+  "git_commit": "0be6ce6713c880daeef36f1e4247ceeff0d3ad66",
+  "git_dirty": true,
+  "message": "Report page target or layout warning gate failed",
+  "runtime_seconds": 4.658558749826625
+}

@@ -1,0 +1,72 @@
+% !TEX program = lualatex
+\documentclass[a4paper,11pt,oneside,numbers=noenddot,headings=normal,bibliography=totoc,listof=totoc]{scrreprt}
+\input{preamble.tex}
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{artwork/cover-editorial-v2.png}};
+\begin{scope}[shift={(current page.center)}]
+\fill[Navy,opacity=.035] (.5mm,-.9mm) circle (22mm);
+\fill[Navy,opacity=.06] (.4mm,-.7mm) circle (21.6mm);
+\fill[Navy,opacity=.09] (.3mm,-.5mm) circle (21.2mm);
+\clip (0,0) circle (21mm);
+\node[inner sep=0pt] at (0,0) {\includegraphics[width=42mm]{artwork/messina-logo-user-supplied.png}};
+\end{scope}
+\end{tikzpicture}
+\null\vfill
+\end{titlepage}
+\pagenumbering{roman}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+Does removing a correlated descriptor preserve a conformational partition? This report examines that question using amyloid-β40 descriptors supplied during a Data Analysis internship, alongside an audit of the published clustering workflow of Cadenelli and colleagues. The distinction between a geometric partition of sampled configurations and an equilibrium ensemble is central to both tasks.
+
+The input contains 300,003 observations in three replica segments covering the source-labelled 1–3 microsecond interval. The audit identified problems in parsing, residual-cluster handling, free-energy interpolation, replica pooling and descriptor summaries. A modular Python implementation addresses these problems with numerical tests, explicit configurations and run manifests while preserving the supplied files. The recovered free-energy surface passes completeness and interpolation checks for all observations, but its energy units and construction provenance remain unresolved. Equilibrium reweighting is therefore not reported.
+
+The completed diagnostics give an Rg–SASA correlation of \RgSasaCorrelation{} and show that the first two standardized principal components account for \PCATwo\% of feature variance. Each of the twelve replica–descriptor series fails at least one correlation-time reliability criterion. These results motivate a feature-sensitivity experiment while limiting independent-frame uncertainty estimates.
+
+The experiment compares four-feature Gaussian mixtures with mixtures fitted after removing SASA. Fifty models use a fixed replica-balanced sample, five component counts and five initialization seeds. All fits converge numerically, but partition agreement and seed stability depend on component count. Strong global correlation therefore does not establish that SASA can be removed without affecting the grouping. The comparison is descriptive: evaluation includes the fitting rows, and Gaussian components are not identified with physical metastable states.
+
+The deliverables are an audited analysis package, a completed descriptor-space sensitivity study and reproducible report sources. Companion VMD MCP and GROMACS MCP implementations provide additional code examples. Completing the published-workflow reproduction requires verified FES provenance and further calculations; no equilibrium cluster populations or unbiased kinetic rates are inferred here.
+
+\vspace{5mm}\noindent\textbf{Keywords:} amyloid-β40; intrinsically disordered peptides; well-tempered metadynamics; density peaks; statistical reweighting; reproducibility.
+\tableofcontents
+\chapter*{Abbreviations and evidence categories}
+\addcontentsline{toc}{chapter}{Abbreviations and evidence categories}
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Term & Meaning\\\midrule
+ACF & Autocorrelation function\\
+ARI & Adjusted Rand index\\
+CV & Collective variable\\
+GMM & Gaussian mixture model\\
+DPC / DPA & Density Peak Clustering / Density Peaks Advanced\\
+ESS & Effective sample size; estimator and assumptions stated explicitly\\
+FES & Free-energy surface\\
+IDP & Intrinsically disordered protein or peptide\\
+MD & Molecular dynamics\\
+PCA & Principal component analysis\\
+SASA & Solvent-accessible surface area\\
+SEM & Standard error of the mean\\
+WT-MetaD & Well-tempered metadynamics\\\bottomrule
+\end{tabularx}
+
+\vspace{6mm}
+Published methodology, the implemented reproduction, corrections to supplied code, robustness extensions, and future work are distinct evidence categories throughout this report. A successful software test demonstrates behavior on a specified fixture; it does not establish a biological result. A \blocked{} analysis lacks required inputs or provenance and is not presented as completed. The report distinguishes assigned learning topics, demonstrable project outputs, and analyses that remain unperformed.
+\clearpage
+\pagenumbering{arabic}
+\label{mainstart}
+\input{chapters/01_introduction.tex}
+\input{chapters/02_background.tex}
+\input{chapters/03_methodology.tex}
+\input{chapters/04_audit.tex}
+\input{chapters/05_robustness.tex}
+\input{chapters/06_results.tex}
+\input{chapters/07_discussion.tex}
+\input{chapters/08_outcomes.tex}
+\input{chapters/09_conclusions.tex}
+\label{mainend}
+\clearpage
+\printbibliography
+\appendix
+\input{appendices/appendices.tex}
+\end{document}

@@ -1,0 +1,16 @@
+{
+  "run_id": "20261007T114909-logo-986615",
+  "command": "logo-placement-review",
+  "status": "SUCCESS",
+  "timestamp_utc": "2026-10-07T11:49:09.607923+00:00",
+  "source": "User-supplied Messina logo attachment",
+  "logo_sha256": "629d26bd366c17f2ac03ddd31d0ce751f63af1071ce6325d1dc5512bf32d4c1a",
+  "build_manifest": "results/manifests/20261007T114834-report-585a78.json",
+  "review": "Rendered first page inspected: logo lettering and circular seal preserved, no overlap with heading or illustration. Original supplied PNG bytes unchanged.",
+  "outputs": [
+    {
+      "filename": "report/artwork/cover-editorial-v3-logo.pdf",
+      "sha256": "f11d9aeacf5581fb1e6a641d04a615ffc76ffd6ed7b945973ab5f544229fd2fd"
+    }
+  ]
+}

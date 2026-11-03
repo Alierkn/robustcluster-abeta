@@ -1,0 +1,69 @@
+\chapter{Scientific and theoretical background}
+\section{Amyloid-β40 and intrinsically disordered ensembles}
+For an IDP, an ensemble average combines contributions from many conformations with different statistical weights. A single representative structure is therefore an illustration of one configuration, not a replacement for the ensemble. Global descriptors provide a compact summary, but two conformations can share the same radius of gyration and solvent-accessible area while having different residue contacts. A cluster in descriptor space should consequently be interpreted as a family under a specified representation, not as a unique atomic fold.
+
+Experimental constraints can improve the characterization of such ensembles, but observables such as NMR or SAXS measurements generally average over conformations. Borthakur and colleagues describe a maximum-entropy procedure that combines simulations with experimental data to constrain IDP ensembles \autocite{borthakur2025}. That study suggests a possible external comparison. Such a comparison requires compatible structural data, observable definitions and statistical weights.
+
+\section{Molecular dynamics and conformational ensembles}
+Molecular dynamics evolves a model system according to a chosen potential-energy function and numerical integration scheme. The resulting distribution depends on force-field parameters, solvent representation, thermodynamic conditions, and sampling. The primary paper reports GROMACS simulations using CHARMM36m and PLUMED \autocite{cadenelli2026,abraham2015,huang2017,tribello2014}. These are statements about the published study. The present project analyzes its supplied descriptors and has not rerun those molecular simulations.
+
+In an equilibrium canonical ensemble, an observable $A(q)$ has expectation proportional to the integral of $A(q)\exp[-\beta_T U(q)]$, where $q$ denotes coordinates and $U$ is potential energy. For energies per molecule, $\beta_T=1/(k_B T)$; for the molar energies used in the implementation, the consistent factor is $1/(RT)$. Mixing these energy conventions introduces a scale error even when the reweighting code is numerically stable.
+
+\section{Sampling limitations}
+A long sequence of saved configurations does not imply an equally large number of independent observations. Nearby frames may share a local environment or remain in slowly changing regions of descriptor space. Statistical inefficiency quantifies the variance inflation associated with serial correlation under suitable assumptions, but it cannot repair inadequate exploration. A stable mean can also conceal compensating changes in different structural subpopulations.
+
+Assessing equilibration and sampling quality requires evidence beyond a raw frame count \autocite{chodera2016,grossfield2019}. Here, an additional limitation is that the trajectory was generated under a changing bias. Correlation statistics are calculated as diagnostics of that recorded process. They are not identified with unbiased relaxation times, transition rates, or kinetic states. The fixed published analysis interval is retained for reproduction; the extension assesses its statistical behavior rather than silently choosing a new interval.
+
+\section{Well-tempered metadynamics}
+WT-MetaD adds a history-dependent potential along selected CVs. Its tempering parameter is conventionally expressed as $\gamma=(T+\Delta T)/T>1$. In the long-time regime, the bias approaches a scaled negative free energy, up to an additive constant \autocite{barducci2008}. This relationship motivates the final-bias approximation used in the primary paper.
+
+The essential distinction is between accelerating exploration and preserving an unbiased distribution. Biased occupancies are not equilibrium populations. Moreover, the modified forces alter the connection between recorded trajectory time and physical dynamics. Thermodynamic reweighting can address populations under its assumptions; it does not automatically restore kinetic information.
+
+\section{Gaussian hills and bias construction}
+For CV vector $s$, hills deposited at times $t_k$ generate a bias of the form
+\begin{equation}
+V(s,t)=\sum_{t_k<t}h_k\exp\!\left[-\frac12\sum_a\frac{(s_a-s_a(t_k))^2}{\sigma_a^2}\right].
+\label{eq:hills}
+\end{equation}
+In WT-MetaD, deposited heights decrease with the accumulated bias as $h_k=h_0\exp[-V(s(t_k),t_k)/(k_B\Delta T)]$, using molecular energy units. For molar units, $k_B$ is replaced by $R$. The precise convention must agree with the simulation software and energy units. Equation~\ref{eq:hills} describes the methodological construction, not a reconstruction performed in this project. No project HILLS file is available.
+
+PLUMED distinguishes the instantaneous bias output, the time-dependent offset, and their difference. Its \code{metad.rbias} component equals \code{metad.bias} minus \code{metad.rct}; the latter represents $c(t)$ \autocite{plumedmetad}. A column named \code{metad.rbias} is therefore potentially useful for a separate time-dependent reweighting analysis. Its name alone does not establish that the offset was computed with the required settings or that its units are known.
+
+\section{Free-energy surfaces}
+For a CV distribution $p(s)$, free energy is $F(s)=-\beta_T^{-1}\log p(s)+C$, where $C$ sets an arbitrary reference. Free energy is a property of the chosen projection; integrating out other coordinates can obscure structural distinctions. A two-dimensional minimum does not uniquely specify a three-dimensional conformation.
+
+PLUMED's \code{sum\_hills} supports reconstruction from accumulated hill records and distinguishes free-energy output from negative-bias output \autocite{plumedsum}. That distinction matters because the WT scaling factor must not be applied twice. The recovered complete file labels its energy field \code{file.free}, but the energy unit, generating commands, and replica-combination procedure are still needed for a verified final-bias calculation.
+
+\section{Statistical reweighting}
+For a quasi-static bias, the correction from a biased distribution to the corresponding unbiased distribution has weights proportional to $\exp(\beta_T V)$. Combining this with the WT relationship yields
+\begin{equation}
+\ell_i\equiv\log w_i=-\frac{1-1/\gamma}{RT}F(\alpha_i,\beta_i).
+\label{eq:finalweights}
+\end{equation}
+An additive constant in $F$ changes every log weight by the same amount within the chosen estimator and disappears after normalization. Equation~\ref{eq:finalweights} is the baseline implemented here, following the primary paper's final-bias approximation. Its scientific validity depends on the quasi-stationary interpretation of the analyzed interval.
+
+Alternative MetaD reweighting approaches account explicitly for changing bias normalization \autocite{bonomi2009,tiwary2015}. For verified PLUMED offset-corrected output, the optional comparison uses $\ell_i=\mathrm{rbias}_i/(RT)$ \autocite{plumedreweight}. These two estimators are not interchangeable labels for the same computation. The current repository keeps their configurations and resulting outputs separate.
+
+\section{Structural descriptors}
+The baseline uses $\na$, $\nb$, $R_g$, and total SASA. In the primary study, the first two are scaled continuous secondary-structure CVs, intended to approximate residue counts. They should not be interpreted as exact integer DSSP assignments. DSSP itself classifies local structural patterns using geometrical and hydrogen-bond information \autocite{kabsch1983}; reproducing such assignments requires coordinates, which are absent here.
+
+Radius of gyration summarizes global compaction, whereas SASA describes solvent exposure. Their information can overlap without being identical. Additional columns describe apolar and polar SASA and intra- and peptide--solvent hydrogen bonds. These are characterized after clustering, not used to select baseline families. Their upstream definitions remain tied to the supplied provenance; in particular, apolar and polar areas are not assumed to sum exactly to total SASA.
+
+\section{Density-based conformational clustering}
+Density-peak methods seek centers that combine high local density with separation from denser points. The primary study adapts that logic to recursively discover acceptable clusters across random subsets and density scales \autocite{cadenelli2026}. A silhouette coefficient summarizes the relation between within-cluster cohesion and separation from other clusters \autocite{rousseeuw1987}. It is a geometric criterion, not proof of thermodynamic metastability.
+
+Consensus then groups local clusters by similarities in their descriptor distributions. DPA offers a distinct, statistically motivated density-topography approach \autocite{derrico2021}. A DPA benchmark would test whether an alternative treatment of density produces similar families. Likewise, weighted ShapeGMM addresses structural ensembles in a coordinate-based representation \autocite{sasmal2024}; its applicability here depends on obtaining valid structural frames.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}{.485\textwidth}
+\includegraphics[width=\linewidth]{artwork/ensemble-editorial-v2.png}
+\caption{Conformational diversity}
+\end{subfigure}\hfill
+\begin{subfigure}{.485\textwidth}
+\includegraphics[width=\linewidth]{artwork/bias-editorial-v2.png}
+\caption{An evolving sampling landscape}
+\end{subfigure}
+\caption{Conceptual editorial illustrations. Open paper ribbons evoke different conformations of a flexible peptide; layered deposits evoke the accumulation of metadynamics bias. Neither image depicts molecular coordinates, secondary-structure assignments, a measured FES or a physical trajectory. The qualitative ideas are formalized in the surrounding text and \cref{eq:hills}. Generated-art provenance is documented in Appendix D.}
+\label{fig:editorialconcepts}
+\end{figure}

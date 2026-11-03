@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="405pt" height="191.808pt" viewBox="0 0 405 191.808" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-07T13:51:01.574497</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 191.808 
+L 405 191.808 
+L 405 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 21.98 54.066187 
+L 109.6 54.066187 
+Q 110.4 54.066187 110.4 53.266187 
+L 110.4 27.661812 
+Q 110.4 26.861812 109.6 26.861812 
+L 21.98 26.861812 
+Q 21.18 26.861812 21.18 27.661812 
+L 21.18 53.266187 
+Q 21.18 54.066187 21.98 54.066187 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(25.18 37.741344)">Validate descriptors</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(30.1175 47.343531)">Separate replicas</text>
+   </g>
+   <g id="text_2">
+    <g id="patch_3">
+     <path d="M 149.6575 54.066187 
+L 255.3425 54.066187 
+Q 256.1425 54.066187 256.1425 53.266187 
+L 256.1425 27.661812 
+Q 256.1425 26.861812 255.3425 26.861812 
+L 149.6575 26.861812 
+Q 148.8575 26.861812 148.8575 27.661812 
+L 148.8575 53.266187 
+Q 148.8575 54.066187 149.6575 54.066187 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(163.82 37.741344)">Scale four features</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(152.8575 47.343531)">Random disjoint subsets</text>
+   </g>
+   <g id="text_3">
+    <g id="patch_4">
+     <path d="M 296.154375 54.065875 
+L 382.265625 54.065875 
+Q 383.065625 54.065875 383.065625 53.265875 
+L 383.065625 27.662125 
+Q 383.065625 26.862125 382.265625 26.862125 
+L 296.154375 26.862125 
+Q 295.354375 26.862125 295.354375 27.662125 
+L 295.354375 53.265875 
+Q 295.354375 54.065875 296.154375 54.065875 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(311.61375 37.741031)">Iterative DPC</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(299.354375 47.343219)">Acceptable clusters</text>
+   </g>
+   <g id="text_4">
+    <g id="patch_5">
+     <path d="M 289.420625 116.158675 
+L 388.999375 116.158675 
+Q 389.799375 116.158675 389.799375 115.358675 
+L 389.799375 89.754925 
+Q 389.799375 88.954925 388.999375 88.954925 
+L 289.420625 88.954925 
+Q 288.620625 88.954925 288.620625 89.754925 
+L 288.620625 115.358675 
+Q 288.620625 116.158675 289.420625 116.158675 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(292.620625 99.833831)">Wasserstein consensus</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(305.826875 109.436019)">Global centroids</text>
+   </g>
+   <g id="text_5">
+    <g id="patch_6">
+     <path d="M 160.2425 116.158675 
+L 244.7575 116.158675 
+Q 245.5575 116.158675 245.5575 115.358675 
+L 245.5575 89.754925 
+Q 245.5575 88.954925 244.7575 88.954925 
+L 160.2425 88.954925 
+Q 159.4425 88.954925 159.4425 89.754925 
+L 159.4425 115.358675 
+Q 159.4425 116.158675 160.2425 116.158675 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(163.4425 99.834456)">Assign every frame</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(187.664375 109.436019)">STEP 3</text>
+   </g>
+   <g id="text_6">
+    <g id="patch_7">
+     <path d="M 11.676875 116.158987 
+L 119.903125 116.158987 
+Q 120.703125 116.158987 120.703125 115.358987 
+L 120.703125 89.754612 
+Q 120.703125 88.954612 119.903125 88.954612 
+L 11.676875 88.954612 
+Q 10.876875 88.954612 10.876875 89.754612 
+L 10.876875 115.358987 
+Q 10.876875 116.158987 11.676875 116.158987 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(14.876875 99.834144)">Complete FES + weights</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(21.71125 109.436331)">Equal replica mixture</text>
+   </g>
+   <g id="text_7">
+    <g id="patch_8">
+     <path d="M 8.94625 178.251788 
+L 122.63375 178.251788 
+Q 123.43375 178.251788 123.43375 177.451787 
+L 123.43375 151.847413 
+Q 123.43375 151.047413 122.63375 151.047413 
+L 8.94625 151.047413 
+Q 8.14625 151.047413 8.14625 151.847413 
+L 8.14625 177.451787 
+Q 8.14625 178.251788 8.94625 178.251788 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(12.14625 161.926944)">Weighted characterization</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(12.1825 171.529131)">Replica-aware uncertainty</text>
+   </g>
+   <g id="text_8">
+    <g id="patch_9">
+     <path d="M 148.4625 178.251788 
+L 256.5375 178.251788 
+Q 257.3375 178.251788 257.3375 177.451787 
+L 257.3375 151.847413 
+Q 257.3375 151.047413 256.5375 151.047413 
+L 148.4625 151.047413 
+Q 147.6625 151.047413 147.6625 151.847413 
+L 147.6625 177.451787 
+Q 147.6625 178.251788 148.4625 178.251788 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(153.985 161.926944)">Independent extensions</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(151.6625 171.529131)">Seeds · features · scaling</text>
+   </g>
+   <g id="text_9">
+    <g id="patch_10">
+     <path d="M 299.04125 178.251788 
+L 379.37875 178.251788 
+Q 380.17875 178.251788 380.17875 177.451787 
+L 380.17875 151.847413 
+Q 380.17875 151.047413 379.37875 151.047413 
+L 299.04125 151.047413 
+Q 298.24125 151.047413 298.24125 151.847413 
+L 298.24125 177.451787 
+Q 298.24125 178.251788 299.04125 178.251788 
+z
+" style="fill: #f3f5f7; stroke: #173a5e; stroke-width: 0.6; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(305.47625 161.926944)">Manifest-backed</text>
+    <text style="font-size: 8px; font-family: 'Libertinus Serif', 'DejaVu Serif', serif; fill: #173a5e" transform="translate(302.24125 171.529131)">figures and report</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 114.699446 40.464 
+Q 129.630424 40.464 143.666974 40.464 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 140.066974 38.664 
+L 143.666974 40.464 
+L 140.066974 42.264 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 260.442384 40.464 
+Q 275.747777 40.464 290.158743 40.464 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 286.558743 38.664 
+L 290.158743 40.464 
+L 286.558743 42.264 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 339.21 58.365788 
+Q 339.21 71.511493 339.21 83.762771 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 341.01 80.162771 
+L 339.21 83.762771 
+L 337.41 80.162771 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 284.32428 102.5568 
+Q 267.089819 102.5568 250.749785 102.5568 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 254.349785 104.3568 
+L 250.749785 102.5568 
+L 254.349785 100.7568 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 155.140814 102.5568 
+Q 140.06999 102.5568 125.893593 102.5568 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 129.493593 104.3568 
+L 125.893593 102.5568 
+L 129.493593 100.7568 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 65.79 120.458588 
+Q 65.79 133.604293 65.79 145.855571 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 67.59 142.255571 
+L 65.79 145.855571 
+L 63.99 142.255571 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 127.736263 164.6496 
+Q 135.549517 164.6496 142.468344 164.6496 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 138.868344 162.8496 
+L 142.468344 164.6496 
+L 138.868344 166.4496 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 261.63376 164.6496 
+Q 277.785385 164.6496 293.042584 164.6496 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 289.442584 162.8496 
+L 293.042584 164.6496 
+L 289.442584 166.4496 
+" style="fill: none; stroke: #2e6f73; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+  </g>
+ </g>
+</svg>

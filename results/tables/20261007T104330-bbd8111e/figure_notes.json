@@ -1,0 +1,6 @@
+{
+  "sensitivity": "Panel A: five seed-paired comparisons, dots and median. Panel B: ten pairwise comparisons per feature space, median and observed min/max; not confidence intervals.",
+  "matrices": "All k values shown; diagonal is identity; no selection of a best biological cluster count.",
+  "source_run": "20261007T104141-f0143175",
+  "equilibrium_interpretation": false
+}

@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-07",
+  "tool": "image_gen.imagegen (built-in)",
+  "model_version": "Not exposed by tool; user requested Image 2.5, exact version not verifiable",
+  "prompt_file": "docs/ARTWORK_PROMPTS.json",
+  "prompt_sha256": "41198c6d77894283e45bff10d602ac1004971a7769bde63603e69f736ead78c0",
+  "purpose": "Conceptual editorial artwork only; no scientific data, structural coordinates or FES encoded",
+  "source_excerpt_records": [
+    {
+      "filename": "report/generated/vmd-mcp-excerpt.py",
+      "first_source_line": 250,
+      "last_source_line": 266,
+      "source_file_sha256": "64a2978a9258bf140a539f4f3324b2a3a661d257a916fa52aabf6b94c74d6db4",
+      "sha256": "7eb8e6f9033bbeb47a574bde0b6f3d7206951b2ab05358a6744774686fc34491",
+      "source_url": "https://github.com/Alierkn/vmd-mcp/blob/01912595595bf0302124f57559e1e6a22095fb24/src/vmd_mcp/server.py#L250-L266"
+    },
+    {
+      "filename": "report/generated/gromacs-mcp-excerpt.py",
+      "first_source_line": 1452,
+      "last_source_line": 1467,
+      "source_file_sha256": "1b337d86a6781d7f802239a886fea55a26830656286fcd30a84cfde6b0d48af1",
+      "sha256": "01bdf6601c5a6d01c7db729f642452783af8095658444a1c2d73aa83963b8ee7",
+      "source_url": "https://github.com/Alierkn/gromacs-mcp/blob/2c5c957c3f2c047888b63ae258ace3df34cb8773/src/gromacs_mcp/server.py#L1452-L1467"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "report/artwork/cover-editorial-v2.png",
+      "sha256": "13292951630573df0778908c7f55df842d84e0f22824521c699a124549a77a90"
+    },
+    {
+      "filename": "report/artwork/ensemble-editorial-v2.png",
+      "sha256": "5b0ced04b21087f66e1e1c972da22a00d1297298c735487395ca792bf37fafb1"
+    },
+    {
+      "filename": "report/artwork/bias-editorial-v2.png",
+      "sha256": "48e1ef8572821c4fd5f01ba2ff8068ff48749c84672ea21f1a4fdd91c269dd48"
+    },
+    {
+      "filename": "report/generated/vmd-mcp-excerpt.py",
+      "sha256": "7eb8e6f9033bbeb47a574bde0b6f3d7206951b2ab05358a6744774686fc34491"
+    },
+    {
+      "filename": "report/generated/gromacs-mcp-excerpt.py",
+      "sha256": "01bdf6601c5a6d01c7db729f642452783af8095658444a1c2d73aa83963b8ee7"
+    },
+    {
+      "filename": "report/artwork/messina-logo-user-supplied.png",
+      "sha256": "629d26bd366c17f2ac03ddd31d0ce751f63af1071ce6325d1dc5512bf32d4c1a"
+    }
+  ],
+  "user_supplied_assets": [
+    {
+      "filename": "report/artwork/messina-logo-user-supplied.png",
+      "source": "User attachment, 7 October 2026",
+      "role": "University of Messina logo supplied by the student",
+      "processing": "Original PNG bytes unchanged; circular document clipping suppresses white outer corners; 42 mm diameter at exact A4 page center (105 mm, 148.5 mm), with subtle layered navy shadow",
+      "rights": "Institutional mark; excluded from the new-code BSD license",
+      "sha256": "629d26bd366c17f2ac03ddd31d0ce751f63af1071ce6325d1dc5512bf32d4c1a"
+    }
+  ]
+}

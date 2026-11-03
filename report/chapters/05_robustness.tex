@@ -1,0 +1,64 @@
+\chapter{RobustCluster-Aβ: robustness extension}
+\section{Temporal correlation and effective sampling}
+For each replica and baseline descriptor, the extension computes a demeaned autocorrelation sequence using an FFT-based convolution. Covariances use the common $1/N$ normalization. Adjacent positive-lag terms are paired; the sum is truncated at the first nonpositive pair and monotonized by cumulative minima. The resulting diagnostic is
+\begin{equation}
+g=\max\!\left(1,1+2\sum_{k\in\mathcal K}\widehat\rho(k)\right),\qquad
+N_{\mathrm{eff,corr}}=N/g,\qquad \tau_{\mathrm{int}}=g\Delta t/2.
+\label{eq:correlation}
+\end{equation}
+In \cref{eq:correlation}, $\mathcal K$ denotes the retained lag contributions after the positive-sequence processing; the implementation saves the truncation lag. The convention includes the zero-lag half term in $\tau_{\mathrm{int}}$. Different conventions in the literature differ by that term, so reporting only a number called ``correlation time'' would be ambiguous.
+
+The method flags an estimate when the sequence has no observed truncation, when $N<50g$, or when the absolute difference between first- and second-half means exceeds 0.25 of the full-series standard deviation. These are explicit screening heuristics, not a formal stationarity test. Their role is to discourage false precision in a biased, possibly drifting time series. Sampling-quality literature emphasizes that uncertainty estimates depend on the adequacy of the data and assumptions, rather than on the existence of a formula alone \autocite{grossfield2019,chodera2016}.
+
+Weight concentration is assessed separately by
+\begin{equation}
+N_{\mathrm{eff,Kish}}=\frac{(\sum_i w_i)^2}{\sum_i w_i^2}.
+\label{eq:kish}
+\end{equation}
+Equation~\ref{eq:kish} describes how unequal weights reduce the effective number of contributing observations, assuming no additional dependence correction. It is not multiplied by, or automatically divided by, the correlation ESS. A single combined ESS would require an estimator-specific treatment of dependence in the weighted observable. No real Kish ESS is reported before validated statistical weights exist.
+
+\section{Cluster stability across seeds}
+The planned DPC seed experiment reruns random grouping, iterative DPC, consensus cutting and final assignment. Comparing only a fixed clustering with different label integers would not test discovery stability. The smoke profile uses two seeds, a separate pilot uses five, and the held full profile defaults to 20, with configuration support for a larger 20--50-seed study.
+
+Partitions are compared on identical source-frame identities. ARI assesses agreement independent of label names \autocite{hubert1985}. A maximum-overlap assignment then matches families across runs, after which Jaccard overlap, population variation and centroid movement can be summarized. Unmatched families are retained explicitly, including the appearance or disappearance of a family. A small average variation among only the matched families would otherwise conceal instability in cluster number.
+
+Centroid comparisons across representations use the original four descriptors, rescaled by the common baseline ranges. Thus a PCA-space centroid is not compared directly with a raw-space centroid. Population variation across seeds describes algorithmic sensitivity under the same input ensemble; it is not interchangeable with sampling uncertainty between independent replicas.
+
+\section{Feature redundancy and PCA}
+The completed lightweight diagnostics calculate the pooled Pearson correlation matrix and PCA after standardizing each baseline feature to zero mean and unit variance. The explained-variance spectrum measures the geometry of the observed descriptor cloud. It does not measure thermodynamic relevance or identify a slow physical mode.
+
+The alternative clustering configurations retain all components in standardized PCA space, with or without whitening. Retaining all components makes PCA an orthogonal rotation of standardized variables; the rotation alone leaves Euclidean distances unchanged. Any difference from the min--max baseline therefore concerns standardization, whitening, numerical effects, or downstream choices, not information loss from dimensionality reduction. This prevents an apparent PCA benefit from being misdescribed as discovery of a reduced kinetic model.
+
+\section{Independent GMM feature-ablation experiment}
+The completed original experiment compares the four baseline descriptors with $\na$, $\nb$ and $R_g$ after removing SASA. It uses Gaussian mixtures in scalar descriptor space, a different model from both the published DPC pipeline and coordinate-based ShapeGMM. For a standardized observation $\mathbf{x}$,
+\begin{equation}
+p(\mathbf{x})=\sum_{j=1}^{K}\pi_j\mathcal{N}(\mathbf{x}\mid\symbf{\mu}_j,\symbf{\Sigma}_j),\qquad \sum_j\pi_j=1.
+\label{eq:gmm}
+\end{equation}
+Equation~\ref{eq:gmm} approximates the sampled descriptor distribution. Its mixture coefficients are not equilibrium statistical weights. The implementation uses scikit-learn \autocite{pedregosa2011}; full covariance matrices allow dependencies between features within a component.
+
+A fixed random fit sample contains 1,000 frames from each replica. Sampling uses seed 20261007; feature means and standard deviations are estimated on those 3,000 rows only. The same observations and shared-feature scaling are retained for both representations. Five initialization seeds (42--46) are used at each $K=2,\ldots,6$, with one initialization per fit, a 500-iteration limit, tolerance $10^{-3}$ and covariance regularization $10^{-6}$. One initialization deliberately exposes local-solution sensitivity. The protocol was committed before execution.
+
+Every model assigns all 300,003 observations, including the fit rows. This is a descriptive sensitivity analysis, not a held-out test. ARI compares the two representations at each seed and component count; all ten seed pairs are also compared within each representation. Maximum-overlap matching records corresponding labels, Jaccard overlaps, unmatched families and centroid shifts in the shared standardized three-feature space. Raw label fractions are retained separately by replica. Observed ranges across runs are not confidence intervals.
+
+This experiment holds the fit subset fixed to isolate representation and initialization effects. It does not quantify sample-selection uncertainty or remove temporal dependence. BIC is stored for comparisons within a feature space only; it is not compared across dimensions or used to declare a physical number of states. The planned DPC ablations remain separate experiments with their own provenance requirements.
+
+\section{Wasserstein scaling sensitivity}
+The raw consensus distance and the normalized alternative use the same marginal-distance construction, changing only the descriptor scaling used in that stage. This isolates a specific implementation ambiguity. Because raw SASA and radius-of-gyration values have different units and numerical ranges, an unscaled aggregate norm can be influenced disproportionately by the larger-range variable.
+
+The normalized result would not establish which version the original authors intended. It would show how sensitive the downstream families and populations are to the chosen convention. Joint distances, sliced Wasserstein, energy distance and MMD are possible later studies, but none is implemented as an undisclosed replacement for the current baseline.
+
+\section{Reweighting sensitivity}
+The optional comparison holds the fitted partition fixed and contrasts the final-bias estimator with weights derived from verified \code{metad.rbias}. It compares reweighted distributions of all four baseline descriptors and family relevance. This separation attributes any differences to weighting rather than to simultaneous changes in the partition.
+
+The descriptor input contains an appropriately named column, but the original PLUMED configuration and energy-unit evidence are absent. Therefore the optional comparison is blocked. Its theoretical motivation and software interface exist; an empirical agreement or disagreement is not claimed. Reweighting alternatives are discussed in the primary estimator literature and official PLUMED reference \autocite{tiwary2015,bonomi2009,plumedreweight}.
+
+\section{Alternative density-based clustering}
+DPA is a high-value future benchmark because it provides a different treatment of density estimation and significant peaks \autocite{derrico2021}. Its evaluation should compare family number, location, population and correspondence using the same observation identities and validated weights. No DPA fit has been performed in this project.
+
+Weighted ShapeGMM is relevant to biased structural ensembles \autocite{sasmal2024}. However, applying it as a coordinate-based comparison requires atomic structures, a consistent atom selection and alignment convention, and valid frame mapping. Scalar descriptor rows cannot be expanded into those structures. The repository therefore leaves this option explicitly deferred.
+
+\section{Optional external validation}
+The experiment-constrained Aβ40 ensemble literature offers an opportunity to compare global compaction and secondary-structure behavior with an independent source \autocite{borthakur2025}. Before numerical comparison, sequence, temperature, weighting, atom selections and observable definitions must be checked. A mass-weighted $R_g$ and a Cα-only $R_g$, for example, need not have directly comparable distributions.
+
+No external ensemble has been processed in this project. The feasibility assessment identifies the relevant study and compatibility requirements; testing agreement with NMR/SAXS-constrained descriptors remains future work.

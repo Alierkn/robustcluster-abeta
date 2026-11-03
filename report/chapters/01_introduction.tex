@@ -1,0 +1,15 @@
+\chapter{Introduction and internship objectives}
+\section{Biological and computational motivation}
+An intrinsically disordered peptide is described by an ensemble rather than a single reference structure. Configurations with similar global dimensions can differ in secondary structure, solvent exposure and contacts. Analysing amyloid-β monomers is therefore a problem of statistical representation as well as molecular simulation. Disorder does not imply an absence of structural organization \autocite{vanderlee2014}.
+
+The motivating study compares monomeric Aβ40 and Aβ42 ensembles using a common simulation and analysis protocol \autocite{cadenelli2026}. Only Aβ40 descriptors are available here. The present project investigates their analysis and reproducibility; it does not compute an isoform comparison or aggregation rates. Related energy-landscape studies motivate ensemble characterization without making monomeric clustering a direct measurement of fibril formation \autocite{abeta2022}.
+
+\section{Internship context and objectives}
+This project forms part of the Data Analysis L-31 internship at the University of Messina, with Andrea Ciccolo and Valeria Conti Nibali as the contacts supplied by the student. The documented programme moved from protein structure and intrinsic disorder to force fields, molecular dynamics and clustering. Its final-stage brief emphasized an independent alternative method or analysis using knowledge from the degree.
+
+The work has three objectives: audit the supplied inputs and script, implement the published analysis with documented corrections, and test how a change in descriptors affects a fitted partition. The independent experiment asks a specific question: does removing SASA preserve the grouping obtained from four descriptors, and is that agreement consistent across model initializations? Gaussian mixtures provide a tractable comparison on the supplied data without requiring equilibrium weights.
+
+\section{Contributions and evidence boundaries}
+The completed work comprises a source audit, tested numerical routines, descriptor and sampling diagnostics, FES grid validation, and a Gaussian-mixture feature-ablation pilot. The pilot is the original analysis developed for this report; the modular clustering implementation supports a separate reproduction of the published method. That reproduction remains incomplete because the FES energy units and construction provenance have not been established.
+
+Each computation records input hashes, configuration, software versions and outputs. Scientific plots are generated from those records; exploratory notebooks are not the source of truth. This follows the emphasis on portable workflows and machine-actionable provenance in research-software guidance \autocite{wratten2021,wilkinson2016,barker2022}. The report connects these practices to the internship's learning objectives while distinguishing assigned study topics from completed numerical work.

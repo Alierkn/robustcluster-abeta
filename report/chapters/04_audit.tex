@@ -1,0 +1,31 @@
+\chapter{Reproduction and scientific code audit}
+\section{Original implementation}
+The supplied implementation is a monolithic script whose top-level execution reads inputs, writes segmented replica files, creates figures, performs clustering, and computes summary tables. Static parsing identifies an un-commented Italian sentence at line 437, causing a syntax error before the analysis can run. The original is preserved exactly, including this defect, so that the audit can be checked against the supplied file.
+
+Static inspection is sufficient to identify several intended operations, but it cannot establish that any previous full run succeeded. No original execution manifest or numerical output set was located. The present audit therefore distinguishes observed source behavior from observed runtime results. Where the source contradicts the published description, the method map records the discrepancy and the correction adopted in the modular implementation.
+
+\section{Identified methodological issues}
+The original parser silently takes the first three reset segments and skips certain malformed lines. The new parser checks segment count and row validity. Original group generation depends on a fixed list of 17 seeds, which would be exhausted under smaller group sizes. The replacement uses local RNG streams and retains a complete identity map. This is a reproducibility improvement but changes exact sampled subsets, so bitwise equivalence to the legacy script is not claimed.
+
+In the clustering stage, rejected frames receive a generic label, and the consensus construction includes every label. This allows residuals that did not pass the acceptance criteria to affect the global families. The corrected implementation stores accepted memberships explicitly and keeps residuals out of centroid discovery. It subsequently assigns those residuals in the published STEP-3 operation.
+
+The FES reader ignores completeness metadata, permits missing grid values with a warning, and the weight function uses nearest-grid lookup with boundary selection. These behaviors can generate plausible but unsupported weights. The replacement rejects incomplete grids and performs bounded bilinear interpolation. The original partial download ended inside a numerical row and was rejected. The complete replacement received on 7 October passed grid validation; it did not retroactively make the partial file usable.
+
+Finally, the original weighted-analysis section calculates arithmetic descriptor means and standard deviations while weighting only relevance. This conflicts with the weighted characterization described in the paper's figure captions. Global pooled weights also do not guarantee equal replica contribution. Both issues are corrected explicitly. Distribution width, replica SEM and bootstrap uncertainty are separate outputs because they answer different questions.
+
+\begin{auditnote}
+Correcting a code path does not establish the validity of its input data or the convergence of the original simulation. The complete grid now passes validation, but its energy-unit and construction provenance still require clarification before empirical reweighting.
+\end{auditnote}
+
+\section{Scientific V2 corrections: evidence unavailable}
+The requested intermediate file \code{CLUSTERING40\_scientific\_v2.py} and its changelog were not located. The method map therefore marks its implementation column as unavailable throughout. None of the corrections in this report is attributed retrospectively to that version. If it is later supplied, it should be hash-verified, preserved without modification, and compared with both the original and the modular implementation.
+
+\section{Verification and numerical tests}
+The current suite passed 36 tests, including strict parsing, interval boundaries, normalization, analytic bilinear interpolation, incomplete and duplicate grids, finite/bounds checks, weight sign, free-energy-offset invariance, equal replica masses, weighted moments, residual handling, final assignment, label-permutation agreement, and bootstrap separation of replicas. A seeded autoregressive fixture checks that the correlation estimator behaves plausibly for a known stationary process.
+
+A complete synthetic pipeline fixture exercises cluster discovery, consensus, all-frame assignment, final-bias weights, population tables, conditional bootstrap intervals and PDF generation. Its generated descriptors and analytic surface are confined to testing and are not treated as Aβ40 observations. An additional repeatability test fits the GMM extension to explicitly synthetic separated observations. Its label-permutation and missing-family tests verify comparison behavior. An archive-provenance test also checks that a source release cannot inherit the Git commit of an unrelated enclosing repository. These tests establish numerical behavior, not the validity of a biological family.
+
+\section{Remaining methodological ambiguities}
+The main unresolved choices are the exact STEP-2 descriptor scaling, the construction of the replica-averaged FES, and the detailed convention for published cluster widths and uncertainties. Density ties and spline-based elbow selection are also more explicit in the supplied code than in the paper. The repository records these as source-informed choices rather than presenting them as fully specified published theory.
+
+The distinction is operational: raw Wasserstein scaling remains the reproduction setting, while normalized scaling receives a different extension configuration. A missing FES-generation recipe remains a provenance limitation even after a complete numerical grid is obtained. A future comparison with published populations must assess those differences before attributing a discrepancy to molecular behavior.

@@ -1,0 +1,4 @@
+replica_id,frames,start_ps,end_ps,spacing_ps,uniform_spacing
+1,100001,1000000.0,3000000.0,20.0,True
+2,100001,1000000.0,3000000.0,20.0,True
+3,100001,1000000.0,3000000.0,20.0,True

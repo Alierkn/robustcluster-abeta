@@ -1,0 +1,54 @@
+\usepackage[a4paper,left=25mm,right=23mm,top=23mm,bottom=24mm,headsep=7mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,mathtools,bm}
+\usepackage{unicode-math}
+\setmainfont{LibertinusSerif}[Extension=.otf,UprightFont=*-Regular,ItalicFont=*-Italic,BoldFont=*-Bold,BoldItalicFont=*-BoldItalic]
+\setsansfont{LibertinusSans}[Extension=.otf,UprightFont=*-Regular,ItalicFont=*-Italic,BoldFont=*-Bold]
+\setmathfont{LibertinusMath-Regular.otf}
+\usepackage{microtype,siunitx,graphicx,subcaption,adjustbox}
+\usepackage{booktabs,tabularx,longtable,threeparttable}
+\usepackage{xcolor,tcolorbox,tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{listings,csquotes}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=6,minbibnames=3,giveninits=true]{biblatex}
+\addbibresource{references.bib}
+\usepackage{hyperref,bookmark,cleveref,glossaries-extra,scrlayer-scrpage}
+\definecolor{Navy}{HTML}{173A5E}
+\definecolor{Teal}{HTML}{2E6F73}
+\definecolor{Ink}{HTML}{20242A}
+\definecolor{CoolGrey}{HTML}{F3F5F7}
+\definecolor{Audit}{HTML}{A95542}
+\hypersetup{hypertexnames=false,colorlinks=true,linkcolor=Navy,citecolor=Teal,urlcolor=Navy,pdftitle={RobustCluster-Aβ: reproducible analysis of amyloid-β40 conformational descriptors},pdfauthor={Ali Erkan Ocaklı},pdfsubject={Curricular internship report, Data Analysis L-31, academic year 2025–2026},pdfkeywords={amyloid-beta40, metadynamics, reproducibility, clustering, feature sensitivity},pdflang={en-GB}}
+\color{Ink}
+\setkomafont{disposition}{\sffamily\bfseries\color{Navy}}
+\setkomafont{pageheadfoot}{\sffamily\small\color{Navy}}
+\clearpairofpagestyles
+\ihead{RobustCluster-Aβ}
+\ohead{Conformational analysis and reproducibility}
+\cfoot*{\pagemark}
+\pagestyle{scrheadings}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=16pt]{chapter}
+\RedeclareSectionCommand[beforeskip=12pt,afterskip=5pt]{section}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{2pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\captionsetup{font=small,labelfont=bf,format=plain}
+\newtcolorbox{auditnote}{colback=CoolGrey,colframe=Audit,boxrule=.4pt,arc=0pt,left=7pt,right=7pt,top=5pt,bottom=5pt,title=Scientific audit note,fonttitle=\sffamily\bfseries}
+\newcommand{\abforty}{Aβ40}
+\newcommand{\abfortytwo}{Aβ42}
+\newcommand{\na}{n_{\alpha}}
+\newcommand{\nb}{n_{\beta}}
+\newcommand{\blocked}{\textsc{blocked}}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\definecolor{CodeComment}{HTML}{667B88}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,frame=none,backgroundcolor=\color{CoolGrey},columns=fullflexible,keepspaces=true,showstringspaces=false,keywordstyle=\color{Navy}\bfseries,stringstyle=\color{Teal},commentstyle=\color{CodeComment}\itshape,tabsize=4,aboveskip=4pt,belowskip=4pt}
+\lstdefinestyle{editorialcode}{language=Python,numbers=left,numberstyle=\sffamily\scriptsize\color{CodeComment},numbersep=9pt,xleftmargin=19pt,basicstyle=\ttfamily\fontsize{8.2}{10.5}\selectfont,breakatwhitespace=false}
+\newtcolorbox{codepanel}[2]{colback=CoolGrey,colframe=Navy,colbacktitle=Navy,coltitle=white,boxrule=.35pt,arc=0pt,left=6pt,right=7pt,top=5pt,bottom=5pt,title={\sffamily\small\bfseries #1\hfill\normalfont\scriptsize #2},before skip=9pt,after skip=9pt}
+\graphicspath{{figures/}}
+\input{generated/values.tex}
+
+\input{generated/revision_values.tex}

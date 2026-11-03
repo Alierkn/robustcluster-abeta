@@ -1,0 +1,44 @@
+# Run from repository root: snakemake -s workflows/Snakefile --cores 1
+from pathlib import Path
+
+SOURCES = sorted(str(p) for p in Path('src').rglob('*.py'))
+CONFIG = 'config/paper_reproduction.yaml'
+
+rule all:
+    input:
+        'results/workflow/diagnostics.json'
+
+rule validate:
+    input:
+        CONFIG, 'data/raw/input_clustering_ab40.dat', *SOURCES
+    output:
+        'results/workflow/validate.json'
+    shell:
+        'python scripts/workflow_stage.py validate --config {input[0]:q} --pointer {output:q}'
+
+rule diagnostics:
+    input:
+        CONFIG, 'results/workflow/validate.json', *SOURCES
+    output:
+        'results/workflow/diagnostics.json'
+    shell:
+        'python scripts/workflow_stage.py diagnostics --config {input[0]:q} --pointer {output:q}'
+
+rule reproduction:
+    input:
+        CONFIG, 'data/raw/FES_AB_40.dat', 'results/workflow/validate.json', *SOURCES
+    output:
+        'results/workflow/reproduction.json'
+    shell:
+        'python scripts/workflow_stage.py reproduce --config {input[0]:q} --pointer {output:q}'
+
+# Reproduction is not a dependency of lightweight diagnostics. Missing FES is never substituted.
+
+# Independent descriptor-only experiment; does not invoke the FES gate.
+rule gmm_ablation:
+    input:
+        'config/gmm_ablation.yaml', 'data/raw/input_clustering_ab40.dat', *SOURCES
+    output:
+        'results/workflow/gmm-ablation.json'
+    shell:
+        'python scripts/workflow_stage.py gmm-ablation --config {input[0]:q} --pointer {output:q}'

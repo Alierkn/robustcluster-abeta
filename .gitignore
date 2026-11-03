@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.snakemake/
+*.egg-info/
+.venv/
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+data/processed/*
+legacy/CLUSTERING40_ottimizzato.py
+results/manifests/local_provenance.json
+report/build/
+*.zip
+
+# Intermediate files for the three-page editorial sample
+report/preview/*.aux
+report/preview/*.log
+report/preview/*.out

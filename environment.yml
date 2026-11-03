@@ -1,0 +1,9 @@
+name: robustcluster-abeta
+channels: [conda-forge]
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -e .[dev,workflow,report]
+# Exact tested package versions are in requirements-lock.txt.
+# LuaLaTeX/Biber/latexmk are separately recorded in report build manifests.

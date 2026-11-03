@@ -1,0 +1,218 @@
+Browser tab: 818605946, Title: "The analysis of intrinsically disordered peptides requires a distinction between the configurations — GPTZero", URL: "https://app.gptzero.me/".
+0 AXWebArea URL: app.gptzero.me/, The analysis of intrinsically disordered peptides requires a distinction between the configurations — GPTZero
+	1 container
+		2 container root
+			3 container
+				4 button GPTZero logo
+					5 image GPTZero logo
+				6 button New Scan
+					7 image
+					8 text New Scan
+				9 button Custom Review
+					10 image
+					11 text Custom Review
+				12 container Navigation sidebar
+					13 content list
+						14 link Description: Scans, Value: app.gptzero.me/documents-history, ID: documents-link
+						15 link Description: Chrome Extension, ID: chrome-extension-link, Value: chromewebstore.google.com/detail/kgobeoibakoahbfnlficpmibdbkdchap?utm_source=dashboard&utm_medium=button&utm_content=sidebar
+			16 container
+				17 text The analysis of intrinsically disordered peptides requires a distinction between the configurations
+				18 button Sign up
+				19 button Log in
+				20 container input-view-container
+					21 button Expand input view
+						22 image
+					23 splitter Resize results panel
+					24 container
+						25 container
+							26 button Copy
+								27 image
+							28 button Undo
+								29 image
+							30 button (disabled) Redo
+								31 image
+							32 button Text
+								33 image
+							34 button Bold
+								35 image
+							36 button Italic
+								37 image
+							38 button Underline
+								39 image
+							40 button (disabled) Add link
+								41 image
+							42 button More formatting options
+								43 image
+							44 button Proofread
+								45 image
+								46 text Proofread
+							47 button (disabled) Watch your writing replay
+								48 image
+						49 container
+							50 container The analysis of intrinsically disordered peptides requires a distinction between the configurations saved by a simulation, their equilibrium statistical weights, and the choices used to group them. This internship report develops RobustCluster-Aβ to examine these questions using amyloid-β40 descriptors supplied for reproduction of the workflow of Cadenelli and colleagues. The published approach combines well-tempered metadynamics, density-peak clustering, Wasserstein consensus, final assignment and statistical reweighting. The present project separates that reproduction target from corrections to the supplied script and an independent analysis of feature sensitivity.
+
+
+
+
+The descriptor table contains 300,003 observations in three replica segments, each covering the source-labelled 1–3 microsecond interval. An audit identified problems involving parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. The modular implementation preserves the original inputs and adds numerical tests, parameter files, input hashes and run manifests. A subsequently recovered free-energy surface passed grid-completeness and interpolation checks for every observation; its energy-unit and construction provenance remain unresolved.
+								51 container
+									52 text The analysis of intrinsically disordered peptides requires a distinction between the configurations saved by a simulation, their equilibrium statistical weights, and the choices used to group them. This internship report develops RobustCluster-Aβ to examine these questions using amyloid-β40 descriptors supplied for reproduction of the workflow of Cadenelli and colleagues. The published approach combines well-tempered metadynamics, density-peak clustering, Wasserstein consensus, final assignment and statistical reweighting. The present project separates that reproduction target from corrections to the supplied script and an independent analysis of feature sensitivity.
+								53 container
+									54 text The descriptor table contains 300,003 observations in three replica segments, each covering the source-labelled 1–3 microsecond interval. An audit identified problems involving parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. The modular implementation preserves the original inputs and adds numerical tests, parameter files, input hashes and run manifests. A subsequently recovered free-energy surface passed grid-completeness and interpolation checks for every observation; its energy-unit and construction provenance remain unresolved.
+							55 container
+								56 image 👔
+								57 button Open Grammarly. 5 suggestions.
+									58 container
+										59 text 5
+					60 container
+						61 text Great! You've entered enough text to scan 1261 characters
+				62 container
+					63 container Description: Scan type navigation, ID: right-hand-scan-menu
+						64 button Description: Basic Scan, ID: g0-nav-menu-button-basic
+						65 button Description: Advanced, ID: g0-nav-menu-button-advanced
+							66 text Advanced
+						67 button Description: Feedback, ID: g0-nav-menu-button-v2_writing_feedback
+							68 text Feedback
+						69 button Description: Plagiarism, ID: g0-nav-menu-button-plagiarism
+							70 text Plagiarism
+						71 button Description: Hallucination, ID: g0-nav-menu-button-bibliography_scan
+							72 text Hallucination
+					73 container g0-nexus-results-header
+						74 heading Basic Scan, Value: 1
+							75 text Basic Scan
+						76 button This result is accurate
+							77 image
+						78 button Disagree with this scan result?
+							79 image
+						80 button Share
+							81 image
+							82 text Share
+						83 button Export
+							84 image
+							85 text Export
+					86 container
+						87 image
+							88 text AI
+						89 image
+						90 text GPTZero AI Detection Model  4.1o We are highly confident this text was AI generated
+						91 image
+						92 text Chance this entire text is...
+						93 button AI 100%
+							94 text AI 100%
+							95 image
+						96 button Mixed 0%
+							97 text Mixed 0%
+							98 image
+						99 button Human 0%
+							100 text Human 0%
+							101 image
+						102 radio button AI Sentences, Value: 1
+							103 container
+								104 image
+								105 text AI Sentences
+						106 radio button AI Patterns NEW, Value: 0
+							107 container
+								108 image
+								109 text AI Patterns NEW
+						110 radio button AI Vocab, Value: 0
+							111 container
+								112 image
+								113 text AI Vocab
+						114 heading Your most AI sentences, Value: 6
+							115 text Your most AI sentences
+						116 content list
+							117 container
+								118 container Low impact
+									119 text High AI impact
+								120 container Medium impact
+									121 text High AI impact
+								122 container High impact
+									123 text High AI impact
+								124 text The published approach combines well-tempered metadynamics, density-peak clustering, Wasserstein consensus, final assignment and statistical reweighting.
+							125 container
+								126 container Low impact
+									127 text High AI impact
+								128 container Medium impact
+									129 text High AI impact
+								130 container High impact
+									131 text High AI impact
+								132 text An audit identified problems involving parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries.
+							133 container
+								134 container Low impact
+									135 text High AI impact
+								136 container Medium impact
+									137 text High AI impact
+								138 container High impact
+									139 text High AI impact
+								140 text The analysis of intrinsically disordered peptides requires a distinction between the configurations saved by a simulation, their equilibrium statistical weights, and the choices used to group them.
+						141 image
+						142 text Advanced sentence scanning
+						143 text Understand how each sentence impacts AI probabilities.
+						144 button Try for Free
+						145 text 1/1 free scans left
+						146 text What's next?
+						147 button Writing feedback on your draft Structure, tone, and argument analysis
+							148 text Writing feedback on your draft
+							149 text Structure, tone, and argument analysis
+							150 image
+						151 button (collapsed) Guidance for Teachers and reviewers, Secondary Actions: Expand
+							152 image
+							153 text Guidance for Teachers and reviewers
+					154 text Text up-to-date 1,261 characters • 154 words
+					155 button Re-scan
+						156 text Re-scan
+						157 image
+				158 container
+					159 button AI Tools
+					160 list
+						161 image
+					162 button Feedback
+						163 image
+						164 text Feedback
+					165 button
+						166 image
+				167 container
+					168 image
+					169 text Here are some useful AI tools.
+					170 text Ways they can help you as a
+					171 pop up button (collapsed) teacher, ID: headlessui-menu-button-:rv:, Secondary Actions: Expand
+						172 text teacher
+						173 image
+					174 button Give constructive feedback Generate insights aligned with your rubric criteria.
+						175 image
+						176 text Give constructive feedback
+						177 text Generate insights aligned with your rubric criteria.
+					178 button Help with addressing AI use in this assignment Get advice on how to address AI use with your student.
+						179 image
+						180 text Help with addressing AI use in this assignment
+						181 text Get advice on how to address AI use with your student.
+					182 button Help support a struggling learner Develop a plan to help this student succeed.
+						183 image
+						184 text Help support a struggling learner
+						185 text Develop a plan to help this student succeed.
+					186 button Find contradictions in my text Uncover inconsistencies and improve logical clarity.
+						187 image
+						188 text Find contradictions in my text
+						189 text Uncover inconsistencies and improve logical clarity.
+					190 button Custom question
+						191 image
+						192 text Custom question
+					193 container
+						194 splitter 75
+						195 text entry area (settable)
+						196 button Add rubric or documents
+							197 image
+							198 text Add rubric or documents
+						199 button (disabled) ->
+	200 container grammarly-integration
+		205 text {"mode":"full","isActive":true,"isUserDisabled":false}
+	202 button Get summaries and key insights using AI Assistant
+		203 button Open AI Assistant
+			204 image ImportedIcons
+
+The focused UI element is 50 container The analysis of intrinsically disordered peptides requires a distinction between the configurations saved by a simulation, their equilibrium statistical weights, and the choices used to group them. This internship report develops RobustCluster-Aβ to examine these questions using amyloid-β40 descriptors supplied for reproduction of the workflow of Cadenelli and colleagues. The published approach combines well-tempered metadynamics, density-peak clustering, Wasserstein consensus, final assignment and statistical reweighting. The present project separates that reproduction target from corrections to the supplied script and an independent analysis of feature sensitivity.
+
+
+
+
+The descriptor table contains 300,003 observations in three replica segments, each covering the source-labelled 1–3 microsecond interval. An audit identified problems involving parsing, residual clusters, free-energy interpolation, replica pooling and weighted summaries. The modular implementation preserves the original inputs and adds numerical tests, parameter files, input hashes and run manifests. A subsequently recovered free-energy surface passed grid-completeness and interpolation checks for every observation; its energy-unit and construction provenance remain unresolved.

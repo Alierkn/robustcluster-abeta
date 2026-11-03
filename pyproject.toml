@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robustcluster-abeta"
+version = "0.1.0"
+description = "Audited Aβ40 conformational clustering and reproducibility diagnostics"
+requires-python = ">=3.12,<3.14"
+license = {text = "BSD-3-Clause (new code only)"}
+dependencies = ["numpy>=2,<3", "scipy>=1.13,<2", "scikit-learn>=1.5,<2", "pandas>=2.2,<3", "matplotlib>=3.9,<4", "PyYAML>=6,<7", "psutil>=6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+workflow = ["snakemake>=9,<10"]
+report = ["pypdf>=5", "requests>=2"]
+
+[project.scripts]
+robustcluster = "robustcluster_abeta.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+robustcluster_abeta = ["*.mplstyle"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["legacy"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

@@ -1,0 +1,132 @@
+\chapter{Full parameter table}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.34\textwidth}>{\raggedright\arraybackslash}p{.22\textwidth}>{\raggedright\arraybackslash}p{.36\textwidth}@{}}
+\caption{Reproduction settings and execution profiles. These parameters are implemented but do not imply a completed empirical run.}\label{tab:parameters}\\
+\toprule Parameter & Value & Evidence / role\\\midrule\endfirsthead
+\multicolumn{3}{l}{\small\itshape Table \thetable\ continued}\\
+\toprule Parameter & Value & Evidence / role\\\midrule\endhead
+Replicas & 3 & Primary paper; observed table segmentation\\
+Analysis interval & 1--3 μs & Published baseline; inclusive source-labelled ps boundaries\\
+Temperature & 310 K & Published weighting parameter; no new MD run\\
+Bias factor $\gamma$ & 10 & Published weighting parameter\\
+Molar gas constant & 0.008314462618 kJ mol$^{-1}$ K$^{-1}$ & Implementation unit convention\\
+CV conversions & $\alpha=\na/1.1$, $\beta=\nb/2.5$ & Published descriptor scaling\\
+Baseline features & $\na$, $\nb$, $R_g$, SASA & Pooled min--max normalization\\
+Initial $d_c$ & 1.3 & Published baseline\\
+Cutoff multiplier & 0.9 & Published 10\% reduction\\
+Center-count scan & 10 down to 2 & Published baseline\\
+Minimum cluster size & 300 frames & Published acceptance criterion\\
+Minimum mean silhouette & 0.3 & Published acceptance criterion\\
+Failure stopping count & 5 & Consecutive iterations with no accepted cluster\\
+Distance storage & float32 & Source-informed; blockwise construction\\
+Consensus & Average linkage & Marginal Wasserstein norm\\
+Elbow smoothing & $s=5$ & Supplied source heuristic\\
+Elbow search range & First 90\% of merges & Supplied source heuristic\\
+Final assignment & One nearest-centroid pass & No iterative refitting\\
+Master seed & 42 & Default project configuration; recorded per run\\
+Smoke / medium groups & 3,000 / 10,000 & Reduced execution profiles\\
+Smoke / medium discovery groups & 2 / 3 & Not full-production evidence\\
+Full group size & About 30,000 & All groups; full execution disabled\\
+Seed counts & 2 smoke; 5 pilot/medium; 20 full default & Full robustness configurable; not performed\\
+Bootstrap draws & 500 & Conditional moving-block extension; not performed on real weights\\
+Resource policy & Bounded sequential local workers & Full execution held for review\\
+\bottomrule
+\end{longtable}
+\clearpage
+\section*{Completed descriptor-only GMM pilot}
+The following settings belong to the successful independent experiment, not to the published DPC baseline. The fit sample and initializations were recorded before execution.
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.34\textwidth}>{\raggedright\arraybackslash}p{.22\textwidth}>{\raggedright\arraybackslash}p{.36\textwidth}@{}}
+\caption{Settings of the completed GMM experiment, as recorded in its run manifest.}\label{tab:gmmparameters}\\
+\toprule Parameter & Value & Evidence / role\\\midrule\endfirsthead
+\multicolumn{3}{l}{\small\itshape Table \thetable\ continued}\\
+\toprule Parameter & Value & Evidence / role\\\midrule\endhead
+Fit sample & 1,000 per replica & 3,000 rows; shared across models\\
+Sampling seed & 20261007 & Local NumPy generator\\
+Feature spaces & Four descriptors; omit SASA & Same scaling for shared features\\
+Scaling & Fit-sample mean and SD & No evaluation-data refit\\
+Components & 2, 3, 4, 5, 6 & All counts retained in comparison\\
+Initialization seeds & 42, 43, 44, 45, 46 & Paired across representations\\
+Initializations per fit & 1 & 50 total fitted models\\
+Covariance & Full & Regularization $10^{-6}$\\
+Convergence settings & 500 iterations; tolerance $10^{-3}$ & All fits converged numerically\\
+Evaluation & 300,003 rows & Includes fit rows; descriptive comparison\\
+Resource limits & 600 s; 4 GiB & Sequential local worker\\
+\bottomrule
+\end{longtable}
+
+\chapter{Mathematical derivations and estimator checks}
+\section*{Why the sign of the final-bias correction is negative in FES form}
+Under a static bias $V$, the observed configuration density is proportional to $\exp[-\beta_T(U+V)]$. Multiplying by $\exp(\beta_T V)$ recovers relative canonical density. The WT relation $V\simeq-(1-1/\gamma)F+C$ therefore gives the negative free-energy sign in \cref{eq:finalweights}. Applying $\exp(-\beta_T V)$ would reverse the correction. This derivation assumes that using a final bias is appropriate for the analyzed interval; it is not a proof that the supplied trajectories satisfy that assumption.
+
+\section*{Equal-replica mixture and cluster moments}
+Let $\widetilde w_{ri}$ sum to one within replica $r$. The pooled expectation of $A$ is $(1/3)\sum_r\sum_i\widetilde w_{ri}A_{ri}$. Cluster relevance uses $A$ equal to a membership indicator. For a conditional cluster mean, divide the pooled weighted sum of the descriptor by the pooled membership mass. Computing three conditional means and averaging them equally instead would answer a different question when cluster populations differ across replicas.
+
+\section*{Bilinear interpolation test}
+For a cell with fractional coordinates $u,v\in[0,1]$, interpolation combines its four corner values with weights $(1-u)(1-v)$, $u(1-v)$, $(1-u)v$, and $uv$. Their sum is one. Any surface $a+b\alpha+c\beta+d\alpha\beta$ is reproduced exactly within floating-point tolerance. The test suite includes such a mixed-term surface, reordered input rows, boundaries and invalid-grid cases, providing stronger evidence than checking a single grid node.
+
+\chapter{Additional diagnostics and interpretation}
+The saved tables contain per-replica raw descriptor counts, means, standard deviations, extrema, common-bin histograms, the full four-feature correlation matrix, PCA transformation parameters and explained variance, and the reported correlation-estimator diagnostics. The ACF figure is a plotting subsample, not the series used to estimate $g$. No weights are present in these real-data diagnostic summaries.
+
+The half-window mean-shift diagnostic is descriptive. A large shift can arise from slow fluctuations, nonstationarity, or changing occupation of sampled regions. Its threshold is an explicit project heuristic. A low shift alone would not establish convergence, and no threshold outcome can recover an unbiased time scale from WT-MetaD time. Future evaluation should preserve these distinctions when adding weighted estimates.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\textwidth]{gmm_seed_matrices.pdf}
+\caption{All pairwise seed ARIs from the GMM pilot. Columns show each tested component count; rows distinguish the four-feature and SASA-ablated representations. The diagonal is identity. All fits converged, so no entries are omitted. Similar numerical stopping status can coexist with different partitions.}
+\label{fig:seedmatrices}
+\end{figure}
+
+\chapter{Code audit summary}
+The project inventory records immutable source hashes, table dimensions and missing inputs. The method map links each step to paper evidence, source behavior, the modular implementation and validation tests. The decision log records scientific category and expected effect. The open-questions register prevents uncertain provenance from being converted into hidden defaults.
+
+Scientific V2 is absent, so the audit contains no invented intermediate diff. The supplied original remains excluded from execution and lint collection because its syntax error and top-level writes are part of the preserved evidence. New code is tested independently. Public source packaging excludes the raw table and original script until their redistribution rights are established.
+
+Codex assisted with software refactoring, numerical checks, document preparation and layout. Reported numerical observations come from recorded Python runs; the illustrated cover and two conceptual editorial artworks were generated with the built-in image-generation tool, and the source-code screenshots are actual browser captures. This assistance is separate from the published methodology and the original supplied materials. The generation tool does not expose a verifiable model-version identifier; no specific Image 2.5 execution claim is made. Exact prompts and image hashes are retained in \code{docs/ARTWORK\_PROMPTS.json} and \code{report/artwork\_provenance.json}. The supplied inspiration image guided the print texture and restrained palette, not the scientific content. The cover typography is part of the generated image; its institutional and personal details were visually checked. The University of Messina logo is a separate image supplied by the student and placed without generative reconstruction.
+
+\chapter{Reproducibility instructions}
+The project source, tests, configurations and this report are available at
+\href{https://github.com/Alierkn/robustcluster-abeta}{RobustCluster-Aβ on GitHub}.
+The \href{https://github.com/Alierkn/robustcluster-abeta/tree/main/src/robustcluster_abeta}{Python package}
+and \href{https://github.com/Alierkn/robustcluster-abeta/tree/main/report}{LaTeX sources}
+can be inspected separately or downloaded together using GitHub's \textit{Code / Download ZIP} option.
+The repository guide distinguishes code verification and report regeneration from analyses requiring restricted inputs.
+
+\begin{lstlisting}
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-lock.txt
+python -m pip install --no-deps -e .
+pytest -q
+ruff check src tests scripts
+robustcluster validate --config config/paper_reproduction.yaml
+robustcluster diagnostics --config config/robustness.yaml
+\end{lstlisting}
+The raw file must first be obtained and checked against its documented SHA256. The standalone commands and Snakemake workflow use the same package functions. The report imports successful diagnostics, FES-audit, GMM and figure manifests with matching hashes. Its generated editorial artwork and real browser screenshots have separate provenance records. LuaLaTeX, Biber and latexmk build the supplied report sources; current paths and tool versions are recorded in the build manifest.
+
+For later production, establish the recovered FES energy units and construction provenance, run smoke validation, review resource measurements, and create a reviewed full-run configuration. HPC templates require an actual allocation and explicit settings. Do not copy account or partition values from unrelated examples, and preserve job evidence before attributing calculations to Leonardo \autocite{leonardodocs}.
+
+\chapter{Software and environment table}
+\begin{table}[h]
+\centering
+\input{generated/environment_rows.tex}
+\caption{Actual software versions for the reported local descriptor diagnostics; the GMM pilot manifest records the same versions. They do not describe the original authors' simulation environment. The complete dependency lock and report-tool versions are separate reproducibility artifacts.}
+\end{table}
+The checked bibliography contains journal articles and official documentation records; its matrix links each citation to its question, method, relevance, and report section. Online-first dates and issue years are distinguished. References whose publisher verification remained unresolved are documented outside the BibTeX file rather than filled from memory.
+
+\chapter{Companion source-code evidence}
+The following images are genuine browser captures from public, commit-specific GitHub source pages on 7 October 2026. They document implementation, not simulation execution. The full images are preserved unchanged; short searchable listings in the main text are a separate presentation format.
+\begin{codepanel}{02\quad Measure each saved frame}{VMD MCP / source lines 250--266}
+\lstinputlisting[style=editorialcode,firstnumber=250]{generated/vmd-mcp-excerpt.py}
+\end{codepanel}
+\begin{figure}[htbp]
+\centering\includegraphics[width=.85\textwidth]{screenshots/vmd-gyration.jpg}
+\caption{VMD MCP source at commit \texttt{0191259}: the gyration wrapper constructs a Tcl frame loop and parses marked values. The screenshot shows the repository tree, source path and real line numbers. The function's documented unit convention must be checked before comparison with other tools. \href{https://github.com/Alierkn/vmd-mcp/blob/01912595595bf0302124f57559e1e6a22095fb24/src/vmd_mcp/server.py\#L242-L278}{Open the inspected source}.}
+\label{fig:vmdcode}
+\end{figure}
+\clearpage
+\begin{codepanel}{03\quad Validate before starting a job}{GROMACS MCP / source lines 1452--1467}
+\lstinputlisting[style=editorialcode,firstnumber=1452,gobble=8]{generated/gromacs-mcp-excerpt.py}
+\end{codepanel}
+\begin{figure}[htbp]
+\centering\includegraphics[width=.85\textwidth]{screenshots/gromacs-mdrun.jpg}
+\caption{GROMACS MCP source at commit \texttt{2c5c957}: the background-run wrapper validates inputs, constructs the \texttt{mdrun} command and prepares an output log. This source view does not establish that an Aβ40 simulation was launched through the tool. \href{https://github.com/Alierkn/gromacs-mcp/blob/2c5c957c3f2c047888b63ae258ace3df34cb8773/src/gromacs_mcp/server.py\#L1441-L1479}{Open the inspected source}.}
+\label{fig:gmxcode}
+\end{figure}

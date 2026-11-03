@@ -1,0 +1,34 @@
+name: Method question or extension
+description: Clarify a scientific choice or propose a separate experiment.
+title: "[Method] "
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Scope
+      options:
+        - Published-method reproduction
+        - Implementation correction
+        - Independent robustness extension
+        - Documentation or provenance
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question and affected choice
+      description: State the assumption, parameter or interpretation that needs attention.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting source or evidence
+      description: Link primary sources, existing run manifests or relevant code. Distinguish facts from hypotheses.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Proposed validation
+      description: Describe the comparison, required inputs and expected resource needs.

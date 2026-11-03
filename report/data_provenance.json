@@ -1,0 +1,41 @@
+{
+  "source_manifest": "results/manifests/20260921T011959-583b4421.json",
+  "source_manifest_sha256": "132375f79a48b7a10e5e2a1f2ce0ed1556fdfb0cc3e68c402edeea297de9e3b2",
+  "run_id": "20260921T011959-583b4421",
+  "source_commit": "198ae9b148733c39d2e1946460d244d38651e9e0",
+  "outputs": [
+    {
+      "filename": "report/generated/environment_rows.tex",
+      "sha256": "b8ab0b64d44896776648a71ce8eb32e446b7b4720d8f338a695dc395b5fdfaf5"
+    },
+    {
+      "filename": "report/generated/sampling_rows.tex",
+      "sha256": "b078c42b765afba6d21dab475c887a66419cba83154aa35d35e8f09bf6cb0811"
+    },
+    {
+      "filename": "report/generated/values.tex",
+      "sha256": "e7dfbf9cca7f0a96bf738eff7e30e90e4fd1fe284759e8a68f006f71a1ecaf41"
+    },
+    {
+      "filename": "report/figures/fig01_workflow.pdf",
+      "sha256": "4e19a9495581cee9d32cf225aa40fb7d9b4a529f393d2c050a0187985d731e4c"
+    },
+    {
+      "filename": "report/figures/fig03_feature_diagnostics.pdf",
+      "sha256": "9a67a1db697a39a7bb1d1d6889e299cd9643d2439b494b8435c67298665c1eee"
+    },
+    {
+      "filename": "report/figures/raw_descriptor_distributions.pdf",
+      "sha256": "6123e4eb3b18a1bf721598bf9bd3667b8d407c4afe99b4c724647601ac122f7f"
+    },
+    {
+      "filename": "report/figures/sampling_autocorrelations.pdf",
+      "sha256": "933cfd8889e7d2311029310b5714595dad360937e0fca727b22d4d726da4cad2"
+    }
+  ],
+  "workflow_override": {
+    "manifest": "results/manifests/20261007T115101-b5fc7418.json",
+    "sha256": "67a1227ef5a568ca750f332af9c025e9911a8ac6e3fe72593538bfbae6f959a3",
+    "reason": "Clip arrows to actual box boundaries; no numerical changes"
+  }
+}

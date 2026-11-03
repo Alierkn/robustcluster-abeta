@@ -1,0 +1,65 @@
+{
+  "run_id": "20261007T124239-archive-review-e6ff4f",
+  "command": "source-archive-review",
+  "status": "SUCCESS",
+  "timestamp_utc": "2026-10-07T12:42:39.435540+00:00",
+  "archive_under_review_sha256": "c68e2d14e4a47d39799a394ea37bdf7b2c3a938b0e8be621c6cb08530584a24b",
+  "report_sha256": "5ac128d1bb9bd0b428768d1f4d65c3d386a72d609f5db1a251129b2c5c7d9627",
+  "build_manifest": "results/manifests/20261007T123134-report-9de5e7.json",
+  "report_pages": 38,
+  "main_text_pages": 22,
+  "archive_build_without_git": "SUCCESS",
+  "archive_tests": 36,
+  "environment_scope": "Fresh source extraction using existing isolated Python/TeX runtimes; not a fresh dependency installation",
+  "first_harness_failure": "The initial harness resolved the virtualenv Python symlink to the incompatible global interpreter. Corrected harness preserved the venv executable path; failure and successful rerun evidence both retained.",
+  "outputs": [
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/verify.log",
+      "sha256": "f5c25f59b7be9e4e0ba3c8a72708ff1cffea06fb5f19cd79939555c06b631515"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/20261007T123342-qa-2be483.json",
+      "sha256": "39a9aabc18a545145d0b948a01b03dc53e2812316f473d8b4a8eb52699c26565"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/20261007T123939-qa-90d886.json",
+      "sha256": "9cd5b2739a8f477ddce57577119f30a1bf492bb577d8f36b7e27a29e17a5e4ae"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/verification.json",
+      "sha256": "05ed1ce009ce363facaf3cba9e154c9b84c44eb2e0cd11c1f7d8d9ab610b3873"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/verify-verified-env.log",
+      "sha256": "1a257f736fe32bbe6c7c279ea75c8839e539000512506868114450ed4c59f974"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/build.log",
+      "sha256": "b62b2b8fa84468859f6edccb66e8d7cbb7d34f7b1c696528038aac144e067836"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/build-verified-env.log",
+      "sha256": "4fd9e3eb283d8df77412ec29baee716652b4e1bf4662d2b5c0283597ad7c2e80"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/20261007T123342-qa-2be483/pytest.log",
+      "sha256": "4a010243ca6dab420bb71c3ff23c529fd927974ccad6a5d73946d0fc0212fc31"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/20261007T123342-qa-2be483/tests.xml",
+      "sha256": "ada999be0c9cc84904d2e356234576f4677a6f0700aa2439bf59fd9c91cbc9d1"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/20261007T123939-qa-90d886/pytest.log",
+      "sha256": "e12f7bd8960b898c3fee9c3558b904395eab5bd58b4a2e04dfce10082c5131ce"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/20261007T123939-qa-90d886/tests.xml",
+      "sha256": "fcefffa9e80787550f4a5b8a24d8514151166c7c49cacfdcab916f0c2d1f2533"
+    },
+    {
+      "filename": "results/logs/20261007T124239-archive-review-e6ff4f/20261007T123939-qa-90d886/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    }
+  ]
+}

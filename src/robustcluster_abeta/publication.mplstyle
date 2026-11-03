@@ -1,0 +1,18 @@
+font.family: serif
+font.serif: Libertinus Serif, DejaVu Serif
+font.size: 9
+axes.labelsize: 9
+axes.titlesize: 10
+axes.spines.top: False
+axes.spines.right: False
+axes.linewidth: 0.6
+lines.linewidth: 1.2
+xtick.labelsize: 8
+ytick.labelsize: 8
+legend.fontsize: 8
+legend.frameon: False
+savefig.bbox: tight
+pdf.fonttype: 42
+ps.fonttype: 42
+svg.fonttype: none
+figure.dpi: 120

@@ -1,0 +1,9 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "summary": {
+    "frames": 300003,
+    "interpretation": "unweighted biased-stream diagnostics",
+    "weights": "BLOCKED: complete FES missing; rbias provenance unverified"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "raw_histograms.csv": true,
+  "feature_correlation.csv": true,
+  "sampling_diagnostics.csv": true,
+  "raw_descriptors.csv": true,
+  "pca.json": true,
+  "autocorrelations.csv": true
+}

@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Cite this software separately from the published methodology; no software DOI has been assigned."
+title: "RobustCluster-Aβ: audited conformational clustering and reproducibility diagnostics"
+repository-code: "https://github.com/Alierkn/robustcluster-abeta"
+url: "https://github.com/Alierkn/robustcluster-abeta"
+type: software
+version: 0.1.0
+license: BSD-3-Clause
+authors:
+  - family-names: "Ocaklı"
+    given-names: "Ali Erkan"
+references:
+  - type: article
+    title: "The Monomeric Conformational Ensembles of Aβ40 and Aβ42 Encode Their Differential Amyloid Aggregation Propensity"
+    doi: 10.1021/acs.jpcb.6c01000
+    year: 2026
+    journal: "The Journal of Physical Chemistry B"
+    volume: 130
+    issue: 24
+    start: 6035
+    end: 6046
+    authors:
+      - family-names: Cadenelli
+        given-names: Irene
+      - family-names: Ciccolo
+        given-names: Andrea
+      - family-names: Tagliabue
+        given-names: Andrea
+      - family-names: Rossi
+        given-names: Giulia
+      - family-names: Conti Nibali
+        given-names: Valeria
+      - family-names: Bochicchio
+        given-names: Davide

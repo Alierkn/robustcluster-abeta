@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "run_id": "20261007T104709-dd9f8f2c",
+  "status": "FAILED",
+  "command": "revision-preview",
+  "experiment": null,
+  "timestamp_utc": "2026-10-07T10:47:09.627040+00:00",
+  "git_commit": "bd669d25448cb04e21833aa118a6c0fc3b699f19",
+  "git_dirty": true,
+  "source_sha256": {
+    "src/robustcluster_abeta/__init__.py": "3cc8a1f08f68febd2093bbc43cc3f797012c65ac781256cab5b5bfc0fb984207",
+    "src/robustcluster_abeta/audit_fes.py": "f2951d8948e4f8b5bf8564b4e3acc14dc35aff4bf069d076ef19cc249a856553",
+    "src/robustcluster_abeta/cli.py": "830f9e65e4483a033e47d65cd4b8183c43e4e17acf9ca603f4c1590cfd6c6df2",
+    "src/robustcluster_abeta/consensus.py": "613e7ce2180d0e67ad0b2b9f85f00a7362d9f20d3d3bfd51e54c68fbc174ef22",
+    "src/robustcluster_abeta/dpc.py": "f833f9219f5cbb6db42790e6d1224f4a48aa193f30e1014fa6827c309def7c13",
+    "src/robustcluster_abeta/fes.py": "81345790bcc5adac0a044055ab5c65e75387bf5391ffcfcfe884f1f904f3f206",
+    "src/robustcluster_abeta/gmm_ablation.py": "fa1df770e2f0f8ae122ffb085c3e5e477dc0de2d3964a0b56b9b5ca45bd284e4",
+    "src/robustcluster_abeta/io.py": "30060c0ade1d9b49db6f03d03fd1f877d2eb4a3f19942ef053a2bc2755f780c3",
+    "src/robustcluster_abeta/manifest.py": "3642c17eda5b16b210e0ae0c8a9bcc48d54e7ee8c31308436ae89a0e36f9294a",
+    "src/robustcluster_abeta/pipeline.py": "92e9b1bd13d61596a23a8202b2eff64b177898b9e40d3c9bb634498566376cbe",
+    "src/robustcluster_abeta/plotting.py": "36d1086aace820f551a99929f39b6f20557a1c663b651ab18955689950b8188b",
+    "src/robustcluster_abeta/preprocessing.py": "72f8da7bae79f53f786411a8157625752640e4f50c344de0e291ef6b1a96ba46",
+    "src/robustcluster_abeta/reweighting.py": "75d2888582fc4316070e76b53e97058bb4df3f781fe2c7c33a497ab95d8e97f5",
+    "src/robustcluster_abeta/stability.py": "09069ca505d4e7b078b8dcda33d3aae242556c897297597f5911e13e3eac948c",
+    "src/robustcluster_abeta/statistics.py": "a6fd389136a00475b53f8832c729c4ca05a556acefa1f0a16edad2875cb0d419",
+    "src/robustcluster_abeta/validation.py": "fd3a8f0db293e0e8adf0e2e220026e29075d7e5e7504f69026276b42fc0e988d"
+  },
+  "python": "3.12.6",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "robustcluster-abeta": "0.1.0"
+  },
+  "config": {
+    "project_root": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta",
+    "mode": "robustness_extension",
+    "profile": "smoke",
+    "inputs": {
+      "descriptors": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/input_clustering_ab40.dat",
+      "fes": null
+    },
+    "replicas": 3,
+    "interval_ps": [
+      1000000,
+      3000000
+    ],
+    "features": [
+      "nAlpha",
+      "nBeta",
+      "Rg",
+      "SASA"
+    ],
+    "gmm": {
+      "fit_per_replica": 1000,
+      "sampling_seed": 20261007,
+      "master_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "components": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "covariance_type": "full",
+      "reg_covar": 1e-06,
+      "max_iter": 500,
+      "n_init": 1,
+      "tol": 0.001
+    },
+    "profiles": {
+      "smoke": {
+        "enabled": true,
+        "max_seconds": 600,
+        "max_memory_gib": 4
+      }
+    },
+    "config_file": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/config/gmm_ablation.yaml",
+    "config_sha256": "18e763573735352559e79fca7e1ad450bd2626a5e36fcf14c78512985a155608",
+    "execution": {
+      "enabled": true,
+      "max_seconds": 600,
+      "max_memory_gib": 4
+    }
+  },
+  "inputs": {
+    "descriptors": {
+      "filename": "input_clustering_ab40.dat",
+      "exists": true,
+      "sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77"
+    }
+  },
+  "outputs": [
+    {
+      "filename": "results/logs/20261007T104709-dd9f8f2c/lualatex.log",
+      "sha256": "1f7fa01be3cec5fd4114539efb8924c065e6a83f100fa7bab76f14722ad1bfe3"
+    }
+  ],
+  "runtime_seconds": 3.0904145420063287,
+  "peak_rss_bytes": 0,
+  "source_manifest": "results/manifests/20261007T104657-04cb6ba4.json",
+  "source_manifest_sha256": "a716f8cd9c7dab08235a6aec2b72773b79f911dee696315623af1584c136e146",
+  "latex_source_sha256": "6c923d4c84a393ff92163121b49420d0f7ec46e28b08c122c72d7d0d0a46ee88",
+  "asset_sources": {
+    "src/robustcluster_abeta/gmm_ablation.py": "fa1df770e2f0f8ae122ffb085c3e5e477dc0de2d3964a0b56b9b5ca45bd284e4"
+  },
+  "artwork": {
+    "type": "original conceptual vector",
+    "algorithm": "deterministic curves in build_revision_preview.py",
+    "empirical": false
+  },
+  "message": "Preview needs repair: [\"LaTeX Font Warning: Font shape `TU/LibertinusMath-Regular.otf(1)/b/n' undefined\", \"LaTeX Font Warning: Font shape `TU/LibertinusMath-Regular.otf(2)/b/n' undefined\", \"LaTeX Font Warning: Font shape `TU/LibertinusMath-Regular.otf(3)/b/n' undefined\"]"
+}

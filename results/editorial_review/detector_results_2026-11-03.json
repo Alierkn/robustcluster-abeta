@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-03",
+  "status": "COMPLETED_EXCERPT_CHECKS",
+  "input": {
+    "date": "2026-11-03",
+    "source": "report/report.tex, Abstract, before editorial changes",
+    "source_sha256": "18fe2c7a47da3d78e8c7c74e22d9bfc18a53703d1787f791c848cac4cbdbcc44",
+    "excerpt_file": "results/editorial_review/detector_excerpt_2026-11-03.txt",
+    "excerpt_sha256": "43e373ca21c64b8ad6889887bc0139563f1ca7de3ae4661b82dcff82ac0f00d5",
+    "word_count": 154,
+    "scope": "First two abstract paragraphs only; selected to fit Sapling 2,000-character free limit. No personal data, contacts or raw data sent. Same text intended for both services.",
+    "character_count": 1261
+  },
+  "results": [
+    {
+      "service": "Sapling",
+      "url": "https://sapling.ai/ai-content-detector",
+      "displayed_score_percent": 100.0,
+      "displayed_label": "AI-detection score",
+      "displayed_token_count": 230,
+      "model_version": null,
+      "temporary_result_url": "https://sapling.ai/ai-content-detector/ea1607ef226752d0f9315ba7f78dd850",
+      "retention_notice": "Share result says expires after 3 days; this is not a general zero-retention promise.",
+      "screenshot": "sapling-result-2026-11-03.png",
+      "ui_text": "sapling-result-2026-11-03.txt"
+    },
+    {
+      "service": "GPTZero",
+      "url": "https://app.gptzero.me/",
+      "displayed_model_version": "4.1o",
+      "displayed_label": "We are highly confident this text was AI generated",
+      "displayed_class_probabilities_percent": {
+        "AI": 100,
+        "Mixed": 0,
+        "Human": 0
+      },
+      "displayed_word_count": 154,
+      "displayed_character_count": 1261,
+      "screenshot": "gptzero-result-2026-11-03.png",
+      "ui_text": "gptzero-result-2026-11-03.txt",
+      "interaction_note": "Landing page Scan opened separate result tab. Scan was clicked twice before discovering the new tabs. This record uses the first result tab, not a selected favourable score."
+    }
+  ],
+  "interpretation": "These service outputs apply only to the exact saved excerpt. They do not establish authorship, scientific validity, plagiarism or full-report percentage. No attempt was made to optimise text against detector scores. No scores were collected for the subsequently edited full report.",
+  "evidence_sha256": {
+    "sapling-result-2026-11-03.txt": "28836ea1643b9efe6aa7a4952c502134046cfe85a3b12ff1159e788214e28a08",
+    "gptzero-result-2026-11-03.png": "47b7c3ce5f6d3c9ea81b437c94d89a55ede1e10cbd91bd910c47c10300f2d790",
+    "gptzero-result-2026-11-03.txt": "8642e66a957e319e098de1107c6a70ee19f09ce480696917ff82d3222eb28b69",
+    "sapling-result-2026-11-03.png": "5487518b1fb7b0182527e86dd80587a4bedd96c8802d0e01dc97855bde2a5e19",
+    "detector_input_2026-11-03.json": "9dd106f6a8b21e8c148761859b0e8f9a27798aad1d38cc6ea6fccbc53e2b236b",
+    "detector_excerpt_2026-11-03.txt": "43e373ca21c64b8ad6889887bc0139563f1ca7de3ae4661b82dcff82ac0f00d5"
+  }
+}

@@ -1,0 +1,24 @@
+project_root: ..
+mode: robustness_extension
+profile: smoke
+inputs:
+  descriptors: data/raw/input_clustering_ab40.dat
+  fes: null
+replicas: 3
+interval_ps: [1000000, 3000000]
+features: [nAlpha, nBeta, Rg, SASA]
+gmm:
+  fit_per_replica: 1000
+  sampling_seed: 20261007
+  master_seeds: [42, 43, 44, 45, 46]
+  components: [2, 3, 4, 5, 6]
+  covariance_type: full
+  reg_covar: 0.000001
+  max_iter: 500
+  n_init: 1
+  tol: 0.001
+profiles:
+  smoke:
+    enabled: true
+    max_seconds: 600
+    max_memory_gib: 4

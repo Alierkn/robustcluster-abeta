@@ -1,0 +1,158 @@
+
+==================================== ERRORS ====================================
+__________________ ERROR collecting tests/test_clustering.py ___________________
+ImportError while importing test module '/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/final-source-archive-verification/robustcluster-abeta/tests/test_clustering.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_clustering.py:4: in <module>
+    from robustcluster_abeta.consensus import assign_frames, merge_clusters, wasserstein_matrix
+src/robustcluster_abeta/consensus.py:4: in <module>
+    from scipy.cluster.hierarchy import fcluster, linkage
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/cluster/__init__.py:27: in <module>
+    from . import vq, hierarchy
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/cluster/vq.py:76: in <module>
+    from scipy.spatial.distance import cdist
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/spatial/__init__.py:110: in <module>
+    from ._kdtree import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/spatial/_kdtree.py:4: in <module>
+    from ._ckdtree import cKDTree, cKDTreeNode  # type: ignore[import-not-found]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ckdtree.pyx:11: in init scipy.spatial._ckdtree
+    ???
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/__init__.py:315: in <module>
+    from . import csgraph
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/__init__.py:187: in <module>
+    from ._laplacian import laplacian
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/_laplacian.py:7: in <module>
+    from scipy.sparse.linalg import LinearOperator
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/__init__.py:134: in <module>
+    from ._eigen import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/__init__.py:11: in <module>
+    from ._svds import svds
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/_svds.py:10: in <module>
+    from scipy.sparse.linalg._svdp import _svdp
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_svdp.py:23: in <module>
+    from ._propack import _spropack  # type: ignore[attr-defined]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ImportError: dlopen(/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so, 0x0002): tried: '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (no such file), '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero)
+_________________ ERROR collecting tests/test_gmm_ablation.py __________________
+ImportError while importing test module '/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/final-source-archive-verification/robustcluster-abeta/tests/test_gmm_ablation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_gmm_ablation.py:4: in <module>
+    from robustcluster_abeta.gmm_ablation import fit_scaler, match_partitions
+src/robustcluster_abeta/gmm_ablation.py:8: in <module>
+    from scipy.optimize import linear_sum_assignment
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/optimize/__init__.py:422: in <module>
+    from ._optimize import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/optimize/_optimize.py:35: in <module>
+    from scipy.sparse.linalg import LinearOperator
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/__init__.py:315: in <module>
+    from . import csgraph
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/__init__.py:187: in <module>
+    from ._laplacian import laplacian
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/_laplacian.py:7: in <module>
+    from scipy.sparse.linalg import LinearOperator
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/__init__.py:134: in <module>
+    from ._eigen import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/__init__.py:11: in <module>
+    from ._svds import svds
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/_svds.py:10: in <module>
+    from scipy.sparse.linalg._svdp import _svdp
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_svdp.py:23: in <module>
+    from ._propack import _spropack  # type: ignore[attr-defined]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ImportError: dlopen(/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so, 0x0002): tried: '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (no such file), '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero)
+___________________ ERROR collecting tests/test_numerics.py ____________________
+ImportError while importing test module '/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/final-source-archive-verification/robustcluster-abeta/tests/test_numerics.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_numerics.py:4: in <module>
+    from robustcluster_abeta.fes import read_fes, read_fes_structure
+src/robustcluster_abeta/fes.py:7: in <module>
+    from scipy.interpolate import RegularGridInterpolator
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/interpolate/__init__.py:179: in <module>
+    from ._interpolate import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/interpolate/_interpolate.py:12: in <module>
+    from . import _fitpack_py
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/interpolate/_fitpack_py.py:10: in <module>
+    from ._bsplines import BSpline
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/interpolate/_bsplines.py:9: in <module>
+    from scipy.optimize import minimize_scalar
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/optimize/__init__.py:422: in <module>
+    from ._optimize import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/optimize/_optimize.py:35: in <module>
+    from scipy.sparse.linalg import LinearOperator
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/__init__.py:315: in <module>
+    from . import csgraph
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/__init__.py:187: in <module>
+    from ._laplacian import laplacian
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/_laplacian.py:7: in <module>
+    from scipy.sparse.linalg import LinearOperator
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/__init__.py:134: in <module>
+    from ._eigen import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/__init__.py:11: in <module>
+    from ._svds import svds
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/_svds.py:10: in <module>
+    from scipy.sparse.linalg._svdp import _svdp
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_svdp.py:23: in <module>
+    from ._propack import _spropack  # type: ignore[attr-defined]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ImportError: dlopen(/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so, 0x0002): tried: '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (no such file), '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero)
+___________________ ERROR collecting tests/test_pipeline.py ____________________
+ImportError while importing test module '/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/final-source-archive-verification/robustcluster-abeta/tests/test_pipeline.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_pipeline.py:11: in <module>
+    from robustcluster_abeta.pipeline import cluster_pipeline, reproduce, validate_configuration
+src/robustcluster_abeta/pipeline.py:10: in <module>
+    from .consensus import assign_frames, merge_clusters, wasserstein_matrix
+src/robustcluster_abeta/consensus.py:4: in <module>
+    from scipy.cluster.hierarchy import fcluster, linkage
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/cluster/__init__.py:27: in <module>
+    from . import vq, hierarchy
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/cluster/vq.py:76: in <module>
+    from scipy.spatial.distance import cdist
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/spatial/__init__.py:110: in <module>
+    from ._kdtree import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/spatial/_kdtree.py:4: in <module>
+    from ._ckdtree import cKDTree, cKDTreeNode  # type: ignore[import-not-found]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ckdtree.pyx:11: in init scipy.spatial._ckdtree
+    ???
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/__init__.py:315: in <module>
+    from . import csgraph
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/__init__.py:187: in <module>
+    from ._laplacian import laplacian
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/csgraph/_laplacian.py:7: in <module>
+    from scipy.sparse.linalg import LinearOperator
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/__init__.py:134: in <module>
+    from ._eigen import *
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/__init__.py:11: in <module>
+    from ._svds import svds
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/_svds.py:10: in <module>
+    from scipy.sparse.linalg._svdp import _svdp
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_svdp.py:23: in <module>
+    from ._propack import _spropack  # type: ignore[attr-defined]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ImportError: dlopen(/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so, 0x0002): tried: '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (no such file), '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/scipy/sparse/linalg/_propack/_spropack.cpython-312-darwin.so' (section '__DATA/__thread_bss' has a zero-fill section type, but offset field is not zero)
+- generated xml file: /Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/final-source-archive-verification/robustcluster-abeta/results/logs/20261007T123342-qa-2be483/tests.xml -
+=========================== short test summary info ============================
+ERROR tests/test_clustering.py
+ERROR tests/test_gmm_ablation.py
+ERROR tests/test_numerics.py
+ERROR tests/test_pipeline.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 4 errors during collection !!!!!!!!!!!!!!!!!!!!
+4 errors in 0.59s

@@ -1,0 +1,18 @@
+{
+  "run_id": "20261007T121345-final-audit-3a53e7",
+  "command": "final-delivery-audit",
+  "status": "SUCCESS",
+  "timestamp_utc": "2026-10-07T12:13:45.899728+00:00",
+  "report_sha256": "25a5fb01816178dda9026f1ce047baed1f24e25fa547342ca424bad2d6b26b50",
+  "build_manifest": "results/manifests/20261007T121045-report-a7f4c3.json",
+  "outputs": [
+    {
+      "filename": "results/logs/20261007T121345-final-audit-3a53e7/checks.json",
+      "sha256": "66ff55d59a091c334e164a008f69dd7a7316d40e0366d586e07386bde8f0953d"
+    },
+    {
+      "filename": "results/logs/20261007T121345-final-audit-3a53e7/fonts.txt",
+      "sha256": "0b0ca4282868b196575af43fad0004ca0308df7412916d5b5493c83138b5fa82"
+    }
+  ]
+}

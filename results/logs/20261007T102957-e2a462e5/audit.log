@@ -1,0 +1,50 @@
+{
+  "status": "PASSED",
+  "fes_bytes": 273309138,
+  "grid_shape": [
+    2801,
+    1301
+  ],
+  "grid_points": 3644101,
+  "metadata": {
+    "min_alpha": "0",
+    "max_alpha": "28",
+    "nbins_alpha": "2801",
+    "periodic_alpha": "false",
+    "min_antibeta": "0",
+    "max_antibeta": "13",
+    "nbins_antibeta": "1301",
+    "periodic_antibeta": "false"
+  },
+  "alpha_range": [
+    0.0,
+    28.0
+  ],
+  "beta_range": [
+    0.0,
+    13.0
+  ],
+  "file_free_range_unit_unverified": [
+    0.0,
+    82.213430126
+  ],
+  "queried_frames": 300003,
+  "outside_grid": 0,
+  "queried_alpha_range": [
+    0.16911363636363635,
+    23.577880909090908
+  ],
+  "queried_beta_range": [
+    0.00017999999999999998,
+    12.00282
+  ],
+  "interpolated_values_finite": true,
+  "replica_frame_counts": {
+    "1": 100001,
+    "2": 100001,
+    "3": 100001
+  },
+  "energy_unit": null,
+  "reweighting_status": "BLOCKED: energy units and FES construction unverified",
+  "clustering_performed": false
+}

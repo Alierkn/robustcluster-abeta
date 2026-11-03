@@ -1,0 +1,34 @@
+name: Numerical or software defect
+description: Report a reproducible implementation problem.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Please use shareable or synthetic inputs. Do not upload restricted simulation data, credentials or private correspondence."
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+      description: Describe the input, expected outcome and actual outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include the command and a small shareable example or test case.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Environment and evidence
+      description: Include commit, Python/package versions, run ID and relevant error output. Remove private paths or data as needed.
+    validations:
+      required: true
+  - type: textarea
+    id: scientific_effect
+    attributes:
+      label: Possible scientific effect
+      description: Identify affected outputs or interpretations, if known.

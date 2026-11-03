@@ -1,0 +1,47 @@
+{
+  "source_integrity": [
+    {
+      "filename": "CLUSTERING40_ottimizzato.py",
+      "original_sha256": "cfd76ebb6eb2fe193c342587b19cef402c29dabbdf63347d3b481656ae46e579",
+      "preserved_copy_sha256": "cfd76ebb6eb2fe193c342587b19cef402c29dabbdf63347d3b481656ae46e579",
+      "match": true
+    },
+    {
+      "filename": "input_clustering_ab40.dat",
+      "original_sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77",
+      "preserved_copy_sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77",
+      "match": true
+    },
+    {
+      "filename": "FES_AB_40.dat",
+      "original_sha256": "6fd6c3d7c04e20859cf91abb4765e126e0f3fcb982d3795b643165dde26fa3f4",
+      "preserved_copy_sha256": "6fd6c3d7c04e20859cf91abb4765e126e0f3fcb982d3795b643165dde26fa3f4",
+      "match": true
+    }
+  ],
+  "historical_partial_download": "Not present at original path on 7 October; not used as scientific input",
+  "visual_review": {
+    "method": "All 37 pages rendered and reviewed as contact sheets; revised outcomes and audit pages inspected separately at higher resolution",
+    "pdf_sha256": "28a1c57d9713e1c0d58ed159079cc7f9fad399818587110a05a11c4f95328e71",
+    "main_pages": 22,
+    "total_pages": 37,
+    "findings": "No clipping, overlap or missing figures observed. Some short chapter-ending pages intentionally retain whitespace. Screenshots are illustrative source evidence; searchable code and source links support reading."
+  },
+  "warnings": [
+    "Package unicode-math Warning: Using \\overbracket and \\underbracket from",
+    "Package unicode-math Warning: I'm going to overwrite the following commands",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 8--8",
+    "Underfull \\hbox (badness 5417) in paragraph at lines 21--21",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 22--23",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 26--26",
+    "Underfull \\hbox (badness 10000) in paragraph at lines 26--26"
+  ],
+  "citation_review": "34 verified-register bibliography entries; 34 cited; no unresolved keys in release QA",
+  "scientific_limits": [
+    "FES units/construction unresolved",
+    "No final-bias equilibrium populations or full DPC reproduction",
+    "GMM ARI ranges are initialization/representation variation, not confidence intervals",
+    "All descriptor correlation ESS estimates are flagged unreliable",
+    "No A\u03b242 or HPC execution claims"
+  ]
+}

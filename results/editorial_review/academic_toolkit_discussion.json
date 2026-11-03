@@ -1,0 +1,43 @@
+{
+  "scope": "Current Chapter 7 LaTeX source, not full-report peer review or AI detection",
+  "date": "2026-11-03",
+  "input": "\\chapter{Discussion}\n\\section{What the completed experiments support}\nThe results show why a representation choice should be tested rather than decided from a correlation matrix. Rg and SASA are strongly associated globally, yet agreement after SASA removal varies with GMM component count. At three components, the two partitions retain high agreement and are stable across the tested initializations. At other counts, representation or initialization has a larger effect. These findings concern one fixed fit subset and one model class; they neither establish that SASA is indispensable nor justify removing it from the published baseline.\n\nThe temporal diagnostics qualify a different assumption. Hundreds of thousands of saved frames need not provide equally many independent observations. Here every replica--descriptor series fails at least one correlation-estimator reliability criterion, so the provisional ESS values indicate a sampling concern without providing calibrated measures of ensemble size. Random selection of fit frames does not remove this dependence. New fit subsets and time-block comparisons would be needed to assess sampling sensitivity \\autocite{grossfield2019}.\n\n\\section{Relation to the published study}\nThe repository reconstructs the published analysis design, but has not reproduced its reweighted conformational families or their populations \\autocite{cadenelli2026}. The completed GMM pilot is an independent descriptor-space extension. It provides a methodological comparison, not validation of published biological conclusions. Neither the diagnostic correlations nor stable Gaussian assignments establish aggregation rates, toxicity or metastable states. Comparison with an independently constrained ensemble would additionally require compatible structures and observable definitions \\autocite{borthakur2025}.\n\n\\section{Limitations and methodological implications}\nNumerical convergence does not establish a global optimum, and partition stability does not identify a unique physical state model. Mixtures approximate a biased descriptor distribution; marginal Wasserstein distances in the separate baseline can miss joint dependence. Representative structures, contact patterns and alternative feature definitions would help evaluate these limitations, but cannot be recovered from scalar rows alone.\n\nThe recovered FES resolves an input-completeness problem. It does not establish the producing units, replica combination or convergence of the bias. Reweighting would introduce weight concentration as another source of variability, to be assessed separately from temporal dependence and initialization sensitivity. With only three replicas, uncertainty in replica-level comparisons would also need careful interpretation.\n\nThese limitations determine what another researcher can reproduce. The saved assignments permit rechecking the GMM comparisons, and the source tables permit rebuilding the descriptor figures. Reproducing equilibrium family populations requires the additional FES information identified above. Separating those tasks makes the software useful for inspection and further analysis without extending the present biological claims \\autocite{plumed2019,barker2022}.\n",
+  "results": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"summary\": \"Paragraph logic review: no issues found.\",\n  \"issue_count\": 0,\n  \"issues\": []\n}"
+          }
+        ],
+        "structuredContent": {
+          "schema_version": 1,
+          "issues": [],
+          "issue_count": 0,
+          "summary": "Paragraph logic review: no issues found."
+        },
+        "isError": false
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"summary\": \"British English check: no issues found.\",\n  \"issue_count\": 0,\n  \"issues\": []\n}"
+          }
+        ],
+        "structuredContent": {
+          "schema_version": 1,
+          "issues": [],
+          "issue_count": 0,
+          "summary": "British English check: no issues found."
+        },
+        "isError": false
+      }
+    }
+  ]
+}

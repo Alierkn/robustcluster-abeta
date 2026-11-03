@@ -1,0 +1,13 @@
+{
+  "status": "SUCCESS",
+  "environment": "Existing isolated Python and TeX runtimes; fresh extracted source, no .git and no raw inputs",
+  "pages": 38,
+  "all_page_text_matches_delivered_report": true,
+  "archive_build_git_commit": null,
+  "runtime_paths": [
+    "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env",
+    "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/final-source-archive-verification/robustcluster-abeta/src/robustcluster_abeta/__init__.py",
+    "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/work/verification-env/lib/python3.12/site-packages/scipy/__init__.py"
+  ],
+  "initial_harness_attempt": "Path.resolve followed the virtualenv Python symlink to the incompatible global runtime; corrected to preserve the virtualenv executable path. Initial failure logs retained."
+}

@@ -1,0 +1,19 @@
+{
+  "header": [
+    "time",
+    "metad.rbias",
+    "nalpha",
+    "nbeta",
+    "RG",
+    "SASA",
+    "ASASA",
+    "PSASA",
+    "HBONDSPP",
+    "HBONNDSPS"
+  ],
+  "units_status": "time/length/area from source script; rbias units unverified",
+  "shape": [
+    300003,
+    14
+  ]
+}

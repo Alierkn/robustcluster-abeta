@@ -1,0 +1,62 @@
+{
+  "evidence": {
+    "gmm": {
+      "manifest": "results/manifests/20261007T104141-f0143175.json",
+      "sha256": "8570ba7e1fb8b9ad8d83e038b42c9969545458b320d19dab8a4eb5a1c65f5e37"
+    },
+    "figures": {
+      "manifest": "results/manifests/20261007T104846-17f8483c.json",
+      "sha256": "6a77e67f4ffc960374fef84fd528028e6b8421f120f8fb1300f5621ad314a863"
+    },
+    "fes": {
+      "manifest": "results/manifests/20261007T102957-e2a462e5.json",
+      "sha256": "1a6d9bc6fc66dd45849db31956aa20426030a73fd9deaadc39c80f2b1cd7ef75"
+    },
+    "preview": {
+      "manifest": "results/manifests/20261007T105122-c040f192.json",
+      "sha256": "60ad4b71a69e9c282bd5675d8f8954364cf549da64e194534675e1e7a9ec4204"
+    }
+  },
+  "screenshots": {
+    "captured_date": "2026-10-07",
+    "method": "Actual Chrome viewport capture using Computer Use; unchanged JPEG bytes",
+    "sources": {
+      "vmd-gyration.jpg": "https://github.com/Alierkn/vmd-mcp/blob/01912595595bf0302124f57559e1e6a22095fb24/src/vmd_mcp/server.py#L242-L278",
+      "gromacs-mdrun.jpg": "https://github.com/Alierkn/gromacs-mcp/blob/2c5c957c3f2c047888b63ae258ace3df34cb8773/src/gromacs_mcp/server.py#L1441-L1479"
+    }
+  },
+  "outputs": [
+    {
+      "filename": "report/figures/cover_concept.pdf",
+      "sha256": "13b518a084902707d83f58a72ac225171472a6bff7726896b48016be90e402b2"
+    },
+    {
+      "filename": "report/figures/gmm_sensitivity.pdf",
+      "sha256": "43460e407a4dc5eeb5039a2770a4e7d7bcf6368ae1f4b8fefe4fabe1ee26fa17"
+    },
+    {
+      "filename": "report/figures/gmm_seed_matrices.pdf",
+      "sha256": "71f745efe8f6a948c2bb7fd95ef09371721d0c645920a44105dbf6a52d5e24e8"
+    },
+    {
+      "filename": "report/generated/revision_values.tex",
+      "sha256": "4efa5e38b9b028d9fc1c9910f86950e5c2d238cc915b242ced202314db4e300d"
+    },
+    {
+      "filename": "report/generated/gmm_rows.tex",
+      "sha256": "1dfede9887450e59561669bf51a744c0463c6cbe09d4f9586c5c6367e4acd464"
+    },
+    {
+      "filename": "report/generated/fit_scaler.py",
+      "sha256": "c5787d6397b124d487cb7b875d3403d14bcf9421e0f49e7fce68c3e9a7389610"
+    },
+    {
+      "filename": "report/screenshots/vmd-gyration.jpg",
+      "sha256": "d3974d85da310e251ab27e2497d56ed10ec14e6d4e76e9a8b748ef536bf96ae4"
+    },
+    {
+      "filename": "report/screenshots/gromacs-mdrun.jpg",
+      "sha256": "141f8057b4613aa052b4033ab93fe386f3e336c68ea857d6eb85024e725ef614"
+    }
+  ]
+}

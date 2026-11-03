@@ -1,0 +1,26 @@
+\chapter{Internship outcomes and skills}
+\section{Learning sequence and practical objectives}
+The internship connected the Data Analysis degree with molecular research. The documented learning programme began with amino-acid properties, peptide bonds, protein structure and intrinsic disorder. It then introduced force fields, molecular dynamics and dihedral angles through supplied slides and reading materials. The final-stage assignment asked for reproduction of the supplied clustering analysis, investigation of parameter changes, and an independent analysis using methods from the degree. The programme provides the context for the analysis reported here; no attendance or hours record is reconstructed.
+
+The project applies statistical ideas to a setting where the observations require physical interpretation. A row is a saved configuration, but consecutive rows can be strongly correlated. A geometric cluster is a useful summary, but its frequency in a biased simulation is not automatically its equilibrium probability. Keeping those distinctions explicit was central to connecting data analysis with the molecular problem.
+
+\section{Demonstrable analysis and software outputs}
+The completed outputs include an input and code audit, modular numerical routines, 36 passing tests, real descriptor diagnostics, a complete-grid FES check, and an independent GMM sensitivity experiment. The latter turns a descriptive observation---the Rg--SASA correlation---into a testable question about assignments. Retaining all component counts and initializations allows both stable and sensitive cases to be examined.
+
+The implementation also makes a common software decision scientifically visible: scaling is fitted on specified observations, then applied consistently. The following excerpt is taken directly from the analysis source and remains searchable in the PDF.
+\begin{codepanel}{01\quad Fit the geometry once}{RobustCluster-Aβ / Python}
+\lstinputlisting[style=editorialcode]{generated/fit_scaler.py}
+\end{codepanel}
+This function rejects a constant fit feature. A numerical test checks that a large evaluation value does not alter the fitted mean and scale. Its purpose is to make the geometry used by the model reproducible, rather than leave normalization as an undocumented preprocessing step.
+
+\section{Companion projects: VMD MCP and GROMACS MCP}
+The student identifies two public software projects as additional outputs: \href{https://github.com/Alierkn/vmd-mcp}{VMD MCP} and \href{https://github.com/Alierkn/gromacs-mcp}{GROMACS MCP}. Their inspected source provides concrete examples of interfaces around molecular software. The Model Context Protocol (MCP) exposes operations with structured inputs and outputs to a client; the scientific calculation still depends on the underlying program and supplied data.
+
+VMD MCP constructs Tcl commands for operations such as per-frame radius of gyration, RMSD, SASA and rendering. The gyration function passes the selected atoms and mass-weighting option to VMD, then parses frame-indexed values. GROMACS MCP includes helpers for simulation preparation and analysis and a background-run interface that constructs a command, validates paths and records output. Genuine source screenshots and immutable commit links appear in \cref{fig:vmdcode,fig:gmxcode}.
+
+These repositories complement RobustCluster's descriptor-analysis layer, but they are not asserted to have generated the supplied Aβ40 ensemble. In particular, the inspected VMD gyration function returns values in its documented angstrom convention; comparisons with source-labelled nanometre descriptors require explicit unit checks. The repository histories retain contributor attribution. Their interfaces are software outcomes; scientific validation still depends on recorded calculations and compatible inputs.
+
+\section{Reproducibility and computational scope}
+The practical software skills represented here include preserving source inputs, separating configuration from implementation, testing analytic examples, handling numerical failures, tracking versions and producing figures from saved tables. For example, a manifest connects a figure to its source table and configuration, while the recorded failure status distinguishes an unavailable estimate from a valid numerical zero.
+
+All newly reported calculations are local descriptor analyses. The project includes a parameterized Leonardo submission template and official documentation references \autocite{leonardodocs}, but no Leonardo job records exist. HPC execution, molecular simulation setup and physical kinetic measurements are therefore outside the claimed computational outcomes.
