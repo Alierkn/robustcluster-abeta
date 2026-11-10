@@ -1,0 +1,43 @@
+% ===== Typography additions: paste at the END of preamble.tex (after the existing \chapterlinesformat) =====
+% Requires in preamble line 17: \PassOptionsToPackage{capitalise,noabbrev}{cleveref} BEFORE \usepackage{hyperref,bookmark,cleveref,...}
+% R2 Table captions as headings
+\captionsetup[table]{position=top,skip=5pt}
+\captionsetup{labelsep=quad}
+% R3 Cross-references
+\crefname{equation}{Equation}{Equations}
+\creflabelformat{equation}{(#2#1#3)}
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{appendix}{Appendix}{Appendices}
+\counterwithout{equation}{chapter}
+\AddToHook{cmd/appendix/after}{\crefalias{chapter}{appendix}}
+% R4 Float placement
+\IfFileExists{fewerfloatpages.sty}{\usepackage{fewerfloatpages}}{}
+\renewcommand{\topfraction}{.85}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.75}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
+% R5 Chapter openings: hanging numeral in the left margin, zero extra height
+\renewcommand*{\chapterformat}{%
+  \makebox[0pt][r]{\fontsize{30}{26}\selectfont\mdseries\textcolor{Teal}{\thechapter}\hspace{5mm}}}
+\newcommand{\chapterlede}[1]{%
+  \setchapterpreamble[u]{\vspace{-4pt}{\itshape\color{Navy}#1\par}\vspace{8pt}}}
+% R6 Key findings box
+\newtcolorbox{keyfindings}[1][Key findings]{%
+  colback=CoolGrey,colframe=Teal,boxrule=0pt,leftrule=2.2pt,arc=0pt,outer arc=0pt,
+  left=9pt,right=9pt,top=6pt,bottom=7pt,before skip=10pt,after skip=10pt,
+  colbacktitle=CoolGrey,coltitle=Teal,titlerule=0pt,toptitle=6pt,bottomtitle=0pt,
+  fonttitle=\sffamily\footnotesize\bfseries\addfontfeatures{LetterSpace=8},
+  title={\MakeUppercase{#1}}}
+\newenvironment{findings}{%
+  \begin{list}{\textcolor{Teal}{\rule[.3ex]{.45em}{.45em}}}{%
+    \setlength{\leftmargin}{1.2em}\setlength{\labelsep}{.6em}%
+    \setlength{\topsep}{2pt}\setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}}%
+  {\end{list}}
+% R8 tables
+\AtBeginEnvironment{tabular}{\addfontfeatures{Numbers={Lining,Monospaced}}}
+\AtBeginEnvironment{tabularx}{\addfontfeatures{Numbers={Lining,Monospaced}}}
+\AtBeginEnvironment{longtable}{\addfontfeatures{Numbers={Lining,Monospaced}}}
+\setlength{\abovetopsep}{0pt}
+% R9 colour discipline
+\hypersetup{citecolor=Navy,linkcolor=Navy,urlcolor=Teal}

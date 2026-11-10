@@ -44,13 +44,28 @@ try:
             raise FileNotFoundError(f"Missing {tool}: add your TeX Live bin directory to PATH")
         version = subprocess.check_output([executable, "--version"], text=True)
         manifest["tools"][tool] = {"path": executable, "version": version.splitlines()[0]}
+    # Report-style figure refresh: a newer, separately recorded hash may replace a superseded one.
+    style_overrides = {}
+    style_path = REPORT / "figure_style_provenance.json"
+    if style_path.exists():
+        for record in json.loads(style_path.read_text())["outputs"]:
+            if sha256(ROOT / record["filename"]) != record["sha256"]:
+                raise RuntimeError(f"Styled figure changed: {record['filename']}; rerun apply_figure_style.py")
+            style_overrides[record["filename"]] = record
+
+    def expected_sha(record):
+        override = style_overrides.get(record["filename"])
+        if override and override["supersedes_sha256"] == record["sha256"]:
+            return override["sha256"]
+        return record["sha256"]
+
     provenance = REPORT / "data_provenance.json"
     evidence = json.loads(provenance.read_text())
     source_manifest = ROOT / evidence["source_manifest"]
     if sha256(source_manifest) != evidence["source_manifest_sha256"]:
         raise RuntimeError("Report diagnostic source manifest changed")
     for record in evidence["outputs"]:
-        if sha256(ROOT / record["filename"]) != record["sha256"]:
+        if sha256(ROOT / record["filename"]) != expected_sha(record):
             raise RuntimeError(f"Report input changed: {record['filename']}; rerun prepare_report.py")
     if "workflow_override" in evidence:
         override = evidence["workflow_override"]
@@ -61,7 +76,7 @@ try:
         if sha256(ROOT / record["manifest"]) != record["sha256"]:
             raise RuntimeError("Revision evidence manifest changed")
     for record in revision["outputs"]:
-        if sha256(ROOT / record["filename"]) != record["sha256"]:
+        if sha256(ROOT / record["filename"]) != expected_sha(record):
             raise RuntimeError("Revision report asset changed; rerun prepare_revision.py")
     artwork = json.loads((REPORT / "artwork_provenance.json").read_text())
     if sha256(ROOT / artwork["prompt_file"]) != artwork["prompt_sha256"]:
@@ -77,7 +92,7 @@ try:
             if sha256(path) != record["sha256"] or json.loads(path.read_text())["status"] != "SUCCESS":
                 raise RuntimeError("Rebuild source manifest changed or was not successful")
         for record in rebuild["assets"]:
-            if sha256(ROOT / record["filename"]) != record["sha256"]:
+            if sha256(ROOT / record["filename"]) != expected_sha(record):
                 raise RuntimeError("Rebuilt report asset changed")
     paths = [p for p in REPORT.rglob("*") if p.is_file() and "build" not in p.parts
              and p.suffix in {".tex", ".bib", ".json"}]

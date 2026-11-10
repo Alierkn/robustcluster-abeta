@@ -1,0 +1,24 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "summary": {
+    "experiment": "seed-pilot",
+    "variants": [
+      "seed_42",
+      "seed_2684470948",
+      "seed_4091952314",
+      "seed_233227757",
+      "seed_3276785861"
+    ],
+    "failed_variants": {},
+    "families": {
+      "seed_42": 11,
+      "seed_2684470948": 12,
+      "seed_4091952314": 12,
+      "seed_233227757": 14,
+      "seed_3276785861": 14
+    },
+    "frames": 300003,
+    "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+  }
+}

@@ -1,0 +1,76 @@
+\chapterlede{This chapter describes the tools, the supplied data and the methods used in the activities of \cref{ch:activities}.}
+\chapter{Tools, data and methods}
+\label{ch:methods}
+\section{Tools and technologies}
+\Cref{tab:tools} lists the software used during the internship and its role. The simulation tools belong to the practical part of the programme; the analysis, testing and reporting tools produced every result in this report.
+
+\begin{table}[htbp]
+\centering
+\caption{Tools and technologies used during the internship.}
+\label{tab:tools}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.27\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{.16\textwidth}@{}}
+\toprule
+Tool & Role in the internship & Where\\
+\midrule
+GROMACS & Molecular-dynamics engine studied in the simulation block; also the engine of the primary study \autocite{abraham2015} & \Cref{sec:mdpractice}\\
+VMD & Visualization and structural measurement of molecular systems & \Cref{sec:mdpractice}\\
+Python 3.12 with NumPy, SciPy, pandas, scikit-learn, Matplotlib & Data validation, clustering, diagnostics, Gaussian mixtures and figures \autocite{harris2020,virtanen2020,pedregosa2011} & \Cref{ch:activities,ch:results}\\
+pytest and Ruff & Unit and end-to-end tests (38 passing) and static checks & \Cref{sec:task1}\\
+Snakemake & Workflow definition reusing the package functions \autocite{snakemakedocs} & \Cref{app:repro}\\
+Git, GitHub and GitHub Actions & Version control, public release and continuous integration & \Cref{sec:software}\\
+LuaLaTeX, Biber & Typesetting of this report & ---\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Supplied data}
+The analysis starts from a supplied text table, not from atomic coordinates: \num{300003} rows with time, an offset-corrected bias field and eight structural measurements. The script, the table and the FES are identified by SHA256 hashes. The published method is the scientific reference \autocite{cadenelli2026}; the supplied script provides implementation details, some of which differ from that description and are therefore checked.
+
+A decrease in the time column marks a new replica. Validation requires exactly three segments with strictly increasing times, finite entries and complete coverage of the 1--3 μs interval (times read as picoseconds, as in the script and the article), giving \num{100001} frames per replica at 20 ps; malformed rows are rejected, not skipped. Every row keeps its file line, replica and frame index, so that partitions from different runs can be compared frame by frame. The first microsecond is not in the table, so its equilibration cannot be reassessed.
+
+The clustering features are $\na$, $\nb$, $R_g$ (nm) and SASA (nm$^2$); the other columns are kept for characterization. They are scaled by pooled min--max normalization, $z_f=(x_f-a_f)/(b_f-a_f)$ with the minimum and maximum over the whole interval, so that all replicas and discovery groups share one coordinate system.
+
+\section{Reproduction workflow}
+\Cref{fig:workflow} summarizes the implemented reproduction. Frames are divided into random, non-overlapping groups of about \num{30000}, drawn from a recorded master seed \autocite{numpyrng}. Within a group, the local density $\rho_i$ counts neighbours inside the cutoff $d_c$, and $\delta_i$ is the distance to the nearest point of higher density, ties being broken by frame order. Candidate centres are ranked by $\rho_i\delta_i$, and clusters are accepted only if they reach a minimum size and mean silhouette; the iterative protocol and its parameters are listed in \cref{app:parameters}. Distances are stored as a blockwise float32 matrix, which limits memory but still grows as $N^2$.
+
+\begin{figure}[tb]
+\centering\input{figures/fig01_workflow.tex}
+\caption{Implemented reproduction workflow. Accepted local clusters define global families, and every frame then receives a label. Dashed stages depend on the FES and were run under the assumed energy unit of \cref{sec:weighted}.}
+\label{fig:workflow}
+\end{figure}
+
+\paragraph{Consensus.} Accepted local clusters are compared with the supplied-code distance
+\begin{equation}
+D(A,B)=\left[\sum_{f=1}^{4}W_1(A_f,B_f)^2\right]^{1/2},
+\label{eq:wasserstein}
+\end{equation}
+where each $W_1$ compares the distributions of one descriptor \autocite{scipywasserstein}; it is not a joint four-dimensional transport distance. The baseline keeps the script's raw scales, in which $R_g$ (pooled spread 0.26~nm) counts about twenty times less than $\na$, $\nb$ and SASA (5.3, 6.0 and 4.8~nm$^2$); a normalized variant tests whether this matters. Average-linkage clustering is cut with the script's spline elbow heuristic.
+
+\paragraph{Final assignment.} Every frame, including those left unassigned during discovery, is assigned to the nearest family centroid in the normalized space, without iterative refinement.
+
+\section{FES interpolation and statistical weights}
+The FES reader checks the grid structure, and descriptor queries $\alpha=\na/1.1$, $\beta=\nb/2.5$ are interpolated bilinearly with strict bounds \autocite{scipygrid,virtanen2020}; a query outside the grid is an error, not a value to clip. The final-bias log weights of \cref{eq:finalweights} are normalized within each replica before pooling,
+\begin{equation}
+\widetilde w_{ri}=\exp\!\left[\ell_{ri}-\operatorname{logsumexp}_j(\ell_{rj})\right],
+\qquad W_{ri}=\widetilde w_{ri}/3,
+\label{eq:replicaweights}
+\end{equation}
+so that each replica carries one third of the total weight.
+
+\section{Diagnostics for the independent analysis}
+\label{sec:diagnostics}
+\paragraph{Temporal correlation.}
+The sampling diagnostic asks how much information repeated observations add. For each replica and descriptor, the mean is removed before FFT-based autocorrelation with common $1/N$ covariance normalization. Following Geyer's initial monotone sequence estimator \autocite{geyer1992}, autocorrelations are summed in adjacent pairs, here starting from lag 1. The sum stops at the first non-positive pair, and a running minimum makes the retained pairs non-increasing. The retained contributions define
+\begin{equation}
+g=\max\!\left(1,1+2\sum_{k\in\mathcal K}\widehat\rho(k)\right),\qquad
+N_{\mathrm{eff,corr}}=N/g,\qquad \tau_{\mathrm{int}}=g\Delta t/2.
+\label{eq:correlation}
+\end{equation}
+Here $\mathcal K$ identifies the lag contributions retained after this processing; $\tau_{\mathrm{int}}$ follows the convention $\Delta t(\tfrac12+\sum\rho)$, which differs from the $(g-1)/2$ convention of \textcite{chodera2016} by a negligible $\Delta t/2$. Reliability checks require a stopping lag, $N\geq50g$ (equivalently $N_{\mathrm{eff}}\geq50$), and a half-window mean difference no greater than 0.25 full-series standard deviations. Geyer's justification assumes a stationary, reversible chain, which a WT-MetaD trajectory is not, so the result serves as a screening diagnostic rather than a formal stationarity test \autocite{grossfield2019}.
+
+\paragraph{Partition agreement.} ARI compares partitions independently of their label names \autocite{hubert1985}. It equals 1 for identical partitions, has expected value 0 for random labellings with the same cluster sizes, and can be negative. Matching families by maximum overlap then supports Jaccard and centroid comparisons while retaining unmatched families. Seed variation measures algorithmic sensitivity, not uncertainty between independent replicas. The same comparison is used for the density-peak parameter study (\cref{sec:task2}) and for the Gaussian-mixture experiment (\cref{sec:task3}).
+
+\paragraph{Feature redundancy.} Pearson correlation and PCA of standardized descriptors describe the observed feature geometry, not equilibrium relevance.
+
+\section{Reproducibility}
+Every command first writes a manifest with the configuration, input hashes, seeds and software versions, and records runtime and peak memory; the command-line interface and the Snakemake workflow call the same functions \autocite{snakemakedocs,wratten2021}. Every figure in this report can therefore be traced to one recorded calculation.

@@ -1,0 +1,108 @@
+{
+  "assumption": "ASSUMED, not confirmed by the authors: PLUMED sum_hills free energy (file.free) of the three combined replicas, in the PLUMED default unit kJ/mol, as used by the supplied script and the primary article",
+  "reproduce_run": {
+    "run_id": "20261110T172236-15d7c0ca",
+    "manifest_sha256": "3ed8df03fa4590190c2f3e13cde2ca3017ce93da87c42a65fd9118875ce1ee66"
+  },
+  "cluster_run": {
+    "run_id": "20261110T145503-7338c22e",
+    "manifest_sha256": "8dfea86cd95f8a8e587a14e4bdeb528caef46b4a8a2a0ff74f24f442b2b643cd"
+  },
+  "kish_ess": [
+    {
+      "replica_id": 1,
+      "raw_frames": 100001,
+      "kish_weight_ess": 3276.9352186383676,
+      "block_length": 44135,
+      "all_correlation_estimates_reliable": false
+    },
+    {
+      "replica_id": 2,
+      "raw_frames": 100001,
+      "kish_weight_ess": 9551.448188575065,
+      "block_length": 21687,
+      "all_correlation_estimates_reliable": false
+    },
+    {
+      "replica_id": 3,
+      "raw_frames": 100001,
+      "kish_weight_ess": 8226.926659336867,
+      "block_length": 63485,
+      "all_correlation_estimates_reliable": false
+    }
+  ],
+  "values": {
+    "WRun": "20261110T172236-15d7c0ca",
+    "WTopFamily": 1,
+    "WTopShare": "47.4",
+    "WTopThree": "77.7",
+    "WMaxShift": "31.5",
+    "WKishMin": "3,277",
+    "WKishMax": "9,551",
+    "WUnitShift": "14.6",
+    "WTopKcal": 1,
+    "WTopKcalShare": "62.0",
+    "WRankAgree": "yes",
+    "WBlockMin": "21,687",
+    "WBlockMax": "63,485",
+    "WMinutes": "16"
+  },
+  "outputs": {
+    "report/figures/weighted_populations.pdf": "13c82afb7a7687de30cad01451d9f470aa12467c087bf45ab65e1f719c05392e",
+    "report/generated/weighted_rows.tex": "edbe4826578d0e9e452cd7d75413476d3dce40346e3e7eb5c5bb8286aa2c9a9e",
+    "report/generated/weighted_values.tex": "bb48dea31546ae0c16caa1441b7c67ffbd3c70bb1591fbc952d3b31266663c59"
+  },
+  "style": {
+    "module": "scripts/report_style.py",
+    "style_version": "1.0.0",
+    "module_sha256": "d7df8e01fb8c41658a35ca0fd27928c34b3aa47aa88356bc4dd30981178799d1",
+    "font": {
+      "family": "Libertinus Sans",
+      "fallback": false,
+      "files": {
+        "regular": {
+          "source": "LibertinusSans-Regular.otf",
+          "source_sha256": "41b60a752ab3b0eb1b1a689272b1502f165b2ed95d097194c2f56bc2009fa66e",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "ba719cc3044716aacbe2163956ed6245bb07391ca3cfadb4a777b9be05b5af7e"
+        },
+        "bold": {
+          "source": "LibertinusSans-Bold.otf",
+          "source_sha256": "6d321e921ae278afb3e81f7a1df4b65816b92928e838f3d11fc1abfe4c15715f",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "1bfd67b57cdf386dd236d9d73c4c6fbb99ba946317044852f30256cdfbe1795a"
+        },
+        "italic": {
+          "source": "LibertinusSans-Italic.otf",
+          "source_sha256": "cd74ad255b2f04939196bb280bd3856285f25fe44eab9eb350e704b425dba4d5",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "37552c78335335fab1ccd9aef800b85e0b1b4bfd84017914b503f6ba62e620b3"
+        }
+      }
+    },
+    "font_sizes_pt": {
+      "tick": 7.5,
+      "legend": 7.5,
+      "annotation": 7.5,
+      "label": 8.0,
+      "title": 8.5,
+      "panel": 9.5,
+      "minimum": 7.0
+    },
+    "widths_mm": {
+      "full": 155.0,
+      "one_half": 110.0,
+      "single": 75.0
+    },
+    "colormaps": {
+      "sequential": "report_seq",
+      "sequential_reversed": "report_seq_r",
+      "diverging": "report_div"
+    },
+    "pdf_fonttype": 42,
+    "matplotlib": "3.11.2"
+  }
+}

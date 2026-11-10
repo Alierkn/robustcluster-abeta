@@ -79,3 +79,40 @@ def test_synthetic_weighted_pipeline_outputs(tmp_path):
     np.testing.assert_allclose(frames.groupby("replica_id").replica_normalized_weight.sum(), 1)
     assert (frames.final_cluster_label > 0).all()
     assert run.path("figures", "fig08_cluster_relevance.pdf").is_file()
+
+
+def test_unweighted_cluster_command_reads_no_fes(tmp_path):
+    """Software fixture: clustering runs without a FES and reports only raw fractions."""
+    from robustcluster_abeta.pipeline import cluster
+    rng = np.random.default_rng(88)
+    centers = np.array([[0,0,0,0], [1,1,1,1], [0,1,1,0], [1,0,0,1], [.5,.5,.5,.5]])
+    raw = np.vstack([rng.normal(center, .012, (90, 4)) for center in centers])
+    raw = raw[rng.permutation(len(raw))]*[10, 10, 1, 30]+[1, 1, 1, 30]
+    values = np.column_stack([np.tile(np.linspace(1e6, 3e6, 150), 3), np.zeros(450), raw,
+                              np.full((450, 4), [12, 18, 10, 100])])
+    source = tmp_path/"synthetic.dat"
+    np.savetxt(source, values, header=" ".join(SOURCE_COLUMNS))
+    config = load_config(ROOT/"config/robustness.yaml")
+    config.update(project_root=str(tmp_path))
+    config["inputs"].update(descriptors=str(source), fes=str(tmp_path/"absent_fes.dat"))
+    config["execution"].update(group_size=150, max_groups=3)
+    config["dpc"].update(min_cluster_size=12, nmax=6, dc=.12)
+    run = Run(config, "cluster", "parameters")
+    summary = cluster(config, run, Budget(), "parameters")
+    run.finish("SUCCESS")
+    families = pd.read_csv(run.path("tables", "families_unweighted.csv"))
+    assert summary["variants"][0] == "baseline"
+    assert not any("weight" in column for column in families.columns)
+    for _, part in families.groupby("variant"):
+        assert part.frames.sum() == 450
+        assert np.isclose(part.raw_fraction.sum(), 1)
+    ari = pd.read_csv(run.path("tables", "ari_matrix.csv"), index_col=0)
+    assert np.isclose(ari.loc["baseline", "baseline"], 1)
+
+
+def test_cluster_parameter_changes_require_robustness_mode():
+    from robustcluster_abeta.pipeline import _cluster_variants
+    config = load_config(ROOT/"config/paper_reproduction.yaml")
+    with pytest.raises(InvalidInput):
+        _cluster_variants(config, "parameters")
+    assert [name for name, *_ in _cluster_variants(config, "baseline")] == ["baseline"]

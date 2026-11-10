@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "purpose": "Unified journal-style figure system (scripts/report_style.py). Figures are re-drawn from the same verified inputs/saved tables; no numerical result is recomputed differently, no data are added. Earlier provenance JSONs are unchanged; this file records the superseded and new hashes.",
+  "generated_utc": "2026-11-10T14:30:20+00:00",
+  "script": "scripts/apply_figure_style.py",
+  "script_sha256": "51b7523b8b9fb95e8242adf44ee54a0ac41b04309e782fa37e8e38b6ad15e455",
+  "style": {
+    "module": "scripts/report_style.py",
+    "style_version": "1.0.0",
+    "module_sha256": "d7df8e01fb8c41658a35ca0fd27928c34b3aa47aa88356bc4dd30981178799d1",
+    "font": {
+      "family": "Libertinus Sans",
+      "fallback": false,
+      "files": {
+        "regular": {
+          "source": "LibertinusSans-Regular.otf",
+          "source_sha256": "41b60a752ab3b0eb1b1a689272b1502f165b2ed95d097194c2f56bc2009fa66e",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "ba719cc3044716aacbe2163956ed6245bb07391ca3cfadb4a777b9be05b5af7e"
+        },
+        "bold": {
+          "source": "LibertinusSans-Bold.otf",
+          "source_sha256": "6d321e921ae278afb3e81f7a1df4b65816b92928e838f3d11fc1abfe4c15715f",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "1bfd67b57cdf386dd236d9d73c4c6fbb99ba946317044852f30256cdfbe1795a"
+        },
+        "italic": {
+          "source": "LibertinusSans-Italic.otf",
+          "source_sha256": "cd74ad255b2f04939196bb280bd3856285f25fe44eab9eb350e704b425dba4d5",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "37552c78335335fab1ccd9aef800b85e0b1b4bfd84017914b503f6ba62e620b3"
+        }
+      }
+    },
+    "font_sizes_pt": {
+      "tick": 7.5,
+      "legend": 7.5,
+      "annotation": 7.5,
+      "label": 8.0,
+      "title": 8.5,
+      "panel": 9.5,
+      "minimum": 7.0
+    },
+    "widths_mm": {
+      "full": 155.0,
+      "one_half": 110.0,
+      "single": 75.0
+    },
+    "colormaps": {
+      "sequential": "report_seq",
+      "sequential_reversed": "report_seq_r",
+      "diverging": "report_div"
+    },
+    "pdf_fonttype": 42,
+    "matplotlib": "3.11.2"
+  },
+  "untouched": [
+    "report/artwork/*",
+    "report/screenshots/*",
+    "report/figures/cover_concept.pdf",
+    "report/figures/fig01_workflow.pdf",
+    "report/figures/fig03_feature_diagnostics.pdf",
+    "report/figures/sampling_autocorrelations.pdf",
+    "report/figures/gmm_sensitivity.pdf"
+  ],
+  "outputs": [
+    {
+      "filename": "report/figures/fes_map.pdf",
+      "sha256": "d9cf4e0c2e1d4056ba38be8313175c702f27f27dd0c39a8b1e009a19cb1ad229",
+      "supersedes_sha256": "5cc85339a19c8373433609febc3471317463b258f7ed990668cbe256d5c26567",
+      "changed": true,
+      "superseded_in": {
+        "report/figures/premium_figures_provenance.json": "5cc85339a19c8373433609febc3471317463b258f7ed990668cbe256d5c26567"
+      },
+      "built_by": "scripts/build_premium_figures.py",
+      "build_record": {
+        "provenance": "results/figures/report-style-v1/premium/premium_figures_provenance.json",
+        "provenance_sha256": "83fc6b1b0a9a900d28cbe481c690363ae00f003962fad8cb64b44761f73c4ac4"
+      },
+      "data_source": "data/raw/FES_AB_40.dat + data/raw/input_clustering_ab40.dat",
+      "included_in_report": true
+    },
+    {
+      "filename": "report/figures/descriptor_landscape.pdf",
+      "sha256": "35e4cbdaa0c2a8cd735ca82fc24683c0a391dcca8a2862a8091cb5c2b71e2fdc",
+      "supersedes_sha256": "a40b7e24802774457bab43755eb102fcbe4b16e806a16f03372a6e127c9e59da",
+      "changed": true,
+      "superseded_in": {
+        "report/figures/premium_figures_provenance.json": "a40b7e24802774457bab43755eb102fcbe4b16e806a16f03372a6e127c9e59da"
+      },
+      "built_by": "scripts/build_premium_figures.py",
+      "build_record": {
+        "provenance": "results/figures/report-style-v1/premium/premium_figures_provenance.json",
+        "provenance_sha256": "83fc6b1b0a9a900d28cbe481c690363ae00f003962fad8cb64b44761f73c4ac4"
+      },
+      "data_source": "data/raw/input_clustering_ab40.dat",
+      "included_in_report": true
+    },
+    {
+      "filename": "report/figures/rg_timeseries.pdf",
+      "sha256": "270b12cd430beef95be84d07a685c82da1103a5a1af6bb0cefacfc77de4c8c00",
+      "supersedes_sha256": "1b21ff64b7b7d8544e4e26c3e7471ecec0d7b829910df4743575854298dc5adc",
+      "changed": true,
+      "superseded_in": {
+        "report/figures/premium_figures_provenance.json": "1b21ff64b7b7d8544e4e26c3e7471ecec0d7b829910df4743575854298dc5adc"
+      },
+      "built_by": "scripts/build_premium_figures.py",
+      "build_record": {
+        "provenance": "results/figures/report-style-v1/premium/premium_figures_provenance.json",
+        "provenance_sha256": "83fc6b1b0a9a900d28cbe481c690363ae00f003962fad8cb64b44761f73c4ac4"
+      },
+      "data_source": "data/raw/input_clustering_ab40.dat",
+      "included_in_report": true
+    },
+    {
+      "filename": "report/figures/rebuild_features.pdf",
+      "sha256": "d09cbbeb3a6205db5bb81d7885c170efb453ea33250e7d92bb79bf710be6fe0f",
+      "supersedes_sha256": "55081e3537ae32db27171aec10291b3dd538f324fac942f6712ed881d8051215",
+      "changed": true,
+      "superseded_in": {
+        "report/rebuild_provenance.json": "55081e3537ae32db27171aec10291b3dd538f324fac942f6712ed881d8051215"
+      },
+      "built_by": "scripts/build_editorial_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142955-4c98411c.json",
+        "manifest_sha256": "642c5a593c9bb78628b4b765340de54f9ce97c9a2573c562ea2f303e3841b18c"
+      },
+      "data_source": "results/tables/20260921T011959-583b4421/{feature_correlation.csv,pca.json}",
+      "included_in_report": true
+    },
+    {
+      "filename": "report/figures/rebuild_features.svg",
+      "sha256": "5da442f0943576b36c46b1b91a1920deb90698dbeadf1650af9e296e5561cbe1",
+      "supersedes_sha256": "6ed1c6a3b7e7ce49438e0ebbfb658840a23b682ecace95badb24cf8089e28f57",
+      "changed": true,
+      "superseded_in": {
+        "report/rebuild_provenance.json": "6ed1c6a3b7e7ce49438e0ebbfb658840a23b682ecace95badb24cf8089e28f57"
+      },
+      "built_by": "scripts/build_editorial_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142955-4c98411c.json",
+        "manifest_sha256": "642c5a593c9bb78628b4b765340de54f9ce97c9a2573c562ea2f303e3841b18c"
+      },
+      "data_source": "results/tables/20260921T011959-583b4421/{feature_correlation.csv,pca.json}",
+      "included_in_report": false
+    },
+    {
+      "filename": "report/figures/rebuild_autocorrelations.pdf",
+      "sha256": "8acc9f10b3e017a7f62593fd71e78ad78c25286c0277a3c4a0fcc6531564c7d2",
+      "supersedes_sha256": "422f14491eeaf4e55a78634c5800d3cf85717f74c5c0db377547b8f0ece3e804",
+      "changed": true,
+      "superseded_in": {
+        "report/rebuild_provenance.json": "422f14491eeaf4e55a78634c5800d3cf85717f74c5c0db377547b8f0ece3e804"
+      },
+      "built_by": "scripts/build_editorial_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142955-4c98411c.json",
+        "manifest_sha256": "642c5a593c9bb78628b4b765340de54f9ce97c9a2573c562ea2f303e3841b18c"
+      },
+      "data_source": "results/tables/20260921T011959-583b4421/autocorrelations.csv",
+      "included_in_report": true
+    },
+    {
+      "filename": "report/figures/rebuild_autocorrelations.svg",
+      "sha256": "bf1114c50cf24d42ee14fbb832eb0b3755488c3b2f4f9afa8e03d01ad72883a3",
+      "supersedes_sha256": "e9f56754757d42efabdb674138e604f6d64682b92ba8c611887379b2df14f4fc",
+      "changed": true,
+      "superseded_in": {
+        "report/rebuild_provenance.json": "e9f56754757d42efabdb674138e604f6d64682b92ba8c611887379b2df14f4fc"
+      },
+      "built_by": "scripts/build_editorial_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142955-4c98411c.json",
+        "manifest_sha256": "642c5a593c9bb78628b4b765340de54f9ce97c9a2573c562ea2f303e3841b18c"
+      },
+      "data_source": "results/tables/20260921T011959-583b4421/autocorrelations.csv",
+      "included_in_report": false
+    },
+    {
+      "filename": "report/figures/rebuild_gmm.pdf",
+      "sha256": "fd57f18091172fdb488fff7db042ddf5db5b5e022d38ad18a59f8d4eb3983150",
+      "supersedes_sha256": "f219f051f06ff721a19abc54b35ba6cbb739f7547b0b87161979a7f7a60d8d91",
+      "changed": true,
+      "superseded_in": {
+        "report/rebuild_provenance.json": "f219f051f06ff721a19abc54b35ba6cbb739f7547b0b87161979a7f7a60d8d91"
+      },
+      "built_by": "scripts/build_editorial_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142955-4c98411c.json",
+        "manifest_sha256": "642c5a593c9bb78628b4b765340de54f9ce97c9a2573c562ea2f303e3841b18c"
+      },
+      "data_source": "results/tables/20261007T104141-f0143175/{ablation.csv,seed_stability.csv}",
+      "included_in_report": true
+    },
+    {
+      "filename": "report/figures/rebuild_gmm.svg",
+      "sha256": "bc2f08c7895caac15a23eb7d95648fb776d92f3afe03e06371780a1a22f8389a",
+      "supersedes_sha256": "bde6fab24d5931c4fd51a2f452e7bcb7395c496ef6bbd3cef5f3cd5fa4663917",
+      "changed": true,
+      "superseded_in": {
+        "report/rebuild_provenance.json": "bde6fab24d5931c4fd51a2f452e7bcb7395c496ef6bbd3cef5f3cd5fa4663917"
+      },
+      "built_by": "scripts/build_editorial_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142955-4c98411c.json",
+        "manifest_sha256": "642c5a593c9bb78628b4b765340de54f9ce97c9a2573c562ea2f303e3841b18c"
+      },
+      "data_source": "results/tables/20261007T104141-f0143175/{ablation.csv,seed_stability.csv}",
+      "included_in_report": false
+    },
+    {
+      "filename": "report/figures/raw_descriptor_distributions.pdf",
+      "sha256": "43e1731fdf2c7a39276efb0531ddb936d2927402dba2c5fe4c1603f0bc13c16c",
+      "supersedes_sha256": "6123e4eb3b18a1bf721598bf9bd3667b8d407c4afe99b4c724647601ac122f7f",
+      "changed": true,
+      "superseded_in": {
+        "report/data_provenance.json": "6123e4eb3b18a1bf721598bf9bd3667b8d407c4afe99b4c724647601ac122f7f",
+        "report/rebuild_provenance.json": "6123e4eb3b18a1bf721598bf9bd3667b8d407c4afe99b4c724647601ac122f7f"
+      },
+      "built_by": "scripts/build_editorial_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142955-4c98411c.json",
+        "manifest_sha256": "642c5a593c9bb78628b4b765340de54f9ce97c9a2573c562ea2f303e3841b18c"
+      },
+      "data_source": "results/tables/20260921T011959-583b4421/raw_histograms.csv",
+      "included_in_report": true
+    },
+    {
+      "filename": "report/figures/gmm_seed_matrices.pdf",
+      "sha256": "6f266ef96912057491e08520cb38f2bcc19a21bf58dcffd06a10d7beed5a5686",
+      "supersedes_sha256": "71f745efe8f6a948c2bb7fd95ef09371721d0c645920a44105dbf6a52d5e24e8",
+      "changed": true,
+      "superseded_in": {
+        "report/revision_provenance.json": "71f745efe8f6a948c2bb7fd95ef09371721d0c645920a44105dbf6a52d5e24e8",
+        "report/rebuild_provenance.json": "71f745efe8f6a948c2bb7fd95ef09371721d0c645920a44105dbf6a52d5e24e8"
+      },
+      "built_by": "scripts/build_gmm_figures.py",
+      "build_record": {
+        "manifest": "results/manifests/20261110T142957-6f005b71.json",
+        "manifest_sha256": "027de9ae43340edd439a3261d5ef1fa25ecb4eb8311cb63672ca8c7ac38c0062"
+      },
+      "data_source": "results/tables/20261007T104141-f0143175/seed_stability.csv",
+      "included_in_report": true
+    }
+  ]
+}

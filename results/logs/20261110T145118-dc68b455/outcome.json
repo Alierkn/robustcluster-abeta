@@ -1,0 +1,18 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "summary": {
+    "experiment": "wasserstein",
+    "variants": [
+      "baseline",
+      "normalized"
+    ],
+    "failed_variants": {},
+    "families": {
+      "baseline": 3,
+      "normalized": 3
+    },
+    "frames": 300003,
+    "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+  }
+}

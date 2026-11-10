@@ -1,0 +1,92 @@
+% Layered architecture of the robustcluster-abeta package (v0.3.0), drawn from the source tree:
+% src/robustcluster_abeta/*.py imports, pyproject [project.scripts], config/*.yaml, workflows/Snakefile,
+% scripts/, tests/ (36 tests passed in results/logs/*/pytest.log) and .github/workflows/ci.yml.
+% gmm_ablation.py is called by cli.py directly (not by pipeline.py) and reads descriptors through io.py
+% with its own scaler, so it receives no arrow from preprocessing.py.
+% Solid frame: implemented and tested. Dashed frame: implemented, real-data run blocked (FES units).
+% Native TikZ; needs only arrows.meta (already loaded by preamble.tex).
+\begin{tikzpicture}[
+  font=\sffamily\footnotesize,
+  every node/.append style={execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  box/.style={draw=Navy!55,fill=CoolGrey,line width=.5pt,rounded corners=1.2pt,
+    text width=#1,minimum height=10mm,align=center,inner sep=2.4pt,text=Ink,
+    font=\sffamily\scriptsize},
+  box/.default=27.2mm,
+  pending/.style={box=#1,dashed,fill=white,draw=Navy!45},
+  outbox/.style={box=#1,fill=Navy,draw=Navy,text=white},
+  outbox/.default=27.2mm,
+  frame/.style={draw=Teal!70,line width=.5pt,rounded corners=2pt,fill=Teal!6},
+  flow/.style={-{Stealth[length=4.5pt,width=4pt]},draw=Navy!70,line width=.6pt},
+  lane/.style={font=\sffamily\scriptsize\bfseries\addfontfeatures{LetterSpace=8},
+    text=Teal,anchor=east},
+  lanetop/.style={font=\sffamily\scriptsize\bfseries\addfontfeatures{LetterSpace=8},
+    text=Teal,anchor=south}]
+\def\ttl#1{{\footnotesize\bfseries #1}\\}
+% main stack: columns centred at 15, 49, 83 mm (outer width 32 mm); right lane centred at 117 mm
+% ---------------- INPUT
+\node[box] (desc) at (15mm,0)  {\ttl{descriptor table}data/raw/\\{\fontsize{7.2}{8.6}\selectfont input\_clustering\_ab40.dat}};
+\node[box] (fesin) at (49mm,0) {\ttl{FES grid}data/raw/\\FES\_AB\_40.dat};
+\node[box] (yaml) at (83mm,0)  {\ttl{YAML config}config/*.yaml\\three run profiles};
+% ---------------- I/O
+\node[box] (io)  at (15mm,-15mm) {\ttl{io.py}read descriptors, check replicas};
+\node[box] (fes) at (49mm,-15mm) {\ttl{fes.py}audit\_fes.py: grid structure, units};
+\node[box] (man) at (83mm,-15mm) {\ttl{manifest.py}load config; hashes, run record};
+\draw[flow] (desc) -- (io);  \draw[flow] (fesin) -- (fes);  \draw[flow] (yaml) -- (man);
+% shared validation bar
+\node[box=95.2mm,minimum height=5.5mm,fill=white,draw=Navy!40] (val) at (49mm,-25.5mm)
+  {\textbf{validation.py} \textperiodcentered{} finite checks, time and memory budget, blocked vs failed states};
+\draw[flow] (io) -- (io |- val.north);  \draw[flow] (fes) -- (fes |- val.north);
+\draw[flow] (man) -- (man |- val.north);
+% ---------------- SCALING
+\node[box=95.2mm,minimum height=8mm] (pre) at (49mm,-35mm)
+  {\ttl{preprocessing.py}min--max scaling of the four features \textperiodcentered{} random disjoint frame groups};
+\draw[flow] (val) -- (pre);
+% ---------------- ANALYSIS
+\draw[frame] (0,-43mm) rectangle (72mm,-80mm);
+\node[anchor=north west,inner sep=0pt,font=\sffamily\scriptsize,text=Teal] at (1.6mm,-44.3mm)
+  {\textbf{pipeline.py} \textperiodcentered{} orchestrates the analysis stages};
+\draw[flow] (36mm,-39mm) -- (36mm,-43mm);
+\begin{scope}[every node/.append style={minimum height=12.5mm}]
+  \node[box=19.4mm] (dpc)  at (12.3mm,-56mm) {\ttl{dpc.py}iterative density-peak clustering};
+  \node[box=19.4mm] (con)  at (36mm,-56mm)   {\ttl{consensus.py}Wasserstein merge, frame assignment};
+  \node[box=19.4mm] (stab) at (59.7mm,-56mm) {\ttl{stability.py}ARI, partition matching};
+  \node[box=19.4mm] (stat) at (12.3mm,-71mm) {\ttl{statistics.py}ACF, Kish ESS, block bootstrap};
+  \node[pending=43.1mm] (rw) at (47.85mm,-71mm) {\ttl{reweighting.py}FES-derived frame weights,\\equal-replica normalisation};
+  \node[box=22.4mm] (gmm) at (86.8mm,-71mm) {{\scriptsize\bfseries gmm\_ablation.py}\\Gaussian-mixture ablation, descriptor-only};
+\end{scope}
+\draw[flow] (dpc) -- (con);
+% ---------------- OUTPUT
+\node[box] (mf)  at (15mm,-92mm) {\ttl{results/manifests/}JSON run manifests};
+\node[box] (tab) at (49mm,-92mm) {\ttl{results/tables/}CSV summaries};
+\node[box] (fig) at (83mm,-92mm) {\ttl{plotting.py}figure scripts \textrightarrow{} results/figures/};
+\draw[flow] (15mm,-80mm) -- (mf);
+\draw[flow] (49mm,-80mm) -- (tab);
+\draw[flow] (gmm.south) -- (gmm.south |- fig.north);
+\draw[flow] (tab) -- (fig);
+% ---------------- REPORT
+\node[box] (prep) at (15mm,-107mm) {\ttl{prepare\_report.py}report/generated/*.tex};
+\node[box] (bld)  at (49mm,-107mm) {\ttl{build\_report.py}latexmk \textperiodcentered{} LuaLaTeX};
+\node[outbox] (pdf) at (83mm,-107mm) {\ttl{report.pdf}this report};
+\draw[flow] (mf) -- (prep);
+\draw[flow] (prep) -- (bld);  \draw[flow] (bld) -- (pdf);
+\draw[flow] (fig.south) -- ++(0,-2.5mm) -| ([xshift=6mm]bld.north);
+% ---------------- left lane labels
+\foreach \y/\t in {0/INPUT,-15/{I/O},-25.5/CHECKS,-35/SCALING,-61.5/ANALYSIS,-92/OUTPUT,-107/REPORT}
+  \node[lane] at (-2.5mm,\y mm) {\t};
+% ---------------- right lane: entry points, tests and CI
+\node[lanetop] at (117mm,-8mm) {ENTRY};
+\node[box=23.2mm] (snk) at (117mm,-15mm) {\ttl{Snakefile}workflows/, via workflow\_stage.py};
+\node[box=23.2mm,minimum height=12.5mm] (cli) at (117mm,-56mm) {\ttl{cli.py}console script robustcluster, seven commands};
+\draw[flow] (snk) -- (cli);
+\draw[flow] (cli) -- (72mm,-56mm);
+\draw[flow] (cli.south) |- (gmm.east);
+\node[lanetop] at (117mm,-85mm) {QUALITY};
+\node[box=23.2mm] (tst) at (117mm,-92mm) {\ttl{tests/}38 pytest tests};
+\node[box=23.2mm] (ci) at (117mm,-107mm) {\ttl{GitHub Actions}ruff + pytest, Python 3.12};
+\draw[flow] (ci) -- (tst);
+% ---------------- legend
+\node[anchor=north,font=\sffamily\scriptsize,text=Ink] at (55mm,-115mm)
+  {\tikz[baseline=-.6ex]\draw[Navy!55,fill=CoolGrey] (0,-1.2mm) rectangle (4.5mm,1.2mm);\enspace implemented and tested\qquad
+   \tikz[baseline=-.6ex]\draw[Navy!45,dashed] (0,-1.2mm) rectangle (4.5mm,1.2mm);\enspace depends on the FES unit\qquad
+   \tikz[baseline=-.6ex]\draw[Teal!70,fill=Teal!6] (0,-1.2mm) rectangle (4.5mm,1.2mm);\enspace called by pipeline.py};
+\end{tikzpicture}

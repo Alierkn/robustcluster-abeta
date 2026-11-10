@@ -1,0 +1,60 @@
+\chapterlede{This chapter compares the outcomes with the internship objectives and reflects on the skills acquired.}
+\chapter{Skills acquired and critical reflection}
+\label{ch:skills}
+\section{Objectives and outcomes}
+\Cref{tab:objectives} compares the aims of the training project and the three parts of the final task with what was achieved, pointing to the evidence for each.
+
+\begin{table}[htbp]
+\centering
+\caption{Internship objectives compared with outcomes.}
+\label{tab:objectives}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.3\textwidth}>{\raggedright\arraybackslash}p{.14\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Objective & Status & Evidence\\
+\midrule
+Develop computational and analytical skills for intrinsically disordered proteins (training project) & Achieved & Preparatory study and practice (\cref{ch:background}, \cref{sec:mdpractice}); analyses of \cref{ch:results}\\
+\addlinespace
+Run the script and reproduce the published results & Achieved, one assumption & Script audited and corrected; clustering reproduced on all frames with the published parameters (\cref{sec:dpcrun}); weighted populations under an assumed FES unit (\cref{sec:weighted})\\
+\addlinespace
+Vary the parameters & Achieved & Seed, cutoff, silhouette, cluster-size and scaling variants on the real data (\cref{sec:task2,sec:dpcfamilies})\\
+\addlinespace
+Propose and explore an independent framework & Achieved & 50-fit Gaussian-mixture feature experiment with PCA and temporal diagnostics (\cref{sec:task3}, \cref{sec:sasaremoval})\\
+\addlinespace
+Report of about 20 pages & Achieved & This document\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Skills acquired}
+\Cref{tab:skills} summarizes the skills exercised during the internship and where each is documented. It records activities rather than self-assessed levels; the evaluation of the internship belongs to the host tutor.
+
+\begin{table}[htbp]
+\centering
+\caption{Skills exercised during the internship and the evidence in this report.}
+\label{tab:skills}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.34\textwidth}X@{}}
+\toprule
+Skill area & Activity and evidence\\
+\midrule
+Protein structure and intrinsic disorder & Preparatory study; background of \cref{ch:background}\\
+Molecular simulation software & GROMACS and VMD practice (\cref{sec:mdpractice})\\
+Enhanced sampling and reweighting & Reading WT-MetaD output; final-bias weights and their unit dependence (\cref{sec:reweighting})\\
+Scientific Python and data validation & Replica parsing, FES grid checks, frame identities (\cref{ch:methods,sec:task1})\\
+Time-series diagnostics & Autocorrelation and effective sample size (\cref{sec:diagnostics}, \cref{ch:results})\\
+Clustering and model comparison & Density-peak workflow; Gaussian mixtures, ARI, BIC (\cref{sec:task3,sec:sasaremoval})\\
+Software testing and reproducibility & 38 tests, run manifests, continuous integration (\cref{sec:task1,sec:software})\\
+Scientific writing & This report in LaTeX, with figures generated from saved tables\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Related personal projects}
+\label{sec:personal}
+Learning GROMACS and VMD during the internship showed me how many commands, options and file formats a newcomer has to keep track of. To make these programs easier to use, I created two personal software projects, \href{https://github.com/Alierkn/vmd-mcp}{VMD MCP} and \href{https://github.com/Alierkn/gromacs-mcp}{GROMACS MCP}. They use the Model Context Protocol to expose molecular-software operations through structured inputs and outputs. Both were written in early July 2026, during the simulation block: \code{vmd-mcp} exposes 12 tools for structure loading, measurement and display-free rendering, and \code{gromacs-mcp} exposes 31 tools covering system preparation, simulation runs and analysis, with a tagged v0.2.0 release and continuous integration. They are distinct from the Aβ40 descriptor analysis, but provide further examples of connecting scientific programs with Python interfaces.
+
+Source excerpts, screenshots and a map of the tools are in \cref{app:companion}. No Aβ40 data in this report were produced with these projects.
+
+\section{Critical reflection}
+The most demanding part of the internship was practical rather than statistical. Learning to use GROMACS took time, and it made clear how many decisions lie behind a simulated ensemble before any clustering starts. Working with supplied files raised a second kind of difficulty: the script did not run as delivered, an intermediate version was missing, and the free-energy surface did not state its unit. Each of these was recorded and handled explicitly instead of being patched over. Separating the clustering from the weighting step later made it possible to reproduce the published clustering in full while leaving only the populations open.
+
+What went well was turning a single observation into a controlled experiment. The strong Rg--SASA correlation could have justified dropping a feature; testing that decision with fixed samples and repeated seeds showed that the answer depends on the model. A practical lesson for future projects is to ask early for the provenance of every input file, since one missing unit was enough to block the weighting stage.

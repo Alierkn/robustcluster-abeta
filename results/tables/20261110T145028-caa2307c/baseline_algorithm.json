@@ -1,0 +1,112 @@
+{
+  "seed": 42,
+  "dpc": {
+    "nmax": 10,
+    "min_cluster_size": 300,
+    "silhouette_threshold": 0.3,
+    "dc": 1.3,
+    "dc_reduction": 0.9,
+    "max_no_improve_steps": 5
+  },
+  "wasserstein": "raw",
+  "elbow": {
+    "elbow_index": 7,
+    "threshold": 10.187527208692176,
+    "spline_s": 5.0,
+    "second_derivative": [
+      -0.21584416797825573,
+      -0.03188768352562871,
+      0.15206880092699832,
+      0.3360252853796254,
+      0.5199817698322524,
+      0.7039382542848794,
+      0.8878947387375065,
+      1.0718512231901334,
+      1.2558077076427605
+    ]
+  },
+  "histories": [
+    {
+      "group": 0,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 3001,
+      "acceptable_clusters": 2,
+      "selected_centers": 8
+    },
+    {
+      "group": 0,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 2253,
+      "acceptable_clusters": 1,
+      "selected_centers": 7
+    },
+    {
+      "group": 0,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 1905,
+      "acceptable_clusters": 2,
+      "selected_centers": 2
+    },
+    {
+      "group": 1,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 3001,
+      "acceptable_clusters": 1,
+      "selected_centers": 3
+    },
+    {
+      "group": 1,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 2108,
+      "acceptable_clusters": 1,
+      "selected_centers": 9
+    },
+    {
+      "group": 1,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 1729,
+      "acceptable_clusters": 1,
+      "selected_centers": 10
+    },
+    {
+      "group": 1,
+      "iteration": 4,
+      "dc": 0.9477000000000002,
+      "remaining": 1382,
+      "acceptable_clusters": 1,
+      "selected_centers": 7
+    },
+    {
+      "group": 1,
+      "iteration": 5,
+      "dc": 0.8529300000000002,
+      "remaining": 779,
+      "acceptable_clusters": 1,
+      "selected_centers": 2
+    }
+  ],
+  "group_count": 2,
+  "training_frames": 6002,
+  "child_spawn_key": [
+    0
+  ],
+  "accepted_local_clusters": 10,
+  "accepted_local_sizes": [
+    392,
+    356,
+    348,
+    844,
+    1061,
+    893,
+    379,
+    347,
+    603,
+    741
+  ]
+}

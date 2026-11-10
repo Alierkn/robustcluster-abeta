@@ -15,6 +15,7 @@
 \usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=6,minbibnames=3,giveninits=true]{biblatex}
 \addbibresource{references.bib}
 \AtBeginBibliography{\small\linespread{1}\selectfont}
+\PassOptionsToPackage{capitalise,noabbrev}{cleveref}
 \usepackage{hyperref,bookmark,cleveref,glossaries-extra,scrlayer-scrpage}
 \definecolor{Navy}{HTML}{173A5E}
 \definecolor{Teal}{HTML}{2E6F73}
@@ -87,7 +88,11 @@
 \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,frame=none,backgroundcolor=\color{CoolGrey},columns=fullflexible,keepspaces=true,showstringspaces=false,keywordstyle=\color{Navy}\bfseries,stringstyle=\color{Teal},commentstyle=\color{CodeComment}\itshape,tabsize=4,aboveskip=4pt,belowskip=4pt}
 \lstdefinestyle{editorialcode}{language=Python,numbers=left,numberstyle=\sffamily\scriptsize\color{CodeComment},numbersep=9pt,xleftmargin=19pt,basicstyle=\ttfamily\fontsize{8.2}{10.5}\selectfont,breakatwhitespace=false}
 \newtcolorbox{codepanel}[2]{colback=CoolGrey,colframe=Navy,colbacktitle=Navy,coltitle=white,boxrule=.35pt,arc=0pt,left=6pt,right=7pt,top=5pt,bottom=5pt,title={\sffamily\small\bfseries #1\hfill\normalfont\scriptsize #2},before skip=9pt,after skip=9pt}
+\input{typo-additions.tex}
 \graphicspath{{figures/}{artwork/}}
 \input{generated/values.tex}
 
 \input{generated/revision_values.tex}
+
+\input{generated/dpc_values.tex}
+\input{generated/weighted_values.tex}

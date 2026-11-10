@@ -1,0 +1,28 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "summary": {
+    "experiment": "parameters",
+    "variants": [
+      "baseline",
+      "dc_x0.9",
+      "dc_x1.1",
+      "silhouette_0.25",
+      "silhouette_0.35",
+      "min_size_200",
+      "min_size_400"
+    ],
+    "failed_variants": {},
+    "families": {
+      "baseline": 11,
+      "dc_x0.9": 13,
+      "dc_x1.1": 13,
+      "silhouette_0.25": 14,
+      "silhouette_0.35": 13,
+      "min_size_200": 14,
+      "min_size_400": 11
+    },
+    "frames": 300003,
+    "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+  }
+}

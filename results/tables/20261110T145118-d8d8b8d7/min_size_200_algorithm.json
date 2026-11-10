@@ -1,0 +1,210 @@
+{
+  "seed": 42,
+  "dpc": {
+    "nmax": 10,
+    "min_cluster_size": 200,
+    "silhouette_threshold": 0.3,
+    "dc": 1.3,
+    "dc_reduction": 0.9,
+    "max_no_improve_steps": 5
+  },
+  "wasserstein": "raw",
+  "elbow": {
+    "elbow_index": 22,
+    "threshold": 9.559115330792523,
+    "spline_s": 5.0,
+    "second_derivative": [
+      -0.04018640777840804,
+      -0.0326347538936201,
+      -0.025083100008832165,
+      -0.017531446124044232,
+      -0.009979792239256291,
+      -0.0024281383544683577,
+      0.005123515530319579,
+      0.012675169415107521,
+      0.020226823299895454,
+      0.027778477184683386,
+      0.03533013106947133,
+      0.04288178495425926,
+      0.0504334388390472,
+      0.05798509272383514,
+      0.06553674660862308,
+      0.073088400493411,
+      0.08064005437819895,
+      0.08819170826298689,
+      0.09574336214777482,
+      0.10329501603256276,
+      0.1108466699173507,
+      0.11839832380213862,
+      0.12594997768692656,
+      0.13350163157171452,
+      0.14105328545650245,
+      0.14860493934129038
+    ]
+  },
+  "histories": [
+    {
+      "group": 0,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 10001,
+      "acceptable_clusters": 3,
+      "selected_centers": 5
+    },
+    {
+      "group": 0,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 7626,
+      "acceptable_clusters": 2,
+      "selected_centers": 10
+    },
+    {
+      "group": 0,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 7056,
+      "acceptable_clusters": 2,
+      "selected_centers": 4
+    },
+    {
+      "group": 0,
+      "iteration": 4,
+      "dc": 0.9477000000000002,
+      "remaining": 3919,
+      "acceptable_clusters": 1,
+      "selected_centers": 7
+    },
+    {
+      "group": 0,
+      "iteration": 5,
+      "dc": 0.8529300000000002,
+      "remaining": 2903,
+      "acceptable_clusters": 1,
+      "selected_centers": 7
+    },
+    {
+      "group": 0,
+      "iteration": 6,
+      "dc": 0.7676370000000002,
+      "remaining": 2247,
+      "acceptable_clusters": 1,
+      "selected_centers": 3
+    },
+    {
+      "group": 1,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 10001,
+      "acceptable_clusters": 2,
+      "selected_centers": 3
+    },
+    {
+      "group": 1,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 6773,
+      "acceptable_clusters": 2,
+      "selected_centers": 6
+    },
+    {
+      "group": 1,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 4711,
+      "acceptable_clusters": 1,
+      "selected_centers": 10
+    },
+    {
+      "group": 1,
+      "iteration": 4,
+      "dc": 0.9477000000000002,
+      "remaining": 3305,
+      "acceptable_clusters": 1,
+      "selected_centers": 4
+    },
+    {
+      "group": 1,
+      "iteration": 5,
+      "dc": 0.8529300000000002,
+      "remaining": 521,
+      "acceptable_clusters": 1,
+      "selected_centers": 2
+    },
+    {
+      "group": 2,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 10001,
+      "acceptable_clusters": 1,
+      "selected_centers": 8
+    },
+    {
+      "group": 2,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 8272,
+      "acceptable_clusters": 2,
+      "selected_centers": 7
+    },
+    {
+      "group": 2,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 6709,
+      "acceptable_clusters": 3,
+      "selected_centers": 8
+    },
+    {
+      "group": 2,
+      "iteration": 4,
+      "dc": 0.9477000000000002,
+      "remaining": 3110,
+      "acceptable_clusters": 3,
+      "selected_centers": 5
+    },
+    {
+      "group": 2,
+      "iteration": 5,
+      "dc": 0.8529300000000002,
+      "remaining": 1813,
+      "acceptable_clusters": 1,
+      "selected_centers": 4
+    }
+  ],
+  "group_count": 3,
+  "training_frames": 30003,
+  "child_spawn_key": [
+    0
+  ],
+  "accepted_local_clusters": 27,
+  "accepted_local_sizes": [
+    1304,
+    622,
+    449,
+    293,
+    277,
+    1930,
+    1207,
+    1016,
+    656,
+    2065,
+    252,
+    2976,
+    418,
+    1644,
+    1406,
+    2784,
+    481,
+    1729,
+    1221,
+    342,
+    1596,
+    1641,
+    362,
+    884,
+    210,
+    203,
+    1666
+  ]
+}

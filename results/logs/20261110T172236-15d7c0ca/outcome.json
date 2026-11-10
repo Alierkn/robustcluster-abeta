@@ -1,0 +1,15 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "summary": {
+    "families": 11,
+    "frames": 300003,
+    "seed": 42,
+    "block_lengths": {
+      "1": 44135,
+      "2": 21687,
+      "3": 63485
+    },
+    "bootstrap_scope": "fixed fitted partition and fixed supplied FES; within-replica moving blocks"
+  }
+}

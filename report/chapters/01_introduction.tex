@@ -1,21 +1,35 @@
-\chapter{Introduction and internship objectives}
-\section{From data analysis to molecular ensembles}
-Molecular descriptors form a familiar data-analysis problem: clustering groups rows with similar measurements. Interpretation requires care because consecutive observations may be correlated, simulation bias changes configuration frequencies, and descriptors can hide structural differences.
+\chapterlede{This chapter states the internship task, how the work departed from the original proposal, and how the report is organized.}
+\chapter{Introduction}
+\label{ch:intro}
+\section{Context}
+Molecular descriptors form a familiar data-analysis problem: clustering groups rows with similar measurements. Interpretation requires care, because consecutive observations may be correlated, simulation bias changes configuration frequencies, and descriptors can hide structural differences. An intrinsically disordered peptide such as amyloid-β40 (Aβ40) is described by many configurations rather than one fixed structure \autocite{vanderlee2014}, and clustering is a natural way to summarize that diversity.
 
-This was the setting of the Data Analysis L-31 internship at the University of Messina, with Andrea Ciccolo and Valeria Conti Nibali as internship contacts. The programme introduced protein structure, intrinsic disorder, force fields, molecular dynamics and clustering. Practical work included GROMACS, VMD and Python. The final assignment combined analysis of supplied simulation data with an independent contribution using methods from the degree programme.
+Cadenelli and colleagues studied monomeric Aβ40 and Aβ42 ensembles with well-tempered metadynamics (WT-MetaD), density-peak clustering, consensus between local clusters and statistical reweighting \autocite{cadenelli2026}. Two of the authors supervised this internship, and their clustering script, descriptor table and free-energy surface (FES) for Aβ40 became its working material.
 
-An intrinsically disordered peptide is described through many configurations rather than a single fixed structure. Disorder does not imply an absence of structural organization \autocite{vanderlee2014}. Clustering summarizes this diversity, but similarity in measured descriptors alone does not establish a physically distinct conformational family.
-
-\section{The Aβ40 case study}
-Cadenelli and colleagues studied monomeric Aβ40 and Aβ42 ensembles using well-tempered metadynamics, density-peak clustering, consensus between local clusters and statistical reweighting \autocite{cadenelli2026}. Metadynamics encourages exploration by adding a bias along selected collective variables; the well-tempered formulation controls its development \autocite{barducci2008}. Frequencies observed under this bias are not automatically equilibrium probabilities.
-
-The supplied materials concern Aβ40: a clustering script, a free-energy surface and 300,003 descriptor observations in three replica segments. The four baseline features describe secondary-structure content, radius of gyration and solvent-accessible surface area (SASA). These measurements make configurations manageable as numerical data; they are not atomic coordinates.
-
-\section{Questions and scope of the report}
+\section{Internship task}
+\label{sec:task}
+After the preparatory study described in \cref{ch:host}, the supervisors assigned the final task on 18 September 2026 in three parts:
 \begin{protocolsteps}
-\item \textbf{Can the analysis be reconstructed?} Make frame identity, scaling, FES interpolation and weighted summaries explicit and testable.
-\item \textbf{What do the descriptors reveal?} Examine redundancy and temporal dependence through correlation, PCA and autocorrelation diagnostics.
-\item \textbf{Does removing SASA preserve the fitted groups?} Compare Gaussian mixtures across feature sets, component counts and initialization seeds on shared observations. Correlation with radius of gyration motivates this question but does not answer it; components are not identified as physical states.
+\item \textbf{Reproduce.} Run the supplied script and reproduce the published results.
+\item \textbf{Vary.} Modify its parameters and observe the effects.
+\item \textbf{Propose.} Independently propose and explore another clustering framework, or other analysis procedures learned during the Bachelor's programme. The supervisors described this as the most important part.
 \end{protocolsteps}
+These parts translate into three working questions: can the analysis be reconstructed and tested; what do the descriptors reveal about redundancy and temporal dependence; and does removing the solvent-accessible surface area (SASA), the descriptor most correlated with compactness, preserve the fitted groups?
 
-The feature experiment is separate from the paper reproduction. The FES passes grid checks, but its energy units and construction remain unverified; equilibrium populations are not reported. Code, tables and run records make the completed calculations inspectable \autocite{plumed2019,wratten2021}.
+\section{Planned and actual work}
+The published internship proposal described a broader project, in which all-atom simulations would be run with GROMACS and the effect of different solvents analysed. The work actually carried out used the supplied descriptor data, as the 18 September assignment specified; no new simulations or solvent comparison are reported. Within that scope, all three parts of the task were carried out: the published clustering was reproduced on the full data and its parameters were varied (\cref{sec:dpcrun,sec:task2}), and an independent framework was explored (\cref{sec:task3}). The weighted family populations were computed under an assumed FES unit, because the supplied file does not document it; they are reported with that assumption and with the effect of the alternative unit.
+
+\section{Structure of the report}
+\Cref{ch:host} describes the host laboratory, supervision and programme. \Cref{ch:background} summarizes the scientific background needed to read a biased simulation, and \cref{ch:methods} the tools, data and methods. \Cref{ch:activities} gives a detailed account of the activities carried out, block by block, and \cref{ch:results} reports the completed analyses. \Cref{ch:skills} reflects on the skills acquired against the objectives, and \cref{ch:conclusions} concludes.
+
+Five limitations apply to the whole report; they are stated here once and referred to later as \emph{Scope~1--5}.
+
+\begin{keyfindings}[Scope and limitations]
+\begin{protocolsteps}
+\item \textbf{Sampling.} The descriptors come from WT-MetaD, so observed frequencies are biased and trajectory time is biased time. No equilibrium probabilities or kinetic rates are inferred from them.
+\item \textbf{Weights.} The supplied FES is a complete, numerically valid grid, but its energy unit and replica-combination recipe are undocumented. Weighted populations are computed under an explicit assumption (kJ\,mol$^{-1}$, three replicas combined) and are marked as such (\cref{sec:weighted}).
+\item \textbf{Interpretation.} Clusters and Gaussian components are geometric groupings of four descriptors; none is identified as a metastable state or given biological meaning.
+\item \textbf{Uncertainty.} Frames are strongly autocorrelated; reported minimum--maximum ranges describe the runs performed and are not confidence intervals.
+\item \textbf{Evidence.} A passing test shows that code is correct on inputs with known answers; it is not an Aβ40 result.
+\end{protocolsteps}
+\end{keyfindings}

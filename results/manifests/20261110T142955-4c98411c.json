@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "run_id": "20261110T142955-4c98411c",
+  "status": "SUCCESS",
+  "command": "editorial-figures",
+  "experiment": null,
+  "timestamp_utc": "2026-11-10T14:29:55.156358+00:00",
+  "git_commit": "4d8826f1325a4c081e6e7db5e22cf3b5eb9dbaa1",
+  "git_dirty": true,
+  "source_sha256": {
+    "src/robustcluster_abeta/__init__.py": "bcfd8bbbcb2d760eab1c02faca6ff31950048d7b8a348e4ef1c3928a844e87d1",
+    "src/robustcluster_abeta/audit_fes.py": "f2951d8948e4f8b5bf8564b4e3acc14dc35aff4bf069d076ef19cc249a856553",
+    "src/robustcluster_abeta/cli.py": "830f9e65e4483a033e47d65cd4b8183c43e4e17acf9ca603f4c1590cfd6c6df2",
+    "src/robustcluster_abeta/consensus.py": "613e7ce2180d0e67ad0b2b9f85f00a7362d9f20d3d3bfd51e54c68fbc174ef22",
+    "src/robustcluster_abeta/dpc.py": "f833f9219f5cbb6db42790e6d1224f4a48aa193f30e1014fa6827c309def7c13",
+    "src/robustcluster_abeta/fes.py": "81345790bcc5adac0a044055ab5c65e75387bf5391ffcfcfe884f1f904f3f206",
+    "src/robustcluster_abeta/gmm_ablation.py": "fa1df770e2f0f8ae122ffb085c3e5e477dc0de2d3964a0b56b9b5ca45bd284e4",
+    "src/robustcluster_abeta/io.py": "30060c0ade1d9b49db6f03d03fd1f877d2eb4a3f19942ef053a2bc2755f780c3",
+    "src/robustcluster_abeta/manifest.py": "c73480bf2b613b4e09b5e3be2b10d5c4586543dfb7c95a859815fe59d933196e",
+    "src/robustcluster_abeta/pipeline.py": "92e9b1bd13d61596a23a8202b2eff64b177898b9e40d3c9bb634498566376cbe",
+    "src/robustcluster_abeta/plotting.py": "6783c740727d3a52a36df679cdc0f1d9b149faa54d8d4002f460999bb24d7bcc",
+    "src/robustcluster_abeta/preprocessing.py": "72f8da7bae79f53f786411a8157625752640e4f50c344de0e291ef6b1a96ba46",
+    "src/robustcluster_abeta/reweighting.py": "75d2888582fc4316070e76b53e97058bb4df3f781fe2c7c33a497ab95d8e97f5",
+    "src/robustcluster_abeta/stability.py": "09069ca505d4e7b078b8dcda33d3aae242556c897297597f5911e13e3eac948c",
+    "src/robustcluster_abeta/statistics.py": "a6fd389136a00475b53f8832c729c4ca05a556acefa1f0a16edad2875cb0d419",
+    "src/robustcluster_abeta/validation.py": "fd3a8f0db293e0e8adf0e2e220026e29075d7e5e7504f69026276b42fc0e988d"
+  },
+  "python": "3.12.6",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "robustcluster-abeta": "0.3.0"
+  },
+  "config": {
+    "project_root": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta-v030",
+    "inputs": {},
+    "source_runs": {
+      "diagnostics": "20260921T011959-583b4421",
+      "gmm": "20261007T104141-f0143175"
+    },
+    "figure_width_inches": 6.1024,
+    "plot_font": "Libertinus Sans (scripts/report_style.py)",
+    "layout_revision": "v0.4.0-report-style",
+    "scientific_mode": "saved_results_presentation",
+    "model_fitting": false
+  },
+  "inputs": {},
+  "outputs": [
+    {
+      "filename": "results/tables/20261110T142955-4c98411c/figure_notes.json",
+      "sha256": "4cd1336443d83254344e969a132abed7b6ea6c458e26421de99205b5396b128e"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/raw_descriptor_distributions.pdf",
+      "sha256": "43e1731fdf2c7a39276efb0531ddb936d2927402dba2c5fe4c1603f0bc13c16c"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/raw_descriptor_distributions.svg",
+      "sha256": "31f087ac4a1d43f46eb7783b69979782ebb57a2359813e366dee5cc4f9bb19e7"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/rebuild_autocorrelations.pdf",
+      "sha256": "8acc9f10b3e017a7f62593fd71e78ad78c25286c0277a3c4a0fcc6531564c7d2"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/rebuild_autocorrelations.svg",
+      "sha256": "bf1114c50cf24d42ee14fbb832eb0b3755488c3b2f4f9afa8e03d01ad72883a3"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/rebuild_features.pdf",
+      "sha256": "d09cbbeb3a6205db5bb81d7885c170efb453ea33250e7d92bb79bf710be6fe0f"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/rebuild_features.svg",
+      "sha256": "5da442f0943576b36c46b1b91a1920deb90698dbeadf1650af9e296e5561cbe1"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/rebuild_gmm.pdf",
+      "sha256": "fd57f18091172fdb488fff7db042ddf5db5b5e022d38ad18a59f8d4eb3983150"
+    },
+    {
+      "filename": "results/figures/20261110T142955-4c98411c/rebuild_gmm.svg",
+      "sha256": "bc2f08c7895caac15a23eb7d95648fb776d92f3afe03e06371780a1a22f8389a"
+    }
+  ],
+  "runtime_seconds": 1.4715647499542683,
+  "peak_rss_bytes": 340901888,
+  "script_sha256": "7be43e98418a365ef583c693baa94bd954a70917116b9be4f035994f8bdc837d",
+  "source_manifests": {
+    "diagnostics": {
+      "filename": "results/manifests/20260921T011959-583b4421.json",
+      "sha256": "132375f79a48b7a10e5e2a1f2ce0ed1556fdfb0cc3e68c402edeea297de9e3b2"
+    },
+    "gmm": {
+      "filename": "results/manifests/20261007T104141-f0143175.json",
+      "sha256": "8570ba7e1fb8b9ad8d83e038b42c9969545458b320d19dab8a4eb5a1c65f5e37"
+    }
+  },
+  "style": {
+    "module": "scripts/report_style.py",
+    "style_version": "1.0.0",
+    "module_sha256": "d7df8e01fb8c41658a35ca0fd27928c34b3aa47aa88356bc4dd30981178799d1",
+    "font": {
+      "family": "Libertinus Sans",
+      "fallback": false,
+      "files": {
+        "regular": {
+          "source": "LibertinusSans-Regular.otf",
+          "source_sha256": "41b60a752ab3b0eb1b1a689272b1502f165b2ed95d097194c2f56bc2009fa66e",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "ba719cc3044716aacbe2163956ed6245bb07391ca3cfadb4a777b9be05b5af7e"
+        },
+        "bold": {
+          "source": "LibertinusSans-Bold.otf",
+          "source_sha256": "6d321e921ae278afb3e81f7a1df4b65816b92928e838f3d11fc1abfe4c15715f",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "1bfd67b57cdf386dd236d9d73c4c6fbb99ba946317044852f30256cdfbe1795a"
+        },
+        "italic": {
+          "source": "LibertinusSans-Italic.otf",
+          "source_sha256": "cd74ad255b2f04939196bb280bd3856285f25fe44eab9eb350e704b425dba4d5",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "37552c78335335fab1ccd9aef800b85e0b1b4bfd84017914b503f6ba62e620b3"
+        }
+      }
+    },
+    "font_sizes_pt": {
+      "tick": 7.5,
+      "legend": 7.5,
+      "annotation": 7.5,
+      "label": 8.0,
+      "title": 8.5,
+      "panel": 9.5,
+      "minimum": 7.0
+    },
+    "widths_mm": {
+      "full": 155.0,
+      "one_half": 110.0,
+      "single": 75.0
+    },
+    "colormaps": {
+      "sequential": "report_seq",
+      "sequential_reversed": "report_seq_r",
+      "diverging": "report_div"
+    },
+    "pdf_fonttype": 42,
+    "matplotlib": "3.11.2"
+  },
+  "peak_memory_method": "Process ru_maxrss high-water mark",
+  "message": null
+}

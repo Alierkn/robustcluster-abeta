@@ -1,0 +1,201 @@
+{
+  "generated_utc": "2026-11-10T12:55:43+00:00",
+  "script": "scripts/build_premium_figures.py",
+  "script_sha256": "7e71c8325ecece57a0abc964446d7157b88439da3596959699826d2797f6503f",
+  "command": "build_premium_figures.py",
+  "scientific_scope": "Descriptive only. Unweighted biased sample; no reweighting, clustering, populations or equilibrium interpretation. FES energy unit unverified.",
+  "inputs": {
+    "descriptors": {
+      "path": "data/raw/input_clustering_ab40.dat",
+      "resolved_path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/input_clustering_ab40.dat",
+      "bytes": 31137940,
+      "sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77",
+      "matches_documented_sha256": true
+    },
+    "fes": {
+      "path": "data/raw/FES_AB_40.dat",
+      "resolved_path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/FES_AB_40.dat",
+      "bytes": 273309138,
+      "sha256": "6fd6c3d7c04e20859cf91abb4765e126e0f3fcb982d3795b643165dde26fa3f4",
+      "matches_documented_sha256": true
+    }
+  },
+  "statistics": {
+    "descriptor_input": {
+      "frames_in_interval": 300003,
+      "interval_ps_inclusive": [
+        1000000.0,
+        3000000.0
+      ],
+      "frames_per_replica": {
+        "1": 100001,
+        "2": 100001,
+        "3": 100001
+      },
+      "replica_detection": "time resets in the source file (robustcluster_abeta.io.read_descriptors)",
+      "weighting": "none; biased WT-MetaD sample"
+    },
+    "descriptor_landscape": {
+      "hexbin_gridsize": 48,
+      "weighting": "none (unweighted biased sample)",
+      "Rg_vs_SASA": {
+        "pooled_pearson_r": 0.847578390701783,
+        "per_replica_pearson_r": {
+          "1": 0.8048286362378987,
+          "2": 0.8546671372142015,
+          "3": 0.8630937427139298
+        },
+        "max_frames_per_hexagon": 6275,
+        "occupied_hexagons": 959
+      },
+      "nAlpha_vs_nBeta": {
+        "pooled_pearson_r": -0.45605491431669026,
+        "per_replica_pearson_r": {
+          "1": -0.5402836204896954,
+          "2": -0.25259103031241736,
+          "3": -0.39727137105914706
+        },
+        "max_frames_per_hexagon": 1165,
+        "occupied_hexagons": 1242
+      }
+    },
+    "fes_map": {
+      "grid_shape_alpha_by_beta": [
+        2801,
+        1301
+      ],
+      "alpha_range": [
+        0.0,
+        28.0
+      ],
+      "beta_range": [
+        0.0,
+        13.0
+      ],
+      "file_free_min": 0.0,
+      "file_free_max": 82.213430126,
+      "shift_applied": 0.0,
+      "relative_F_max": 82.213430126,
+      "grid_fraction_at_max_plateau": 0.6108573829320318,
+      "grid_fraction_F_le_10": 0.012768855747960883,
+      "grid_fraction_F_le_20": 0.07218817480635141,
+      "grid_fraction_F_le_40": 0.1807274276975309,
+      "minimum_location_alpha_beta": [
+        0.87,
+        2.9
+      ],
+      "energy_unit": "unverified (file declares none)",
+      "plot_stride": 4,
+      "plotted_grid_shape": [
+        701,
+        326
+      ],
+      "contour_levels": [
+        0.0,
+        84.0,
+        4.0
+      ],
+      "query_conversion": "alpha = nAlpha/1.1, beta = nBeta/2.5",
+      "query_alpha_range": [
+        0.16911363636363635,
+        23.577880909090908
+      ],
+      "query_beta_range": [
+        0.00017999999999999998,
+        12.00282
+      ],
+      "queries_outside_grid": 0,
+      "coverage_histogram_bin": 0.2,
+      "coverage_smoothing_sigma_bins": 1.0,
+      "coverage_hpd_masses": [
+        0.5,
+        0.9,
+        0.99
+      ],
+      "convex_hull_vertices": 21,
+      "convex_hull_area": 151.73699427769634,
+      "convex_hull_fraction_of_grid_area": 0.4168598743892757
+    },
+    "rg_timeseries": {
+      "frame_spacing_ps": 20.0,
+      "rolling_window_frames": 1000,
+      "rolling_window_ns": 20.0,
+      "rolling": "centred, full window only",
+      "marginal": "unweighted density histogram, bin 0.02 nm; dashed = median",
+      "per_replica": {
+        "1": {
+          "frames": 100001,
+          "time_ps_range": [
+            1000000.0,
+            3000000.0
+          ],
+          "Rg_mean_nm": 1.1889760509894902,
+          "Rg_median_nm": 1.15329,
+          "Rg_sd_nm": 0.17438843452460281,
+          "Rg_min_nm": 0.924168,
+          "Rg_max_nm": 2.69561,
+          "rolling_mean_range_nm": [
+            0.977793991,
+            1.80045025
+          ]
+        },
+        "2": {
+          "frames": 100001,
+          "time_ps_range": [
+            1000000.0,
+            3000000.0
+          ],
+          "Rg_mean_nm": 1.213163890301097,
+          "Rg_median_nm": 1.11801,
+          "Rg_sd_nm": 0.28363048763853455,
+          "Rg_min_nm": 0.923868,
+          "Rg_max_nm": 3.42243,
+          "rolling_mean_range_nm": [
+            0.962715957,
+            2.38180118
+          ]
+        },
+        "3": {
+          "frames": 100001,
+          "time_ps_range": [
+            1000000.0,
+            3000000.0
+          ],
+          "Rg_mean_nm": 1.221453122188778,
+          "Rg_median_nm": 1.12565,
+          "Rg_sd_nm": 0.2924077267016421,
+          "Rg_min_nm": 0.913545,
+          "Rg_max_nm": 3.09781,
+          "rolling_mean_range_nm": [
+            0.9559989,
+            2.24649538
+          ]
+        }
+      }
+    }
+  },
+  "outputs": {
+    "descriptor_landscape.pdf": {
+      "sha256": "a40b7e24802774457bab43755eb102fcbe4b16e806a16f03372a6e127c9e59da",
+      "bytes": 50512
+    },
+    "fes_map.pdf": {
+      "sha256": "5cc85339a19c8373433609febc3471317463b258f7ed990668cbe256d5c26567",
+      "bytes": 376617
+    },
+    "rg_timeseries.pdf": {
+      "sha256": "1b21ff64b7b7d8544e4e26c3e7471ecec0d7b829910df4743575854298dc5adc",
+      "bytes": 73984
+    }
+  },
+  "figure_width_mm": 155,
+  "font": "DejaVu Serif (matches build_editorial_figures.py)",
+  "software": {
+    "python": "3.12.6",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1"
+  },
+  "runtime_seconds": 3.1
+}

@@ -1,0 +1,12 @@
+reference_cluster,other_cluster,intersection,jaccard,status,variant,ari_vs_first
+1,1,35364,1.0,matched,baseline,1.0
+2,2,24583,1.0,matched,baseline,1.0
+3,3,9963,1.0,matched,baseline,1.0
+4,4,4779,1.0,matched,baseline,1.0
+5,5,38608,1.0,matched,baseline,1.0
+6,6,4664,1.0,matched,baseline,1.0
+7,7,33371,1.0,matched,baseline,1.0
+8,8,22204,1.0,matched,baseline,1.0
+9,9,47833,1.0,matched,baseline,1.0
+10,10,41167,1.0,matched,baseline,1.0
+11,11,37467,1.0,matched,baseline,1.0

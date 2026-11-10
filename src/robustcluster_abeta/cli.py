@@ -30,6 +30,8 @@ def worker(manifest_path):
         if command == "gmm-ablation":
             from .gmm_ablation import experiment
             summary = experiment(run.config, run, budget)
+        elif command == "cluster":
+            summary = pipeline.cluster(run.config, run, budget, data["experiment"] or "baseline")
         elif command == "robustness":
             summary = pipeline.robustness(run.config, run, budget, data["experiment"])
         elif command == "figures":
@@ -111,10 +113,10 @@ def main(argv=None):
     if argv and argv[0] == "_worker":
         return worker(argv[1])
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["validate", "diagnostics", "reproduce", "robustness", "figures", "gmm-ablation"])
+    parser.add_argument("command", choices=["validate", "diagnostics", "cluster", "reproduce", "robustness", "figures", "gmm-ablation"])
     parser.add_argument("--config", default="config/paper_reproduction.yaml")
     parser.add_argument("--profile", choices=["smoke", "medium", "full"])
-    parser.add_argument("--experiment", choices=["seeds", "seed-pilot", "features", "wasserstein", "reweighting", "dpa", "shapegmm", "external_validation"])
+    parser.add_argument("--experiment", choices=["baseline", "parameters", "seeds", "seed-pilot", "features", "wasserstein", "reweighting", "dpa", "shapegmm", "external_validation"])
     parser.add_argument("--source-manifest")
     args = parser.parse_args(argv)
     if args.command == "robustness" and not args.experiment:

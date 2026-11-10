@@ -1,0 +1,47 @@
+% Tooling map: where the student's tools sit relative to the analysis in this report.
+% MCP projects labelled from the READMEs of github.com/Alierkn/vmd-mcp and github.com/Alierkn/gromacs-mcp.
+% Dashed frame: personal project, not used to produce the supplied Abeta40 data.
+% Native TikZ; needs only arrows.meta (already loaded by preamble.tex). Uses \abforty from preamble.tex.
+\begin{tikzpicture}[
+  font=\sffamily\footnotesize,
+  every node/.append style={execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  tool/.style={draw=Navy!55,fill=CoolGrey,line width=.5pt,rounded corners=1.2pt,
+    text width=35mm,minimum height=14mm,align=center,inner sep=3pt,text=Ink,
+    font=\sffamily\scriptsize},
+  personal/.style={tool,dashed,fill=white,draw=Navy!45},
+  outbox/.style={tool,fill=Navy,draw=Navy,text=white},
+  flow/.style={-{Stealth[length=4.5pt,width=4pt]},draw=Navy!70,line width=.6pt},
+  wraps/.style={flow,densely dashed,draw=Navy!45},
+  lane/.style={font=\sffamily\scriptsize\bfseries\addfontfeatures{LetterSpace=8},
+    text=Teal,anchor=east}]
+\def\ttl#1{{\footnotesize\bfseries #1}\\}
+% columns centred at 20.5, 63.5, 106.5 mm (outer width 41 mm, 2 mm gaps)
+% ---------------- SIMULATION
+\node[tool] (gmx) at (20.5mm,0)  {\ttl{GROMACS}molecular dynamics: topology, solvation, mdrun, trajectory analysis};
+\node[tool] (vmd) at (63.5mm,0)  {\ttl{VMD}visualisation and measurement: RMSD, R\textsubscript{g}, SASA, rendering};
+% ---------------- PERSONAL MCP PROJECTS
+\node[personal] (gmcp) at (20.5mm,-21mm) {\ttl{gromacs-mcp}MCP server: gmx pipeline, background mdrun};
+\node[personal] (vmcp) at (63.5mm,-21mm) {\ttl{vmd-mcp}MCP server: headless VMD analysis, Tachyon rendering};
+\draw[wraps] (gmcp) -- node[right,font=\sffamily\scriptsize,text=Navy!70,inner sep=1.5pt] {wraps} (gmx);
+\draw[wraps] (vmcp) -- node[right,font=\sffamily\scriptsize,text=Navy!70,inner sep=1.5pt] {wraps} (vmd);
+\node[anchor=west,text width=37mm,align=left,font=\sffamily\scriptsize\itshape,text=Audit,inner sep=0pt]
+  at (88mm,-21mm) {personal Model Context Protocol projects: not used to produce the supplied \abforty{} data};
+% ---------------- ANALYSIS
+\node[tool] (data) at (20.5mm,-40mm) {\ttl{supplied \abforty{} data}descriptor table, FES grid};
+\node[tool] (rc)   at (63.5mm,-40mm) {\ttl{robustcluster-abeta}analysis package of this report};
+\node[tool] (py)   at (106.5mm,-40mm) {\ttl{Python stack}NumPy \textperiodcentered{} SciPy \textperiodcentered{} pandas\\scikit-learn \textperiodcentered{} Matplotlib};
+\draw[flow] (data) -- (rc);
+\draw[flow] (py) -- (rc);
+% ---------------- REPORTING
+\node[tool] (git) at (20.5mm,-60mm) {\ttl{Git / GitHub}version control, GitHub Actions CI};
+\node[outbox] (tex) at (63.5mm,-60mm) {\ttl{LaTeX}LuaLaTeX report};
+\draw[flow] (rc) -- (tex);
+\draw[flow,draw=Navy!45] (git) -- (tex);
+% ---------------- lane labels
+\foreach \y/\t in {0/SIMULATION,-21/PERSONAL,-40/ANALYSIS,-60/REPORTING}
+  \node[lane] at (-2.5mm,\y mm) {\t};
+% ---------------- legend
+\node[anchor=north east,font=\sffamily\scriptsize,text=Ink,align=left] at (127mm,-54mm)
+  {\tikz[baseline=-.6ex]\draw[Navy!55,fill=CoolGrey] (0,-1.2mm) rectangle (4.5mm,1.2mm);\enspace tool or input\\[1pt]
+   \tikz[baseline=-.6ex]\draw[Navy!45,dashed] (0,-1.2mm) rectangle (4.5mm,1.2mm);\enspace personal MCP project};
+\end{tikzpicture}

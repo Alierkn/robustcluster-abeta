@@ -1,0 +1,294 @@
+{
+  "runs": {
+    "full-run": {
+      "run_id": "20261110T145503-7338c22e",
+      "manifest_sha256": "8dfea86cd95f8a8e587a14e4bdeb528caef46b4a8a2a0ff74f24f442b2b643cd",
+      "runtime_seconds": 856.1658132500015,
+      "peak_rss_bytes": 4086857728,
+      "summary": {
+        "experiment": "baseline",
+        "variants": [
+          "baseline"
+        ],
+        "failed_variants": {},
+        "families": {
+          "baseline": 11
+        },
+        "frames": 300003,
+        "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+      }
+    },
+    "seeds-run": {
+      "run_id": "20261110T151008-5db6b98e",
+      "manifest_sha256": "e11234dd1e21998ae333af8bfb218781cc9bba97fe4d0c2560642dbeb0fc9217",
+      "runtime_seconds": 4935.432501875097,
+      "peak_rss_bytes": 4743692288,
+      "summary": {
+        "experiment": "seed-pilot",
+        "variants": [
+          "seed_42",
+          "seed_2684470948",
+          "seed_4091952314",
+          "seed_233227757",
+          "seed_3276785861"
+        ],
+        "failed_variants": {},
+        "families": {
+          "seed_42": 11,
+          "seed_2684470948": 12,
+          "seed_4091952314": 12,
+          "seed_233227757": 14,
+          "seed_3276785861": 14
+        },
+        "frames": 300003,
+        "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+      }
+    },
+    "params-run": {
+      "run_id": "20261110T151008-76ee7a71",
+      "manifest_sha256": "1778674564da6daae501646a8464ecd73f906ab85036b555e61f8987abd62148",
+      "runtime_seconds": 7111.541535250144,
+      "peak_rss_bytes": 4337172480,
+      "summary": {
+        "experiment": "parameters",
+        "variants": [
+          "baseline",
+          "dc_x0.9",
+          "dc_x1.1",
+          "silhouette_0.25",
+          "silhouette_0.35",
+          "min_size_200",
+          "min_size_400"
+        ],
+        "failed_variants": {},
+        "families": {
+          "baseline": 11,
+          "dc_x0.9": 13,
+          "dc_x1.1": 13,
+          "silhouette_0.25": 14,
+          "silhouette_0.35": 13,
+          "min_size_200": 14,
+          "min_size_400": 11
+        },
+        "frames": 300003,
+        "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+      }
+    },
+    "wasserstein-run": {
+      "run_id": "20261110T145118-dc68b455",
+      "manifest_sha256": "93a90fd4e6e377d948b4c5bef088fe5572f671afec19af12e1d592961b887155",
+      "runtime_seconds": 62.4111105829943,
+      "peak_rss_bytes": 834453504,
+      "summary": {
+        "experiment": "wasserstein",
+        "variants": [
+          "baseline",
+          "normalized"
+        ],
+        "failed_variants": {},
+        "families": {
+          "baseline": 3,
+          "normalized": 3
+        },
+        "frames": 300003,
+        "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+      }
+    },
+    "medium-seeds-run": {
+      "run_id": "20261110T145118-444f6840",
+      "manifest_sha256": "0ada7cd166423681283ecd82991a822f85436d2868588bacaddd14efa5cf2d34",
+      "runtime_seconds": 121.74918945785612,
+      "peak_rss_bytes": 924483584,
+      "summary": {
+        "experiment": "seeds",
+        "variants": [
+          "seed_42",
+          "seed_2684470948",
+          "seed_4091952314",
+          "seed_233227757",
+          "seed_3276785861"
+        ],
+        "failed_variants": {},
+        "families": {
+          "seed_42": 3,
+          "seed_2684470948": 3,
+          "seed_4091952314": 3,
+          "seed_233227757": 3,
+          "seed_3276785861": 4
+        },
+        "frames": 300003,
+        "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+      }
+    },
+    "medium-params-run": {
+      "run_id": "20261110T145118-d8d8b8d7",
+      "manifest_sha256": "3a992881d9d81d745fb09916228a8d56c61f7a551dade3267ecd71e6b405e210",
+      "runtime_seconds": 182.39938808302395,
+      "peak_rss_bytes": 978010112,
+      "summary": {
+        "experiment": "parameters",
+        "variants": [
+          "baseline",
+          "dc_x0.9",
+          "dc_x1.1",
+          "silhouette_0.25",
+          "silhouette_0.35",
+          "min_size_200",
+          "min_size_400"
+        ],
+        "failed_variants": {},
+        "families": {
+          "baseline": 3,
+          "dc_x0.9": 3,
+          "dc_x1.1": 3,
+          "silhouette_0.25": 4,
+          "silhouette_0.35": 3,
+          "min_size_200": 4,
+          "min_size_400": 3
+        },
+        "frames": 300003,
+        "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+      }
+    }
+  },
+  "full_profile": {
+    "group_size": 30000,
+    "max_groups": null,
+    "seeds": 20,
+    "max_seconds": 86400,
+    "max_memory_gib": 24,
+    "enabled": true
+  },
+  "wasserstein_normalized_ari": 1.0,
+  "sensitivity_rows": [
+    [
+      "Seed",
+      "seed 1",
+      "0.5275048468815549",
+      "12",
+      "0.7309101070305404"
+    ],
+    [
+      "Seed",
+      "seed 2",
+      "0.5532991516012192",
+      "12",
+      "0.2877166800018667"
+    ],
+    [
+      "Seed",
+      "seed 3",
+      "0.4421480136990485",
+      "14",
+      "0.5529278282112154"
+    ],
+    [
+      "Seed",
+      "seed 4",
+      "0.6765717366408643",
+      "14",
+      "0.3000107535160896"
+    ],
+    [
+      "Parameter",
+      "$d_c\\times0.9$",
+      "0.5937906644103348",
+      "13",
+      "0.3771729400740483"
+    ],
+    [
+      "Parameter",
+      "$d_c\\times1.1$",
+      "0.6776643861020915",
+      "13",
+      "0.6875294960783275"
+    ],
+    [
+      "Parameter",
+      "silhouette 0.25",
+      "0.566160437010794",
+      "14",
+      "0.5207707746818715"
+    ],
+    [
+      "Parameter",
+      "silhouette 0.35",
+      "0.5661091369206852",
+      "13",
+      "0.4052506984365251"
+    ],
+    [
+      "Parameter",
+      "min. size 200",
+      "0.7444471428175854",
+      "14",
+      "0.5108805628552239"
+    ],
+    [
+      "Parameter",
+      "min. size 400",
+      "0.6448527082188714",
+      "11",
+      "0.9800141566121762"
+    ]
+  ],
+  "outputs": {
+    "report/figures/dpc_families.pdf": "1a0b987829b716338dec6a5eaeef40d686f9767388fb1e6f4660a33c3dbe03f8",
+    "report/figures/dpc_sensitivity.pdf": "d6f05f08986cd805d47d8c4c01840657616a9588610495799148025bbf02555c",
+    "report/generated/dpc_family_rows.tex": "941079039a0302e97230e63949aa2e9ab3f68921286689a28135cfdd11702018",
+    "report/generated/dpc_values.tex": "24e7fba797cb10219047304f519794b471af8d893cc20dda010d40acd0716ffe"
+  },
+  "style": {
+    "module": "scripts/report_style.py",
+    "style_version": "1.0.0",
+    "module_sha256": "d7df8e01fb8c41658a35ca0fd27928c34b3aa47aa88356bc4dd30981178799d1",
+    "font": {
+      "family": "Libertinus Sans",
+      "fallback": false,
+      "files": {
+        "regular": {
+          "source": "LibertinusSans-Regular.otf",
+          "source_sha256": "41b60a752ab3b0eb1b1a689272b1502f165b2ed95d097194c2f56bc2009fa66e",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "ba719cc3044716aacbe2163956ed6245bb07391ca3cfadb4a777b9be05b5af7e"
+        },
+        "bold": {
+          "source": "LibertinusSans-Bold.otf",
+          "source_sha256": "6d321e921ae278afb3e81f7a1df4b65816b92928e838f3d11fc1abfe4c15715f",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "1bfd67b57cdf386dd236d9d73c4c6fbb99ba946317044852f30256cdfbe1795a"
+        },
+        "italic": {
+          "source": "LibertinusSans-Italic.otf",
+          "source_sha256": "cd74ad255b2f04939196bb280bd3856285f25fe44eab9eb350e704b425dba4d5",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "37552c78335335fab1ccd9aef800b85e0b1b4bfd84017914b503f6ba62e620b3"
+        }
+      }
+    },
+    "font_sizes_pt": {
+      "tick": 7.5,
+      "legend": 7.5,
+      "annotation": 7.5,
+      "label": 8.0,
+      "title": 8.5,
+      "panel": 9.5,
+      "minimum": 7.0
+    },
+    "widths_mm": {
+      "full": 155.0,
+      "one_half": 110.0,
+      "single": 75.0
+    },
+    "colormaps": {
+      "sequential": "report_seq",
+      "sequential_reversed": "report_seq_r",
+      "diverging": "report_div"
+    },
+    "pdf_fonttype": 42,
+    "matplotlib": "3.11.2"
+  }
+}

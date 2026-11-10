@@ -5,64 +5,106 @@
 \begin{titlepage}
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture,overlay]
-\node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{artwork/cover-editorial-v2.png}};
-\begin{scope}[shift={(current page.center)}]
-\fill[Navy,opacity=.035] (.5mm,-.9mm) circle (22mm);
-\fill[Navy,opacity=.06] (.4mm,-.7mm) circle (21.6mm);
-\fill[Navy,opacity=.09] (.3mm,-.5mm) circle (21.2mm);
+% header
+\node[anchor=north,align=center,font=\sffamily,text=Navy] at ([yshift=-22mm]current page.north)
+  {{\small\bfseries\addfontfeatures{LetterSpace=14}\MakeUppercase{University of Messina}}\\[2.2mm]
+   {\footnotesize\color{Ink}Department of Mathematical and Computer Sciences, Physical Sciences and Earth Sciences (MIFT)}\\[1mm]
+   {\footnotesize\color{Ink}Bachelor's Degree in Computer Science (L-31) \textperiodcentered{} Data Analysis curriculum}};
+% illustration band
+\node[anchor=north,inner sep=0pt] (band) at ([yshift=-50mm]current page.north)
+  {\includegraphics[width=\paperwidth,height=115mm]{artwork/cover-illustration-band.png}};
+\fill[Navy] (band.south west) rectangle ([yshift=1.2mm]band.south east);
+% centred logo with soft shadow
+\begin{scope}[shift={(band.center)}]
+\fill[Navy,opacity=.05] (.6mm,-1mm) circle (24.5mm);
+\fill[Navy,opacity=.08] (.4mm,-.7mm) circle (23.8mm);
+\fill[white] (0,0) circle (23mm);
 \clip (0,0) circle (21mm);
 \node[inner sep=0pt] at (0,0) {\includegraphics[width=42mm]{artwork/messina-logo-user-supplied.png}};
 \end{scope}
+% title block
+\node[anchor=north,align=center,text width=150mm] at ([yshift=-11mm]band.south)
+  {{\sffamily\small\color{Teal}\addfontfeatures{LetterSpace=10}\MakeUppercase{Report on internship activities}}\\[4mm]
+   {\fontsize{30}{34}\selectfont\bfseries\color{Navy} RobustCluster-Aβ}\\[3mm]
+   {\Large\color{Ink} Reproducible analysis of amyloid-β40 conformational descriptors}\\[2.5mm]
+   {\itshape\normalsize\color{Ink} Internship project: Clustering Framework for Intrinsically Disordered Proteins}};
+% details
+\node[anchor=north,font=\sffamily\small] at ([yshift=-62mm]band.south)
+  {\begin{tabular}{@{}r@{\hspace{1.2em}}l@{}}
+   \color{Teal}Student & Ali Erkan Ocaklı (student ID 555012)\\[1.5pt]
+   \color{Teal}Host laboratory & Laboratory of Experimental and Computational Physics of Biosystems, MIFT\\[1.5pt]
+   \color{Teal}Host supervisor & Prof.\ Valeria Conti Nibali\\[1.5pt]
+   \color{Teal}Co-supervisor & Andrea Ciccolo\\[1.5pt]
+   \color{Teal}Academic tutor & Prof.\ David Barilla\\[1.5pt]
+   \color{Teal}Hours completed & 75\\
+   \end{tabular}};
+\node[anchor=south,font=\sffamily\small,text=Navy] at ([yshift=16mm]current page.south) {Academic year 2025--2026};
 \end{tikzpicture}
 \null\vfill
 \end{titlepage}
 \pagenumbering{roman}
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-Molecular simulation data require both statistical analysis and an understanding of how the observations were generated. This curricular internship used amyloid-β40 descriptors to connect practical work with GROMACS, VMD and Python to a reproducible analysis of conformational clustering. The report develops the scientific background, examines the supplied implementation of the workflow of Cadenelli and colleagues, and presents a separate experiment on the choice of clustering features.
+This report describes a 75-hour curricular internship, completed in full, in the Laboratory of Experimental and Computational Physics of Biosystems at the University of Messina, on the project \emph{Clustering Framework for Intrinsically Disordered Proteins}. After a preparatory study of protein structure, intrinsic disorder and molecular dynamics, with practice in GROMACS and VMD, the final task was to reproduce the clustering workflow of Cadenelli and colleagues for amyloid-β40, vary its parameters, and propose an independent analysis framework.
 
-The available table contains 300,003 observations from three replicas over the source-labelled 1–3 microsecond interval. The audit identified problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries. A modular implementation addresses these operations through explicit validation, numerical tests and recorded run settings. The recovered free-energy surface contains the complete grid and covers all converted descriptor queries. Its energy units and construction procedure remain unverified, so equilibrium clustering and population estimates are not reported.
+The supplied table contains 300,003 descriptor observations from three replicas of well-tempered metadynamics. An audit of the supplied script found problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries; a modular, tested reimplementation corrects them. Run with the published parameters on all frames, it finds \DPCFamilies{} density-peak families, which separate mainly by secondary structure and are shared unevenly between replicas; the partition changes substantially with the initialization seed (ARI \DPCSeedARIMin--\DPCSeedARIMax) and with single parameters. Because the free-energy surface does not state its unit, populations were computed assuming kJ\,mol$^{-1}$: reweighting removes the helix-rich families and concentrates \WTopThree\% of the weight on three compact or extended families, a pattern that holds even if the file were in kcal\,mol$^{-1}$.
 
-The completed descriptor analysis found a pooled correlation of \RgSasaCorrelation{} between radius of gyration and solvent-accessible surface area (SASA). The first two standardized principal components account for \PCATwo\% of variance. To examine whether the correlation justified removing SASA, Gaussian mixtures were fitted to four and three descriptors using one shared, replica-balanced fitting sample. Five component counts and five initialization seeds produced fifty converged fits. The median agreement between feature sets was 0.864 at three components and 0.457 at six, showing that the effect of feature removal depends on the fitted model.
+As the independent framework, Gaussian mixtures were fitted with and without solvent-accessible surface area (SASA), which correlates strongly with radius of gyration ($r=\RgSasaCorrelation{}$): fifty converged fits across two feature sets, five component counts and five seeds. Median agreement between feature sets was 0.864 at three components but 0.457 at six, so whether SASA is redundant depends on the model. Each 100,001-frame series yields only \ESSMinimum{}–\ESSMaximum{} effective samples, so all results are descriptive statements about a biased, correlated sample.
 
-All twelve replica–descriptor correlation estimates failed at least one reliability check. The results therefore remain descriptive comparisons in a biased, temporally dependent sample; they do not establish physical metastable states or unbiased kinetic rates. The accompanying code, figures and source records make the completed calculations inspectable. The learning account also identifies VMD MCP and GROMACS MCP as personal software projects, without attributing the supplied simulations to them.
+\vspace{5mm}\noindent\textbf{Keywords:} curricular internship; amyloid-β40; intrinsically disordered peptides; well-tempered metadynamics; clustering; Gaussian mixtures; reproducibility.
 
-\vspace{5mm}\noindent\textbf{Keywords:} amyloid-β40; intrinsically disordered peptides; well-tempered metadynamics; density peaks; statistical reweighting; reproducibility.
+\chapter*{Internship at a glance}
+\addcontentsline{toc}{chapter}{Internship at a glance}
+\begin{keyfindings}[The internship]
+\begin{findings}
+\item \textbf{Host.} Laboratory of Experimental and Computational Physics of Biosystems, MIFT, University of Messina.
+\item \textbf{Supervision.} Prof.\ Valeria Conti Nibali (host supervisor), Andrea Ciccolo (co-supervisor), Prof.\ David Barilla (academic tutor).
+\item \textbf{Workload and period.} 75 hours completed; registered period 25 May -- 30 September 2026; training project approved 25 June 2026.
+\item \textbf{Tools.} GROMACS, VMD, Python (NumPy, SciPy, pandas, scikit-learn, Matplotlib), pytest, Snakemake, Git/GitHub, LaTeX.
+\end{findings}
+\end{keyfindings}
+\begin{keyfindings}[Key findings]
+\begin{findings}
+\item \textbf{The supplied data pass every structural check.} 300,003 frames form exactly three replicas of 100,001 frames at 20 ps; the recovered FES is a complete grid containing every descriptor query.
+\item \textbf{The published clustering is reproduced, but it is sensitive.} With the published parameters, all frames form \DPCFamilies{} families; changing only the seed gives ARIs of \DPCSeedARIMin--\DPCSeedARIMax{} with that partition.
+\item \textbf{Reweighting reshapes the families (assumed FES unit).} Under the kJ\,mol$^{-1}$ assumption, three families carry \WTopThree\% of the weight and the helix-rich families almost vanish; the pattern survives the kcal\,mol$^{-1}$ alternative.
+\item \textbf{Saved frames are far from independent.} Each 100,001-frame series yields only \ESSMinimum{}–\ESSMaximum{} effective samples, and all twelve estimates fail the reliability screen.
+\item \textbf{Correlation does not make SASA redundant.} Dropping SASA preserves the three-component partition (ARI 0.862–0.868; 95.3\% of frames keep matched labels), but at six components median agreement falls to 0.457.
+\item \textbf{A single fit can mislead.} At three components seed-to-seed ARI is 0.988–1.000; at two it drops as low as 0.011, which is why every setting was repeated with five seeds.
+\end{findings}
+\end{keyfindings}
+\addsec*{Abbreviations}
+{\small\noindent\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{\hspace{1.5em}}l>{\raggedright\arraybackslash}X@{}}\toprule
+Term & Meaning & Term & Meaning\\\midrule
+ACF & Autocorrelation function & IDP & Intrinsically disordered protein or peptide\\
+ARI & Adjusted Rand index & MD & Molecular dynamics\\
+CV & Collective variable & PCA & Principal component analysis\\
+DPC / DPA & Density Peak Clustering / Density Peaks Advanced & SASA & Solvent-accessible surface area\\
+ESS & Effective sample size & SEM & Standard error of the mean\\
+FES & Free-energy surface & WT-MetaD & Well-tempered metadynamics\\
+GMM & Gaussian mixture model & MCP & Model Context Protocol\\\bottomrule
+\end{tabularx}}
 \tableofcontents
-\chapter*{Abbreviations and evidence categories}
-\addcontentsline{toc}{chapter}{Abbreviations and evidence categories}
-\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
-Term & Meaning\\\midrule
-ACF & Autocorrelation function\\
-ARI & Adjusted Rand index\\
-CV & Collective variable\\
-GMM & Gaussian mixture model\\
-DPC / DPA & Density Peak Clustering / Density Peaks Advanced\\
-ESS & Effective sample size; estimator and assumptions stated explicitly\\
-FES & Free-energy surface\\
-IDP & Intrinsically disordered protein or peptide\\
-MD & Molecular dynamics\\
-PCA & Principal component analysis\\
-SASA & Solvent-accessible surface area\\
-SEM & Standard error of the mean\\
-WT-MetaD & Well-tempered metadynamics\\\bottomrule
-\end{tabularx}
-
-\vspace{6mm}
-The report separates the published method, its implementation, corrections to the supplied code, additional robustness experiments, and future work. A software test checks how the code behaves on a specified example; it does not establish a biological result. An analysis marked \blocked{} lacks required inputs or information about their origin. Learning topics in the internship programme are also distinguished from work that has a recorded output.
 \clearpage
 \pagenumbering{arabic}
 \label{mainstart}
 \input{chapters/01_introduction.tex}
-\input{chapters/02_background.tex}
-\input{chapters/03_methodology.tex}
-\input{chapters/04_audit.tex}
-\input{chapters/05_robustness.tex}
+\input{chapters/02_host.tex}
+\input{chapters/03_background.tex}
+\input{chapters/04_methods.tex}
+\input{chapters/05_activities.tex}
 \input{chapters/06_results.tex}
-\input{chapters/07_discussion.tex}
-\input{chapters/08_outcomes.tex}
-\input{chapters/09_conclusions.tex}
+\input{chapters/07_skills.tex}
+\input{chapters/08_conclusions.tex}
 \label{mainend}
+\chapter*{Signatures}
+\addcontentsline{toc}{chapter}{Signatures}
+\vspace{14mm}
+\noindent\begin{tabularx}{\textwidth}{@{}XXX@{}}
+\rule{.9\linewidth}{.4pt} & \rule{.9\linewidth}{.4pt} & \rule{.9\linewidth}{.4pt}\\
+\small Student\newline Ali Erkan Ocaklı & \small Host supervisor\newline Prof.\ Valeria Conti Nibali & \small Academic tutor\newline Prof.\ David Barilla\\[10mm]
+\small Place and date & \small Place and date & \small Place and date\\
+\end{tabularx}
 \clearpage
 \printbibliography
 \appendix

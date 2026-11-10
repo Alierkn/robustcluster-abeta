@@ -1,0 +1,96 @@
+\chapterlede{This chapter gives a detailed account of the activities carried out, following the programme blocks of \cref{tab:programme}.}
+\chapter{Activities carried out}
+\label{ch:activities}
+\section{Preparatory study}
+The internship required more than applying a familiar statistical method to a new table. The assigned programme began with the concepts needed to interpret the data: amino acids, peptide bonds, protein structure and intrinsic disorder. Force fields, molecular dynamics and dihedral angles connected those concepts to simulation. The final task brought them together through examination of a clustering analysis and an independent investigation.
+
+Two ideas from this block shaped all later work. Saved configurations need not be independent observations, and their frequency in a biased simulation differs from their equilibrium probability. Both connect the molecular setting to statistics and explain why the origin of the data matters as much as the clustering method.
+
+\section{Practical work with GROMACS and VMD}
+\label{sec:mdpractice}
+I used GROMACS, VMD and Python during the internship. Learning to use GROMACS was one of the more challenging parts of the internship for me. I found the process demanding at first, but I also enjoyed becoming more familiar with the software. The simulation block introduced the practical steps of setting up and running a molecular-dynamics simulation, and VMD was used to inspect and measure molecular structures. These exercises were training activities: the Aβ40 data analysed in this report were produced by the original study, not by simulations run during the internship. Working with both programs also led to two personal software projects that wrap them in a simpler interface (\cref{sec:personal}). \Cref{fig:tooling} in \cref{app:companion} places the tools in relation to each other and to these projects.
+
+
+
+\section{Task 1: running and auditing the supplied script}
+\label{sec:task1}
+\subsection{Running the supplied script}
+The audit separated three questions: what the paper describes, what the supplied code attempts, and what execution records show. The supplied script combines input reading, replica separation, clustering, weighting and plotting in one file, and a bare Italian sentence at line 437 stops it with a syntax error before anything runs. No original execution record was available, so the script is evidence of intent rather than of a completed run; it is preserved unchanged.
+
+\subsection{Identified methodological issues}
+The corrections in \cref{tab:auditcorrections} concern which observations enter the analysis and how clusters are interpreted.
+
+\begin{table}[htbp]
+\centering
+\caption{Methodological corrections in the modular implementation. The original script remains unchanged.}
+\label{tab:auditcorrections}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.38\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Supplied-script behaviour & Correction and consequence\\
+\midrule
+Takes the first three time-reset segments and skips some malformed rows.
+& Checks every row and requires exactly three segments, making incomplete or invalid input an explicit failure.\\
+\addlinespace
+Sends rejected frames into consensus under a generic label.
+& Uses accepted memberships to discover global centres. Rejected frames receive final labels without being treated as a discovered family.\\
+\addlinespace
+Permits missing FES cells; nearest-grid lookup can return a boundary value for an out-of-range query.
+& Requires a complete grid and bounded bilinear interpolation; queries outside the grid fail.\\
+\addlinespace
+Weights relevance but uses unweighted descriptor means and standard deviations.
+& Weights cluster summaries consistently and normalizes each replica before pooling. Distribution width, replica SEM and bootstrap intervals remain distinct.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Random grouping was also corrected: the script draws its groups from a fixed list of 17 seeds, which runs out if more groups are requested, whereas the reimplementation derives independent streams from one recorded seed.
+
+\subsection{Verification and numerical tests}
+The 38 tests check each numerical operation on inputs with known answers, such as an analytic bilinear surface and weight normalization with unequal replica lengths, and run synthetic end-to-end fixtures; two worked examples are given in \cref{app:codeaudit}.
+
+\subsection{Remaining ambiguities}
+The paper does not fully specify the scaling used in consensus, how the replica-averaged FES was built, or the conventions behind every reported uncertainty, and an intermediate script version mentioned in the materials could not be located. Where the code was clearer, its choice was adopted and recorded as source-informed.
+
+\subsection{Running the corrected workflow on the real data}
+\label{sec:dpcrun}
+The three clustering steps (local density-peak discovery, Wasserstein consensus and final assignment) do not use statistical weights: only the final characterization of families needs the FES. A separate \code{cluster} command therefore runs these steps without reading the FES, and reports family sizes as raw frame fractions of the biased sample rather than populations. With the published parameters and group size, all \num{300003} frames entered discovery in \DPCGroups{} random groups of about \num{30000}; \DPCLocalClusters{} local clusters passed the size and silhouette criteria, and consensus merged them into \DPCFamilies{} families (\cref{sec:dpcfamilies}). The run took \DPCMinutes{} minutes with a peak memory of \DPCMemory{} GiB, measured before the published full profile was enabled. Rerunning with the same seed reproduces the partition exactly. This completes the reproduction of the clustering itself. The weighted populations were then computed under an explicitly stated assumption about the FES unit (\cref{sec:weighted}).
+
+\section{Task 2: varying the parameters}
+\label{sec:task2}
+With the workflow running on the real data, the parameter study could be carried out. Every variant was compared with the reference partition (seed 42, published parameters) on the same frame identities using the adjusted Rand index. Two kinds of variation were tested, each at the published full profile and at a reduced medium profile (three groups of \num{10000} frames):
+\begin{itemize}
+\item \emph{Initialization}: the random assignment of frames to discovery groups, with four further seeds derived from the master seed;
+\item \emph{One parameter at a time}: the cutoff $d_c$ scaled by 0.9 and 1.1, the silhouette threshold set to 0.25 and 0.35, and the minimum cluster size set to 200 and 400 frames.
+\end{itemize}
+A third comparison replaced the raw descriptor scales in the Wasserstein consensus with normalized ones, testing whether the under-weighted $R_g$ changes the families. The results are reported in \cref{sec:dpcfamilies}. Comparisons that still need further inputs were prepared but not run:
+\begin{itemize}
+\item \emph{Time-dependent reweighting}: keep labels fixed and contrast final-bias weights with \code{metad.rbias} weights \autocite{tiwary2015,bonomi2009,plumedreweight}, once the METAD settings are known;
+\item \emph{Alternative density clustering}: DPA \autocite{derrico2021}; ShapeGMM would additionally need structural coordinates \autocite{sasmal2024};
+\item \emph{External validation}: comparison with an experimentally constrained Aβ40 ensemble \autocite{borthakur2025}.
+\end{itemize}
+
+\section{Task 3: an independent analysis framework}
+\label{sec:task3}
+The supervisors asked for an alternative framework drawn from the Bachelor's programme. The data-mining course of the curriculum had covered correlation analysis, feature scaling and outlier detection; the independent framework builds on these and extends them with principal component analysis and Gaussian mixture models. The descriptor diagnostics suggested a concrete question for this framework: radius of gyration and SASA are strongly correlated (\cref{ch:results}), so is SASA redundant for clustering? The experiment tests whether removing SASA changes assignments, comparing four descriptors with $\na$, $\nb$ and $R_g$ using Gaussian mixtures:
+\begin{equation}
+p(\mathbf{x})=\sum_{j=1}^{K}\pi_j\mathcal{N}(\mathbf{x}\mid\symbf{\mu}_j,\symbf{\Sigma}_j),\qquad \sum_j\pi_j=1.
+\label{eq:gmm}
+\end{equation}
+In \cref{eq:gmm}, components approximate the sampled descriptor distribution; their mixture coefficients are not equilibrium weights. The scikit-learn implementation uses full covariance matrices \autocite{pedregosa2011}.
+
+The protocol was fixed before execution (\cref{app:parameters}): every fit uses the same \num{3000} frames, \num{1000} per replica; the scaling is estimated on those rows only and shared between the two feature sets; each of the five component counts $K=2,\ldots,6$ is fitted with five seeds in both feature spaces, giving 50 fits; and all \num{300003} frames are then labelled and compared with ARIs, five paired across feature sets and ten between seeds within each feature set.
+
+The comparison is descriptive: keeping the fitting sample fixed isolates the feature and seed effects, and observed ranges are not confidence intervals.
+
+\section{Software practice}
+\label{sec:software}
+Small programming decisions also became explicit parts of the analysis. Feature scaling is fitted on a specified sample and reused for later observations. A test checks that a large evaluation value cannot alter that transformation. Original frame identities are retained so that label arrays refer to the same observations. These details determine whether a difference comes from the method under investigation or an unintended change in preprocessing.
+
+\begin{codepanel}{Fit once, reuse the same scale}{RobustCluster-Aβ / Python}
+\lstinputlisting[style=editorialcode]{generated/fit_scaler.py}
+\end{codepanel}
+
+\Cref{fig:architecture} in \cref{app:codeaudit} shows how the package fits together: inputs are validated once at the boundary, analysis functions receive explicit arrays and settings, and each command writes a manifest before producing tables or figures.
+
+
+

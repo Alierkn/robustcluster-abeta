@@ -1,0 +1,253 @@
+{
+  "generated_utc": "2026-11-10T14:29:54+00:00",
+  "script": "scripts/build_premium_figures.py",
+  "script_sha256": "3216e58cd27c54653a446cb64ed627e3be66aa069833e2f3cb04021e817b2bb6",
+  "command": "build_premium_figures.py --out results/figures/report-style-v1/premium",
+  "scientific_scope": "Descriptive only. Unweighted biased sample; no reweighting, clustering, populations or equilibrium interpretation. FES energy unit unverified.",
+  "inputs": {
+    "descriptors": {
+      "path": "data/raw/input_clustering_ab40.dat",
+      "resolved_path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/input_clustering_ab40.dat",
+      "bytes": 31137940,
+      "sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77",
+      "matches_documented_sha256": true
+    },
+    "fes": {
+      "path": "data/raw/FES_AB_40.dat",
+      "resolved_path": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/FES_AB_40.dat",
+      "bytes": 273309138,
+      "sha256": "6fd6c3d7c04e20859cf91abb4765e126e0f3fcb982d3795b643165dde26fa3f4",
+      "matches_documented_sha256": true
+    }
+  },
+  "statistics": {
+    "descriptor_input": {
+      "frames_in_interval": 300003,
+      "interval_ps_inclusive": [
+        1000000.0,
+        3000000.0
+      ],
+      "frames_per_replica": {
+        "1": 100001,
+        "2": 100001,
+        "3": 100001
+      },
+      "replica_detection": "time resets in the source file (robustcluster_abeta.io.read_descriptors)",
+      "weighting": "none; biased WT-MetaD sample"
+    },
+    "descriptor_landscape": {
+      "hexbin_gridsize": 48,
+      "weighting": "none (unweighted biased sample)",
+      "Rg_vs_SASA": {
+        "pooled_pearson_r": 0.847578390701783,
+        "per_replica_pearson_r": {
+          "1": 0.8048286362378987,
+          "2": 0.8546671372142015,
+          "3": 0.8630937427139298
+        },
+        "max_frames_per_hexagon": 6275,
+        "occupied_hexagons": 959
+      },
+      "nAlpha_vs_nBeta": {
+        "pooled_pearson_r": -0.45605491431669026,
+        "per_replica_pearson_r": {
+          "1": -0.5402836204896954,
+          "2": -0.25259103031241736,
+          "3": -0.39727137105914706
+        },
+        "max_frames_per_hexagon": 1165,
+        "occupied_hexagons": 1242
+      }
+    },
+    "fes_map": {
+      "grid_shape_alpha_by_beta": [
+        2801,
+        1301
+      ],
+      "alpha_range": [
+        0.0,
+        28.0
+      ],
+      "beta_range": [
+        0.0,
+        13.0
+      ],
+      "file_free_min": 0.0,
+      "file_free_max": 82.213430126,
+      "shift_applied": 0.0,
+      "relative_F_max": 82.213430126,
+      "grid_fraction_at_max_plateau": 0.6108573829320318,
+      "grid_fraction_F_le_10": 0.012768855747960883,
+      "grid_fraction_F_le_20": 0.07218817480635141,
+      "grid_fraction_F_le_40": 0.1807274276975309,
+      "minimum_location_alpha_beta": [
+        0.87,
+        2.9
+      ],
+      "energy_unit": "unverified (file declares none)",
+      "plot_stride": 4,
+      "plotted_grid_shape": [
+        701,
+        326
+      ],
+      "contour_levels": [
+        0.0,
+        84.0,
+        4.0
+      ],
+      "query_conversion": "alpha = nAlpha/1.1, beta = nBeta/2.5",
+      "query_alpha_range": [
+        0.16911363636363635,
+        23.577880909090908
+      ],
+      "query_beta_range": [
+        0.00017999999999999998,
+        12.00282
+      ],
+      "queries_outside_grid": 0,
+      "coverage_histogram_bin": 0.2,
+      "coverage_smoothing_sigma_bins": 1.0,
+      "coverage_hpd_masses": [
+        0.5,
+        0.9,
+        0.99
+      ],
+      "convex_hull_vertices": 21,
+      "convex_hull_area": 151.73699427769634,
+      "convex_hull_fraction_of_grid_area": 0.4168598743892757
+    },
+    "rg_timeseries": {
+      "frame_spacing_ps": 20.0,
+      "rolling_window_frames": 1000,
+      "rolling_window_ns": 20.0,
+      "rolling": "centred, full window only",
+      "marginal": "unweighted density histogram, bin 0.02 nm; dashed = median",
+      "per_replica": {
+        "1": {
+          "frames": 100001,
+          "time_ps_range": [
+            1000000.0,
+            3000000.0
+          ],
+          "Rg_mean_nm": 1.1889760509894902,
+          "Rg_median_nm": 1.15329,
+          "Rg_sd_nm": 0.17438843452460281,
+          "Rg_min_nm": 0.924168,
+          "Rg_max_nm": 2.69561,
+          "rolling_mean_range_nm": [
+            0.977793991,
+            1.80045025
+          ]
+        },
+        "2": {
+          "frames": 100001,
+          "time_ps_range": [
+            1000000.0,
+            3000000.0
+          ],
+          "Rg_mean_nm": 1.213163890301097,
+          "Rg_median_nm": 1.11801,
+          "Rg_sd_nm": 0.28363048763853455,
+          "Rg_min_nm": 0.923868,
+          "Rg_max_nm": 3.42243,
+          "rolling_mean_range_nm": [
+            0.962715957,
+            2.38180118
+          ]
+        },
+        "3": {
+          "frames": 100001,
+          "time_ps_range": [
+            1000000.0,
+            3000000.0
+          ],
+          "Rg_mean_nm": 1.221453122188778,
+          "Rg_median_nm": 1.12565,
+          "Rg_sd_nm": 0.2924077267016421,
+          "Rg_min_nm": 0.913545,
+          "Rg_max_nm": 3.09781,
+          "rolling_mean_range_nm": [
+            0.9559989,
+            2.24649538
+          ]
+        }
+      }
+    }
+  },
+  "outputs": {
+    "descriptor_landscape.pdf": {
+      "sha256": "35e4cbdaa0c2a8cd735ca82fc24683c0a391dcca8a2862a8091cb5c2b71e2fdc",
+      "bytes": 42757
+    },
+    "fes_map.pdf": {
+      "sha256": "d9cf4e0c2e1d4056ba38be8313175c702f27f27dd0c39a8b1e009a19cb1ad229",
+      "bytes": 365413
+    },
+    "rg_timeseries.pdf": {
+      "sha256": "270b12cd430beef95be84d07a685c82da1103a5a1af6bb0cefacfc77de4c8c00",
+      "bytes": 204971
+    }
+  },
+  "figure_width_mm": 155.0,
+  "style": {
+    "module": "scripts/report_style.py",
+    "style_version": "1.0.0",
+    "module_sha256": "d7df8e01fb8c41658a35ca0fd27928c34b3aa47aa88356bc4dd30981178799d1",
+    "font": {
+      "family": "Libertinus Sans",
+      "fallback": false,
+      "files": {
+        "regular": {
+          "source": "LibertinusSans-Regular.otf",
+          "source_sha256": "41b60a752ab3b0eb1b1a689272b1502f165b2ed95d097194c2f56bc2009fa66e",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "ba719cc3044716aacbe2163956ed6245bb07391ca3cfadb4a777b9be05b5af7e"
+        },
+        "bold": {
+          "source": "LibertinusSans-Bold.otf",
+          "source_sha256": "6d321e921ae278afb3e81f7a1df4b65816b92928e838f3d11fc1abfe4c15715f",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "1bfd67b57cdf386dd236d9d73c4c6fbb99ba946317044852f30256cdfbe1795a"
+        },
+        "italic": {
+          "source": "LibertinusSans-Italic.otf",
+          "source_sha256": "cd74ad255b2f04939196bb280bd3856285f25fe44eab9eb350e704b425dba4d5",
+          "embedded_as": "TrueType (Type 42 subset)",
+          "converter": "cu2qu-1e-3em-v1",
+          "converted_sha256": "37552c78335335fab1ccd9aef800b85e0b1b4bfd84017914b503f6ba62e620b3"
+        }
+      }
+    },
+    "font_sizes_pt": {
+      "tick": 7.5,
+      "legend": 7.5,
+      "annotation": 7.5,
+      "label": 8.0,
+      "title": 8.5,
+      "panel": 9.5,
+      "minimum": 7.0
+    },
+    "widths_mm": {
+      "full": 155.0,
+      "one_half": 110.0,
+      "single": 75.0
+    },
+    "colormaps": {
+      "sequential": "report_seq",
+      "sequential_reversed": "report_seq_r",
+      "diverging": "report_div"
+    },
+    "pdf_fonttype": 42,
+    "matplotlib": "3.11.2"
+  },
+  "software": {
+    "python": "3.12.6",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1"
+  },
+  "runtime_seconds": 3.89
+}

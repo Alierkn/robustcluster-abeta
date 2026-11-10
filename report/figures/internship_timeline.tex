@@ -1,0 +1,82 @@
+% Internship timeline, May-November 2026 (native TikZ; no extra libraries beyond arrows.meta/positioning).
+% Only verified dates are drawn. x unit = one calendar day from 1 May 2026 (0.6 mm/day).
+% Day numbers: 12 May=11, 25 May=24, 25 Jun=55, 30 Jun=60, 1 Jul=61, 4 Sep=126, 10 Sep=132,
+% 16 Sep=138, 18 Sep=140, 24 Sep=146, 30 Sep=152, 6 Oct=158, 12 Nov=195; months at 0,31,61,92,123,153,184,214.
+% Block bars run from assignment to the next assignment; the summer-break start ("early July")
+% and the report-drafting span ("late Sep - Oct") are approximate by construction.
+\begin{tikzpicture}[
+  x=0.6mm,y=1mm,
+  font=\sffamily\footnotesize,
+  rowname/.style={anchor=east,align=right,text width=21mm,inner sep=0pt,
+    font=\sffamily\scriptsize\bfseries,text=Teal},
+  note/.style={font=\sffamily\scriptsize,text=Ink,inner sep=1pt},
+  block/.style={fill=Teal,draw=none},
+  ms/.style={rectangle,rotate=45,minimum size=2.2mm,inner sep=0pt,fill=Navy,draw=white,line width=.4pt},
+  msopen/.style={ms,fill=white,draw=Navy,line width=.6pt},
+  month/.style={font=\sffamily\scriptsize\bfseries\addfontfeatures{LetterSpace=8},text=Navy}]
+% ---- registered period: CoolGrey band behind the chart + thin bracket on top
+\fill[CoolGrey] (24,1.5) rectangle (152,-51);
+\draw[Navy!30,line width=.3pt] (24,1.5) -- (24,-51) (152,1.5) -- (152,-51);
+\draw[Navy!70,line width=.5pt] (24,7.6) -- (24,9) -- (152,9) -- (152,7.6);
+\node[note,anchor=south,fill=white,inner xsep=2pt] at (88,9)
+  {registered period in the training project \textperiodcentered{} 25 May -- 30 Sep 2026};
+% ---- month axis
+\foreach \m in {0,31,61,92,123,153,184,214}
+  \draw[Navy!15,line width=.3pt] (\m,1.5) -- (\m,-51);
+\draw[Navy!70,line width=.5pt] (0,1.5) -- (214,1.5);
+\foreach \m in {0,31,61,92,123,153,184,214}
+  \draw[Navy!70,line width=.5pt] (\m,1.5) -- (\m,3);
+\foreach \c/\t in {15.5/MAY,46/JUN,76.5/JUL,107.5/AUG,138/SEP,168.5/OCT,199/NOV}
+  \node[month,anchor=base] at (\c,3.4) {\t};
+% ---- summer break: hatched gap across the block rows (start approximate)
+\begin{scope}
+  \clip (68,-9) rectangle (126,-51);
+  \fill[white] (68,-9) rectangle (126,-51);
+  \foreach \i in {-4,0,...,128}
+    \draw[Navy!28,line width=.35pt] (\i,-51) -- ++(42mm,42mm);
+\end{scope}
+\draw[Navy!35,line width=.3pt,densely dashed] (68,-9) -- (68,-51);
+\node[note,fill=white,font=\sffamily\scriptsize\itshape,inner sep=2pt] at (97,-30) {summer break};
+% ---- row names
+\foreach \y/\t in {-4/{Proposal and\\training project},-14/{Proteins and\\disorder},-22/Simulation,
+                   -30/{Clustering\\method},-38/{Clustering\\project},-46/Report}
+  \node[rowname] at (-4,\y) {\t};
+% ---- row 1: proposal and training project
+\node[ms] at (11,-4) {};
+\node[note,anchor=south west] at (9,-2.6) {12 May \textperiodcentered{} internship proposal published (75\,h, 6 months)};
+\node[ms] at (55,-4) {};
+\node[note,anchor=north west] at (53,-5.4) {25 Jun \textperiodcentered{} training project signed by the degree coordinator};
+% ---- row 2: proteins and disorder (25 Jun -> 1 Jul), discussion meeting 30 Jun
+\fill[block] (55,-15.5) rectangle (61,-12.5);
+\node[ms] at (60,-14) {};
+\node[note,anchor=east,align=right] at (52,-14) {assigned 25 Jun\\discussion meeting 30 Jun};
+% ---- row 3: simulation (1 Jul -> summer break)
+\fill[block] (61,-23.5) rectangle (68,-20.5);
+\node[note,anchor=east,align=right] at (58,-22) {assigned 1 Jul \textperiodcentered{} force fields,\\MD, GROMACS/VMD};
+% ---- row 4: clustering method (4 Sep -> 18 Sep), online script walkthrough 10 Sep
+\fill[block] (126,-31.5) rectangle (140,-28.5);
+\node[ms] at (132,-30) {};
+\node[note,anchor=west,align=left] at (143,-30) {resumed 4 Sep \textperiodcentered{} online script\\walkthrough 10 Sep};
+% ---- row 5: clustering project (assigned 18 Sep, end open); meetings 16 and 24 Sep
+\fill[left color=Teal,right color=Teal!0,draw=none] (140,-39.5) rectangle (166,-36.5);
+\fill[block] (140,-39.5) rectangle (150,-36.5);
+\node[ms] at (138,-38) {};
+\node[ms] at (146,-38) {};
+\node[note,anchor=west,align=left] at (168,-38) {assigned 18 Sep\\meetings 16 and 24 Sep};
+% ---- row 6: report drafting (late Sep - Oct), report requested 6 Oct, review proposed 12 Nov
+\fill[block] (143,-47.5) rectangle (184,-44.5);
+\node[font=\sffamily\scriptsize,text=white,anchor=east,inner sep=0pt] at (182.5,-46) {drafting};
+\node[ms] at (158,-46) {};
+\node[msopen] at (195,-46) {};
+\node[note,anchor=north east,align=right] at (159.5,-48.6) {6 Oct \textperiodcentered{} report\\requested by supervisor};
+\node[note,anchor=north east,align=right] at (214,-48.6) {12 Nov \textperiodcentered{} review\\meeting (scheduled)};
+% ---- legend
+\begin{scope}[shift={(0,-61)}]
+  \node[note,anchor=center] at (87.5,0) {%
+    \tikz[baseline=-.6ex]\fill[Teal] (0,-1.1mm) rectangle (4.5mm,1.1mm);\enspace block, from assignment\quad
+    \tikz[baseline=-.6ex]\fill[left color=Teal,right color=Teal!0] (0,-1.1mm) rectangle (4.5mm,1.1mm);\enspace end not recorded\quad
+    \tikz[baseline=-.6ex]\node[ms] {};\enspace meeting or milestone\quad
+    \tikz[baseline=-.6ex]\node[msopen] {};\enspace scheduled\quad
+    \tikz[baseline=-.6ex]{\fill[CoolGrey] (0,-1.1mm) rectangle (4.5mm,1.1mm);\draw[Navy!30,line width=.3pt] (0,-1.1mm) rectangle (4.5mm,1.1mm);}\enspace registered period};
+\end{scope}
+\end{tikzpicture}

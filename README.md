@@ -2,7 +2,7 @@
 
 **Reproducible analysis of amyloid-β40 conformational descriptors**
 
-Scientific code audit · sampling diagnostics · feature-space sensitivity
+Scientific code audit · real-data DPC reproduction · sampling diagnostics · feature-space sensitivity
 
 [Read the report](report/report.pdf) · [Download the report](https://github.com/Alierkn/robustcluster-abeta/raw/refs/heads/main/report/report.pdf) · [Browse the source](https://github.com/Alierkn/robustcluster-abeta/tree/main/src/robustcluster_abeta) · [Download source ZIP](https://github.com/Alierkn/robustcluster-abeta/archive/refs/heads/main.zip)
 
@@ -14,7 +14,7 @@ Scientific code audit · sampling diagnostics · feature-space sensitivity
 
 RobustCluster-Aβ is a curricular internship research project by **Ali Erkan Ocaklı**, Data Analysis L-31, University of Messina. It examines how computational choices affect the interpretation of Aβ40 conformational descriptors and makes the analysis inspectable through modular Python code, numerical tests, saved outputs and a LaTeX report.
 
-The project distinguishes the published workflow of [Cadenelli et al. (2026)](https://pubs.acs.org/doi/10.1021/acs.jpcb.6c01000), an audited implementation of that workflow, and a separate robustness extension. The completed results concern descriptor diagnostics and an unweighted Gaussian-mixture feature-ablation pilot. **The published equilibrium-clustering reproduction is incomplete:** the complete FES passed numerical validation, but its energy units and construction provenance remain unresolved.
+The project distinguishes the published workflow of [Cadenelli et al. (2026)](https://pubs.acs.org/doi/10.1021/acs.jpcb.6c01000), an audited implementation of that workflow, and a separate robustness extension. The completed results are descriptor diagnostics, the published density-peak clustering run on all 300,003 frames with seed and parameter studies, and an unweighted Gaussian-mixture feature-ablation pilot. **Weighted family populations are conditional on an assumption:** the FES file does not state its energy unit or how the replicas were combined, so populations are computed assuming the PLUMED default kJ/mol for a `sum_hills` free energy of the three combined replicas, with a kcal/mol comparison.
 
 ## What is available
 
@@ -23,6 +23,8 @@ The project distinguishes the published workflow of [Cadenelli et al. (2026)](ht
 | [Academic report](report/report.pdf) | Scientific background, methods, audit, observed results and limitations; editable [LaTeX source](report/report.tex) |
 | [Modular Python package](src/robustcluster_abeta) | Input validation, DPC, consensus, FES interpolation, weighting, diagnostics and independent experiments |
 | [Descriptor diagnostics](results/manifests/20260921T011959-583b4421.json) | Real data: 300,003 frames across three replicas; correlation, PCA, distributions and autocorrelation diagnostics |
+| [DPC clustering, full profile](results/manifests/20261110T145503-7338c22e.json) | Published parameters on all frames: 96 accepted local clusters, 11 families; [seed](results/manifests/20261110T151008-5db6b98e.json) and [parameter](results/manifests/20261110T151008-76ee7a71.json) studies give ARI 0.44–0.74 |
+| [Weighted populations](results/manifests/20261110T172236-15d7c0ca.json) | Final-bias weights under the stated kJ/mol assumption ([config](config/paper_reproduction_full_assumed.yaml)); three families carry 77.7% of the weight |
 | [GMM sensitivity pilot](docs/GMM_ABLATION_PILOT.md) | 50 real-data fits: two feature spaces, five component counts and five seeds; all reported convergence |
 | [Tests](tests) and [QA record](docs/FINAL_QA.md) | Analytic and synthetic checks of numerical behavior; these are not additional biological observations |
 | [Method audit](METHOD_AUDIT.md) and [open questions](docs/OPEN_QUESTIONS.md) | Corrections, unresolved choices and prerequisites for further scientific claims |
@@ -72,11 +74,17 @@ robustcluster gmm-ablation --config config/gmm_ablation.yaml
 
 These commands create new run directories rather than replacing the evidence used in the report. The independent GMM pilot does not require an FES.
 
-The reproduction and DPC robustness stages additionally require a complete, provenanced FES with verified energy units. With the current configuration, they terminate as `BLOCKED`:
+The density-peak clustering itself needs no FES. The published full profile (ten groups of 30,000 frames, about 15 minutes and 4 GiB) is enabled in reviewed configurations:
 
 ```bash
-robustcluster reproduce --config config/paper_reproduction.yaml --profile smoke
-robustcluster robustness --config config/robustness.yaml --experiment seed-pilot
+robustcluster cluster --config config/paper_reproduction_full.yaml --profile full --experiment baseline
+robustcluster cluster --config config/robustness_full.yaml --profile full --experiment parameters
+```
+
+Weighted populations require an explicit FES unit and provenance statement. `config/paper_reproduction_full_assumed.yaml` states the unconfirmed kJ/mol assumption in its header and in every manifest it produces; with `config/paper_reproduction.yaml` the same command still stops as `BLOCKED`:
+
+```bash
+robustcluster reproduce --config config/paper_reproduction_full_assumed.yaml --profile full
 ```
 
 Every analysis command records a resolved configuration, input/output hashes, software versions, seeds, runtime and sampled process-tree peak memory. Exit codes are **0: SUCCESS**, **2: BLOCKED**, **3: FAILED**. A file's presence alone is not evidence that its producing stage succeeded.
@@ -89,9 +97,9 @@ Every analysis command records a resolved configuration, input/output hashes, so
 |---|---:|---:|---:|---|
 | Smoke | 3,000 | At most 2 | 2 | Software and feasibility checks |
 | Medium | 10,000 | At most 3 | 5 | Resource and sensitivity checks |
-| Full | 30,000 | All | 20 | Production preparation; disabled pending review |
+| Full | 30,000 | All | 20 | Published setting; enabled in the reviewed `*_full*.yaml` configurations |
 
-The separate five-seed DPC pilot overrides the profile's seed count. These profiles are defined for the DPC pipeline; the completed GMM experiment has its own [configuration](config/gmm_ablation.yaml). Reducing discovery groups does not discard analysis frames from final assignment. Full production has not been performed.
+The separate five-seed DPC pilot overrides the profile's seed count. These profiles are defined for the DPC pipeline; the completed GMM experiment has its own [configuration](config/gmm_ablation.yaml). Reducing discovery groups does not discard analysis frames from final assignment. The full profile has been run for clustering, seed and parameter studies, and weighting under the stated assumption.
 
 ## Rebuild the report
 
@@ -129,15 +137,11 @@ New project code and documentation use [BSD-3-Clause](LICENSE). This does not re
 
 Publication scope and fresh-history policy: [PUBLIC_RELEASE.md](docs/PUBLIC_RELEASE.md). External checker evidence is recorded separately in [AI_CHECKER_REVIEW.md](docs/AI_CHECKER_REVIEW.md); it is not a scientific validation score.
 
-## Revised report v0.3.0
+## Report v0.4.0
 
-The report has **19 main-text pages, 36 pages including front matter, references and appendices**. It uses 32 cited references, 11 pt Libertinus typography, larger vector-plot labels and the approved illustrated cover. Numbered method steps, an audit comparison table and two short paired explanations complement normal scientific prose. The hierarchy and reading structures draw on inspected JMLR, LiveCoMS and PLOS PDFs; see the [design research](docs/DESIGN_RESEARCH_V030.md).
+The report is restructured as a University of Messina curricular-internship report: host and programme, background, tools and methods, activities by task, results, skills and reflection, and conclusions. It has **22 main-text pages and 43 pages in total**, a single formal cover with the recorded internship details, a signature page, and figures in one visual system ([style module](scripts/report_style.py)). New results: the published DPC clustering on all frames, its seed and parameter sensitivity, and weighted family populations under an explicitly marked FES-unit assumption with a kcal/mol comparison ([DPC figures](scripts/build_dpc_figures.py), [weighted figures](scripts/build_weighted_figures.py)). Outputs that would redistribute the FES or per-frame descriptor values stay local; their hashes remain in the manifests.
 
-The student's confirmed GROMACS, VMD and Python use is described separately from their personal VMD MCP and GROMACS MCP projects. The [learning evidence map](docs/rebuild/LEARNING_EVIDENCE_MAP.md) and [complete-rebuild record](docs/rebuild/REBUILD_RECORD.md) retain that distinction.
-
-A new [external checker comparison](docs/AI_CHECKER_REVIEW_V030.md) used one frozen 232-word abstract excerpt: Sapling returned 99.9% AI, QuillBot 0% likely AI, and GPTZero required registration. These conflicting outputs are not a whole-report authorship result or scientific validation. The checked abstract is unchanged; assistance and generated-art disclosures remain in the report.
-
-The requested equilibrium analysis received a fresh [readiness review](docs/EQUILIBRIUM_READINESS_V030.md). Descriptor validation succeeded, but the reproduction preflight stopped before clustering or weighting because FES units/construction remain unverified. No equilibrium population or new molecular fit was produced.
+The v0.3.0 [external checker comparison](docs/AI_CHECKER_REVIEW_V030.md) and [equilibrium readiness review](docs/EQUILIBRIUM_READINESS_V030.md) are kept as history.
 
 ### Editorial history
 

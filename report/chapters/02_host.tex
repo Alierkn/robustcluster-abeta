@@ -1,0 +1,66 @@
+\chapterlede{This chapter describes where the internship took place, who supervised it, and how the programme unfolded.}
+\chapter{Host institution and internship framework}
+\label{ch:host}
+\section{Host laboratory and supervision}
+The internship was hosted by the Laboratory of Experimental and Computational Physics of Biosystems of the Department of Mathematical and Computer Sciences, Physical Sciences and Earth Sciences (MIFT) at the University of Messina, on the project \emph{Clustering Framework for Intrinsically Disordered Proteins}. \Cref{tab:internshipframe} gives the administrative frame recorded in the signed training project.
+
+\begin{table}[htbp]
+\centering
+\caption{Administrative frame of the internship, as recorded in the signed training project and the published internship proposal.}
+\label{tab:internshipframe}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.3\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Item & Entry\\
+\midrule
+Student & Ali Erkan Ocaklı, student ID 555012; Computer Science (L-31), Data Analysis curriculum, enrolled 2023/2024, third year in 2025/2026\\
+Host & University of Messina, Department MIFT; Laboratory of Experimental and Computational Physics of Biosystems\\
+Host supervisor & Prof.\ Valeria Conti Nibali\\
+Co-supervisor & Andrea Ciccolo, PhD student in Physics\\
+Academic tutor & Prof.\ David Barilla\\
+Workload & 75 hours, completed; registered period 25 May -- 30 September 2026\\
+Approval & Training project signed by the degree coordinator on 25 June 2026\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Prof.\ Valeria Conti Nibali supervised the project and Andrea Ciccolo, a PhD student in physics, followed the day-to-day work as co-supervisor. Both are co-authors of the Aβ40/Aβ42 study whose clustering script and data form the case study of this report \autocite{cadenelli2026}, so the final assignment came directly from ongoing research rather than from a textbook exercise. The signed project states the aim as developing computational and analytical skills for the study of intrinsically disordered proteins, with a focus on the amyloid-β peptide.
+
+\section{Organization and administrative procedure}
+Study could be done remotely, with regular meetings to discuss the material; the co-supervisor circulated reading lists, lecture material and the analysis files by email, and meetings were held in person or online. Before any activity could count towards the internship, the training project had to be signed by the student, the host supervisor and the academic tutor, approved by the degree coordinator and registered with the university protocol office. At the end, the regulation requires a report on the activities, a signed activity log and the host tutor's assessment form.
+
+\section{Programme and timeline}
+The programme moved from biochemistry to simulation and finally to an open analysis task. \Cref{tab:programme} lists the blocks as assigned in the supervisors' emails, and \cref{fig:timeline} places them in time.
+
+\begin{table}[htbp]
+\centering
+\caption{Internship programme as assigned in the supervisors' emails. Dates mark when each block was assigned; the practical tool work is described in \cref{sec:mdpractice}.}
+\label{tab:programme}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.2\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Block & Content\\
+\midrule
+Proteins and disorder\newline\footnotesize assigned 25 June 2026
+& Amino-acid structure and classification, ionization, peptide bonds; levels of protein structure, peptide-group conformation, folding and stability; intrinsically disordered proteins. Discussion meeting on 30 June.\\
+\addlinespace
+Simulation\newline\footnotesize assigned 1 July 2026
+& Force fields, molecular dynamics, protein dihedral angles and cis/trans conformations; introductory material on setting up and running an MD simulation. Practical work with GROMACS and VMD.\\
+\addlinespace
+Clustering method\newline\footnotesize resumed 4 September 2026
+& The supervisors' clustering framework, introduced before the summer break, studied through the Methods and Results sections on conformational clustering of the primary article, with background on density-peak and agglomerative clustering; online walkthrough of the Python implementation on 10 September.\\
+\addlinespace
+Clustering project\newline\footnotesize assigned 18 September 2026
+& (1) Run the supplied script and reproduce the published results; (2) vary its parameters and observe the effects; (3) independently propose and explore another clustering or analysis framework from the Bachelor's programme. Progress meetings on 16 and 24 September.\\
+\addlinespace
+Report
+& A written report of about 20 pages (minimum 15) presenting the work.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[htbp]
+\centering\input{figures/internship_timeline.tex}
+\caption{Internship timeline, May--November 2026. The grey band is the period registered in the training project. Teal bars run from each block's assignment to the next assignment; the faded bar marks an end date that was not recorded, and the start of the summer break is approximate. Diamonds are meetings or milestones; the hollow diamond is the report review meeting scheduled for 12 November.}
+\label{fig:timeline}
+\end{figure}
+
+The clustering-project block defines the structure of the remaining chapters. Reproduction and parameter study correspond to \cref{sec:task1,sec:task2}; the independent framework is described in \cref{sec:task3}, and its results in \cref{ch:results}.

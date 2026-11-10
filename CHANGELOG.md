@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 — 2026-11-10
+
+- Report restructured as a UniMe L-31 curricular-internship report (host, programme timeline, activities by task, skills and reflection), with a formal cover, verified administrative details and a signature page; 22 main-text pages.
+- New `robustcluster cluster` command runs density-peak discovery, consensus and assignment without the FES; the published full profile is enabled in reviewed configurations after measured resource estimates. Full run: 11 families; seed and one-parameter studies give ARI 0.44–0.74.
+- Weighted family populations under an explicitly stated, unconfirmed FES assumption (kJ/mol, combined replicas), with a kcal/mol comparison and rough block-bootstrap intervals.
+- One figure style for all data figures (`scripts/report_style.py`), new TikZ timeline, architecture and tooling diagrams; restyled-figure hashes in `report/figure_style_provenance.json`.
+- Science fixes: Geyer and Rodriguez–Laio citations, raw-scale weighting note, BIC and ARI clarifications.
+- 38 tests. `release_manifest.json` still documents the v0.3.0 release.
+
 ## 0.3.0 — 2026-11-03
 
 - Publication-informed chapter hierarchy, numbered protocols, audit comparison table, short paired explanations and larger vector-plot labels. Approved cover and empirical values preserved.

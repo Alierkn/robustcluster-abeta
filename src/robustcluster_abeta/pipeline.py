@@ -300,3 +300,88 @@ def rebuild_figures(config, run, budget, source_manifest):
     else:
         raise InvalidInput("Source run has no supported scientific figures")
     return {"source_manifest": source.name, "source_manifest_sha256": sha256(source)}
+
+
+def _cluster_variants(config, experiment):
+    """Variants for unweighted clustering; parameter changes require robustness mode."""
+    base = config["master_seed"]
+    if experiment == "baseline":
+        return [("baseline", config, base)]
+    if experiment in {"seeds", "seed-pilot"}:
+        count = config.get("seed_pilot_count", 5) if experiment == "seed-pilot" else config["execution"]["seeds"]
+        seeds = [base] + [int(s.generate_state(1)[0]) for s in
+                          np.random.SeedSequence(base).spawn(count-1)]
+        return [(f"seed_{seed}", config, seed) for seed in seeds]
+    if config["mode"] != "robustness_extension":
+        raise InvalidInput(f"Experiment {experiment} changes the method; use robustness_extension mode")
+    variants = [("baseline", config, base)]
+    if experiment == "parameters":
+        reference = config["dpc"]
+        changes = [("dc_x0.9", "dc", reference["dc"]*0.9), ("dc_x1.1", "dc", reference["dc"]*1.1),
+                   ("silhouette_0.25", "silhouette_threshold", 0.25),
+                   ("silhouette_0.35", "silhouette_threshold", 0.35),
+                   ("min_size_200", "min_cluster_size", 200), ("min_size_400", "min_cluster_size", 400)]
+        for name, key, value in changes:
+            variant = copy.deepcopy(config)
+            variant["dpc"][key] = value
+            variants.append((name, variant, base))
+    elif experiment == "wasserstein":
+        variant = copy.deepcopy(config)
+        variant["wasserstein"] = "normalized"
+        variants.append(("normalized", variant, base))
+    else:
+        raise InvalidInput(f"Unknown clustering experiment: {experiment}")
+    return variants
+
+
+def cluster(config, run, budget, experiment="baseline"):
+    """Unweighted DPC, consensus and final assignment on the real descriptors.
+
+    No FES is read and no weight is computed: family sizes are raw frame fractions of the
+    biased sample, never equilibrium populations.
+    """
+    table = read_table(config)
+    rows, partitions, names, failures = [], [], [], {}
+    for name, variant, seed in _cluster_variants(config, experiment):
+        budget.check()
+        try:
+            result = cluster_pipeline(table, variant, seed, budget)
+        except AnalysisFailure as exc:
+            failures[name] = str(exc)
+            continue
+        labels = result["labels"]
+        np.savez_compressed(run.path("tables", f"{name}_labels.npz"), labels=labels,
+                            centroids=result["centroids"], distance=result["distance"],
+                            linkage=result["linkage"], local_families=result["local_families"])
+        dump_json(run.path("tables", f"{name}_algorithm.json"),
+                  {"seed": int(seed), "dpc": variant["dpc"], "wasserstein": variant["wasserstein"],
+                   **{key: result[key] for key in ["elbow", "histories", "group_count",
+                                                   "training_frames", "child_spawn_key"]},
+                   "accepted_local_clusters": len(result["accepted"]),
+                   "accepted_local_sizes": [len(c) for c in result["accepted"]]})
+        for family in np.unique(labels):
+            mask = labels == family
+            row = {"variant": name, "family": int(family), "frames": int(mask.sum()),
+                   "raw_fraction": float(mask.mean())}
+            for replica in sorted(table.replica_id.unique()):
+                in_replica = table.replica_id.to_numpy() == replica
+                row[f"raw_fraction_replica_{int(replica)}"] = float(mask[in_replica].mean())
+            for descriptor in DESCRIPTORS:
+                row[f"mean_{descriptor}"] = float(table[descriptor].to_numpy()[mask].mean())
+            rows.append(row)
+        partitions.append(labels)
+        names.append(name)
+    if not partitions:
+        raise AnalysisFailure(f"No variant produced a partition: {failures}")
+    pd.DataFrame(rows).to_csv(run.path("tables", "families_unweighted.csv"), index=False)
+    pd.DataFrame(ari_matrix(partitions), index=names, columns=names).to_csv(run.path("tables", "ari_matrix.csv"))
+    matches = []
+    for name, labels in zip(names, partitions):
+        ari, table_matches = compare_partitions(partitions[0], labels)
+        for record in table_matches.to_dict("records"):
+            matches.append(dict(record, variant=name, ari_vs_first=ari))
+    pd.DataFrame(matches).to_csv(run.path("tables", "family_matching.csv"), index=False)
+    return {"experiment": experiment, "variants": names, "failed_variants": failures,
+            "families": {n: int(len(np.unique(p))) for n, p in zip(names, partitions)},
+            "frames": len(table),
+            "interpretation": "unweighted biased-sample partition; no FES read, no populations"}

@@ -1,0 +1,306 @@
+{
+  "seed": 42,
+  "dpc": {
+    "nmax": 10,
+    "min_cluster_size": 300,
+    "silhouette_threshold": 0.35,
+    "dc": 1.3,
+    "dc_reduction": 0.9,
+    "max_no_improve_steps": 5
+  },
+  "wasserstein": "raw",
+  "elbow": {
+    "elbow_index": 15,
+    "threshold": 10.072633908695002,
+    "spline_s": 5.0,
+    "second_derivative": [
+      -0.11532872283543874,
+      -0.08786186613801486,
+      -0.06039500944059097,
+      -0.032928152743167106,
+      -0.005461296045743238,
+      0.02200556065168065,
+      0.04947241734910452,
+      0.0769392740465284,
+      0.10440613074395227,
+      0.13187298744137615,
+      0.16458958915140454,
+      0.19730619086143295,
+      0.23002279257146135,
+      0.26273939428148974,
+      0.2954559959915181,
+      0.3281725977015465,
+      0.36088919941157493,
+      0.3936058011216033
+    ]
+  },
+  "histories": [
+    {
+      "group": 0,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 10001,
+      "acceptable_clusters": 3,
+      "selected_centers": 5
+    },
+    {
+      "group": 0,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 7626,
+      "acceptable_clusters": 2,
+      "selected_centers": 5
+    },
+    {
+      "group": 0,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 4212,
+      "acceptable_clusters": 1,
+      "selected_centers": 6
+    },
+    {
+      "group": 0,
+      "iteration": 4,
+      "dc": 0.9477000000000002,
+      "remaining": 3196,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 5,
+      "dc": 0.8529300000000002,
+      "remaining": 3196,
+      "acceptable_clusters": 1,
+      "selected_centers": 4
+    },
+    {
+      "group": 0,
+      "iteration": 6,
+      "dc": 0.7676370000000002,
+      "remaining": 2787,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 7,
+      "dc": 0.6908733000000002,
+      "remaining": 2787,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 8,
+      "dc": 0.6217859700000002,
+      "remaining": 2787,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 9,
+      "dc": 0.5596073730000002,
+      "remaining": 2787,
+      "acceptable_clusters": 1,
+      "selected_centers": 3
+    },
+    {
+      "group": 0,
+      "iteration": 10,
+      "dc": 0.5036466357000002,
+      "remaining": 2414,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 11,
+      "dc": 0.4532819721300002,
+      "remaining": 2414,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 12,
+      "dc": 0.4079537749170002,
+      "remaining": 2414,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 13,
+      "dc": 0.36715839742530015,
+      "remaining": 2414,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 0,
+      "iteration": 14,
+      "dc": 0.33044255768277014,
+      "remaining": 2414,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 1,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 10001,
+      "acceptable_clusters": 1,
+      "selected_centers": 9
+    },
+    {
+      "group": 1,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 9583,
+      "acceptable_clusters": 1,
+      "selected_centers": 5
+    },
+    {
+      "group": 1,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 7234,
+      "acceptable_clusters": 1,
+      "selected_centers": 8
+    },
+    {
+      "group": 1,
+      "iteration": 4,
+      "dc": 0.9477000000000002,
+      "remaining": 5703,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 1,
+      "iteration": 5,
+      "dc": 0.8529300000000002,
+      "remaining": 5703,
+      "acceptable_clusters": 1,
+      "selected_centers": 5
+    },
+    {
+      "group": 1,
+      "iteration": 6,
+      "dc": 0.7676370000000002,
+      "remaining": 4725,
+      "acceptable_clusters": 1,
+      "selected_centers": 3
+    },
+    {
+      "group": 1,
+      "iteration": 7,
+      "dc": 0.6908733000000002,
+      "remaining": 4202,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 1,
+      "iteration": 8,
+      "dc": 0.6217859700000002,
+      "remaining": 4202,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 1,
+      "iteration": 9,
+      "dc": 0.5596073730000002,
+      "remaining": 4202,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 1,
+      "iteration": 10,
+      "dc": 0.5036466357000002,
+      "remaining": 4202,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 1,
+      "iteration": 11,
+      "dc": 0.4532819721300002,
+      "remaining": 4202,
+      "acceptable_clusters": 0,
+      "selected_centers": null
+    },
+    {
+      "group": 2,
+      "iteration": 1,
+      "dc": 1.3,
+      "remaining": 10001,
+      "acceptable_clusters": 1,
+      "selected_centers": 5
+    },
+    {
+      "group": 2,
+      "iteration": 2,
+      "dc": 1.1700000000000002,
+      "remaining": 6524,
+      "acceptable_clusters": 1,
+      "selected_centers": 10
+    },
+    {
+      "group": 2,
+      "iteration": 3,
+      "dc": 1.0530000000000002,
+      "remaining": 5938,
+      "acceptable_clusters": 1,
+      "selected_centers": 4
+    },
+    {
+      "group": 2,
+      "iteration": 4,
+      "dc": 0.9477000000000002,
+      "remaining": 5618,
+      "acceptable_clusters": 1,
+      "selected_centers": 5
+    },
+    {
+      "group": 2,
+      "iteration": 5,
+      "dc": 0.8529300000000002,
+      "remaining": 4503,
+      "acceptable_clusters": 2,
+      "selected_centers": 2
+    }
+  ],
+  "group_count": 3,
+  "training_frames": 30003,
+  "child_spawn_key": [
+    0
+  ],
+  "accepted_local_clusters": 19,
+  "accepted_local_sizes": [
+    1304,
+    622,
+    449,
+    2207,
+    1207,
+    1016,
+    409,
+    373,
+    418,
+    2349,
+    1531,
+    978,
+    523,
+    3477,
+    586,
+    320,
+    1115,
+    1632,
+    2871
+  ]
+}

@@ -1,0 +1,46 @@
+\chapterlede{This chapter summarizes the physics and statistics needed to read a biased simulation correctly.}
+\chapter{Scientific and theoretical background}
+\label{ch:background}
+\section{Amyloid-β40 and intrinsically disordered proteins}
+Aβ40 is an intrinsically disordered peptide: no single structure describes it, and its state is an ensemble of conformations together with their statistical weights \autocite{vanderlee2014,cadenelli2026}. Observing a compact and an extended conformation therefore says nothing about how probable either is. Experiments usually report ensemble averages, and simulations can be combined with NMR or SAXS data when the observables are compatible \autocite{borthakur2025}.
+
+\section{Molecular dynamics and the sampling problem}
+Molecular dynamics integrates the equations of motion of all atoms, with forces from a force field; the primary study used GROMACS, the CHARMM36m force field and PLUMED \autocite{cadenelli2026,abraham2015,huang2017,tribello2014}. At equilibrium a configuration with potential energy $U(q)$ contributes in proportion to $\exp[-\beta_T U(q)]$, with $\beta_T=1/(k_BT)$ per molecule or $1/(RT)$ per mole, so the energy unit must be known before any weight is computed. Saved frames are not independent observations: saving more often adds similar rows, not information, and treating dependent frames as independent makes an estimate look more precise than the sampling supports \autocite{chodera2016,grossfield2019}.
+
+\section{Well-tempered metadynamics and free-energy surfaces}
+Metadynamics accelerates exploration by adding a history-dependent bias, built from Gaussian hills (\cref{app:derivations}), along a few collective variables (CVs). In the well-tempered variant the bias grows ever more slowly, and the bias factor $\gamma=(T+\Delta T)/T$ sets its long-time limit \autocite{barducci2008}:
+\begin{equation}
+V(s,t\to\infty)=-\left(1-\frac{1}{\gamma}\right)F(s)+C.
+\label{eq:wtlimit}
+\end{equation}
+For the primary study ($T=310$~K, $\gamma=10$) the bias offsets 90\% of the free energy, so the sampled CV distribution, $p_b(s)\propto\exp[-F(s)/(\gamma k_BT)]$, is a tenfold-flattened version of the equilibrium one. This is why the method explores efficiently, and why its raw frequencies must be reweighted before they can be read as populations; biased trajectory time does not give unbiased rates.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}{.4\textwidth}
+\includegraphics[width=\linewidth]{artwork/ensemble-editorial-v2.png}
+\caption{A conformational ensemble}
+\end{subfigure}\hspace{.06\textwidth}
+\begin{subfigure}{.4\textwidth}
+\includegraphics[width=\linewidth]{artwork/bias-editorial-v2.png}
+\caption{Accumulating sampling bias}
+\end{subfigure}
+\caption{Conceptual editorial illustrations of two ideas used in the analysis. Flexible ribbons suggest conformational diversity; layered deposits suggest the accumulated bias in \cref{eq:hills}. The illustrations contain no data.}
+\label{fig:editorialconcepts}
+\end{figure}
+
+The free energy of a CV density is $F(s)=-\beta_T^{-1}\log p(s)+C$; integrating out all other coordinates can merge different atomic arrangements at one point of the surface. PLUMED's \code{sum\_hills} writes either the free energy or the negative bias, which differ by $\gamma/(\gamma-1)\approx1.11$ for $\gamma=10$ \autocite{plumedsum}: a grid can be numerically perfect and still be the wrong quantity. The offset-corrected bias \code{metad.rbias} is meaningful only together with the METAD settings that produced it \autocite{plumedmetad}.
+
+\section{Statistical reweighting}
+\label{sec:reweighting}
+Weighting each sampled frame by $\exp(\beta_T V)$ undoes a quasi-static bias. Combined with \cref{eq:wtlimit}, this gives the final-bias weights used in the primary study:
+\begin{equation}
+\ell_i\equiv\log w_i=-\frac{1-1/\gamma}{RT}F(\alpha_i,\beta_i).
+\label{eq:finalweights}
+\end{equation}
+At 310~K, $RT=2.577$~kJ\,mol$^{-1}$, so with $\gamma=10$ each kJ\,mol$^{-1}$ of $F$ lowers $\log w$ by 0.349; if the same numbers were kcal\,mol$^{-1}$, every log weight would be 4.184 times larger. An additive constant in $F$ cancels on normalization, but the unit does not, which is why it matters (Scope~2). Time-dependent estimators such as that of Tiwary and Parrinello instead use $\ell_i=\mathrm{rbias}_i/(RT)$ \autocite{bonomi2009,tiwary2015,plumedreweight}.
+
+\section{Descriptors and density-based clustering}
+The four clustering descriptors summarize secondary structure ($\na$, $\nb$: continuous CVs that approximate helical and β residue counts, not DSSP assignments \autocite{kabsch1983}), compactness ($R_g$) and solvent exposure (SASA). They differ in unit and spread, so their scaling is part of the method: in a raw-scale distance $R_g$ counts about twenty times less than the others.
+
+In density-peak clustering \autocite{rodriguez2014}, a cluster centre combines a high local density $\rho_i$ with a large distance $\delta_i$ to any denser point. The published workflow searches for such centres in random subsets and keeps clusters that are large enough and have a sufficient mean silhouette, $(b-a)/\max(a,b)$, where $a$ is a frame's mean distance to its own cluster and $b$ to the nearest other one \autocite{cadenelli2026,rousseeuw1987}. Consensus then merges the local clusters into families, every frame is assigned to a family, and statistical weighting decides how much each family contributes.

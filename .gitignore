@@ -21,3 +21,12 @@ report/preview/*.out
 
 # Isolated editorial draft; final sources are in report/
 /report-next/
+
+# Outputs that contain or reproduce restricted inputs (complete FES, per-frame descriptor values).
+# They stay local; their SHA256 hashes remain in the run manifests.
+results/tables/*/fes_grid.npz
+results/tables/*/*_frames.csv.gz
+results/figures/*/fig02_fes.*
+# Per-frame DPC decision record of the weighted reproduction (22 MB); hash kept in its manifest.
+results/tables/20261110T172236-15d7c0ca/baseline_algorithm.json
+.DS_Store

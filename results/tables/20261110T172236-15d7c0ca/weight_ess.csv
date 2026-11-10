@@ -1,0 +1,4 @@
+replica_id,raw_frames,kish_weight_ess,block_length,all_correlation_estimates_reliable
+1,100001,3276.9352186383676,44135,False
+2,100001,9551.448188575063,21687,False
+3,100001,8226.926659336867,63485,False

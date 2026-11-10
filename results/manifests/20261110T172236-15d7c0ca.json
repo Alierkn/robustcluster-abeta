@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "run_id": "20261110T172236-15d7c0ca",
+  "status": "SUCCESS",
+  "command": "reproduce",
+  "experiment": null,
+  "timestamp_utc": "2026-11-10T17:22:36.294922+00:00",
+  "git_commit": "9775107ae9bc006f7e6a128d358171ca8391f890",
+  "git_dirty": true,
+  "source_sha256": {
+    "src/robustcluster_abeta/__init__.py": "bcfd8bbbcb2d760eab1c02faca6ff31950048d7b8a348e4ef1c3928a844e87d1",
+    "src/robustcluster_abeta/audit_fes.py": "f2951d8948e4f8b5bf8564b4e3acc14dc35aff4bf069d076ef19cc249a856553",
+    "src/robustcluster_abeta/cli.py": "ae9f1a5b50707062d0f6525426728bc92d0fe36da805a636f7b5b687da5de174",
+    "src/robustcluster_abeta/consensus.py": "613e7ce2180d0e67ad0b2b9f85f00a7362d9f20d3d3bfd51e54c68fbc174ef22",
+    "src/robustcluster_abeta/dpc.py": "f833f9219f5cbb6db42790e6d1224f4a48aa193f30e1014fa6827c309def7c13",
+    "src/robustcluster_abeta/fes.py": "81345790bcc5adac0a044055ab5c65e75387bf5391ffcfcfe884f1f904f3f206",
+    "src/robustcluster_abeta/gmm_ablation.py": "fa1df770e2f0f8ae122ffb085c3e5e477dc0de2d3964a0b56b9b5ca45bd284e4",
+    "src/robustcluster_abeta/io.py": "30060c0ade1d9b49db6f03d03fd1f877d2eb4a3f19942ef053a2bc2755f780c3",
+    "src/robustcluster_abeta/manifest.py": "c73480bf2b613b4e09b5e3be2b10d5c4586543dfb7c95a859815fe59d933196e",
+    "src/robustcluster_abeta/pipeline.py": "46aaa7b052d5191887885d0c767e913d30c081f7a158892a517f395ab7fd4ffc",
+    "src/robustcluster_abeta/plotting.py": "6783c740727d3a52a36df679cdc0f1d9b149faa54d8d4002f460999bb24d7bcc",
+    "src/robustcluster_abeta/preprocessing.py": "72f8da7bae79f53f786411a8157625752640e4f50c344de0e291ef6b1a96ba46",
+    "src/robustcluster_abeta/reweighting.py": "75d2888582fc4316070e76b53e97058bb4df3f781fe2c7c33a497ab95d8e97f5",
+    "src/robustcluster_abeta/stability.py": "09069ca505d4e7b078b8dcda33d3aae242556c897297597f5911e13e3eac948c",
+    "src/robustcluster_abeta/statistics.py": "a6fd389136a00475b53f8832c729c4ca05a556acefa1f0a16edad2875cb0d419",
+    "src/robustcluster_abeta/validation.py": "fd3a8f0db293e0e8adf0e2e220026e29075d7e5e7504f69026276b42fc0e988d"
+  },
+  "python": "3.12.6",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "robustcluster-abeta": "0.3.0"
+  },
+  "config": {
+    "project_root": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta-v030",
+    "mode": "paper_reproduction",
+    "profile": "full",
+    "inputs": {
+      "descriptors": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/input_clustering_ab40.dat",
+      "fes": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta/data/raw/FES_AB_40.dat",
+      "fes_energy_unit": "kJ/mol",
+      "fes_provenance": "ASSUMED, not confirmed by the authors: PLUMED sum_hills free energy (file.free) of the three combined replicas, in the PLUMED default unit kJ/mol, as used by the supplied script and the primary article",
+      "rbias_energy_unit": null,
+      "rbias_provenance": null
+    },
+    "replicas": 3,
+    "interval_ps": [
+      1000000,
+      3000000
+    ],
+    "temperature_K": 310.0,
+    "gamma_bias": 10.0,
+    "features": [
+      "nAlpha",
+      "nBeta",
+      "Rg",
+      "SASA"
+    ],
+    "representation": "minmax",
+    "wasserstein": "raw",
+    "master_seed": 42,
+    "dpc": {
+      "nmax": 10,
+      "min_cluster_size": 300,
+      "silhouette_threshold": 0.3,
+      "dc": 1.3,
+      "dc_reduction": 0.9,
+      "max_no_improve_steps": 5
+    },
+    "consensus": {
+      "spline_s": 5.0
+    },
+    "bootstrap_draws": 500,
+    "profiles": {
+      "smoke": {
+        "group_size": 3000,
+        "max_groups": 2,
+        "seeds": 2,
+        "max_seconds": 300,
+        "max_memory_gib": 8,
+        "enabled": true
+      },
+      "medium": {
+        "group_size": 10000,
+        "max_groups": 3,
+        "seeds": 5,
+        "max_seconds": 1800,
+        "max_memory_gib": 16,
+        "enabled": true
+      },
+      "full": {
+        "group_size": 30000,
+        "max_groups": null,
+        "seeds": 20,
+        "max_seconds": 86400,
+        "max_memory_gib": 24,
+        "enabled": true
+      }
+    },
+    "config_file": "/Users/alico/Documents/Codex/2026-09-21/you-are-working-as-a-senior/outputs/robustcluster-abeta-v030/config/paper_reproduction_full_assumed.yaml",
+    "config_sha256": "af6e11a88497b7d72cf6240459a65c7b57bd5487bbd6de2157d8681983bec721",
+    "execution": {
+      "group_size": 30000,
+      "max_groups": null,
+      "seeds": 20,
+      "max_seconds": 86400,
+      "max_memory_gib": 24,
+      "enabled": true
+    }
+  },
+  "inputs": {
+    "descriptors": {
+      "filename": "input_clustering_ab40.dat",
+      "exists": true,
+      "sha256": "cc44ee36a80ae7b04fe035f27ee6764323125e16f139a4ddc533a8a9089bfd77"
+    },
+    "fes": {
+      "filename": "FES_AB_40.dat",
+      "exists": true,
+      "sha256": "6fd6c3d7c04e20859cf91abb4765e126e0f3fcb982d3795b643165dde26fa3f4"
+    }
+  },
+  "outputs": [
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/baseline_algorithm.json",
+      "sha256": "769ea2ea46d87ec81ae20fbf4d335ba0992de4f0c149015b5b3163f534c04cd3"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/baseline_clustering.npz",
+      "sha256": "b1f3ada1ab8d980c9034c33adce4e4ee8a9e651bd98dbdfadd5f9bf513971039"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/baseline_frames.csv.gz",
+      "sha256": "58e44384d5f051728216d8739e946c75c77eb1448bda95f1997f4b164872af1c"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/baseline_populations.csv",
+      "sha256": "655c27dd3130e31e37a4424f11874873f5d441d9da24e8a8237b801425a3a183"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/baseline_replica_populations.csv",
+      "sha256": "4a4bf81311f06b870c32ebdfce682d433664631399088188622146a4b846c7d9"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/baseline_weighted_descriptors.csv",
+      "sha256": "4e6101b5dfe3f8e919edca0c43b14c8a570d41a5a1bda742b1358fcf2b530dbf"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/fes_grid.npz",
+      "sha256": "578efd487d183e9f4009d61ee5f207a62a435533a62d0f016676cca27d983f90"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/population_bootstrap.npy",
+      "sha256": "be9b087e90e66bb0b3a912f3ce1be1652dd98b9dae21b7a63f330cfbd78d986f"
+    },
+    {
+      "filename": "results/tables/20261110T172236-15d7c0ca/weight_ess.csv",
+      "sha256": "eff0900e17f3cd2d03ceecc58980fb0b9cdf2138173cdc5178470581584f88f7"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig01_workflow.pdf",
+      "sha256": "afdcc68224cd7d5eab32cef470686729f0cec6b09f54b2b67095103090fd3ec3"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig01_workflow.svg",
+      "sha256": "ed9acbb356cca6e16745a6a353e10d8b55cdb67f03e737061d551b7a203dee93"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig02_fes.pdf",
+      "sha256": "12ee1b6d0eed2c7370ea65b3911fdf668482fae68a6a99da78887f230ef2b7cf"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig02_fes.svg",
+      "sha256": "c326848bad18e2ad719a1ebd967aa62c6897e1976f87d55469d7e392f8d0b5ac"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig04_density_decision.pdf",
+      "sha256": "7480f24cb898fce70824e2ae5489057701b6f74dbdd1ae92787356962b4d5b4a"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig04_density_decision.svg",
+      "sha256": "722328bdab71762bd61f496757826670ee29af0915eb512ae9a9a5e4a4be2d24"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig05_consensus.pdf",
+      "sha256": "efe9abdab3000550b092a8b19c3c1dd201024a0997a7e0435776d3da80543c8e"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig05_consensus.svg",
+      "sha256": "b2d05b84951ce67b6d0f20108281cf19e7084ba716e5a4c70259d34efb12c997"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig06_structural_summary.pdf",
+      "sha256": "b6b0d19c517e58cabe9e860c527cb4e50fe78dcc80adf0923de2bce813827514"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig06_structural_summary.svg",
+      "sha256": "f02dd52d08bd45ed739f391c315d5fbd231a8fcdda7aa8029772ea2aae850434"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig07_additional_descriptors.pdf",
+      "sha256": "bc5c28232a81c680df6bb4840bf3713f4645c51b462342c6b7fbd361d24a70f4"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig07_additional_descriptors.svg",
+      "sha256": "05111c2a6a0c720cd988b718e104a0a42e1b8241b8058b1438f6a57bf2e327cd"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig08_cluster_relevance.pdf",
+      "sha256": "8f85b9d45dba86a92f57f809772561f73421252b60a29941db5ab659d4775c75"
+    },
+    {
+      "filename": "results/figures/20261110T172236-15d7c0ca/fig08_cluster_relevance.svg",
+      "sha256": "a0b2f03fe713aca4b1511ea817e93be0da0ee9bb47f9b6e06452363d541eac2a"
+    },
+    {
+      "filename": "results/logs/20261110T172236-15d7c0ca/execution.log",
+      "sha256": "f06a4b113c39d06003c07bf3cff56b32232f6be69a70f9a7c3e09c19f607a9f8"
+    },
+    {
+      "filename": "results/logs/20261110T172236-15d7c0ca/outcome.json",
+      "sha256": "177dc654b3006a699cdcd7450571600eae78824d4912b063491d9fa77712c6ab"
+    }
+  ],
+  "runtime_seconds": 970.3469747919589,
+  "peak_rss_bytes": 4229939200,
+  "source_manifest": null,
+  "resource_measurement": "process-tree RSS sampled every 0.1 s; may miss shorter peaks",
+  "summary": {
+    "families": 11,
+    "frames": 300003,
+    "seed": 42,
+    "block_lengths": {
+      "1": 44135,
+      "2": 21687,
+      "3": 63485
+    },
+    "bootstrap_scope": "fixed fitted partition and fixed supplied FES; within-replica moving blocks"
+  },
+  "message": null
+}

@@ -1,0 +1,16 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "summary": {
+    "experiment": "baseline",
+    "variants": [
+      "baseline"
+    ],
+    "failed_variants": {},
+    "families": {
+      "baseline": 3
+    },
+    "frames": 300003,
+    "interpretation": "unweighted biased-sample partition; no FES read, no populations"
+  }
+}
