@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 — 2026-11-11
+
+- Report: two sentences in the critical reflection (Section 7.4) still described the weighted populations as open and the weighting stage as blocked; they now match Section 6.5, where populations are computed under a stated FES assumption. No result changed.
+
 ## 0.4.0 — 2026-11-10
 
 - Report restructured as a UniMe L-31 curricular-internship report (host, programme timeline, activities by task, skills and reflection), with a formal cover, verified administrative details and a signature page; 22 main-text pages.
