@@ -103,7 +103,7 @@
     },
     {
       "filename": "report/generated/gmm_rows.tex",
-      "sha256": "1dfede9887450e59561669bf51a744c0463c6cbe09d4f9586c5c6367e4acd464"
+      "sha256": "6f1ce65a50041b4f5a82bc389a8ec99756d4f1c8668891602f0a34ab7c859c28"
     },
     {
       "filename": "report/generated/gromacs-mcp-excerpt.py",
@@ -115,7 +115,7 @@
     },
     {
       "filename": "report/generated/sampling_rows.tex",
-      "sha256": "b078c42b765afba6d21dab475c887a66419cba83154aa35d35e8f09bf6cb0811"
+      "sha256": "0049559fa6ff28ed4d86ddc0e24cb68c856728eca22c25fef5ece62d6fb87d3f"
     },
     {
       "filename": "report/generated/values.tex",

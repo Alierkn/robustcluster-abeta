@@ -7,22 +7,24 @@
 \setmathfont{LibertinusMath-Regular.otf}
 % About 14.1 pt body leading with the 11 pt KOMA-Script base size.
 \linespread{1.04}
-\usepackage{microtype,siunitx,graphicx,subcaption,adjustbox,placeins}
+\usepackage{microtype,siunitx,graphicx,subcaption,placeins}
+\sisetup{group-separator={,},group-minimum-digits=4}
 \usepackage{booktabs,tabularx,longtable,threeparttable}
 \usepackage{xcolor,tcolorbox,tikz}
 \usetikzlibrary{arrows.meta,positioning}
 \usepackage{listings,csquotes}
-\usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=6,minbibnames=3,giveninits=true]{biblatex}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=6,minbibnames=3,giveninits=true,urldate=iso]{biblatex}
 \addbibresource{references.bib}
-\AtBeginBibliography{\small\linespread{1}\selectfont}
+\AtBeginBibliography{\small\linespread{1}\selectfont\raggedright}
+\setcounter{biburlnumpenalty}{100}\setcounter{biburlucpenalty}{100}\setcounter{biburllcpenalty}{100}
 \PassOptionsToPackage{capitalise,noabbrev}{cleveref}
-\usepackage{hyperref,bookmark,cleveref,glossaries-extra,scrlayer-scrpage}
+\usepackage{hyperref,bookmark,cleveref,scrlayer-scrpage}
 \definecolor{Navy}{HTML}{173A5E}
 \definecolor{Teal}{HTML}{2E6F73}
 \definecolor{Ink}{HTML}{20242A}
 \definecolor{CoolGrey}{HTML}{F3F5F7}
 \definecolor{Audit}{HTML}{A95542}
-\hypersetup{hypertexnames=false,colorlinks=true,linkcolor=Navy,citecolor=Teal,urlcolor=Navy,pdftitle={RobustCluster-Aβ: reproducible analysis of amyloid-β40 conformational descriptors},pdfauthor={Ali Erkan Ocaklı},pdfsubject={Curricular internship report, Data Analysis L-31, academic year 2025–2026},pdfkeywords={amyloid-beta40, metadynamics, reproducibility, clustering, feature sensitivity},pdflang={en-GB}}
+\hypersetup{hypertexnames=false,colorlinks=true,linkcolor=Navy,citecolor=Teal,urlcolor=Navy,pdftitle={RobustCluster-Aβ: reproducible analysis of amyloid-β40 conformational descriptors},pdfauthor={Ali Erkan Ocaklı},pdfsubject={Curricular internship report, Data Analysis L-31, academic year 2025–2026},pdfkeywords={curricular internship, amyloid-β40, intrinsically disordered peptides, well-tempered metadynamics, clustering, Gaussian mixtures, reproducibility},pdflang={en-GB}}
 \color{Ink}
 \setkomafont{disposition}{\rmfamily\bfseries\color{Navy}}
 \setkomafont{chapter}{\rmfamily\fontsize{22}{26}\selectfont\bfseries\color{Navy}}
@@ -77,7 +79,6 @@
     {\sffamily\bfseries\color{Navy}#1\par}%
     \nobreak\vspace{3pt}{\color{Teal}\hrule height .4pt}\vspace{6pt}%
 }{\end{minipage}}
-\newtcolorbox{auditnote}{colback=CoolGrey,colframe=Audit,boxrule=.4pt,arc=0pt,left=7pt,right=7pt,top=5pt,bottom=5pt,title=Scientific audit note,fonttitle=\sffamily\bfseries}
 \newcommand{\abforty}{Aβ40}
 \newcommand{\abfortytwo}{Aβ42}
 \newcommand{\na}{n_{\alpha}}

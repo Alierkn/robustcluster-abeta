@@ -3,7 +3,7 @@
 % scripts/, tests/ (36 tests passed in results/logs/*/pytest.log) and .github/workflows/ci.yml.
 % gmm_ablation.py is called by cli.py directly (not by pipeline.py) and reads descriptors through io.py
 % with its own scaler, so it receives no arrow from preprocessing.py.
-% Solid frame: implemented and tested. Dashed frame: implemented, real-data run blocked (FES units).
+% Solid frame: implemented and tested. Dashed frame: implemented; depends on the FES unit, run under the assumption stated in the report.
 % Native TikZ; needs only arrows.meta (already loaded by preamble.tex).
 \begin{tikzpicture}[
   font=\sffamily\footnotesize,
@@ -51,7 +51,7 @@
   \node[box=19.4mm] (con)  at (36mm,-56mm)   {\ttl{consensus.py}Wasserstein merge, frame assignment};
   \node[box=19.4mm] (stab) at (59.7mm,-56mm) {\ttl{stability.py}ARI, partition matching};
   \node[box=19.4mm] (stat) at (12.3mm,-71mm) {\ttl{statistics.py}ACF, Kish ESS, block bootstrap};
-  \node[pending=43.1mm] (rw) at (47.85mm,-71mm) {\ttl{reweighting.py}FES-derived frame weights,\\equal-replica normalisation};
+  \node[pending=43.1mm] (rw) at (47.85mm,-71mm) {\ttl{reweighting.py}FES-derived frame weights,\\equal-replica normalization};
   \node[box=22.4mm] (gmm) at (86.8mm,-71mm) {{\scriptsize\bfseries gmm\_ablation.py}\\Gaussian-mixture ablation, descriptor-only};
 \end{scope}
 \draw[flow] (dpc) -- (con);

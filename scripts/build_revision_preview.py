@@ -101,7 +101,7 @@ try:
     for k, stats in analysis["summary"]["ari_by_k"].items():
         rows.append(f"{k} & {stats['median']:.3f} & {stats['min']:.3f}--{stats['max']:.3f} \\\\")
     (folder / "ablation_rows.tex").write_text(
-        r"\begin{tabular}{@{}crr@{}}\toprule Components & Median ablation ARI & Observed range\\\midrule"
+        r"\begin{tabular}{@{}crr@{}}\toprule Components & Median ARI, four vs three features & Observed range\\\midrule"
         + "\n"
         + "\n".join(rows)
         + "\n"

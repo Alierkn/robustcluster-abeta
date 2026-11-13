@@ -1,4 +1,4 @@
-\chapter{Full parameter table}
+\chapter{Parameters and settings}
 \label{app:parameters}
 \section*{Iterative density-peak discovery}
 Within each random group of about \num{30000} frames, discovery proceeds as follows.
@@ -7,57 +7,43 @@ Within each random group of about \num{30000} frames, discovery proceeds as foll
 \item \textbf{Check each cluster.} Require at least 300 members and a mean silhouette of at least 0.3 for acceptance.
 \item \textbf{Choose the candidate.} Keep the one with the most acceptable clusters. A tie retains the earlier, higher-centre-count candidate.
 \item \textbf{Continue on the remainder.} Remove accepted members and multiply $d_c$ by 0.9 before the next iteration.
-\item \textbf{Stop discovery.} Stop below 300 remaining points or after five consecutive unsuccessful iterations. Residual frames receive their final labels only in STEP~3.
+\item \textbf{Stop discovery.} Stop below 300 remaining points or after five consecutive unsuccessful iterations. Residual frames receive their final labels only in the final-assignment step (step~5 of \cref{fig:workflow}).
 \end{protocolsteps}
 
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
 \begingroup\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.34\textwidth}>{\raggedright\arraybackslash}p{.22\textwidth}>{\raggedright\arraybackslash}p{.36\textwidth}@{}}
-\caption{Reproduction settings and execution profiles. These parameters are implemented but do not imply a completed empirical run.}\label{tab:parameters}\\
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.29\textwidth}>{\raggedright\arraybackslash}p{.29\textwidth}>{\raggedright\arraybackslash}p{.365\textwidth}@{}}
+\caption{Settings of the density-peak workflow and its weighted extension, with the execution profiles used. Full-profile values describe the runs reported in \cref{sec:dpcfamilies,sec:weighted}.}\label{tab:parameters}\\
 \toprule Parameter & Value & Evidence / role\\\midrule\endfirsthead
-\multicolumn{3}{l}{\small\itshape Table \thetable\ continued}\\
+\caption[]{Settings of the density-peak workflow and its weighted extension (continued).}\\
 \toprule Parameter & Value & Evidence / role\\\midrule\endhead
-Replicas & 3 & Primary paper; observed table segmentation\\
-Analysis interval & 1--3 μs & Published baseline; inclusive source-labelled ps boundaries\\
-Temperature & 310 K & Published weighting parameter; no new MD run\\
-Bias factor $\gamma$ & 10 & Published weighting parameter\\
-Molar gas constant & 0.008314462618 kJ mol$^{-1}$ K$^{-1}$ & Implementation unit convention\\
+Replicas & 3 & Primary article; observed table segmentation\\
+Analysis interval & 1--3~μs & Published baseline; inclusive source-labelled ps boundaries\\
+Temperature; bias factor $\gamma$ & 310~K; 10 & Published weighting parameters; no new MD run\\
+Molar gas constant & 0.008314462618 kJ\,mol$^{-1}$\,K$^{-1}$ & Implementation unit convention\\
 CV conversions & $\alpha=\na/1.1$, $\beta=\nb/2.5$ & Published descriptor scaling\\
 Baseline features & $\na$, $\nb$, $R_g$, SASA & Pooled min--max normalization\\
-Initial $d_c$ & 1.3 & Published baseline\\
-Cutoff multiplier & 0.9 & Published 10\% reduction\\
-Center-count scan & 10 down to 2 & Published baseline\\
-Minimum cluster size & 300 frames & Published acceptance criterion\\
-Minimum mean silhouette & 0.3 & Published acceptance criterion\\
-Failure stopping count & 5 & Consecutive iterations with no accepted cluster\\
+Discovery & $d_c=1.3$, multiplied by 0.9 per iteration; 10 down to 2 centres; at least 300 frames; mean silhouette at least 0.3; stop after 5 failures & Published baseline (steps 1--5 above)\\
 Distance storage & float32 & Source-informed; blockwise construction\\
-Consensus & Average linkage & Marginal Wasserstein norm\\
-Elbow smoothing & $s=5$ & Supplied source heuristic\\
-Elbow search range & First 90\% of merges & Supplied source heuristic\\
+Consensus & Average linkage & Euclidean norm of the four marginal Wasserstein-1 distances\\
+Elbow heuristic & $s=5$; first 90\% of merges & Supplied source heuristic\\
 Final assignment & One nearest-centroid pass & No iterative refitting\\
 Master seed & 42 & Default project configuration; recorded per run\\
-Smoke / medium groups & 3,000 / 10,000 & Reduced execution profiles\\
-Smoke / medium discovery groups & 2 / 3 & Not full-production evidence\\
-Full group size & About 30,000 & All groups; full execution disabled\\
-Seed counts & 2 smoke; 5 pilot/medium; 20 full default & Full robustness configurable; not performed\\
-Bootstrap draws & 500 & Conditional moving-block extension; not performed on real weights\\
-Resource policy & Bounded sequential local workers & Full execution held for review\\
+Profiles (smoke / medium / full) & Groups of 3,000 / 10,000 / about 30,000 frames; 2 / 3 / all groups & Smoke and medium are reduced profiles; full uses \DPCGroups{} groups covering all 300,003 frames\\
+Seed study & 2 smoke; 5 medium; 5 full & Initialization seeds only; seed 42 is the reference. The configured 20-seed full study was not run\\
+Parameter study & $d_c\times0.9$ and $\times1.1$; silhouette 0.25 and 0.35; minimum size 200 and 400 & One change at a time; medium and full profiles\\
+FES energy unit & \kJmol{} (assumed) & Not confirmed by the authors; set in the configuration file \code{paper\_reproduction\_}\allowbreak\code{full\_assumed.yaml}\\
+Bootstrap & 500 draws; blocks of twice the largest statistical inefficiency & Run but not reported: two to five blocks per replica gave intervals not centred on the estimates (\cref{tab:weighted})\\
+Resource policy & Bounded sequential local workers & Full-profile limits 24~h and 24~GiB; measured for the baseline run: 14~min, 3.8~GiB\\
 \bottomrule
 \end{longtable}
-\endgroup
-\addsec{Completed descriptor-only GMM pilot}
-The protocol was committed before execution. Its four operations separate the choice of fitting observations from the comparisons made afterwards:
-\begin{protocolsteps}
-\item \textbf{Fix the sample.} Select 1,000 frames per replica with seed 20261007. Use the same 3,000 observations for every fit.
-\item \textbf{Fit the transformation.} Estimate means and population standard deviations on those rows only. Share the transformation of retained descriptors between the four- and three-feature representations.
-\item \textbf{Fit the models.} For each $K=2,\ldots,6$, use seeds 42--46: 50 fits overall. Each fit uses one initialization, at most 500 iterations, tolerance $10^{-3}$ and covariance regularization $10^{-6}$.
-\item \textbf{Compare assignments.} Label all 300,003 frames, including fitting rows. Use five paired-seed ARIs to compare representations and ten seed pairs to compare initializations within each representation.
-\end{protocolsteps}
 
-The following settings belong to the successful independent experiment, not to the published DPC baseline. The fit sample and initializations were recorded before execution.
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.34\textwidth}>{\raggedright\arraybackslash}p{.22\textwidth}>{\raggedright\arraybackslash}p{.36\textwidth}@{}}
+\section*{Settings of the Gaussian-mixture experiment}
+\Cref{tab:gmmparameters} lists the settings of the independent GMM experiment, which are separate from the published density-peak baseline; the protocol is described in \cref{sec:task3}.
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.29\textwidth}>{\raggedright\arraybackslash}p{.29\textwidth}>{\raggedright\arraybackslash}p{.365\textwidth}@{}}
 \caption{Settings of the completed GMM experiment, as recorded in its run manifest.}\label{tab:gmmparameters}\\
 \toprule Parameter & Value & Evidence / role\\\midrule\endfirsthead
-\multicolumn{3}{l}{\small\itshape Table \thetable\ continued}\\
+\caption[]{Settings of the completed GMM experiment (continued).}\\
 \toprule Parameter & Value & Evidence / role\\\midrule\endhead
 Fit sample & 1,000 per replica & 3,000 rows; shared across models\\
 Sampling seed & 20261007 & Local NumPy generator\\
@@ -69,9 +55,11 @@ Initializations per fit & 1 & 50 total fitted models\\
 Covariance & Full & Regularization $10^{-6}$\\
 Convergence settings & 500 iterations; tolerance $10^{-3}$ & All fits converged numerically\\
 Evaluation & 300,003 rows & Includes fit rows; descriptive comparison\\
-Resource limits & 600 s; 4 GiB & Sequential local worker\\
+Comparisons & 5 paired-seed ARIs between feature spaces; 10 seed pairs within each & All 300,003 frames, fitting rows included\\
+Resource limits & 600~s; 4~GiB & Sequential local worker\\
 \bottomrule
 \end{longtable}
+\endgroup
 
 \chapter{Mathematical derivations and estimator checks}
 \label{app:derivations}
@@ -81,10 +69,10 @@ The accumulated potential can be written as a sum of local Gaussian hills:
 V(s,t)=\sum_{t_k<t}h_k\exp\!\left[-\frac12\sum_a\frac{(s_a-s_a(t_k))^2}{\sigma_a^2}\right].
 \label{eq:hills}
 \end{equation}
-In \cref{eq:hills}, $s$ is the CV vector, $t_k$ a deposition time, $h_k$ the hill height and $\sigma_a$ its width along coordinate $a$. Well-tempered heights follow $h_k=h_0\exp[-V(s(t_k),t_k)/(k_B\Delta T)]$ in molecular energy units; molar units require $R$ instead of $k_B$.
+In \cref{eq:hills}, $s$ is the CV vector, $t_k$ a deposition time, $h_k$ the hill height and $\sigma_a$ its width along coordinate $a$. Well-tempered heights follow $h_k=h_0\exp[-V(s(t_k),t_k)/(k_B\Delta T)]$ in molecular energy units, with $\Delta T=(\gamma-1)T$; molar units require $R$ instead of $k_B$.
 
-\section*{Why the sign of the final-bias correction is negative in FES form}
-Under a static bias $V$, the observed configuration density is proportional to $\exp[-\beta_T(U+V)]$. Multiplying by $\exp(\beta_T V)$ recovers relative canonical density. The WT relation $V\simeq-(1-1/\gamma)F+C$ therefore gives the negative free-energy sign in \cref{eq:finalweights}. Applying $\exp(-\beta_T V)$ would reverse the correction. This derivation assumes that using a final bias is appropriate for the analyzed interval; it is not a proof that the supplied trajectories satisfy that assumption.
+\section*{Sign of the final-bias correction}
+Under a static bias $V$, the observed configuration density is proportional to $\exp[-\beta_T(U+V)]$. Multiplying by $\exp(\beta_T V)$ recovers relative canonical density. The WT relation $V\simeq-(1-1/\gamma)F+C$ therefore gives the negative free-energy sign in \cref{eq:finalweights}. Applying $\exp(-\beta_T V)$ would reverse the correction. This derivation assumes that using a final bias is appropriate for the analysed interval; it is not a proof that the supplied trajectories satisfy that assumption.
 
 \section*{Kish effective sample size}
 Unequal statistical weights require a separate diagnostic:
@@ -92,7 +80,7 @@ Unequal statistical weights require a separate diagnostic:
 N_{\mathrm{eff,Kish}}=\frac{(\sum_i w_i)^2}{\sum_i w_i^2}.
 \label{eq:kish}
 \end{equation}
-\Cref{eq:kish} measures weight concentration without correcting temporal dependence. It is not automatically combined with correlation ESS. No empirical Kish ESS is available without validated weights.
+\Cref{eq:kish} measures weight concentration without correcting temporal dependence, so it is not combined with the correlation ESS of \cref{tab:sampling}. Under the assumed FES unit of \cref{sec:weighted} it ranges from \WKishMin{} to \WKishMax{} per replica of \num{100001} frames.
 
 \section*{Equal-replica mixture and cluster moments}
 Let $\widetilde w_{ri}$ sum to one within replica $r$. The pooled expectation of $A$ is $(1/3)\sum_r\sum_i\widetilde w_{ri}A_{ri}$. Cluster relevance uses $A$ equal to a membership indicator. For a conditional cluster mean, divide the pooled weighted sum of the descriptor by the pooled membership mass. Computing three conditional means and averaging them equally instead would answer a different question when cluster populations differ across replicas.
@@ -100,58 +88,65 @@ Let $\widetilde w_{ri}$ sum to one within replica $r$. The pooled expectation of
 \section*{Bilinear interpolation test}
 For a cell with fractional coordinates $u,v\in[0,1]$, interpolation combines its four corner values with weights $(1-u)(1-v)$, $u(1-v)$, $(1-u)v$, and $uv$. Their sum is one. Any surface $a+b\alpha+c\beta+d\alpha\beta$ is reproduced exactly within floating-point tolerance. The test suite includes such a mixed-term surface, reordered input rows, boundaries and invalid-grid cases, providing stronger evidence than checking a single grid node.
 
-\chapter{Additional diagnostics and interpretation}
+\chapter{Supplementary diagnostics}
 \label{app:diagnostics}
-\begin{figure}[!htbp]
+This appendix collects the figures and tables behind \cref{sec:dependence,sec:sasaremoval}. Every descriptor diagnostic uses the unweighted, biased sample of 300,003 frames (three replicas, 1--3~μs); weights enter only in \cref{sec:weighted}. The saved tables behind these figures belong to run \DiagnosticRun{}.
+
+\section*{Descriptor distributions and relationships}
+\begin{figure}[htbp]
+\centering\includegraphics[width=.92\textwidth]{descriptor_landscape.pdf}
+\caption{Unweighted descriptor landscape of the pooled sample (300,003 frames, three replicas, 1--3~μs). (A) Radius of gyration against SASA. (B) $\na$ against $\nb$. Shading is the log number of frames per hexagonal cell on a shared scale.}
+\label{fig:landscape}
+\end{figure}
+\begin{figure}[htbp]
+\centering\includegraphics[width=.92\textwidth]{rebuild_features.pdf}
+\caption{Relationships between the four descriptors in the pooled, unweighted sample. (A)~Pearson correlation matrix. (B)~Variance explained by standardized PCA; the line shows cumulative variance.}
+\label{fig:features}
+\end{figure}
+\begin{figure}[htbp]
+\centering\includegraphics[width=.92\textwidth]{raw_descriptor_distributions.pdf}
+\caption{Per-replica distributions of the recorded descriptors. Each descriptor uses common bin edges, with separate density normalization for each replica. The curves retain the simulation bias and are not equilibrium distributions. Units follow the source labels. Panels: (A)~$\na$, (B)~$\nb$, (C)~$R_g$, (D)~SASA.}
+\label{fig:rawdistributions}
+\end{figure}
+
+\FloatBarrier
+\section*{Dependence between saved frames}
+\begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{rg_timeseries.pdf}
-\caption{Radius of gyration along the biased trajectory of each replica. Thin lines show every frame and bold lines a centred 20 ns (1,000-frame) rolling mean. The right-hand histograms are unweighted densities with dashed lines at the medians (1.153, 1.118 and 1.126 nm).}
+\caption{Radius of gyration along the biased trajectory of each replica. Thin lines show every frame and bold lines a centred 20~ns (1,000-frame) rolling mean. The right-hand histograms are unweighted densities with dashed lines at the medians (1.153, 1.118 and 1.126~nm).}
 \label{fig:rgtrace}
+\end{figure}
+\begin{figure}[htbp]
+\centering\includegraphics[width=\textwidth]{rebuild_autocorrelations.pdf}
+\caption{Autocorrelation functions calculated separately for each replica and descriptor. For readability the figure displays a subset of lag points over the first half of the available window; estimation uses the full ACF sequence. The horizontal axis is biased trajectory time. Panels: (A)~$\na$, (B)~$\nb$, (C)~$R_g$, (D)~SASA.}
+\label{fig:acf}
 \end{figure}
 \begin{table}[htbp]
 \centering
+\caption{Correlation-time estimates for all twelve replica--descriptor series. Every series is flagged as unreliable: $N_{\mathrm{eff,corr}}$ is below the required 50 for all of them, and the half-window shift exceeds 0.25 standard deviations in 11 of 12. $g$ is the statistical inefficiency; the half-window shift is the absolute difference of the half-series means divided by the full-series standard deviation. Time is biased trajectory time.}
+\label{tab:sampling}\small
+\input{generated/sampling_rows.tex}
+\end{table}
+
+The half-window mean-shift diagnostic is descriptive: a large shift can arise from slow fluctuations, nonstationarity or changing occupation of sampled regions, and a series is flagged when the shift exceeds 0.25 standard deviations, an explicit project heuristic. A small shift alone would not establish convergence, and no threshold outcome can recover an unbiased time scale from WT-MetaD time.
+
+\FloatBarrier
+\section*{Gaussian-mixture comparison}
+\Cref{tab:gmm} lists the values plotted in \cref{fig:gmm}, and \cref{fig:seedmatrices} shows every pairwise seed ARI behind the within-feature-space ranges reported there.
+\begin{table}[htbp]
+\centering
 \begin{threeparttable}
-\caption{Agreement between feature sets across the five paired initializations.}
+\caption{Agreement between the four-feature and SASA-removed Gaussian-mixture partitions over the five paired initializations (values plotted in \cref{fig:gmm}).}
 \label{tab:gmm}
 \input{generated/gmm_rows.tex}
-\begin{tablenotes}[flushleft]\footnotesize
+\begin{tablenotes}[flushleft]\footnotesize\raggedright
 \item Component counts were specified for comparison, not selected as physical numbers of states.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
-\begin{figure}[!htbp]
-\centering\includegraphics[width=\textwidth]{descriptor_landscape.pdf}
-\caption{Unweighted descriptor landscape of the pooled sample (300,003 frames, three replicas, 1--3 μs). (A) Radius of gyration against SASA. (B) $\na$ against $\nb$. Shading is the log number of frames per hexagonal cell on a shared scale.}
-\label{fig:landscape}
-\end{figure}
-\begin{figure}[!htbp]
-\centering\includegraphics[width=\textwidth]{rebuild_features.pdf}
-\caption{Relationships between the four descriptors in the pooled, unweighted sample. Left: Pearson correlation matrix. Right: variance explained by standardized PCA, with cumulative variance shown by the line.}
-\label{fig:features}
-\end{figure}
-\begin{figure}[!htbp]
-\centering\includegraphics[width=.95\textwidth]{rebuild_autocorrelations.pdf}
-\caption{Autocorrelation functions calculated separately for each replica and descriptor. For readability the figure displays a subset of lag points over the first half of the available window; estimation uses the full ACF sequence. The horizontal axis is biased trajectory time.}
-\label{fig:acf}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering\includegraphics[width=\textwidth]{raw_descriptor_distributions.pdf}
-\caption{Per-replica distributions of the recorded descriptors. Each descriptor uses common bin edges, with separate density normalization for each replica. The curves retain the simulation bias and are not equilibrium distributions. Units follow the source labels.}
-\label{fig:rawdistributions}
-\end{figure}
-\begin{table}[htbp]
-\centering
-\caption{All recorded correlation estimates, each flagged as unreliable by at least one stated check. $g$ denotes statistical inefficiency. The half-window shift is the absolute difference of means divided by the full-series standard deviation. The time axis belongs to the biased trajectory.}
-\label{tab:sampling}\small
-\input{generated/sampling_rows.tex}
-\end{table}
-The saved tables contain per-replica raw descriptor counts, means, standard deviations, extrema, common-bin histograms, the full four-feature correlation matrix, PCA transformation parameters and explained variance, and the reported correlation-estimator diagnostics. The ACF figure is a plotting subsample, not the series used to estimate $g$. No weights are present in these real-data diagnostic summaries.
-
-The half-window mean-shift diagnostic is descriptive. A large shift can arise from slow fluctuations, nonstationarity, or changing occupation of sampled regions. Its threshold is an explicit project heuristic. A low shift alone would not establish convergence, and no threshold outcome can recover an unbiased time scale from WT-MetaD time. Future evaluation should preserve these distinctions when adding weighted estimates.
-
 \begin{figure}[htbp]
 \centering\includegraphics[width=\textwidth]{gmm_seed_matrices.pdf}
-\caption{All pairwise seed ARIs from the GMM pilot. Columns show each tested component count; rows distinguish the four-feature and SASA-ablated representations. The diagonal is identity. All fits converged, so no entries are omitted. Similar numerical stopping status can coexist with different partitions.}
+\caption{All pairwise seed ARIs from the GMM experiment. Columns show each tested component count; rows distinguish the four-feature and SASA-removed representations. The diagonal is identity. All fits converged, so no entries are omitted; convergence of the optimizer does not guarantee the same partition.}
 \label{fig:seedmatrices}
 \end{figure}
 
@@ -166,31 +161,31 @@ The half-window mean-shift diagnostic is descriptive. A large shift can arise fr
 Two small examples from the 38-test suite show how a check can identify a numerical error without relying on the output of the full pipeline.
 
 \paragraph{Interpolation with a known answer.}
-An analytic bilinear surface includes a mixed-coordinate term, so a query between nodes tests both axes together. Reordering its rows must preserve the interpolated answer. Deleting or duplicating a grid point, or querying outside the bounds, must instead raise an error. The same fixture therefore checks both a valid calculation and the rejection of inputs for which that calculation would be inappropriate.
+The derivation is in \cref{app:derivations}. An analytic bilinear surface includes a mixed-coordinate term, so a query between nodes tests both axes together. Reordering its rows must preserve the interpolated answer. Deleting or duplicating a grid point, or querying outside the bounds, must instead raise an error. The same fixture therefore checks both a valid calculation and the rejection of inputs for which that calculation would be inappropriate.
 
 \paragraph{Normalization with an invariant.}
 An arbitrary additive FES constant must disappear after weight normalization. A second check gives two replicas unequal numbers of frames and requires each to contribute half of the pooled mass. This catches pooling by row count, which would look correct on three equal-length replicas. Other weight tests check the formula's sign and weighted moments.
 
-The remaining checks cover parsing, scaling, residual exclusion and final assignment. Renaming cluster labels must leave partition agreement unchanged; changing evaluation extremes must not alter a scaler fitted on fixed training rows. These checks isolate failures that could otherwise be mistaken for a change in the clustering method.
+The remaining checks cover parsing, scaling, residual exclusion and final assignment. Renaming cluster labels must leave partition agreement unchanged; changing evaluation extremes must not alter a scaler fitted on fixed training rows. These checks isolate failures that could otherwise be mistaken for a change in the clustering method. The scaling function behind the last of them is shown below.
+
+\begin{codepanel}{Fit once, reuse the same scale}{RobustCluster-Aβ / Python}
+\lstinputlisting[style=editorialcode]{generated/fit_scaler.py}
+\end{codepanel}
 
 A synthetic end-to-end fixture exercises discovery, consensus, weighting, summaries and figure generation. Synthetic GMM cases check repeatability and missing-family handling. An autoregressive fixture probes the correlation estimator; an archive test prevents an unrelated enclosing Git repository from supplying false provenance. The fixtures establish software behaviour on known inputs (Scope~5).
 
-The project inventory records immutable source hashes, table dimensions and missing inputs. The method map links each step to paper evidence, source behavior, the modular implementation and validation tests. The decision log records scientific category and expected effect. The open-questions register prevents uncertain provenance from being converted into hidden defaults.
+The audit is documented in four project files: the inventory (immutable source hashes, table dimensions and missing inputs), the method map (each step linked to paper evidence, source behaviour, implementation and tests), the decision log (scientific category and expected effect of each change) and the open-questions register, which keeps uncertain provenance from becoming a hidden default.
 
-Scientific V2 is absent, so the audit contains no invented intermediate diff. The supplied original remains excluded from execution and lint collection because its syntax error and top-level writes are part of the preserved evidence. New code is tested independently. Public source packaging excludes the raw table and original script until their redistribution rights are established.
+An intermediate version of the supplied script, mentioned in the materials, could not be located; the audit therefore compares the supplied original directly with the reimplementation and reconstructs no intermediate version. The original is excluded from execution and from lint collection because its syntax error and top-level writes are part of the preserved evidence; the new code is tested independently. The raw table and the original script are not redistributed until their owners give permission.
 
-
-
-The checked bibliography contains journal articles and official documentation records; its matrix links each citation to its question, method, relevance, and report section. Online-first dates and issue years are distinguished. References whose publisher verification remained unresolved are documented outside the BibTeX file rather than filled from memory.
-
-\chapter{Reproducibility instructions and software environment}
+\chapter{Reproducibility and software environment}
 \label{app:repro}
 The project source, tests, configurations and this report are available at
 \href{https://github.com/Alierkn/robustcluster-abeta}{RobustCluster-Aβ on GitHub}.
 The \href{https://github.com/Alierkn/robustcluster-abeta/tree/main/src/robustcluster_abeta}{Python package}
 and \href{https://github.com/Alierkn/robustcluster-abeta/tree/main/report}{LaTeX sources}
 can be inspected separately or downloaded together using GitHub's \textit{Code / Download ZIP} option.
-The repository guide distinguishes code verification and report regeneration from analyses requiring restricted inputs.
+The repository README and \code{REPRODUCIBILITY.md} distinguish code verification and report regeneration from analyses that need the restricted inputs.
 
 \begin{lstlisting}
 python3.12 -m venv .venv
@@ -204,22 +199,17 @@ robustcluster diagnostics --config config/robustness.yaml
 robustcluster cluster --config config/paper_reproduction_full.yaml --profile full
 robustcluster reproduce --config config/paper_reproduction_full_assumed.yaml --profile full
 \end{lstlisting}
-The raw file must first be obtained and checked against its documented SHA256. The standalone commands and Snakemake workflow use the same package functions. The report imports successful diagnostics, FES-audit, GMM and figure manifests with matching hashes. Its generated editorial artwork and real browser screenshots have separate provenance records. LuaLaTeX, Biber and latexmk build the supplied report sources; current paths and tool versions are recorded in the build manifest.
+The raw file must first be obtained and checked against its documented SHA256. The standalone commands and Snakemake workflow use the same package functions. The seed and parameter studies add \code{-{}-experiment seed-pilot} or \code{-{}-experiment parameters} to the \code{cluster} command with \code{config/robustness\_full.yaml}, and the GMM experiment uses the \code{gmm-ablation} command with its own configuration. The report imports successful diagnostics, FES-audit, GMM, DPC-clustering, weighted-reproduction and figure manifests with matching hashes. The generated editorial artwork and the browser screenshots have separate provenance records. LuaLaTeX, Biber and latexmk build the report.
 
-The full-profile configurations record the measured resource estimates that justified enabling them (about 15 minutes and 4~GiB per clustering run). The configuration with the assumed FES unit states that assumption in its header and in every manifest it produces; once the unit is confirmed, only its two FES fields need to change. Outputs that would redistribute the FES or per-frame descriptor values stay local, with their hashes kept in the manifests. No calculation in this report used an HPC system \autocite{leonardodocs}.
+The full-profile configurations record the resource estimate that justified enabling them (at most 2~h and under 10~GiB, extrapolated from a medium-profile run of 36~s and 0.70~GiB). The full baseline run then took 14~min with a peak of 3.8~GiB. The configuration with the assumed FES unit states that assumption in its header and in every manifest it produces; once the unit is confirmed, only its two FES fields need to change. Outputs that would redistribute the FES or per-frame descriptor values stay local, with their hashes kept in the manifests. No calculation in this report used a high-performance computing (HPC) system such as Leonardo \autocite{leonardodocs}.
 
-\addsec{Software environment}
-\begin{table}[htbp]
-\centering
-\begin{threeparttable}
-\caption{Software versions for the reported local descriptor diagnostics.}
+\section*{Software environment}
+\Cref{tab:environment} lists the software versions recorded in the manifest of the descriptor diagnostics. The third-party versions are identical in the GMM, DPC-clustering and weighted-population manifests; the package version is 0.1.0 in the diagnostics and GMM manifests and 0.3.0 in the two later ones. The versions do not describe the original authors' simulation environment.
+\par\medskip\noindent\begin{minipage}{\textwidth}\centering
+\captionof{table}{Software versions recorded in the manifest of the descriptor diagnostics.}
 \label{tab:environment}
 \input{generated/environment_rows.tex}
-\begin{tablenotes}[flushleft]\footnotesize
-\item The GMM pilot manifest records the same versions. They do not describe the original authors' simulation environment. The complete dependency lock and report-tool versions are separate reproducibility artifacts.
-\end{tablenotes}
-\end{threeparttable}
-\end{table}
+\end{minipage}\par
 
 \chapter{Personal projects and source-code evidence}\label{app:companion}
 \begin{figure}[htbp]
@@ -228,30 +218,18 @@ The full-profile configurations record the measured resource estimates that just
 \label{fig:tooling}
 \end{figure}
 
-\par\addvspace{8pt}\noindent
-\begin{comparisonpanel}{VMD MCP: frame measurements}
-The inspected source constructs Tcl commands for measurement and rendering. Its gyration function passes an atom selection and mass-weighting option to VMD, then returns frame-indexed values.
-\end{comparisonpanel}\hfill
-\begin{comparisonpanel}{GROMACS MCP: execution interface}
-The inspected source includes preparation and analysis helpers. Its background-run interface checks paths and records output in a log.
-\end{comparisonpanel}
-\par\addvspace{8pt}
-
-The following images are genuine browser captures from public, commit-specific GitHub source pages on 7 October 2026. They document implementation, not simulation execution. The full images are preserved unchanged; short accompanying searchable listings are a separate presentation format.
-\begin{codepanel}{02\quad Measure each saved frame}{VMD MCP / source lines 250--266}
+The images below are unaltered browser captures of public, commit-specific GitHub source pages taken on 7 October 2026. They document the implementation, not any simulation run. Each is preceded by a transcription of the same lines as searchable text. The VMD wrapper passes an atom selection and a mass-weighting option to VMD and returns frame-indexed values; the GROMACS wrapper checks its paths and records output in a log.
+\begin{codepanel}{Measure each saved frame}{VMD MCP / source lines 250--266}
 \lstinputlisting[style=editorialcode,firstnumber=250]{generated/vmd-mcp-excerpt.py}
 \end{codepanel}
-\begin{figure}[htbp]
-\centering\includegraphics[width=.85\textwidth]{screenshots/vmd-gyration.jpg}
-\caption{VMD MCP source at commit \texttt{0191259}: the gyration wrapper constructs a Tcl frame loop and parses marked values. The screenshot shows the repository tree, source path and real line numbers. The function's documented unit convention must be checked before comparison with other tools. \href{https://github.com/Alierkn/vmd-mcp/blob/01912595595bf0302124f57559e1e6a22095fb24/src/vmd_mcp/server.py\#L242-L278}{Open the inspected source}.}
+\par\medskip\noindent\begin{minipage}{\textwidth}\centering\includegraphics[width=.68\textwidth]{screenshots/vmd-gyration.jpg}
+\captionof{figure}{VMD MCP source at commit \texttt{0191259}: the gyration wrapper constructs a Tcl frame loop and parses marked values. The screenshot shows the repository tree, source path and real line numbers. VMD reports lengths in ångström, so its values must be converted before comparison with the nanometre values of this report. \href{https://github.com/Alierkn/vmd-mcp/blob/01912595595bf0302124f57559e1e6a22095fb24/src/vmd_mcp/server.py\#L242-L278}{The inspected source is available online}.}
 \label{fig:vmdcode}
-\end{figure}
-\clearpage
-\begin{codepanel}{03\quad Validate before starting a job}{GROMACS MCP / source lines 1452--1467}
+\end{minipage}\par\medskip
+\begin{codepanel}{Validate before starting a job}{GROMACS MCP / source lines 1452--1467}
 \lstinputlisting[style=editorialcode,firstnumber=1452,gobble=8]{generated/gromacs-mcp-excerpt.py}
 \end{codepanel}
-\begin{figure}[htbp]
-\centering\includegraphics[width=.85\textwidth]{screenshots/gromacs-mdrun.jpg}
-\caption{GROMACS MCP source at commit \texttt{2c5c957}: the background-run wrapper validates inputs, constructs the \texttt{mdrun} command and prepares an output log. This source view does not establish that an Aβ40 simulation was launched through the tool. \href{https://github.com/Alierkn/gromacs-mcp/blob/2c5c957c3f2c047888b63ae258ace3df34cb8773/src/gromacs_mcp/server.py\#L1441-L1479}{Open the inspected source}.}
+\par\medskip\noindent\begin{minipage}{\textwidth}\centering\includegraphics[width=.68\textwidth]{screenshots/gromacs-mdrun.jpg}
+\captionof{figure}{GROMACS MCP source at commit \texttt{2c5c957}: the background-run wrapper validates inputs, constructs the \texttt{mdrun} command and prepares an output log. This source view does not establish that an Aβ40 simulation was launched through the tool. \href{https://github.com/Alierkn/gromacs-mcp/blob/2c5c957c3f2c047888b63ae258ace3df34cb8773/src/gromacs_mcp/server.py\#L1441-L1479}{The inspected source is available online}.}
 \label{fig:gmxcode}
-\end{figure}
+\end{minipage}\par\medskip

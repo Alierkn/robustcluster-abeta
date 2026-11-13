@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.2 — 2026-11-13
+
+- Report revised after a page-by-page review (six reviewers; findings verified against manifests before use). No clustering or weighting result changed; 21 main-text pages, 42 in total.
+- Accuracy: the report now says the published workflow was *run with the published parameters* (its families are not yet compared with the article); block-bootstrap intervals are no longer shown because, with two to five blocks per replica, they were not centred on the estimates, and the three single-replica values are reported instead; the sensitivity figure states that each variant is compared with the seed-42 partition of its own profile; the Kish ESS is marked as ignoring temporal correlation.
+- Methods text: definitions before first use, the density-peak tie rule, the consensus distance and the Geyer estimator are written out as implemented.
+- Structure: abbreviations page after the contents, numbered next steps, a fuller signature page, Appendix A table brought up to date, Appendix C reordered to follow the text, shorter Appendices E and F.
+- Consistency: one thousands-separator style, unit macros, British spelling with -ize, ISO access dates, every float cited.
+- Figures: family labels placed outside overlapping bubbles with a zoomed panel; family numbering mapped to the run's internal labels in the table note and `dpc_provenance.json`.
+- Sections 7.3 and 7.4 rewritten from the student's own account: where the difficulty lay, the motivation for the two MCP projects (built with AI coding assistance), what is still open and what would be done differently.
+- `__version__` now matches `pyproject.toml` (0.4.2).
+
 ## 0.4.1 — 2026-11-11
 
 - Report: two sentences in the critical reflection (Section 7.4) still described the weighted populations as open and the weighting stage as blocked; they now match Section 6.5, where populations are computed under a stated FES assumption. No result changed.

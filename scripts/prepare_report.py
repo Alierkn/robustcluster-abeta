@@ -49,7 +49,7 @@ generated.mkdir(exist_ok=True)
 rows=[]
 labels={"nAlpha":r"$n_\alpha$", "nBeta":r"$n_\beta$", "Rg":r"$R_g$", "SASA":"SASA"}
 for row in sampling.itertuples():
-    rows.append(f"{row.replica_id} & {labels[row.descriptor]} & {row.statistical_inefficiency:.0f} & {row.tau_int_ps/1000:.1f} & {row.correlation_ess:.1f} & {row.half_mean_difference_in_sd:.2f} \\\\")
+    rows.append(f"{row.replica_id} & {labels[row.descriptor]} & \\num{{{row.statistical_inefficiency:.0f}}} & {row.tau_int_ps/1000:.1f} & {row.correlation_ess:.1f} & {row.half_mean_difference_in_sd:.2f} \\\\")
 (generated/"sampling_rows.tex").write_text(
     r"\begin{tabular}{@{}clrrrr@{}}\toprule"+"\n"
     +r"Replica & Descriptor & $g$ & $\tau_{\mathrm{int}}$ (ns) & $N_{\mathrm{eff,corr}}$ & Half shift / SD\\\midrule"+"\n"

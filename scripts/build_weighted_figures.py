@@ -83,32 +83,29 @@ def main():
     for y, family in enumerate(order):
         raw = unweighted.loc[family, "raw_fraction"]
         ax.barh(y, 100*raw, height=.62, color=rs.COOLGREY, edgecolor=rs.GRID, lw=.6, zorder=1)
-        low, high = 100*pops.loc[family, "bootstrap_low"], 100*pops.loc[family, "bootstrap_high"]
-        ax.hlines(y, low, high, color=rs.NAVY, lw=1.6, zorder=3)
         reps = per_rep[per_rep.cluster == family].population.to_numpy()*100
         ax.scatter(reps, np.full(len(reps), y), marker="|", s=40, color=rs.TEAL, lw=1.1, zorder=4)
         ax.scatter(100*pops.loc[family, "mean"], y, s=30, color=rs.NAVY, zorder=5)
-        ax.scatter(100*kcal[family], y, s=30, marker="D", facecolor="white", edgecolor=rs.AUDIT, lw=1, zorder=6)
+        ax.scatter(100*kcal[family], y+.24, s=22, marker="D", facecolor="white", edgecolor=rs.AUDIT, lw=1, zorder=6)
     ax.set_yticks(range(len(order)), [f"Family {number[f]}" for f in order])
     ax.invert_yaxis()
     ax.set_xlabel("Share of frames or of statistical weight (%)")
     handles = [rs.plt.Rectangle((0, 0), 1, 1, facecolor=rs.COOLGREY, edgecolor=rs.GRID, label="raw frame fraction"),
-               rs.plt.Line2D([], [], color=rs.NAVY, marker="o", markersize=4.5, lw=1.6,
-                             label="weighted, kJ/mol (95% block bootstrap)"),
+               rs.plt.Line2D([], [], color=rs.NAVY, marker="o", markersize=4.5, ls="",
+                             label=r"weighted (kJ mol$^{-1}$)"),
                rs.plt.Line2D([], [], color=rs.TEAL, marker="|", ls="", markersize=7, label="single replicas"),
                rs.plt.Line2D([], [], color=rs.AUDIT, marker="D", markerfacecolor="white", ls="", markersize=4.5,
-                             label="if the file were kcal/mol")]
+                             label=r"if the file were kcal mol$^{-1}$")]
     ax.legend(handles=handles, loc="lower right", frameon=False)
     rs.save_figure(fig, ROOT/"report/figures/weighted_populations.pdf", creator="scripts/build_weighted_figures.py")
 
     # Table rows.
-    lines = [r"\begin{tabular}{@{}lrrrrr@{}}", r"\toprule",
-             r"Family & Raw & Weighted & 95\% bootstrap & Replica range & kcal/mol case\\", r"\midrule"]
+    lines = [r"\begin{tabular}{@{}lrrrr@{}}", r"\toprule",
+             r"Family & Raw & Weighted & Replica range & If kcal\,mol$^{-1}$\\", r"\midrule"]
     for family in order:
         reps = per_rep[per_rep.cluster == family].population
         lines.append(f"{number[family]} & {100*unweighted.loc[family, 'raw_fraction']:.1f} & "
-                     f"{100*pops.loc[family, 'mean']:.1f} & {100*pops.loc[family, 'bootstrap_low']:.1f}--"
-                     f"{100*pops.loc[family, 'bootstrap_high']:.1f} & {100*reps.min():.1f}--{100*reps.max():.1f} & "
+                     f"{100*pops.loc[family, 'mean']:.1f} & {100*reps.min():.1f}--{100*reps.max():.1f} & "
                      f"{100*kcal[family]:.1f}\\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
     (ROOT/"report/generated/weighted_rows.tex").write_text(
@@ -121,17 +118,32 @@ def main():
     unit_shift = (kcal-pops.loc[order, "mean"]).abs().max()
     rank_kj = pops.loc[order, "mean"].rank(ascending=False)
     rank_kcal = kcal.rank(ascending=False)
+    weighted = pops.loc[order, "mean"]
+    raw = unweighted.loc[order, "raw_fraction"]
+    extended = [f for f in order if unweighted.loc[f, "mean_Rg"] > 1.5]
+    vanishing = [f for f in order if number[f] in (3, 5, 6, 8, 11)]
+    per_replica_vanishing = max(per_rep[(per_rep.replica_id == r) & per_rep.cluster.isin(vanishing)].population.sum()
+                                for r in per_rep.replica_id.unique())
+    top = pops.loc[order, "mean"].idxmax()
+    top_reps = per_rep[per_rep.cluster == top].population
     values = {
+        "WExtendedRaw": f"{100*raw[extended].sum():.1f}", "WExtended": f"{100*weighted[extended].sum():.1f}",
+        "WExtendedKcal": f"{100*kcal[extended].sum():.1f}",
+        "WVanishRaw": f"{100*raw[vanishing].sum():.0f}", "WVanish": f"{100*weighted[vanishing].sum():.1f}",
+        "WVanishMaxReplica": f"{100*per_replica_vanishing:.1f}",
+        "WTopRepMin": f"{100*top_reps.min():.1f}", "WTopRepMax": f"{100*top_reps.max():.1f}",
+        "WFamSevenKcal": f"{100*kcal[[f for f in order if number[f] == 7][0]]:.1f}",
+        "WFamTwoKcal": f"{100*kcal[[f for f in order if number[f] == 2][0]]:.1f}",
         "WRun": rep_manifest["run_id"],
         "WTopFamily": number[top_w], "WTopShare": f"{100*pops.loc[top_w, 'mean']:.1f}",
         "WTopThree": f"{100*top3:.1f}",
         "WMaxShift": f"{100*shift:.1f}",
-        "WKishMin": f"{ess.kish_weight_ess.min():,.0f}", "WKishMax": f"{ess.kish_weight_ess.max():,.0f}",
+        "WKishMin": f"\\num{{{ess.kish_weight_ess.min():.0f}}}", "WKishMax": f"\\num{{{ess.kish_weight_ess.max():.0f}}}",
         "WUnitShift": f"{100*unit_shift:.1f}",
         "WTopKcal": number[kcal.idxmax()], "WTopKcalShare": f"{100*kcal.max():.1f}",
         "WRankAgree": "yes" if rank_kj.idxmin() == rank_kcal.idxmin() else "no",
-        "WBlockMin": f"{min(rep_manifest['summary']['block_lengths'].values()):,}",
-        "WBlockMax": f"{max(rep_manifest['summary']['block_lengths'].values()):,}",
+        "WBlockMin": f"\\num{{{min(rep_manifest['summary']['block_lengths'].values())}}}",
+        "WBlockMax": f"\\num{{{max(rep_manifest['summary']['block_lengths'].values())}}}",
         "WMinutes": f"{rep_manifest['runtime_seconds']/60:.0f}",
     }
     (ROOT/"report/generated/weighted_values.tex").write_text(

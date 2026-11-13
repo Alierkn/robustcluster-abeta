@@ -160,6 +160,19 @@
     "enabled": true
   },
   "wasserstein_normalized_ari": 1.0,
+  "family_number_to_internal_label": {
+    "1": 9,
+    "2": 10,
+    "3": 5,
+    "4": 11,
+    "5": 1,
+    "6": 7,
+    "7": 2,
+    "8": 8,
+    "9": 3,
+    "10": 4,
+    "11": 6
+  },
   "sensitivity_rows": [
     [
       "Seed",
@@ -233,10 +246,10 @@
     ]
   ],
   "outputs": {
-    "report/figures/dpc_families.pdf": "1a0b987829b716338dec6a5eaeef40d686f9767388fb1e6f4660a33c3dbe03f8",
-    "report/figures/dpc_sensitivity.pdf": "d6f05f08986cd805d47d8c4c01840657616a9588610495799148025bbf02555c",
-    "report/generated/dpc_family_rows.tex": "941079039a0302e97230e63949aa2e9ab3f68921286689a28135cfdd11702018",
-    "report/generated/dpc_values.tex": "24e7fba797cb10219047304f519794b471af8d893cc20dda010d40acd0716ffe"
+    "report/figures/dpc_families.pdf": "09b8e32fbd0a58a3a02a1f87f8a4ddd98a5b1611d32ab75425145ee1b6080811",
+    "report/figures/dpc_sensitivity.pdf": "93617f142bae88dc4038145726f3816e4a4589a177bc3d6be0fa117e5ae9f42b",
+    "report/generated/dpc_family_rows.tex": "f263a45d757cbb24b67b760c0a3e15782a4b70718530bfa92e47f8ffc4a8c8c4",
+    "report/generated/dpc_values.tex": "0a693804e10e592307c07b457bfe34a793612242ae68f302c0c3d73e97986333"
   },
   "style": {
     "module": "scripts/report_style.py",

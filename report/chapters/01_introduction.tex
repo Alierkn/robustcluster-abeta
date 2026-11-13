@@ -2,9 +2,9 @@
 \chapter{Introduction}
 \label{ch:intro}
 \section{Context}
-Molecular descriptors form a familiar data-analysis problem: clustering groups rows with similar measurements. Interpretation requires care, because consecutive observations may be correlated, simulation bias changes configuration frequencies, and descriptors can hide structural differences. An intrinsically disordered peptide such as amyloid-β40 (Aβ40) is described by many configurations rather than one fixed structure \autocite{vanderlee2014}, and clustering is a natural way to summarize that diversity.
+Clustering molecular descriptors is a familiar data-analysis problem: it groups rows with similar measurements. Interpretation requires care, because consecutive observations may be correlated, simulation bias changes configuration frequencies, and descriptors can hide structural differences. An intrinsically disordered peptide such as amyloid-β40 (Aβ40) is described by many configurations rather than one fixed structure \autocite{vanderlee2014}, and clustering is a natural way to summarize that diversity.
 
-Cadenelli and colleagues studied monomeric Aβ40 and Aβ42 ensembles with well-tempered metadynamics (WT-MetaD), density-peak clustering, consensus between local clusters and statistical reweighting \autocite{cadenelli2026}. Two of the authors supervised this internship, and their clustering script, descriptor table and free-energy surface (FES) for Aβ40 became its working material.
+Cadenelli and colleagues studied monomeric Aβ40 and Aβ42 ensembles with well-tempered metadynamics (WT-MetaD), density-peak clustering (DPC), consensus between local clusters and statistical reweighting \autocite{cadenelli2026}; that study is called \emph{the primary article} below. Two of the authors supervised this internship, and their clustering script, descriptor table and free-energy surface (FES) for Aβ40 became its working material.
 
 \section{Internship task}
 \label{sec:task}
@@ -14,10 +14,10 @@ After the preparatory study described in \cref{ch:host}, the supervisors assigne
 \item \textbf{Vary.} Modify its parameters and observe the effects.
 \item \textbf{Propose.} Independently propose and explore another clustering framework, or other analysis procedures learned during the Bachelor's programme. The supervisors described this as the most important part.
 \end{protocolsteps}
-These parts translate into three working questions: can the analysis be reconstructed and tested; what do the descriptors reveal about redundancy and temporal dependence; and does removing the solvent-accessible surface area (SASA), the descriptor most correlated with compactness, preserve the fitted groups?
+The task led to three working questions: can the analysis be reconstructed and tested; what do the descriptors reveal about redundancy and temporal dependence; and does removing the solvent-accessible surface area (SASA), the descriptor most correlated with compactness, preserve the fitted groups?
 
 \section{Planned and actual work}
-The published internship proposal described a broader project, in which all-atom simulations would be run with GROMACS and the effect of different solvents analysed. The work actually carried out used the supplied descriptor data, as the 18 September assignment specified; no new simulations or solvent comparison are reported. Within that scope, all three parts of the task were carried out: the published clustering was reproduced on the full data and its parameters were varied (\cref{sec:dpcrun,sec:task2}), and an independent framework was explored (\cref{sec:task3}). The weighted family populations were computed under an assumed FES unit, because the supplied file does not document it; they are reported with that assumption and with the effect of the alternative unit.
+The published internship proposal described a broader project, in which all-atom simulations would be run with GROMACS and the effect of different solvents analysed. The work actually carried out used the supplied descriptor data, as the 18 September assignment specified; no new simulations or solvent comparison are reported. Within that scope, all three parts of the task were carried out: the published clustering workflow was run on the full data with the published parameters and its parameters were varied (\cref{sec:dpcrun,sec:task2}), and an independent framework was explored (\cref{sec:task3}).
 
 \section{Structure of the report}
 \Cref{ch:host} describes the host laboratory, supervision and programme. \Cref{ch:background} summarizes the scientific background needed to read a biased simulation, and \cref{ch:methods} the tools, data and methods. \Cref{ch:activities} gives a detailed account of the activities carried out, block by block, and \cref{ch:results} reports the completed analyses. \Cref{ch:skills} reflects on the skills acquired against the objectives, and \cref{ch:conclusions} concludes.
@@ -27,7 +27,7 @@ Five limitations apply to the whole report; they are stated here once and referr
 \begin{keyfindings}[Scope and limitations]
 \begin{protocolsteps}
 \item \textbf{Sampling.} The descriptors come from WT-MetaD, so observed frequencies are biased and trajectory time is biased time. No equilibrium probabilities or kinetic rates are inferred from them.
-\item \textbf{Weights.} The supplied FES is a complete, numerically valid grid, but its energy unit and replica-combination recipe are undocumented. Weighted populations are computed under an explicit assumption (kJ\,mol$^{-1}$, three replicas combined) and are marked as such (\cref{sec:weighted}).
+\item \textbf{Weights.} The supplied FES is a complete, numerically valid grid, but its energy unit and replica-combination recipe are undocumented. Weighted populations are computed under an explicit assumption (\kJmol, three replicas combined) and are marked as such (\cref{sec:weighted}).
 \item \textbf{Interpretation.} Clusters and Gaussian components are geometric groupings of four descriptors; none is identified as a metastable state or given biological meaning.
 \item \textbf{Uncertainty.} Frames are strongly autocorrelated; reported minimum--maximum ranges describe the runs performed and are not confidence intervals.
 \item \textbf{Evidence.} A passing test shows that code is correct on inputs with known answers; it is not an Aβ40 result.

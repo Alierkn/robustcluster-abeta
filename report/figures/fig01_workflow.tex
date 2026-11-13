@@ -1,5 +1,5 @@
 % Native TikZ workflow (replaces matplotlib fig01_workflow.pdf). Same nine stages, same order.
-% Solid frame: implemented and tested. Dashed frame: implemented, real-data run blocked (FES units).
+% Solid frame: implemented and tested. Dashed frame: depends on the FES unit (run under the assumed kJ/mol).
 \begin{tikzpicture}[
   font=\sffamily\footnotesize,
   stage/.style={draw=Navy!55,fill=CoolGrey,line width=.5pt,rounded corners=1.2pt,
@@ -16,14 +16,14 @@
 \node[stage] (a) {\textbf{Validate descriptors}\\separate replicas};
 \node[stage,right=of a] (b) {\textbf{Scale four features}\\random disjoint subsets};
 % Row 2 - clustering
-\node[stage,below=of a] (c) {\textbf{STEP 1 \textperiodcentered{} Iterative DPC}\\acceptable clusters};
-\node[stage,right=of c] (d) {\textbf{STEP 2 \textperiodcentered{} Wasserstein}\\consensus; global centroids};
-\node[stage,right=of d] (e) {\textbf{STEP 3 \textperiodcentered{} Assign}\\every analysis frame};
+\node[stage,below=of a] (c) {\textbf{Iterative DPC}\\acceptable clusters};
+\node[stage,right=of c] (d) {\textbf{Wasserstein}\\consensus; global centroids};
+\node[stage,right=of d] (e) {\textbf{Assign}\\every analysis frame};
 % Row 3 - weighting
-\node[pending,below=of c] (f) {\textbf{Complete FES + weights}\\equal replica mixture};
+\node[pending,below=of c] (f) {\textbf{FES interpolation + weights}\\equal replica mixture};
 \node[pending,right=of f] (g) {\textbf{Weighted characterization}\\replica-aware uncertainty};
 % Row 4 - extensions and reporting
-\node[stage,below=of f] (h) {\textbf{Independent extensions}\\seeds \textperiodcentered{} features \textperiodcentered{} scaling};
+\node[stage,below=of f] (h) {\textbf{Independent extensions}\\seeds \textperiodcentered{} parameters \textperiodcentered{} GMM};
 \node[outbox,right=of h] (i) {\textbf{Manifest-backed}\\figures and report};
 % numbering badges
 \foreach \n/\m in {a/1,b/2,c/3,d/4,e/5,f/6,g/7,h/8,i/9}

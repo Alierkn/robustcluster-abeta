@@ -9,7 +9,7 @@
 \node[anchor=north,align=center,font=\sffamily,text=Navy] at ([yshift=-22mm]current page.north)
   {{\small\bfseries\addfontfeatures{LetterSpace=14}\MakeUppercase{University of Messina}}\\[2.2mm]
    {\footnotesize\color{Ink}Department of Mathematical and Computer Sciences, Physical Sciences and Earth Sciences (MIFT)}\\[1mm]
-   {\footnotesize\color{Ink}Bachelor's Degree in Computer Science (L-31) \textperiodcentered{} Data Analysis curriculum}};
+   {\footnotesize\color{Ink}Bachelor's degree in Computer Science (L-31) \textperiodcentered{} Data Analysis curriculum}};
 % illustration band
 \node[anchor=north,inner sep=0pt] (band) at ([yshift=-50mm]current page.north)
   {\includegraphics[width=\paperwidth,height=115mm]{artwork/cover-illustration-band.png}};
@@ -29,16 +29,19 @@
    {\Large\color{Ink} Reproducible analysis of amyloid-β40 conformational descriptors}\\[2.5mm]
    {\itshape\normalsize\color{Ink} Internship project: Clustering Framework for Intrinsically Disordered Proteins}};
 % details
-\node[anchor=north,font=\sffamily\small] at ([yshift=-62mm]band.south)
-  {\begin{tabular}{@{}r@{\hspace{1.2em}}l@{}}
-   \color{Teal}Student & Ali Erkan Ocaklı (student ID 555012)\\[1.5pt]
-   \color{Teal}Host laboratory & Laboratory of Experimental and Computational Physics of Biosystems, MIFT\\[1.5pt]
-   \color{Teal}Host supervisor & Prof.\ Valeria Conti Nibali\\[1.5pt]
-   \color{Teal}Co-supervisor & Andrea Ciccolo\\[1.5pt]
-   \color{Teal}Academic tutor & Prof.\ David Barilla\\[1.5pt]
-   \color{Teal}Hours completed & 75\\
+\node[anchor=north,font=\sffamily\small,inner sep=0pt] (details) at ([yshift=-62mm]band.south)
+  {\renewcommand{\arraystretch}{1.22}\begin{tabular}{@{}r@{\hspace{1.4em}}l@{}}
+   \coverlabel{Student} & Ali Erkan Ocaklı (student ID 555012)\\
+   \coverlabel{Host laboratory} & Laboratory of Experimental and Computational Physics of Biosystems, MIFT\\
+   \coverlabel{Host supervisor} & Prof.\ Valeria Conti Nibali\\
+   \coverlabel{Co-supervisor} & Andrea Ciccolo\\
+   \coverlabel{Academic tutor} & Prof.\ David Barilla\\
+   \coverlabel{Workload} & 75 hours, completed\\
    \end{tabular}};
-\node[anchor=south,font=\sffamily\small,text=Navy] at ([yshift=16mm]current page.south) {Academic year 2025--2026};
+\draw[Teal!55,line width=.4pt] ([yshift=3.2mm]details.north west) -- ([yshift=3.2mm]details.north east);
+\draw[Teal!55,line width=.4pt] ([yshift=-3.2mm]details.south west) -- ([yshift=-3.2mm]details.south east);
+\node[anchor=south,font=\sffamily\small,text=Navy] at ([yshift=16mm]current page.south)
+  {\addfontfeatures{LetterSpace=10}\MakeUppercase{Academic year 2025--2026}};
 \end{tikzpicture}
 \null\vfill
 \end{titlepage}
@@ -47,9 +50,9 @@
 \addcontentsline{toc}{chapter}{Abstract}
 This report describes a 75-hour curricular internship, completed in full, in the Laboratory of Experimental and Computational Physics of Biosystems at the University of Messina, on the project \emph{Clustering Framework for Intrinsically Disordered Proteins}. After a preparatory study of protein structure, intrinsic disorder and molecular dynamics, with practice in GROMACS and VMD, the final task was to reproduce the clustering workflow of Cadenelli and colleagues for amyloid-β40, vary its parameters, and propose an independent analysis framework.
 
-The supplied table contains 300,003 descriptor observations from three replicas of well-tempered metadynamics. An audit of the supplied script found problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries; a modular, tested reimplementation corrects them. Run with the published parameters on all frames, it finds \DPCFamilies{} density-peak families, which separate mainly by secondary structure and are shared unevenly between replicas; the partition changes substantially with the initialization seed (ARI \DPCSeedARIMin--\DPCSeedARIMax) and with single parameters. Because the free-energy surface does not state its unit, populations were computed assuming kJ\,mol$^{-1}$: reweighting removes the helix-rich families and concentrates \WTopThree\% of the weight on three compact or extended families, a pattern that holds even if the file were in kcal\,mol$^{-1}$.
+The supplied table contains \num{300003} descriptor observations from three replicas of well-tempered metadynamics. An audit of the supplied script found problems in input handling, residual-cluster treatment, free-energy interpolation and weighted summaries, which a modular, tested reimplementation corrects. Run with the published parameters on all frames, the reimplementation finds \DPCFamilies{} density-peak families that separate mainly by secondary structure and are shared unevenly between replicas. The partition is sensitive: changing only the initialization seed gives adjusted Rand indices (ARI) of \DPCSeedARIMin--\DPCSeedARIMax{} with the reference partition. Because the free-energy surface does not state its unit, populations were computed assuming \kJmol; reweighting then removes the helix-rich families and concentrates \WTopThree\% of the weight on three compact or extended families, a pattern that persists if the file is read as \kcalmol.
 
-As the independent framework, Gaussian mixtures were fitted with and without solvent-accessible surface area (SASA), which correlates strongly with radius of gyration ($r=\RgSasaCorrelation{}$): fifty converged fits across two feature sets, five component counts and five seeds. Median agreement between feature sets was 0.864 at three components but 0.457 at six, so whether SASA is redundant depends on the model. Each 100,001-frame series yields only \ESSMinimum{}–\ESSMaximum{} effective samples, so all results are descriptive statements about a biased, correlated sample.
+As the independent framework, Gaussian mixtures were fitted with and without solvent-accessible surface area (SASA), which correlates strongly with radius of gyration ($r=\RgSasaCorrelation{}$). Across fifty converged fits, median agreement between the two feature sets was 0.864 at three components but 0.457 at six, so whether SASA is redundant depends on the model. Each \num{100001}-frame series yields only \ESSMinimum{}--\ESSMaximum{} effective samples; all results are therefore descriptive statements about a biased, correlated sample.
 
 \vspace{5mm}\noindent\textbf{Keywords:} curricular internship; amyloid-β40; intrinsically disordered peptides; well-tempered metadynamics; clustering; Gaussian mixtures; reproducibility.
 
@@ -59,32 +62,35 @@ As the independent framework, Gaussian mixtures were fitted with and without sol
 \begin{findings}
 \item \textbf{Host.} Laboratory of Experimental and Computational Physics of Biosystems, MIFT, University of Messina.
 \item \textbf{Supervision.} Prof.\ Valeria Conti Nibali (host supervisor), Andrea Ciccolo (co-supervisor), Prof.\ David Barilla (academic tutor).
-\item \textbf{Workload and period.} 75 hours completed; registered period 25 May -- 30 September 2026; training project approved 25 June 2026.
+\item \textbf{Workload and period.} 75 hours completed; registered period 25 May--30 September 2026; training project signed by the degree coordinator on 25 June 2026.
 \item \textbf{Tools.} GROMACS, VMD, Python (NumPy, SciPy, pandas, scikit-learn, Matplotlib), pytest, Snakemake, Git/GitHub, LaTeX.
 \end{findings}
 \end{keyfindings}
 \begin{keyfindings}[Key findings]
 \begin{findings}
-\item \textbf{The supplied data pass every structural check.} 300,003 frames form exactly three replicas of 100,001 frames at 20 ps; the recovered FES is a complete grid containing every descriptor query.
-\item \textbf{The published clustering is reproduced, but it is sensitive.} With the published parameters, all frames form \DPCFamilies{} families; changing only the seed gives ARIs of \DPCSeedARIMin--\DPCSeedARIMax{} with that partition.
-\item \textbf{Reweighting reshapes the families (assumed FES unit).} Under the kJ\,mol$^{-1}$ assumption, three families carry \WTopThree\% of the weight and the helix-rich families almost vanish; the pattern survives the kcal\,mol$^{-1}$ alternative.
-\item \textbf{Saved frames are far from independent.} Each 100,001-frame series yields only \ESSMinimum{}–\ESSMaximum{} effective samples, and all twelve estimates fail the reliability screen.
-\item \textbf{Correlation does not make SASA redundant.} Dropping SASA preserves the three-component partition (ARI 0.862–0.868; 95.3\% of frames keep matched labels), but at six components median agreement falls to 0.457.
-\item \textbf{A single fit can mislead.} At three components seed-to-seed ARI is 0.988–1.000; at two it drops as low as 0.011, which is why every setting was repeated with five seeds.
+\item \textbf{The supplied data pass every structural check.} \num{300003} frames form exactly three replicas of \num{100001} frames at 20~ps; the FES is a complete grid containing every descriptor query (\cref{sec:dependence,tab:status}).
+\item \textbf{The published workflow runs, but its partition is sensitive.} With the published parameters, all frames form \DPCFamilies{} families; changing only the seed gives adjusted Rand indices (ARI) of \DPCSeedARIMin--\DPCSeedARIMax{} with that partition (\cref{sec:dpcfamilies}).
+\item \textbf{Reweighting reshapes the families (assumed FES unit).} Under the \kJmol{} assumption, three families carry \WTopThree\% of the weight and the helix-rich families almost vanish; the pattern survives the \kcalmol{} alternative (\cref{sec:weighted}).
+\item \textbf{Saved frames are far from independent.} Each \num{100001}-frame series yields only \ESSMinimum{}--\ESSMaximum{} effective samples, and all twelve estimates fail the reliability screen (\cref{sec:dependence}).
+\item \textbf{Correlation does not make SASA redundant.} Dropping SASA preserves the three-component partition (ARI 0.862--0.868; 95.3\% of frames keep matched labels), but at six components median agreement falls to 0.457 (\cref{sec:sasaremoval}).
+\item \textbf{A single fit can mislead.} At three components seed-to-seed ARI is 0.988--1.000; at two it drops as low as 0.011, which is why every setting was repeated with five seeds.
 \end{findings}
 \end{keyfindings}
-\addsec*{Abbreviations}
+\tableofcontents
+\chapter*{Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
 {\small\noindent\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{\hspace{1.5em}}l>{\raggedright\arraybackslash}X@{}}\toprule
 Term & Meaning & Term & Meaning\\\midrule
-ACF & Autocorrelation function & IDP & Intrinsically disordered protein or peptide\\
-ARI & Adjusted Rand index & MD & Molecular dynamics\\
+ACF & Autocorrelation function & HPC & High-performance computing\\
+ARI & Adjusted Rand index & MCP & Model Context Protocol\\
+BIC & Bayesian information criterion & MD & Molecular dynamics\\
+CI & Continuous integration & MIFT & Department of Mathematical and Computer Sciences, Physical Sciences and Earth Sciences\\
 CV & Collective variable & PCA & Principal component analysis\\
-DPC / DPA & Density Peak Clustering / Density Peaks Advanced & SASA & Solvent-accessible surface area\\
-ESS & Effective sample size & SEM & Standard error of the mean\\
-FES & Free-energy surface & WT-MetaD & Well-tempered metadynamics\\
-GMM & Gaussian mixture model & MCP & Model Context Protocol\\\bottomrule
+DPC / DPA & Density-peak clustering / Density Peaks Advanced & SASA & Solvent-accessible surface area\\
+ESS & Effective sample size & SD & Standard deviation\\
+FES & Free-energy surface & SEM & Standard error of the mean\\
+GMM & Gaussian mixture model & WT-MetaD & Well-tempered metadynamics\\\bottomrule
 \end{tabularx}}
-\tableofcontents
 \clearpage
 \pagenumbering{arabic}
 \label{mainstart}
@@ -99,12 +105,19 @@ GMM & Gaussian mixture model & MCP & Model Context Protocol\\\bottomrule
 \label{mainend}
 \chapter*{Signatures}
 \addcontentsline{toc}{chapter}{Signatures}
-\vspace{14mm}
-\noindent\begin{tabularx}{\textwidth}{@{}XXX@{}}
-\rule{.9\linewidth}{.4pt} & \rule{.9\linewidth}{.4pt} & \rule{.9\linewidth}{.4pt}\\
-\small Student\newline Ali Erkan Ocaklı & \small Host supervisor\newline Prof.\ Valeria Conti Nibali & \small Academic tutor\newline Prof.\ David Barilla\\[10mm]
-\small Place and date & \small Place and date & \small Place and date\\
-\end{tabularx}
+\noindent Curricular internship, 25 May--30 September 2026, 75 hours, Laboratory of Experimental and Computational Physics of Biosystems, University of Messina.\par
+\vspace{12mm}
+\newcommand{\sigblock}[2]{%
+  \noindent\begin{minipage}{\textwidth}
+  {\sffamily\small\color{Teal}\addfontfeatures{LetterSpace=8}\MakeUppercase{#1}}\\[1mm] #2\\[15mm]
+  \begin{tabularx}{\textwidth}{@{}X@{\hspace{10mm}}X@{}}
+  \rule{\linewidth}{.4pt} & \rule{\linewidth}{.4pt}\\
+  \small Signature & \small Place and date
+  \end{tabularx}
+  \end{minipage}\par\vspace{11mm}}
+\sigblock{Student}{Ali Erkan Ocaklı}
+\sigblock{Host supervisor}{Prof.\ Valeria Conti Nibali}
+\sigblock{Academic tutor}{Prof.\ David Barilla}
 \clearpage
 \printbibliography
 \appendix

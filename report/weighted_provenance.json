@@ -32,25 +32,35 @@
     }
   ],
   "values": {
+    "WExtendedRaw": "11.5",
+    "WExtended": "23.9",
+    "WExtendedKcal": "13.1",
+    "WVanishRaw": "45",
+    "WVanish": "0.7",
+    "WVanishMaxReplica": "1.7",
+    "WTopRepMin": "39.8",
+    "WTopRepMax": "61.8",
+    "WFamSevenKcal": "2.4",
+    "WFamTwoKcal": "0.4",
     "WRun": "20261110T172236-15d7c0ca",
     "WTopFamily": 1,
     "WTopShare": "47.4",
     "WTopThree": "77.7",
     "WMaxShift": "31.5",
-    "WKishMin": "3,277",
-    "WKishMax": "9,551",
+    "WKishMin": "\\num{3277}",
+    "WKishMax": "\\num{9551}",
     "WUnitShift": "14.6",
     "WTopKcal": 1,
     "WTopKcalShare": "62.0",
     "WRankAgree": "yes",
-    "WBlockMin": "21,687",
-    "WBlockMax": "63,485",
+    "WBlockMin": "\\num{21687}",
+    "WBlockMax": "\\num{63485}",
     "WMinutes": "16"
   },
   "outputs": {
-    "report/figures/weighted_populations.pdf": "13c82afb7a7687de30cad01451d9f470aa12467c087bf45ab65e1f719c05392e",
-    "report/generated/weighted_rows.tex": "edbe4826578d0e9e452cd7d75413476d3dce40346e3e7eb5c5bb8286aa2c9a9e",
-    "report/generated/weighted_values.tex": "bb48dea31546ae0c16caa1441b7c67ffbd3c70bb1591fbc952d3b31266663c59"
+    "report/figures/weighted_populations.pdf": "47f8b542401aa652a17718de347a03e0960782ddfe6a090ee14f7b77c0764162",
+    "report/generated/weighted_rows.tex": "e370d908921c822ccde068739a8f1cae562e93505130590e316ced7f0f0b4033",
+    "report/generated/weighted_values.tex": "d21b54b01fd67eebfaf89d8637115f836c7af22e0d58bbec14157f5da176fd51"
   },
   "style": {
     "module": "scripts/report_style.py",

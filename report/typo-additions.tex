@@ -2,7 +2,7 @@
 % Requires in preamble line 17: \PassOptionsToPackage{capitalise,noabbrev}{cleveref} BEFORE \usepackage{hyperref,bookmark,cleveref,...}
 % R2 Table captions as headings
 \captionsetup[table]{position=top,skip=5pt}
-\captionsetup{labelsep=quad}
+\captionsetup{labelsep=quad,format=hang}
 % R3 Cross-references
 \crefname{equation}{Equation}{Equations}
 \creflabelformat{equation}{(#2#1#3)}
@@ -41,3 +41,13 @@
 \setlength{\abovetopsep}{0pt}
 % R9 colour discipline
 \hypersetup{citecolor=Navy,linkcolor=Navy,urlcolor=Teal}
+% R10 units, cover labels, list bullets, float pages (review round, November 2026)
+\newcommand{\kJmol}{kJ\,mol$^{-1}$}
+\newcommand{\kcalmol}{kcal\,mol$^{-1}$}
+\newcommand{\coverlabel}[1]{{\color{Teal}\footnotesize\addfontfeatures{LetterSpace=8}\MakeUppercase{#1}}}
+\renewcommand{\labelitemi}{\textcolor{Teal}{\rule[.3ex]{.45em}{.45em}}}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{14pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother

@@ -42,6 +42,39 @@ def family_order(families):
     return families.sort_values("raw_fraction", ascending=False).family.tolist()
 
 
+def place_labels(ax, points, sizes, pad=4.0, min_gap=9.5, steps=400):
+    """Label positions (display points) outside the bubbles, pushed apart so numbers stay legible."""
+    anchors = ax.transData.transform(points)*72/ax.figure.dpi
+    radii = np.sqrt(np.asarray(sizes)/np.pi)
+    centre = anchors.mean(axis=0)
+    direction = anchors-centre
+    norm = np.linalg.norm(direction, axis=1, keepdims=True)
+    direction = np.where(norm > 1e-9, direction/np.maximum(norm, 1e-9), np.array([[0.0, 1.0]]))
+    reach = (radii+pad+3.5)[:, None]
+    labels = anchors+direction*reach
+    for _ in range(steps):
+        moved = False
+        for a in range(len(labels)):
+            for b in range(a+1, len(labels)):
+                delta = labels[a]-labels[b]
+                dist = np.hypot(*delta)
+                if dist < min_gap:
+                    push = (delta/dist if dist > 1e-9 else np.array([1.0, 0.0]))*(min_gap-dist)/2
+                    labels[a] += push
+                    labels[b] -= push
+                    moved = True
+            for b in range(len(anchors)):  # keep labels off every bubble
+                delta = labels[a]-anchors[b]
+                dist = np.hypot(*delta)
+                need = radii[b]+pad
+                if dist < need:
+                    labels[a] += (delta/dist if dist > 1e-9 else direction[a])*(need-dist)
+                    moved = True
+        if not moved:
+            break
+    return anchors, labels, radii
+
+
 def landscape_figure(full_tables, out):
     families = pd.read_csv(full_tables/"families_unweighted.csv")
     families = families[families.variant == "baseline"].set_index("family")
@@ -50,27 +83,39 @@ def landscape_figure(full_tables, out):
     if len(table) != len(labels):
         raise SystemExit("Label count differs from the descriptor table")
     order = family_order(families.reset_index())
-    fig, axes = rs.plt.subplots(1, 2, figsize=rs.figsize(rs.FULL_WIDTH_MM, 74), layout="constrained")
+    fig, axes = rs.plt.subplots(1, 2, figsize=rs.figsize(rs.FULL_WIDTH_MM, 78), layout="constrained")
     panels = [("Rg", "SASA", r"$R_g$ (nm)", r"SASA (nm$^2$)", "Compactness and exposure"),
               ("nAlpha", "nBeta", r"$n_\alpha$", r"$n_\beta$", "Secondary structure")]
     background = rs.cmap_segment(rs.CMAP_SEQUENTIAL, 0.02, 0.35)
+    scale = 520
     for ax, (x, y, xl, yl, title), letter in zip(axes, panels, "AB"):
         ax.hexbin(table[x], table[y], gridsize=55, bins="log", cmap=background, mincnt=1,
                   linewidths=0, rasterized=True)
-        for number, family in enumerate(order, 1):
-            row = families.loc[family]
-            size = 1400*row.raw_fraction
-            ax.scatter(row[f"mean_{x}"], row[f"mean_{y}"], s=size, color=rs.NAVY, alpha=.78,
-                       edgecolor="white", linewidth=.8, zorder=5)
-            ax.annotate(str(number), (row[f"mean_{x}"], row[f"mean_{y}"]), ha="center", va="center",
-                        color="white", fontsize=6.5, fontweight="bold", zorder=6)
+        if x == "Rg":  # the family means all lie in this window; the full landscape is in the appendix
+            ax.set_xlim(0.92, 2.0)
+            ax.set_ylim(31.5, 53.5)
+        points = np.array([[families.loc[f, f"mean_{x}"], families.loc[f, f"mean_{y}"]] for f in order])
+        sizes = np.array([scale*families.loc[f, "raw_fraction"] for f in order])
+        ax.scatter(points[:, 0], points[:, 1], s=sizes, color=rs.NAVY, alpha=.85,
+                   edgecolor="white", linewidth=.7, zorder=5)
         ax.set_xlabel(xl)
         ax.set_ylabel(yl)
         rs.panel_label(ax, letter, title)
+        fig.draw_without_rendering()
+        anchors, spots, radii = place_labels(ax, points, sizes)
+        for number, (anchor, spot, radius) in enumerate(zip(anchors, spots, radii), 1):
+            offset = spot-anchor
+            length = np.hypot(*offset)
+            start = anchor+offset/length*radius if length > 1e-9 else anchor
+            ax.annotate("", xy=start, xytext=spot, xycoords="figure points", textcoords="figure points",
+                        arrowprops=dict(arrowstyle="-", color=rs.CODE_COMMENT, lw=.5, shrinkA=3.2, shrinkB=0),
+                        zorder=6)
+            ax.annotate(str(number), xy=spot, xycoords="figure points", ha="center", va="center",
+                        color=rs.INK, fontsize=7, fontweight="bold", zorder=7)
     for fraction in (.05, .15):
-        axes[1].scatter([], [], s=1400*fraction, color=rs.NAVY, alpha=.78, edgecolor="white",
+        axes[1].scatter([], [], s=scale*fraction, color=rs.NAVY, alpha=.85, edgecolor="white",
                         label=f"{fraction:.0%} of frames")
-    axes[1].legend(loc="upper right", frameon=False, labelspacing=1.4, borderpad=1.0)
+    axes[1].legend(loc="upper right", frameon=False, labelspacing=1.0, borderpad=.8)
     rs.save_figure(fig, out, creator="scripts/build_dpc_figures.py")
     return order
 
@@ -105,7 +150,7 @@ def sensitivity_figure(seed_tables, param_tables, out, medium_seeds=None, medium
     ax.invert_yaxis()
     ax.set_xlim(0, 1.32)
     ax.set_xticks([0, .25, .5, .75, 1])
-    ax.set_xlabel(f"ARI with the reference partition (seed 42, published parameters, {ref_fams} families)")
+    ax.set_xlabel("ARI with the seed-42 partition of the same profile")
     split = sum(r[0] == "Seed" for r in rows) - .5
     ax.axhline(split, color=rs.CODE_COMMENT, lw=.6, ls=":")
     handles = [rs.plt.Line2D([], [], marker="o", ls="", color=rs.INK, markersize=5, label="full profile"),
@@ -119,14 +164,16 @@ def sensitivity_figure(seed_tables, param_tables, out, medium_seeds=None, medium
 def family_rows(full_tables, order, out):
     families = pd.read_csv(full_tables/"families_unweighted.csv")
     families = families[families.variant == "baseline"].set_index("family")
-    lines = [r"\begin{tabular}{@{}lrrrrrrr@{}}", r"\toprule",
-             r"Family & Frames & \multicolumn{3}{c}{Fraction by replica} & $\bar n_\alpha$ & $\bar n_\beta$ & $\bar R_g$ (nm) / SASA (nm$^2$)\\",
-             r"\cmidrule(lr){3-5}", r" & (all) & 1 & 2 & 3 & & & \\", r"\midrule"]
+    lines = [r"\begin{tabular}{@{}lrrrrrrrr@{}}", r"\toprule",
+             r" & \multicolumn{4}{c}{Fraction of frames (\%)} & \multicolumn{4}{c}{Unweighted mean}\\",
+             r"\cmidrule(lr){2-5}\cmidrule(l){6-9}",
+             r"Family & All & Rep.~1 & Rep.~2 & Rep.~3 & $\bar n_\alpha$ & $\bar n_\beta$ & $\bar R_g$ (nm) & $\overline{\mathrm{SASA}}$ (nm$^2$)\\",
+             r"\midrule"]
     for i, family in enumerate(order, 1):
         r = families.loc[family]
-        lines.append(f"{i} & {r.raw_fraction:.1%} & {r.raw_fraction_replica_1:.1%} & {r.raw_fraction_replica_2:.1%} & "
-                     f"{r.raw_fraction_replica_3:.1%} & {r.mean_nAlpha:.1f} & {r.mean_nBeta:.1f} & "
-                     f"{r.mean_Rg:.2f} / {r.mean_SASA:.1f}\\\\".replace("%", r"\%"))
+        lines.append(f"{i} & {100*r.raw_fraction:.1f} & {100*r.raw_fraction_replica_1:.1f} & "
+                     f"{100*r.raw_fraction_replica_2:.1f} & {100*r.raw_fraction_replica_3:.1f} & "
+                     f"{r.mean_nAlpha:.1f} & {r.mean_nBeta:.1f} & {r.mean_Rg:.2f} & {r.mean_SASA:.1f}\\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
     out.write_text("% Generated by scripts/build_dpc_figures.py from a SUCCESS cluster manifest. Do not edit.\n"
                    + "\n".join(lines) + "\n")
@@ -144,7 +191,8 @@ def write_values(runs, rows, wasserstein_ari, out):
     medium = runs.get("medium-seeds-run")
     medium_fams = None
     if medium:
-        medium_fams = int(pd.read_csv(medium[1]/"families_unweighted.csv").groupby("variant").family.nunique().iloc[0])
+        medium_table = pd.read_csv(medium[1]/"families_unweighted.csv")
+        medium_fams = int(medium_table[medium_table.variant == "seed_42"].family.nunique())
     values = {
         "DPCRun": full_manifest["run_id"],
         "DPCFamilies": int(families.family.nunique()),
@@ -155,6 +203,9 @@ def write_values(runs, rows, wasserstein_ari, out):
         "DPCLargest": f"{100*families.raw_fraction.max():.1f}",
         "DPCSmallest": f"{100*families.raw_fraction.min():.1f}",
         "DPCMaxReplicaSpread": f"{100*spread.max():.1f}",
+        "DPCSpreadFamily": int(families.sort_values("raw_fraction", ascending=False).family.tolist().index(
+            families.loc[spread.idxmax(), "family"])+1),
+        "DPCInternalLabels": ", ".join(str(f) for f in families.sort_values("raw_fraction", ascending=False).family),
         "DPCSeedARIMin": f"{min(r[2] for r in seeds):.2f}", "DPCSeedARIMax": f"{max(r[2] for r in seeds):.2f}",
         "DPCSeedFamMin": min(r[3] for r in seeds), "DPCSeedFamMax": max(r[3] for r in seeds),
         "DPCParamARIMin": f"{min(r[2] for r in params):.2f}", "DPCParamARIMax": f"{max(r[2] for r in params):.2f}",
@@ -195,6 +246,7 @@ def main():
                      "summary": v[0]["summary"]} for k, v in runs.items()},
         "full_profile": full["config"]["execution"],
         "wasserstein_normalized_ari": float(wass.loc["baseline", "normalized"]),
+        "family_number_to_internal_label": {str(i): int(f) for i, f in enumerate(order, 1)},
         "sensitivity_rows": [list(map(str, r)) for r in rows],
         "outputs": {p: sha256(ROOT/p) for p in ["report/figures/dpc_families.pdf", "report/figures/dpc_sensitivity.pdf",
                                                   "report/generated/dpc_family_rows.tex"]},

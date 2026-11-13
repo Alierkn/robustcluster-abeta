@@ -2,7 +2,7 @@
 \chapter{Tools, data and methods}
 \label{ch:methods}
 \section{Tools and technologies}
-\Cref{tab:tools} lists the software used during the internship and its role. The simulation tools belong to the practical part of the programme; the analysis, testing and reporting tools produced every result in this report.
+\Cref{tab:tools} lists the software used during the internship and its role.
 
 \begin{table}[htbp]
 \centering
@@ -12,12 +12,12 @@
 \toprule
 Tool & Role in the internship & Where\\
 \midrule
-GROMACS & Molecular-dynamics engine studied in the simulation block; also the engine of the primary study \autocite{abraham2015} & \Cref{sec:mdpractice}\\
+GROMACS & Molecular-dynamics engine studied in the simulation block; also the engine used in the primary article \autocite{abraham2015} & \Cref{sec:mdpractice}\\
 VMD & Visualization and structural measurement of molecular systems & \Cref{sec:mdpractice}\\
 Python 3.12 with NumPy, SciPy, pandas, scikit-learn, Matplotlib & Data validation, clustering, diagnostics, Gaussian mixtures and figures \autocite{harris2020,virtanen2020,pedregosa2011} & \Cref{ch:activities,ch:results}\\
 pytest and Ruff & Unit and end-to-end tests (38 passing) and static checks & \Cref{sec:task1}\\
 Snakemake & Workflow definition reusing the package functions \autocite{snakemakedocs} & \Cref{app:repro}\\
-Git, GitHub and GitHub Actions & Version control, public release and continuous integration & \Cref{sec:software}\\
+Git, GitHub and GitHub Actions & Version control, public release and continuous integration (CI) & \Cref{sec:task1}\\
 LuaLaTeX, Biber & Typesetting of this report & ---\\
 \bottomrule
 \end{tabularx}
@@ -26,12 +26,12 @@ LuaLaTeX, Biber & Typesetting of this report & ---\\
 \section{Supplied data}
 The analysis starts from a supplied text table, not from atomic coordinates: \num{300003} rows with time, an offset-corrected bias field and eight structural measurements. The script, the table and the FES are identified by SHA256 hashes. The published method is the scientific reference \autocite{cadenelli2026}; the supplied script provides implementation details, some of which differ from that description and are therefore checked.
 
-A decrease in the time column marks a new replica. Validation requires exactly three segments with strictly increasing times, finite entries and complete coverage of the 1--3 μs interval (times read as picoseconds, as in the script and the article), giving \num{100001} frames per replica at 20 ps; malformed rows are rejected, not skipped. Every row keeps its file line, replica and frame index, so that partitions from different runs can be compared frame by frame. The first microsecond is not in the table, so its equilibration cannot be reassessed.
+A decrease in the time column marks a new replica. Validation requires exactly three segments with strictly increasing times, finite entries and complete coverage of the 1--3 μs interval (times read as picoseconds, as in the script and the article), giving \num{100001} frames per replica at 20 ps; a malformed row rejects the whole file rather than being skipped. Every row keeps its file line, replica and frame index, so that partitions from different runs can be compared frame by frame. The first microsecond is not in the table, so its equilibration cannot be reassessed.
 
-The clustering features are $\na$, $\nb$, $R_g$ (nm) and SASA (nm$^2$); the other columns are kept for characterization. They are scaled by pooled min--max normalization, $z_f=(x_f-a_f)/(b_f-a_f)$ with the minimum and maximum over the whole interval, so that all replicas and discovery groups share one coordinate system.
+The clustering features are $\na$, $\nb$, $R_g$ (nm) and SASA (nm$^2$); the other columns are kept for characterization. They are scaled by pooled min--max normalization, $z_f=(x_f-a_f)/(b_f-a_f)$, where $a_f$ and $b_f$ are the minimum and maximum of feature $f$ over all three replicas, so that all replicas and discovery groups share one coordinate system.
 
 \section{Reproduction workflow}
-\Cref{fig:workflow} summarizes the implemented reproduction. Frames are divided into random, non-overlapping groups of about \num{30000}, drawn from a recorded master seed \autocite{numpyrng}. Within a group, the local density $\rho_i$ counts neighbours inside the cutoff $d_c$, and $\delta_i$ is the distance to the nearest point of higher density, ties being broken by frame order. Candidate centres are ranked by $\rho_i\delta_i$, and clusters are accepted only if they reach a minimum size and mean silhouette; the iterative protocol and its parameters are listed in \cref{app:parameters}. Distances are stored as a blockwise float32 matrix, which limits memory but still grows as $N^2$.
+\Cref{fig:workflow} summarizes the implemented reproduction. Frames are divided into random, non-overlapping groups of about \num{30000}, drawn from a recorded master seed \autocite{numpyrng}. Within a group, using Euclidean distances in the scaled space, $\rho_i$ is the number of frames within the cutoff $d_c$ of frame $i$ (itself included) and $\delta_i$ the distance to the nearest denser frame; equal densities are ordered by position in the shuffled group, and the densest frame receives the largest distance in the group. The $k$ frames with the largest $\rho_i\delta_i$ become centres, and every other frame, taken in decreasing density, inherits the label of its nearest denser frame. Clusters are accepted only if they reach a minimum size and mean silhouette; the iterative protocol and its parameters are listed in \cref{app:parameters} (\cref{tab:parameters}). Distances are computed in row blocks into a full float32 matrix (about 3.6~GB for \num{30000} frames), so memory still grows as $N^2$.
 
 \begin{figure}[tb]
 \centering\input{figures/fig01_workflow.tex}
@@ -39,38 +39,39 @@ The clustering features are $\na$, $\nb$, $R_g$ (nm) and SASA (nm$^2$); the othe
 \label{fig:workflow}
 \end{figure}
 
-\paragraph{Consensus.} Accepted local clusters are compared with the supplied-code distance
+\paragraph{Consensus.} Accepted local clusters are compared with the distance used in the supplied script,
 \begin{equation}
 D(A,B)=\left[\sum_{f=1}^{4}W_1(A_f,B_f)^2\right]^{1/2},
 \label{eq:wasserstein}
 \end{equation}
-where each $W_1$ compares the distributions of one descriptor \autocite{scipywasserstein}; it is not a joint four-dimensional transport distance. The baseline keeps the script's raw scales, in which $R_g$ (pooled spread 0.26~nm) counts about twenty times less than $\na$, $\nb$ and SASA (5.3, 6.0 and 4.8~nm$^2$); a normalized variant tests whether this matters. Average-linkage clustering is cut with the script's spline elbow heuristic.
+where $W_1(A_f,B_f)$ is the one-dimensional first Wasserstein (earth mover's) distance between the unweighted values of descriptor $f$ in clusters $A$ and $B$ \autocite{scipywasserstein}; $D$ is not a joint four-dimensional transport distance. The baseline keeps the script's raw scales, in which $R_g$ (pooled standard deviation 0.26~nm) counts about twenty times less than $\na$ and $\nb$ (5.3 and 6.0, dimensionless) and SASA (4.8~nm$^2$); a normalized variant tests whether this matters. Average-linkage clustering of $D$ is cut at the merge height where a smoothing spline ($s=5$) fitted to the merge heights has its largest second derivative within the first 90\% of merges, as in the supplied script.
 
-\paragraph{Final assignment.} Every frame, including those left unassigned during discovery, is assigned to the nearest family centroid in the normalized space, without iterative refinement.
+\paragraph{Final assignment.} Every frame, including discovery members and frames left unassigned, receives the label of the nearest family centroid (Euclidean, min--max space), each centroid being the unweighted mean of the family's member frames; there is no iterative refinement, so a frame can leave the family of its local cluster.
 
 \section{FES interpolation and statistical weights}
-The FES reader checks the grid structure, and descriptor queries $\alpha=\na/1.1$, $\beta=\nb/2.5$ are interpolated bilinearly with strict bounds \autocite{scipygrid,virtanen2020}; a query outside the grid is an error, not a value to clip. The final-bias log weights of \cref{eq:finalweights} are normalized within each replica before pooling,
+\label{sec:fesweights}
+The FES reader checks the grid structure, and the FES is interpolated bilinearly at each frame's CV values $\alpha=\na/1.1$, $\beta=\nb/2.5$ with strict bounds \autocite{scipygrid,virtanen2020}; a query outside the grid is an error, not a value to clip. Assuming the file is in \kJmol{} (Scope~2), the final-bias log weights of \cref{eq:finalweights} are normalized within each replica before pooling,
 \begin{equation}
 \widetilde w_{ri}=\exp\!\left[\ell_{ri}-\operatorname{logsumexp}_j(\ell_{rj})\right],
 \qquad W_{ri}=\widetilde w_{ri}/3,
 \label{eq:replicaweights}
 \end{equation}
-so that each replica carries one third of the total weight.
+for frame $i$ of replica $r$; the log-sum-exp avoids overflow, and each replica carries one third of the total weight. Weight concentration is summarized per replica by the Kish effective sample size (\cref{eq:kish}), and family populations are reported pooled and for each replica separately; the spread between the three replicas is the uncertainty statement used in \cref{sec:weighted}.
 
 \section{Diagnostics for the independent analysis}
 \label{sec:diagnostics}
 \paragraph{Temporal correlation.}
-The sampling diagnostic asks how much information repeated observations add. For each replica and descriptor, the mean is removed before FFT-based autocorrelation with common $1/N$ covariance normalization. Following Geyer's initial monotone sequence estimator \autocite{geyer1992}, autocorrelations are summed in adjacent pairs, here starting from lag 1. The sum stops at the first non-positive pair, and a running minimum makes the retained pairs non-increasing. The retained contributions define
+For each replica and descriptor, the unweighted series is centred and its autocorrelation $\widehat\rho(k)$ computed by FFT with $1/N$ normalization at every lag. Following Geyer's initial monotone sequence estimator \autocite{geyer1992}, but pairing lags from 1 rather than 0, the pair sums $\Gamma_m=\widehat\rho(2m-1)+\widehat\rho(2m)$ are made non-increasing by a running minimum, $\widetilde\Gamma_m=\min_{j\le m}\Gamma_j$, and summed up to $M$, the last pair before the first non-positive one:
 \begin{equation}
-g=\max\!\left(1,1+2\sum_{k\in\mathcal K}\widehat\rho(k)\right),\qquad
+g=\max\!\Bigl(1,\,1+2\sum_{m=1}^{M}\widetilde\Gamma_m\Bigr),\qquad
 N_{\mathrm{eff,corr}}=N/g,\qquad \tau_{\mathrm{int}}=g\Delta t/2.
 \label{eq:correlation}
 \end{equation}
-Here $\mathcal K$ identifies the lag contributions retained after this processing; $\tau_{\mathrm{int}}$ follows the convention $\Delta t(\tfrac12+\sum\rho)$, which differs from the $(g-1)/2$ convention of \textcite{chodera2016} by a negligible $\Delta t/2$. Reliability checks require a stopping lag, $N\geq50g$ (equivalently $N_{\mathrm{eff}}\geq50$), and a half-window mean difference no greater than 0.25 full-series standard deviations. Geyer's justification assumes a stationary, reversible chain, which a WT-MetaD trajectory is not, so the result serves as a screening diagnostic rather than a formal stationarity test \autocite{grossfield2019}.
+Here $g$ is the statistical inefficiency, $N_{\mathrm{eff,corr}}$ the effective sample size (ESS) and $\tau_{\mathrm{int}}$ the integrated time, measured in biased simulation time; it exceeds the $(g-1)\Delta t/2$ of \textcite{chodera2016} by $\Delta t/2=10$~ps, negligible here. As project heuristics, an estimate is called reliable if a non-positive pair occurs, $N_{\mathrm{eff,corr}}\geq50$, and the half-series means differ by at most 0.25 full-series standard deviations. Geyer's justification assumes a stationary, reversible chain, which a WT-MetaD trajectory is not, so the result serves as a screening diagnostic rather than a formal stationarity test \autocite{grossfield2019}.
 
-\paragraph{Partition agreement.} ARI compares partitions independently of their label names \autocite{hubert1985}. It equals 1 for identical partitions, has expected value 0 for random labellings with the same cluster sizes, and can be negative. Matching families by maximum overlap then supports Jaccard and centroid comparisons while retaining unmatched families. Seed variation measures algorithmic sensitivity, not uncertainty between independent replicas. The same comparison is used for the density-peak parameter study (\cref{sec:task2}) and for the Gaussian-mixture experiment (\cref{sec:task3}).
+\paragraph{Partition agreement.} The adjusted Rand index (ARI) compares partitions independently of their label names \autocite{hubert1985}. It equals 1 for identical partitions, has expected value 0 for random labellings with the same cluster sizes, and can be negative. A one-to-one matching of families that maximizes total overlap (Hungarian algorithm) then supports Jaccard and centroid comparisons; unmatched families are retained. Seed variation measures algorithmic sensitivity, not uncertainty between independent replicas. The same comparison is used for the density-peak parameter study (\cref{sec:task2}) and for the Gaussian-mixture experiment (\cref{sec:task3}).
 
-\paragraph{Feature redundancy.} Pearson correlation and PCA of standardized descriptors describe the observed feature geometry, not equilibrium relevance.
+\paragraph{Feature redundancy.} Pearson correlation and PCA of standardized descriptors describe the observed (unweighted, biased) feature geometry, not equilibrium relevance.
 
 \section{Reproducibility}
-Every command first writes a manifest with the configuration, input hashes, seeds and software versions, and records runtime and peak memory; the command-line interface and the Snakemake workflow call the same functions \autocite{snakemakedocs,wratten2021}. Every figure in this report can therefore be traced to one recorded calculation.
+Every command first writes a manifest with the configuration, input hashes, seeds and software versions, and records runtime and peak memory; the command-line interface and the Snakemake workflow call the same functions \autocite{snakemakedocs,wratten2021}. Every data figure and table in this report can therefore be traced to one recorded calculation.

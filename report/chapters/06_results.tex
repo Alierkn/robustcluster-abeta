@@ -1,4 +1,4 @@
-\chapterlede{This chapter reports the completed analyses: data and FES checks, descriptor relationships, temporal dependence, the density-peak families and the feature experiment.}
+\chapterlede{This chapter reports the completed analyses: data and FES checks, descriptor relationships, temporal dependence, the density-peak families, their weighted populations and the feature experiment.}
 \chapter{Results}
 \label{ch:results}
 \section{What the available data support}
@@ -17,101 +17,101 @@ FES grid and query checks & Complete; energy unit and construction undocumented\
 GMM feature comparison & Complete; 50 fits on a fixed fitting sample\\
 Paper DPC clustering & Complete; unweighted, published parameters and full profile\\
 DPC parameter study & Complete; seeds and one-parameter changes\\
-Weighted family populations & Complete under an assumed kJ\,mol$^{-1}$ unit (\cref{sec:weighted})\\
+Weighted family populations & Complete under an assumed \kJmol{} unit (\cref{sec:weighted})\\
 Structural representatives & \blocked{}: needs coordinates and a frame map\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Input validation found three segments of \num{100001} rows. Times increase at the source-labelled spacing of 20 ps, and the data satisfy the column, finite-value and interval checks. The descriptor calculation, run \code{\DiagnosticRun}, took \DiagnosticSeconds{} s with a sampled peak worker-process memory of \DiagnosticMemory{} MiB; these figures describe the local diagnostic run, not the cost of a full DPC analysis.
+Input validation found three segments of \num{100001} rows. Times increase at the source-labelled spacing of 20 ps, and the data satisfy the column, finite-value and interval checks. The descriptor calculation, run \code{\DiagnosticRun}, took \DiagnosticSeconds{} s with a sampled peak worker-process memory of \DiagnosticMemory{} MiB.
 
-The FES check resolved the earlier incomplete-download problem. The recovered file contains 2,801 by 1,301 grid points, giving 3,644,101 rows with five finite columns. Every expected coordinate pair is present and none is duplicated. The nonperiodic axes cover 0--28 and 0--13 at spacing 0.01, and all 300,003 converted queries fall inside the grid and yield finite bilinear interpolations. \Cref{fig:fesmap} shows why this matters: the sampled frames occupy a triangular region of low free energy near small $\alpha$ and moderate $\beta$, while 61\% of the grid sits on a flat maximum that lies largely outside the sampled region. The file is numerically usable; only its unit stands between it and equilibrium weights (Scope~2).
+The complete FES file contains 2,801 by 1,301 grid points, giving 3,644,101 rows with five finite columns. Every expected coordinate pair is present and none is duplicated. The nonperiodic axes cover 0--28 and 0--13 at spacing 0.01, and all 300,003 converted queries fall inside the grid and yield finite bilinear interpolations. \Cref{fig:fesmap} shows why this matters: the sampled frames occupy a triangular region of low free energy near small $\alpha$ and moderate $\beta$, while 61\% of the grid sits on a flat maximum that lies largely outside the sampled region. The file is numerically usable; only its unit and construction stand between it and equilibrium weights (Scope~2).
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=\textwidth]{fes_map.pdf}
-\caption{The supplied free-energy grid shifted so its minimum is zero and plotted at one-quarter resolution. Values stay in undeclared file units. Terracotta contours enclose 50\%, 90\% and 99\% of the 300,003 unweighted descriptor queries ($\alpha=\na/1.1$, $\beta=\nb/2.5$); the dash-dot line is their convex hull, and no query falls outside the grid.}
+\caption{The supplied free-energy grid (minimum 0), plotted at every fourth grid point along each axis. Values stay in undeclared file units. Terracotta contours enclose 50\%, 90\% and 99\% of the 300,003 unweighted descriptor queries ($\alpha=\na/1.1$, $\beta=\nb/2.5$); the dash-dot line is their convex hull, and no query falls outside the grid.}
 \label{fig:fesmap}
 \end{figure}
 
 \section{Shared variation in the descriptors}
-The pooled Rg--SASA correlation is \RgSasaCorrelation{}, against \AlphaBetaCorrelation{} between the two secondary-structure descriptors, and the relationship holds in every replica (per-replica $r$ between 0.805 and 0.863). It is not a straight line: compact frames ($R_g<1.3$~nm) form a dense core in which SASA rises steeply with $R_g$, while extended frames spread along a flatter band (\cref{fig:landscape} in \cref{app:diagnostics}). After standardization the first two principal components explain \PCAFirst{}\% and \PCASecond{}\% of the variance, together \PCATwo{}\%. This strong association is a reason to test whether SASA is needed for clustering (\cref{sec:sasaremoval}), not a reason to drop it in advance.
+The pooled $R_g$--SASA correlation is \RgSasaCorrelation{}, against $\AlphaBetaCorrelation$ between the two secondary-structure descriptors, and the relationship holds in every replica (per-replica $r$ between 0.805 and 0.863). It is not a straight line: compact frames ($R_g<1.3$~nm) form a dense core in which SASA rises steeply with $R_g$, while extended frames spread along a flatter band (\cref{fig:landscape} in \cref{app:diagnostics}). After standardization the first two principal components explain \PCAFirst{}\% and \PCASecond{}\% of the variance, together \PCATwo{}\% (\cref{fig:features}); the per-replica distributions of each descriptor are in \cref{fig:rawdistributions}. This strong association is a reason to test whether SASA is needed for clustering (\cref{sec:sasaremoval}), not a reason to drop it in advance.
 
 \section{Dependence between saved observations}
 \label{sec:dependence}
-Each replica stays near a compact radius of gyration of about 1.0--1.2~nm for long stretches and leaves it only in a few extended excursions lasting tens to hundreds of nanoseconds of biased time (\cref{fig:rgtrace} in \cref{app:diagnostics}), so neighbouring frames, 20~ps apart, are nearly copies of each other. For the 12 replica--descriptor series, statistical inefficiencies range from 3,490 to 31,742 frames, giving correlation ESS values of only \ESSMinimum{}--\ESSMaximum{} per \num{100001} frames (\cref{tab:sampling}). Every series falls below the required $N_{\mathrm{eff}}\geq50$, and 11 of 12 shift by more than 0.25 standard deviations between their halves; $\na$ in replica 3 has the longest integrated time, 317~ns of biased time. Independent-frame error bars would therefore be unjustified. These diagnostics describe the supplied 1--3 μs data, not the convergence of the published runs, whose first microsecond and bias history are not available.
+Each replica stays near a compact radius of gyration of about 1.0--1.2~nm for long stretches and leaves it only in a few extended excursions lasting tens to hundreds of nanoseconds of biased time (\cref{fig:rgtrace} in \cref{app:diagnostics}), so neighbouring frames, 20~ps apart, are nearly copies of each other. For the 12 replica--descriptor series, statistical inefficiencies range from 3,490 to 31,742 frames, giving correlation ESS values of only \ESSMinimum{}--\ESSMaximum{} per \num{100001} frames (\cref{tab:sampling}; autocorrelation functions in \cref{fig:acf}). Every series falls below the required $N_{\mathrm{eff,corr}}\geq50$, and 11 of 12 shift by more than 0.25 standard deviations between their halves; $\na$ in replica 3 has the longest integrated time, 317~ns of biased time. Independent-frame error bars would therefore be unjustified. These diagnostics describe the supplied 1--3 μs data, not the convergence of the published runs, whose first microsecond and bias history are not available.
 
 \FloatBarrier
 \section{Density-peak families in the real data}
 \label{sec:dpcfamilies}
-The reproduced workflow divides the \num{300003} frames into \DPCFamilies{} families (\cref{fig:dpcfamilies,tab:dpcfamilies}). The largest holds \DPCLargest\% of the frames and the smallest \DPCSmallest\%. The families separate mainly by secondary structure rather than by compactness. Nine of the eleven have mean radii of gyration between 1.04 and 1.40~nm and overlap in \cref{fig:dpcfamilies}A, whereas in the $(\na,\nb)$ plane of \cref{fig:dpcfamilies}B their centres spread from helix-rich ($\bar n_\alpha$ up to 16.6) to β-rich ($\bar n_\beta$ up to 19.3) regions. Only two families are extended, with mean $R_g$ of 1.58 and 1.81~nm; together they hold 11.5\% of the frames.
+Run with the published parameters, the workflow divides the \num{300003} frames into \DPCFamilies{} families (\cref{fig:dpcfamilies,tab:dpcfamilies}). The largest holds \DPCLargest\% of the frames and the smallest \DPCSmallest\%. The families separate mainly by secondary structure rather than by compactness. Nine of the eleven have mean radii of gyration between 1.04 and 1.40~nm and lie close together in \cref{fig:dpcfamilies}A, whereas in the $(\na,\nb)$ plane of \cref{fig:dpcfamilies}B their centres spread from helix-rich ($\bar n_\alpha$ up to 16.6) to β-rich ($\bar n_\beta$ up to 19.3) regions. Only two families are extended, with mean $R_g$ of 1.58 and 1.81~nm; together they hold 11.5\% of the frames.
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=\textwidth]{dpc_families.pdf}
-\caption{Density-peak families of the reproduced workflow (published parameters, full profile, seed 42) on the unweighted descriptor landscape. Bubbles mark family means, numbered as in \cref{tab:dpcfamilies}; their area is proportional to the raw frame fraction. The background shows the density of all frames.}
+\caption{Density-peak families of the published workflow (published parameters, full profile, seed 42) on the unweighted descriptor landscape. Bubbles mark family means, numbered as in \cref{tab:dpcfamilies}; their area is proportional to the raw frame fraction. The background shows the density of all frames; panel A is zoomed on the region that contains the family means.}
 \label{fig:dpcfamilies}
 \end{figure}
 
 \begin{table}[htbp]
 \centering
 \begin{threeparttable}
-\caption{Density-peak families: raw frame fractions, overall and by replica, and unweighted descriptor means.}
+\caption{Density-peak families: fractions of frames, overall and by replica, and unweighted descriptor means.}
 \label{tab:dpcfamilies}
 \small\input{generated/dpc_family_rows.tex}
-\begin{tablenotes}[flushleft]\footnotesize
-\item Fractions count frames of the biased sample; they are not equilibrium populations (Scope~1--2).
+\begin{tablenotes}[flushleft]\footnotesize\raggedright
+\item Fractions count frames of the biased sample; they are not equilibrium populations (Scope~1--2). Families are numbered by decreasing frame fraction; the run's internal labels, in the same order, are \DPCInternalLabels.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
 
-The replicas do not share the families evenly. Family~3, the most helix-rich, holds 18.8\% and 19.5\% of the frames of replicas 1 and 3 but only 0.3\% of replica 2, while the β-rich family~5 holds 22.9\% of replica 2 and 2.9\% of replica 3; the largest difference between replicas for a single family is \DPCMaxReplicaSpread{} percentage points. This agrees with the temporal diagnostics of \cref{sec:dependence}: each replica spends long stretches in a few regions, so the three replicas sample the landscape in different proportions.
+The replicas do not share the families evenly. Family~3, the most helix-rich, holds 18.8\% and 19.5\% of the frames of replicas 1 and 3 but only 0.3\% of replica 2, while the β-rich family~5 holds 22.9\% of replica 2 and 2.9\% of replica 3; the largest difference between replicas, for family~\DPCSpreadFamily, is \DPCMaxReplicaSpread{} percentage points. This agrees with the temporal diagnostics of \cref{sec:dependence}: each replica spends long stretches in a few regions, so the three replicas sample the landscape in different proportions.
 
-The partition is sensitive to how it is computed (\cref{fig:dpcsensitivity}). Changing only the initialization seed gives ARIs of \DPCSeedARIMin{}--\DPCSeedARIMax{} with the reference and between \DPCSeedFamMin{} and \DPCSeedFamMax{} families. Changing one parameter at a time gives ARIs of \DPCParamARIMin{}--\DPCParamARIMax{} and between \DPCParamFamMin{} and \DPCParamFamMax{} families. The amount of data entering discovery matters as well: the medium profile, which uses \num{30000} frames for discovery instead of all of them, finds only \DPCMediumFamilies{} families. Replacing the raw descriptor scales in the consensus with normalized ones left the medium-profile partition unchanged (ARI \DPCWassersteinARI), so the low raw-scale weight of $R_g$ does not affect the result there.
+The partition is sensitive to how it is computed (\cref{fig:dpcsensitivity}). Changing only the initialization seed gives ARIs of \DPCSeedARIMin{}--\DPCSeedARIMax{} with the seed-42 partition and between \DPCSeedFamMin{} and \DPCSeedFamMax{} families. Changing one parameter at a time gives ARIs of \DPCParamARIMin{}--\DPCParamARIMax{} and between \DPCParamFamMin{} and \DPCParamFamMax{} families. The amount of data entering discovery matters as well: the medium profile, which uses \num{30000} frames for discovery instead of all of them, finds only \DPCMediumFamilies{} families. Replacing the raw descriptor scales in the consensus with normalized ones left the medium-profile partition unchanged (ARI \DPCWassersteinARI), so the low raw-scale weight of $R_g$ does not affect the result there.
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=\textwidth]{dpc_sensitivity.pdf}
-\caption{Sensitivity of the density-peak partition. Each row changes either the initialization seed or one parameter of the published configuration; dots give the ARI with the reference partition, filled for the full profile and open for the medium profile, and the labels give the full-profile ARI and family count.}
+\caption{Sensitivity of the density-peak partition. Each row changes either the initialization seed (navy) or one parameter (teal) of the published configuration. Filled dots: ARI with the full-profile seed-42 partition (\DPCFamilies{} families); open dots: ARI with the medium-profile seed-42 partition (\DPCMediumFamilies{} families). Labels give the full-profile ARI and family count.}
 \label{fig:dpcsensitivity}
 \end{figure}
 
 \section{Weighted family populations under an assumed FES unit}
 \label{sec:weighted}
 \begin{keyfindings}[Assumption]
-The supplied FES does not state its energy unit or how the three replicas were combined. The populations in this section assume that \code{FES\_AB\_40.dat} is the \code{sum\_hills} free energy (\code{file.free}) of the three replicas combined, in kJ\,mol$^{-1}$. This is the PLUMED default, the unit used by the supplied script and the unit of the primary article, but it has not been confirmed by the authors. If the assumption is wrong, these populations are wrong; the kcal\,mol$^{-1}$ column of \cref{tab:weighted} shows how much they would change.
+The supplied FES does not state its energy unit or how the three replicas were combined. The populations in this section assume that \code{FES\_AB\_40.dat} is the \code{sum\_hills} free energy (\code{file.free}) of the three replicas combined, in \kJmol{}. This is the PLUMED default, the unit used by the supplied script and the unit of the primary article, but it has not been confirmed by the authors. If the assumption is wrong, these populations are wrong; the \kcalmol{} column of \cref{tab:weighted} shows how much they would change.
 \end{keyfindings}
 
-Under this assumption, the final-bias weights of \cref{eq:finalweights,eq:replicaweights} were applied to the same \DPCFamilies{} families; rerunning the clustering inside the weighted workflow reproduced the unweighted labels exactly. Reweighting changes the picture substantially (\cref{fig:weighted,tab:weighted}). Family~\WTopFamily{}, compact with little helix and moderate β content, carries \WTopShare\% of the equilibrium weight, and the three largest families together \WTopThree\%. The helix-rich families 3, 6, 8 and 11 and the strongly β-rich family~5, which together hold 45\% of the frames, keep less than 1\% of the weight: the bias drove the simulations into these regions, but they are rare at equilibrium. The two extended families gain weight, from 11.5\% of the frames to 23.8\%. The largest change for a single family is \WMaxShift{} percentage points.
+Under this assumption, the final-bias weights of \cref{eq:finalweights,eq:replicaweights} were applied to the same \DPCFamilies{} families; rerunning the clustering inside the weighted workflow reproduced the unweighted labels exactly. Reweighting changes the picture substantially (\cref{fig:weighted,tab:weighted}). Family~\WTopFamily{}, compact with little helix and moderate β content, carries \WTopShare\% of the equilibrium weight, and the three heaviest families (1, 4 and 7) together \WTopThree\%. The helix-rich families 3, 6, 8 and 11 and the strongly β-rich family~5, which together hold \WVanishRaw\% of the frames, keep less than 1\% of the weight (at most \WVanishMaxReplica\% in any replica): the bias drove the simulations into these regions, but under this reweighting they carry almost no equilibrium weight. The two extended families gain weight, from \WExtendedRaw\% of the frames to \WExtended\%. The largest change for a single family is \WMaxShift{} percentage points.
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=\textwidth]{weighted_populations.pdf}
-\caption{Family populations before and after reweighting, assuming the FES is in kJ\,mol$^{-1}$. Grey bars are raw frame fractions; navy dots are weighted populations with rough 95\% block-bootstrap intervals; teal ticks are the three replicas; open diamonds show the populations if the same file were in kcal\,mol$^{-1}$.}
+\caption{Family populations before and after reweighting, assuming the FES is in \kJmol{}. Grey bars are raw frame fractions; navy dots are weighted populations; teal ticks are the three single replicas; open diamonds show the populations if the same file were in \kcalmol{}.}
 \label{fig:weighted}
 \end{figure}
 
 \begin{table}[htbp]
 \centering
 \begin{threeparttable}
-\caption{Raw frame fractions and weighted populations of the density-peak families (\%), under the assumed kJ\,mol$^{-1}$ unit and, for comparison, if the file were in kcal\,mol$^{-1}$.}
+\caption{Raw frame fractions and weighted populations of the density-peak families (\%), under the assumed \kJmol{} unit and, for comparison, if the file were in \kcalmol{}.}
 \label{tab:weighted}
 \small\input{generated/weighted_rows.tex}
-\begin{tablenotes}[flushleft]\footnotesize
-\item Bootstrap blocks are twice the largest statistical inefficiency of each replica (\WBlockMin--\WBlockMax{} frames), so each replica contributes only two to five blocks and the intervals are rough. They hold the partition and the FES fixed.
+\begin{tablenotes}[flushleft]\footnotesize\raggedright
+\item Replica range: lowest and highest of the three single-replica populations. A moving-block bootstrap was also run, but with blocks of \WBlockMin--\WBlockMax{} frames (twice the largest statistical inefficiency) each replica holds only two to five blocks and the resulting intervals were not centred on the estimates, so they are not reported.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
 
-The weights are strongly concentrated. The Kish effective sample size is \WKishMin--\WKishMax{} per replica of \num{100001} frames, and the replicas disagree: the population of family~1 ranges from 39.8\% to 61.8\% across replicas. If the file were in kcal\,mol$^{-1}$, every log weight would be 4.184 times larger, and family populations would shift by up to \WUnitShift{} percentage points; family~\WTopKcal{} would still dominate, with \WTopKcalShare\%, and the families that vanish under the kJ\,mol$^{-1}$ assumption would vanish as well. The qualitative result, that reweighting removes the helix-rich and strongly β-rich families and concentrates the ensemble on a few compact and extended families, therefore does not depend on which of the two units is correct; the individual percentages do.
+The weights are strongly concentrated. The Kish effective sample size is \WKishMin--\WKishMax{} per replica of \num{100001} frames; it measures weight concentration only and ignores the temporal correlation of \cref{sec:dependence}, so the independent information is far smaller. The replicas also disagree: the population of family~1 ranges from \WTopRepMin\% to \WTopRepMax\%. If the file were in \kcalmol{} (\cref{eq:finalweights}), populations would shift by up to \WUnitShift{} percentage points: family~\WTopKcal{} would still dominate, with \WTopKcalShare\%, and the helix-rich and strongly β-rich families would still vanish, but family~7 would fall to \WFamSevenKcal\% and family~2 to \WFamTwoKcal\%, and the extended families would hold \WExtendedKcal\%. The dominance of family~1 and the loss of those families therefore do not depend on which of the two units is correct; the gain of the extended families and the individual percentages do.
 
 \section{What changes when SASA is removed}
 \label{sec:sasaremoval}
-All \GMMModels{} Gaussian-mixture fits converged; the pilot took \GMMSeconds{} s with a peak of \GMMMemory{} MiB. Paired fits with and without SASA share observations and seed, so their ARI measures the feature effect, while fits within one feature space differ only in initialization (\cref{fig:gmm}; values in \cref{tab:gmm}, \cref{app:diagnostics}).
+All \GMMModels{} Gaussian-mixture fits converged; the run took \GMMSeconds{} s with a peak of \GMMMemory{} MiB. Paired fits with and without SASA share observations and seed, so their ARI measures the feature effect, while fits within one feature space differ only in initialization (\cref{fig:gmm}; values in \cref{tab:gmm}, \cref{app:diagnostics}).
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=\textwidth]{rebuild_gmm.pdf}
-\caption{The independent GMM comparison. Left: ARI between four-feature and SASA-removed assignments for five paired seeds; diamonds denote medians. Right: within-feature-space ARI for ten seed pairs. Bars span observed minima and maxima. Every model uses the same fitting subset, and evaluation includes fitting rows.}
+\caption{The independent GMM comparison. (A)~ARI between four-feature and SASA-removed assignments for five paired seeds; diamonds are medians. (B)~Within-feature-space ARI for ten seed pairs; markers are medians and bars span the observed minimum and maximum. Every model uses the same fitting subset, and evaluation includes fitting rows.}
 \label{fig:gmm}
 \end{figure}
 
-At three components the cross-feature ARIs are 0.862--0.868, and a median 95.3\% of frames keep corresponding labels; within-space agreement is 0.994--1.000 with four descriptors and 0.988--1.000 without SASA. At two components, by contrast, within-space ARIs fall to 0.011 and 0.067, so a single fit would have been misleading (all seed pairs in \cref{fig:seedmatrices}). Seed stability alone does not single out three components, since four-feature fits at five components (0.989--1.000) and three-feature fits at four (0.976--1.000) are equally reproducible, and within-space BIC keeps decreasing up to six. What distinguishes three components is that the partition is stable in both feature spaces and agrees across them; at the other counts the median cross-feature ARI falls to 0.457--0.690.
+At three components the cross-feature ARIs are 0.862--0.868, and a median 95.3\% of frames keep corresponding labels; within-space agreement is 0.994--1.000 with four descriptors and 0.988--1.000 without SASA. At two components, by contrast, within-space ARIs drop as low as 0.011 and 0.067, so a single fit would have been misleading (all seed pairs in \cref{fig:seedmatrices}). Seed stability alone does not single out three components, since four-feature fits at five components (0.989--1.000) and three-feature fits at four (0.976--1.000) are equally reproducible, and the Bayesian information criterion (BIC) of each feature space keeps decreasing up to six. What distinguishes three components is that the partition is stable in both feature spaces and agrees across them; at the other counts the median cross-feature ARI falls to 0.457--0.690. At three components, removing SASA changes the labels of about 5\% of frames, so SASA is largely but not entirely redundant for this model.
 
 \section{Interpretation}
-Correlation alone does not settle a feature choice: it summarizes the whole sample, whereas clustering assigns individual frames using all retained features, and the answer here depends on the model. The two clustering approaches also behave differently. The three-component Gaussian mixture is almost insensitive to its seed, whereas the density-peak partition changes substantially with the seed, the parameters and the amount of data used for discovery. The density-peak families should therefore be read as one reproducible outcome of a stated configuration rather than a unique decomposition of the ensemble, and their weighted populations depend in addition on the assumed FES unit.
+Correlation alone does not settle a feature choice: it summarizes the whole sample, whereas clustering assigns individual frames using all retained features, and the answer here depends on the model. The two clustering approaches also behave differently. The three-component Gaussian mixture is almost insensitive to its seed, whereas the density-peak partition changes substantially with the seed, the parameters and the amount of data used for discovery. The density-peak families should therefore be read as one reproducible outcome of a stated configuration rather than a unique decomposition of the ensemble, and their weighted populations depend in addition on the assumed FES unit. Whether these families correspond to those reported in the primary article has not yet been compared.
